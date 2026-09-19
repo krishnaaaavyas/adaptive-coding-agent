@@ -1,4 +1,3 @@
-from harness import workspace
 from pathlib import Path
 import json
 import sys
@@ -10,6 +9,7 @@ from harness.workspace import create_workspace, run_tests
 
 
 BASE_REPO = Path("taskflow_base")
+
 
 def extract_code(generation: str) -> str:
     text = generation.strip()
@@ -26,7 +26,8 @@ def extract_code(generation: str) -> str:
         text = "\n".join(lines).strip()
 
     return text
-    
+
+
 def main():
     if len(sys.argv) != 2:
         print(
@@ -36,10 +37,7 @@ def main():
         raise SystemExit(1)
 
     config_path = Path(sys.argv[1])
-
-    config = json.loads(
-        config_path.read_text(encoding="utf-8")
-    )
+    config = json.loads(config_path.read_text(encoding="utf-8"))
 
     workspace = create_workspace(BASE_REPO)
 
@@ -78,40 +76,30 @@ REPOSITORY CONTEXT:
     print("Generating...")
 
     generation = generate(
-    [
-        {
-            "role": "system",
-            "content": system_prompt,
-        },
-        {
-            "role": "user",
-            "content": user_prompt,
-        },
-    ]
-)
+        [
+            {
+                "role": "system",
+                "content": system_prompt,
+            },
+            {
+                "role": "user",
+                "content": user_prompt,
+            },
+        ]
+    )
 
-clean_generation = generation.strip()
-
-if clean_generation.startswith("```"):
-    lines = clean_generation.splitlines()
-
-    if lines[0].startswith("```"):
-        lines = lines[1:]
-
-    if lines and lines[-1].strip() == "```":
-        lines = lines[:-1]
-
-    clean_generation = "\n".join(lines).strip()
+    clean_generation = extract_code(generation)
 
     target = workspace / config["target_file"]
 
-    # Preserve the original before modifying the workspace.
+    # Preserve original file for experiment records.
     original = target.read_text(encoding="utf-8")
 
     target.write_text(
-    clean_generation + "\n",
-    encoding="utf-8",
+        clean_generation + "\n",
+        encoding="utf-8",
     )
+
     test_result = run_tests(workspace)
 
     result = {
@@ -126,6 +114,7 @@ if clean_generation.startswith("```"):
         "user_prompt": user_prompt,
         "original_target": original,
         "raw_generation": generation,
+        "applied_generation": clean_generation,
         "tests_passed": test_result["passed"],
         "test_returncode": test_result["returncode"],
         "test_stdout": test_result["stdout"],
