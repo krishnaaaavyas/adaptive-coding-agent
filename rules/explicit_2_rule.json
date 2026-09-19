@@ -1,0 +1,6 @@
+{
+  "rule_id": "explicit_2_result_rule",
+  "scope": "repository",
+  "status": "confirmed",
+  "rule": "Service methods must represent expected success and failure outcomes using Result-style Ok and Err values rather than raising exceptions for expected failures."
+}

@@ -1,0 +1,8 @@
+{
+  "episode_id": "explicit_2_previous_correction",
+  "type": "developer_correction",
+  "scope": "repository",
+  "previous_task": "Implement task deletion functionality.",
+  "rejected_code": "def delete_task(self, task_id):\n    task = self.task_repo.get(task_id)\n    if task is None:\n        raise TaskNotFoundError(task_id)\n    self.task_repo.delete(task_id)\n    return None",
+  "developer_edit": "def delete_task(self, task_id):\n    task = self.task_repo.get(task_id)\n    if task is None:\n        return Err(TaskNotFoundError(task_id))\n    self.task_repo.delete(task_id)\n    return Ok(None)"
+}

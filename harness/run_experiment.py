@@ -7,6 +7,7 @@ from harness.inference import generate
 from harness.results import save_result
 from harness.workspace import create_workspace, run_tests
 from harness.scorers.explicit_1 import score_explicit_1
+from harness.scorers.explicit_2 import score_explicit_2
 
 
 BASE_REPO = Path("taskflow_base")
@@ -209,9 +210,14 @@ CONFIRMED REPOSITORY RULE:
 
     test_result = run_tests(workspace)
 
-    convention_result = score_explicit_1(
-        workspace
+    convention_result = score_convention(
+        config["experiment"],
+        workspace,
     )
+    overall_success = (
+    test_result["passed"]
+    and convention_result["passed"]
+) 
 
     # -----------------------------
     # Save experiment evidence
@@ -225,6 +231,7 @@ CONFIRMED REPOSITORY RULE:
         "context_files": config["context_files"],
         "target_file": config["target_file"],
         "task": config["task"],
+        "overall_success": overall_success,
 
         "memory_file": config.get(
             "memory_file"
@@ -266,6 +273,7 @@ CONFIRMED REPOSITORY RULE:
     print("Generation saved and applied.")
     print(f"Result: {result_path}")
     print(f"Target: {target}")
+    print(f"Overall success: {overall_success}")
     print(
         f"Tests passed: "
         f"{test_result['passed']}"
@@ -285,6 +293,18 @@ CONFIRMED REPOSITORY RULE:
     if test_result["stderr"]:
         print(test_result["stderr"])
 
+def score_convention(experiment: str, workspace: Path) -> dict:
+    scorers = {
+        "explicit_1": score_explicit_1,
+        "explicit_2": score_explicit_2,
+    }
+
+    if experiment not in scorers:
+        raise ValueError(
+            f"No scorer registered for experiment: {experiment}"
+        )
+
+    return scorers[experiment](workspace)
 
 if __name__ == "__main__":
     main()
