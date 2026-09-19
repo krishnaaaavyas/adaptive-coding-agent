@@ -1,0 +1,6 @@
+{
+  "rule_id": "explicit_3_public_id_rule",
+  "scope": "repository",
+  "status": "confirmed",
+  "rule": "Public API DTOs must expose public_id as a UUID and must not expose internal database primary-key identifiers."
+}

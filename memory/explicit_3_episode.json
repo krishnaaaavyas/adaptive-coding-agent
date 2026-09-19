@@ -1,0 +1,8 @@
+{
+  "episode_id": "explicit_3_previous_correction",
+  "type": "developer_correction",
+  "scope": "repository",
+  "previous_task": "Create a public API DTO for a task.",
+  "rejected_code": "class TaskDTO(BaseModel):\n    id: int\n    title: str",
+  "developer_edit": "class TaskDTO(BaseModel):\n    public_id: UUID\n    title: str"
+}

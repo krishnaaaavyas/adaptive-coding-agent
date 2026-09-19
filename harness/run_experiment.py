@@ -8,6 +8,7 @@ from harness.results import save_result
 from harness.workspace import create_workspace, run_tests
 from harness.scorers.explicit_1 import score_explicit_1
 from harness.scorers.explicit_2 import score_explicit_2
+from harness.scorers.explicit_3 import score_explicit_3
 
 
 BASE_REPO = Path("taskflow_base")
@@ -195,8 +196,15 @@ CONFIRMED REPOSITORY RULE:
 
     target = workspace / config["target_file"]
 
-    original = target.read_text(
-        encoding="utf-8"
+    if target.exists():
+        original = target.read_text(
+            encoding="utf-8"
+        )
+    else:
+        original = None
+        target.parent.mkdir(
+            parents=True,
+            exist_ok=True,
     )
 
     target.write_text(
@@ -295,8 +303,9 @@ CONFIRMED REPOSITORY RULE:
 
 def score_convention(experiment: str, workspace: Path) -> dict:
     scorers = {
-        "explicit_1": score_explicit_1,
-        "explicit_2": score_explicit_2,
+    "explicit_1": score_explicit_1,
+    "explicit_2": score_explicit_2,
+    "explicit_3": score_explicit_3,
     }
 
     if experiment not in scorers:

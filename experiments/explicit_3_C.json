@@ -1,0 +1,14 @@
+{
+  "experiment": "explicit_3",
+  "condition": "C",
+  "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+  "task": "Create dto/comment_dto.py containing a CommentDTO for exposing comments through the public API. Follow the DTO conventions demonstrated by the repository.",
+  "context_files": [
+    "dto/project_dto.py",
+    "dto/task_dto.py",
+    "models/project.py",
+    "models/task.py"
+  ],
+  "target_file": "dto/comment_dto.py",
+  "rule_file": "rules/explicit_3_rule.json"
+}
