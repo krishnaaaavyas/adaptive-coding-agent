@@ -1,3 +1,4 @@
+from harness import workspace
 from pathlib import Path
 import json
 import sys
@@ -5,12 +6,27 @@ import sys
 from harness.context import build_context
 from harness.inference import generate
 from harness.results import save_result
-from harness.workspace import create_workspace
+from harness.workspace import create_workspace, run_tests
 
 
 BASE_REPO = Path("taskflow_base")
 
+def extract_code(generation: str) -> str:
+    text = generation.strip()
 
+    if text.startswith("```"):
+        lines = text.splitlines()
+
+        if lines[0].strip().startswith("```"):
+            lines = lines[1:]
+
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+
+        text = "\n".join(lines).strip()
+
+    return text
+    
 def main():
     if len(sys.argv) != 2:
         print(
@@ -62,17 +78,30 @@ REPOSITORY CONTEXT:
     print("Generating...")
 
     generation = generate(
-        [
-            {
-                "role": "system",
-                "content": system_prompt,
-            },
-            {
-                "role": "user",
-                "content": user_prompt,
-            },
-        ]
-    )
+    [
+        {
+            "role": "system",
+            "content": system_prompt,
+        },
+        {
+            "role": "user",
+            "content": user_prompt,
+        },
+    ]
+)
+
+clean_generation = generation.strip()
+
+if clean_generation.startswith("```"):
+    lines = clean_generation.splitlines()
+
+    if lines[0].startswith("```"):
+        lines = lines[1:]
+
+    if lines and lines[-1].strip() == "```":
+        lines = lines[:-1]
+
+    clean_generation = "\n".join(lines).strip()
 
     target = workspace / config["target_file"]
 
@@ -80,9 +109,10 @@ REPOSITORY CONTEXT:
     original = target.read_text(encoding="utf-8")
 
     target.write_text(
-        generation.strip() + "\n",
-        encoding="utf-8",
+    clean_generation + "\n",
+    encoding="utf-8",
     )
+    test_result = run_tests(workspace)
 
     result = {
         "experiment": config["experiment"],
@@ -96,7 +126,10 @@ REPOSITORY CONTEXT:
         "user_prompt": user_prompt,
         "original_target": original,
         "raw_generation": generation,
-        "tests_passed": None,
+        "tests_passed": test_result["passed"],
+        "test_returncode": test_result["returncode"],
+        "test_stdout": test_result["stdout"],
+        "test_stderr": test_result["stderr"],
         "convention_passed": None,
     }
 
@@ -106,6 +139,13 @@ REPOSITORY CONTEXT:
     print("Generation saved and applied.")
     print(f"Result: {result_path}")
     print(f"Target: {target}")
+    print(f"Tests passed: {test_result['passed']}")
+
+    if test_result["stdout"]:
+        print(test_result["stdout"])
+
+    if test_result["stderr"]:
+        print(test_result["stderr"])
 
 
 if __name__ == "__main__":
