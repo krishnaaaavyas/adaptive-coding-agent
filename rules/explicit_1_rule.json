@@ -1,0 +1,6 @@
+{
+  "rule_id": "explicit_1_repository_rule",
+  "scope": "repository",
+  "status": "confirmed",
+  "rule": "Service methods must access persistence through repository dependencies rather than directly accessing the database, ORM session, or persistence layer."
+}

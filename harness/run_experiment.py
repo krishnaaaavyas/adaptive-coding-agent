@@ -29,6 +29,17 @@ def extract_code(generation: str) -> str:
     return text
 
 
+def load_json_file(path_string: str):
+    path = Path(path_string)
+
+    if not path.exists():
+        raise FileNotFoundError(f"File not found: {path}")
+
+    return json.loads(
+        path.read_text(encoding="utf-8")
+    )
+
+
 def main():
     if len(sys.argv) != 2:
         print(
@@ -38,7 +49,38 @@ def main():
         raise SystemExit(1)
 
     config_path = Path(sys.argv[1])
-    config = json.loads(config_path.read_text(encoding="utf-8"))
+
+    config = json.loads(
+        config_path.read_text(encoding="utf-8")
+    )
+
+    # -----------------------------
+    # Load adaptation information
+    # -----------------------------
+
+    memory = None
+    rule = None
+
+    if "memory_file" in config:
+        memory = load_json_file(
+            config["memory_file"]
+        )
+
+    if "rule_file" in config:
+        rule = load_json_file(
+            config["rule_file"]
+        )
+
+    # Prevent accidental condition contamination.
+    if memory is not None and rule is not None:
+        raise ValueError(
+            "Experiment cannot load both memory and rule "
+            "for A/B/C comparison."
+        )
+
+    # -----------------------------
+    # Create isolated workspace
+    # -----------------------------
 
     workspace = create_workspace(BASE_REPO)
 
@@ -46,6 +88,10 @@ def main():
         workspace,
         config["context_files"],
     )
+
+    # -----------------------------
+    # Base system prompt
+    # -----------------------------
 
     system_prompt = """
 You are modifying an existing Python repository.
@@ -59,6 +105,10 @@ Do not use Markdown fences.
 Do not explain your answer.
 """.strip()
 
+    # -----------------------------
+    # Base task prompt
+    # -----------------------------
+
     user_prompt = f"""
 TASK:
 {config["task"]}
@@ -71,9 +121,54 @@ REPOSITORY CONTEXT:
 {context}
 """.strip()
 
+    # -----------------------------
+    # Condition B: episodic memory
+    # -----------------------------
+
+    if memory is not None:
+        memory_context = f"""
+PREVIOUS DEVELOPMENT EXPERIENCE:
+
+Previous task:
+{memory["previous_task"]}
+
+Initial implementation:
+{memory["rejected_code"]}
+
+Developer's corrected implementation:
+{memory["developer_edit"]}
+""".strip()
+
+        user_prompt = (
+            f"{memory_context}\n\n"
+            f"{user_prompt}"
+        )
+
+    # -----------------------------
+    # Condition C: confirmed rule
+    # -----------------------------
+
+    if rule is not None:
+        rule_context = f"""
+CONFIRMED REPOSITORY RULE:
+
+{rule["rule"]}
+""".strip()
+
+        user_prompt = (
+            f"{rule_context}\n\n"
+            f"{user_prompt}"
+        )
+
+    # -----------------------------
+    # Run model
+    # -----------------------------
+
     print(f"Experiment: {config['experiment']}")
     print(f"Condition:  {config['condition']}")
     print(f"Workspace:  {workspace}")
+    print(f"Memory loaded: {memory is not None}")
+    print(f"Rule loaded: {rule is not None}")
     print("Generating...")
 
     generation = generate(
@@ -89,20 +184,38 @@ REPOSITORY CONTEXT:
         ]
     )
 
-    clean_generation = extract_code(generation)
+    clean_generation = extract_code(
+        generation
+    )
+
+    # -----------------------------
+    # Apply generated code
+    # -----------------------------
 
     target = workspace / config["target_file"]
 
-    # Preserve original file for experiment records.
-    original = target.read_text(encoding="utf-8")
+    original = target.read_text(
+        encoding="utf-8"
+    )
 
     target.write_text(
         clean_generation + "\n",
         encoding="utf-8",
     )
 
+    # -----------------------------
+    # Verification
+    # -----------------------------
+
     test_result = run_tests(workspace)
-    convention_result = score_explicit_1(workspace)
+
+    convention_result = score_explicit_1(
+        workspace
+    )
+
+    # -----------------------------
+    # Save experiment evidence
+    # -----------------------------
 
     result = {
         "experiment": config["experiment"],
@@ -112,28 +225,59 @@ REPOSITORY CONTEXT:
         "context_files": config["context_files"],
         "target_file": config["target_file"],
         "task": config["task"],
+
+        "memory_file": config.get(
+            "memory_file"
+        ),
+        "memory": memory,
+
+        "rule_file": config.get(
+            "rule_file"
+        ),
+        "rule": rule,
+
         "system_prompt": system_prompt,
         "user_prompt": user_prompt,
+
         "original_target": original,
         "raw_generation": generation,
         "applied_generation": clean_generation,
+
         "tests_passed": test_result["passed"],
-        "test_returncode": test_result["returncode"],
+        "test_returncode": test_result[
+            "returncode"
+        ],
         "test_stdout": test_result["stdout"],
         "test_stderr": test_result["stderr"],
-        "convention_passed": convention_result["passed"],
+
+        "convention_passed": convention_result[
+            "passed"
+        ],
         "convention_result": convention_result,
     }
 
     result_path = save_result(result)
 
+    # -----------------------------
+    # Console summary
+    # -----------------------------
+
     print()
     print("Generation saved and applied.")
     print(f"Result: {result_path}")
     print(f"Target: {target}")
-    print(f"Tests passed: {test_result['passed']}")
-    print(f"Convention passed: {convention_result['passed']}")
-    print(f"Convention reason: {convention_result['reason']}")
+    print(
+        f"Tests passed: "
+        f"{test_result['passed']}"
+    )
+    print(
+        f"Convention passed: "
+        f"{convention_result['passed']}"
+    )
+    print(
+        f"Convention reason: "
+        f"{convention_result['reason']}"
+    )
 
     if test_result["stdout"]:
         print(test_result["stdout"])
