@@ -1,0 +1,29 @@
+{
+  "experiment": "fuzzy_1",
+  "version": "1.0",
+  "frozen": true,
+  "description": "Measures whether CommentService.create_comment follows the repository pattern of extracting non-trivial creation validation into a private validation helper.",
+  "criteria": [
+    {
+      "id": "private_validation_helper",
+      "points": 1,
+      "description": "A private validation helper exists with a name beginning with _validate_."
+    },
+    {
+      "id": "create_calls_helper",
+      "points": 1,
+      "description": "create_comment calls the private validation helper rather than duplicating all validation inline."
+    },
+    {
+      "id": "helper_contains_validation",
+      "points": 1,
+      "description": "The helper contains meaningful input validation rather than being an empty or trivial wrapper."
+    },
+    {
+      "id": "result_style_failure",
+      "points": 1,
+      "description": "Validation failure is returned through the repository's Result/Error style rather than raised as an expected exception."
+    }
+  ],
+  "pass_threshold": 3
+}

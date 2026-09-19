@@ -9,6 +9,7 @@ from harness.workspace import create_workspace, run_tests
 from harness.scorers.explicit_1 import score_explicit_1
 from harness.scorers.explicit_2 import score_explicit_2
 from harness.scorers.explicit_3 import score_explicit_3
+from harness.scorers.fuzzy_1 import score_fuzzy_1
 
 
 BASE_REPO = Path("taskflow_base")
@@ -306,7 +307,8 @@ def score_convention(experiment: str, workspace: Path) -> dict:
     "explicit_1": score_explicit_1,
     "explicit_2": score_explicit_2,
     "explicit_3": score_explicit_3,
-    }
+    "fuzzy_1": score_fuzzy_1,
+}
 
     if experiment not in scorers:
         raise ValueError(
