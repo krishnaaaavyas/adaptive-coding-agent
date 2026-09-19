@@ -1,0 +1,17 @@
+{
+  "experiment": "explicit_1",
+  "condition": "A",
+  "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+  "task": "Implement the missing project deletion functionality. Follow the architecture and coding patterns demonstrated by the repository.",
+  "context_files": [
+    "routers/projects.py",
+    "routers/tasks.py",
+    "services/project_service.py",
+    "services/task_service.py",
+    "repositories/project_repository.py",
+    "repositories/task_repository.py",
+    "core/result.py",
+    "core/errors.py"
+  ],
+  "target_file": "services/project_service.py"
+}

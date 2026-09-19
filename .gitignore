@@ -6,3 +6,4 @@ venv/
 taskflow.zip
 results/*
 !results/.gitkeep
+workspaces/
