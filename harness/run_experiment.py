@@ -6,6 +6,7 @@ from harness.context import build_context
 from harness.inference import generate
 from harness.results import save_result
 from harness.workspace import create_workspace, run_tests
+from harness.scorers.explicit_1 import score_explicit_1
 
 
 BASE_REPO = Path("taskflow_base")
@@ -101,6 +102,7 @@ REPOSITORY CONTEXT:
     )
 
     test_result = run_tests(workspace)
+    convention_result = score_explicit_1(workspace)
 
     result = {
         "experiment": config["experiment"],
@@ -119,7 +121,8 @@ REPOSITORY CONTEXT:
         "test_returncode": test_result["returncode"],
         "test_stdout": test_result["stdout"],
         "test_stderr": test_result["stderr"],
-        "convention_passed": None,
+        "convention_passed": convention_result["passed"],
+        "convention_result": convention_result,
     }
 
     result_path = save_result(result)
@@ -129,6 +132,8 @@ REPOSITORY CONTEXT:
     print(f"Result: {result_path}")
     print(f"Target: {target}")
     print(f"Tests passed: {test_result['passed']}")
+    print(f"Convention passed: {convention_result['passed']}")
+    print(f"Convention reason: {convention_result['reason']}")
 
     if test_result["stdout"]:
         print(test_result["stdout"])
