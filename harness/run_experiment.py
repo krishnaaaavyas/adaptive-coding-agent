@@ -5,6 +5,7 @@ import sys
 
 from harness.context import build_context
 from harness.inference import generate
+from harness.leakage import LeakageDetectedError, scan_leakage
 from harness.results import save_result
 from harness.workspace import create_workspace, run_tests
 from harness.scorers.explicit_1 import score_explicit_1
@@ -237,6 +238,78 @@ Implementation:
         f"Unsupported memory type: {memory_type}"
     )
 
+
+def generate_with_preflight(
+    messages: list[dict],
+    sources: list[tuple[str, str]],
+):
+    findings = []
+    covered_message_findings = set()
+
+    for source_label, source_text in sources:
+        source_findings = scan_leakage([(source_label, source_text)])
+        findings.extend(source_findings)
+
+        if not source_text:
+            continue
+
+        for message_index, message in enumerate(messages):
+            content = message["content"]
+            offset = content.find(source_text)
+
+            while offset != -1:
+                for finding in source_findings:
+                    covered_message_findings.add(
+                        (
+                            message_index,
+                            offset + finding.start,
+                            offset + finding.end,
+                            finding.severity,
+                            finding.pattern,
+                        )
+                    )
+                offset = content.find(source_text, offset + 1)
+
+    for message_index, message in enumerate(messages):
+        role = message.get("role", "unknown")
+        message_label = f"message[{message_index}] ({role})"
+        message_findings = scan_leakage(
+            [(message_label, message["content"])]
+        )
+
+        for finding in message_findings:
+            key = (
+                message_index,
+                finding.start,
+                finding.end,
+                finding.severity,
+                finding.pattern,
+            )
+            if key not in covered_message_findings:
+                findings.append(finding)
+
+    errors = [finding for finding in findings if finding.severity == "error"]
+
+    for finding in findings:
+        if finding.severity == "warning":
+            print(
+                "Leakage preflight warning: "
+                f"{finding.source_label}: {finding.pattern} "
+                f"({finding.excerpt})"
+            )
+
+    if errors:
+        print("Model-context leakage detected; inference aborted.")
+        for finding in errors:
+            print(
+                f"  {finding.source_label}: {finding.pattern} "
+                f"[{finding.match}] ({finding.excerpt})"
+            )
+        raise LeakageDetectedError(errors)
+
+    print("Generating...")
+    return generate(messages)
+
 def main():
     if len(sys.argv) != 2:
         print(
@@ -336,16 +409,20 @@ Do not explain your answer.
     else:
         target_description = f"TARGET FILE:\n{target_files[0]}"
 
-    user_prompt = f"""
+    task_prompt = f"""
 TASK:
 {config["task"]}
 
 {target_description}
 
 REPOSITORY CONTEXT:
-
-{context}
 """.strip()
+    user_prompt = f"{task_prompt}\n\n{context}"
+    model_sources = [
+        ("system prompt", system_prompt),
+        ("task prompt", task_prompt),
+        ("repository context", context),
+    ]
 
     # -----------------------------
     # Condition B: episodic memory
@@ -353,6 +430,7 @@ REPOSITORY CONTEXT:
 
     if memory is not None:
         memory_context = render_memory(memory)
+        model_sources.append(("memory", memory_context))
         user_prompt = (
             f"{memory_context}\n\n"
             f"{user_prompt}"
@@ -368,6 +446,7 @@ REPOSITORY CONTEXT:
 
         {rule["rule"]}
         """.strip()
+        model_sources.append(("rule", rule_context))
 
         user_prompt = (
             f"{rule_context}\n\n"
@@ -383,20 +462,18 @@ REPOSITORY CONTEXT:
     print(f"Workspace:  {workspace}")
     print(f"Memory loaded: {memory is not None}")
     print(f"Rule loaded: {rule is not None}")
-    print("Generating...")
 
-    generation = generate(
-        [
-            {
-                "role": "system",
-                "content": system_prompt,
-            },
-            {
-                "role": "user",
-                "content": user_prompt,
-            },
-        ]
-    )
+    messages = [
+        {
+            "role": "system",
+            "content": system_prompt,
+        },
+        {
+            "role": "user",
+            "content": user_prompt,
+        },
+    ]
+    generation = generate_with_preflight(messages, model_sources)
 
     # -----------------------------
     # Apply generated code
