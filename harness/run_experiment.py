@@ -42,6 +42,50 @@ def load_json_file(path_string: str):
         path.read_text(encoding="utf-8")
     )
 
+def render_memory(memory: dict) -> str:
+    memory_type = memory.get("type")
+
+    if memory_type == "developer_correction":
+        return f"""
+PREVIOUS DEVELOPMENT EXPERIENCE:
+
+Previous task:
+{memory["previous_task"]}
+
+Initial implementation:
+{memory["rejected_code"]}
+
+Developer's corrected implementation:
+{memory["developer_edit"]}
+""".strip()
+
+    if memory_type == "repository_experience":
+        sections = []
+
+        for index, example in enumerate(
+            memory["examples"],
+            start=1,
+        ):
+            sections.append(
+                f"""
+Previous example {index}:
+
+Task:
+{example["task"]}
+
+Implementation:
+{example["implementation"]}
+""".strip()
+            )
+
+        return (
+            "PREVIOUS DEVELOPMENT EXPERIENCE:\n\n"
+            + "\n\n".join(sections)
+        )
+
+    raise ValueError(
+        f"Unsupported memory type: {memory_type}"
+    )
 
 def main():
     if len(sys.argv) != 2:
@@ -129,19 +173,7 @@ REPOSITORY CONTEXT:
     # -----------------------------
 
     if memory is not None:
-        memory_context = f"""
-PREVIOUS DEVELOPMENT EXPERIENCE:
-
-Previous task:
-{memory["previous_task"]}
-
-Initial implementation:
-{memory["rejected_code"]}
-
-Developer's corrected implementation:
-{memory["developer_edit"]}
-""".strip()
-
+        memory_context = render_memory(memory)
         user_prompt = (
             f"{memory_context}\n\n"
             f"{user_prompt}"
@@ -153,10 +185,10 @@ Developer's corrected implementation:
 
     if rule is not None:
         rule_context = f"""
-CONFIRMED REPOSITORY RULE:
+        CONFIRMED REPOSITORY RULE:
 
-{rule["rule"]}
-""".strip()
+        {rule["rule"]}
+        """.strip()
 
         user_prompt = (
             f"{rule_context}\n\n"

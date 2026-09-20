@@ -1,0 +1,7 @@
+{
+  "rule_id": "fuzzy_1_validation_helper",
+  "scope": "repository",
+  "status": "confirmed",
+  "source": "convention_induction",
+  "rule": "When creation logic requires non-trivial input validation, extract that validation into a private _validate_* helper and have the create method use the helper."
+}

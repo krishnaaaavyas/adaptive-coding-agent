@@ -1,0 +1,15 @@
+{
+  "episode_id": "fuzzy_1_previous_examples",
+  "type": "repository_experience",
+  "scope": "repository",
+  "examples": [
+    {
+      "task": "Implement task creation.",
+      "implementation": "def create_task(self, payload):\n    errors = self._validate_create(payload)\n    if errors:\n        return Err(ValidationError(errors))\n    return Ok(self.task_repo.create(payload))\n\ndef _validate_create(self, payload):\n    errors = []\n    if not payload.title.strip():\n        errors.append(\"title is required\")\n    return errors"
+    },
+    {
+      "task": "Implement project creation.",
+      "implementation": "def create_project(self, payload):\n    errors = self._validate_create(payload)\n    if errors:\n        return Err(ValidationError(errors))\n    return Ok(self.project_repo.create(payload))\n\ndef _validate_create(self, payload):\n    errors = []\n    if not payload.name.strip():\n        errors.append(\"name is required\")\n    return errors"
+    }
+  ]
+}

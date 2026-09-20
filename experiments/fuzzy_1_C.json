@@ -1,0 +1,16 @@
+{
+  "experiment": "fuzzy_1",
+  "condition": "C",
+  "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+  "task": "Create services/comment_service.py containing a CommentService with create_comment functionality. Validate comment creation input and follow the architecture and coding patterns demonstrated by the repository.",
+  "context_files": [
+    "services/project_service.py",
+    "services/task_service.py",
+    "repositories/project_repository.py",
+    "repositories/task_repository.py",
+    "core/result.py",
+    "core/errors.py"
+  ],
+  "target_file": "services/comment_service.py",
+  "rule_file": "rules/fuzzy_1_rule.json"
+}
