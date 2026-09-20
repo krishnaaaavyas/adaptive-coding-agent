@@ -3,8 +3,8 @@ from fastapi import FastAPI
 from core.db import Base, engine
 from routers import projects, tasks
 
-# Import every model module before create_all so its table is registered
-# on Base.metadata. comments.py does not exist yet on purpose.
+# Import model modules before create_all so their tables are registered
+# on Base.metadata.
 from models import project, task  # noqa: F401
 
 Base.metadata.create_all(bind=engine)

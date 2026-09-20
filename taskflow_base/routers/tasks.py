@@ -17,9 +17,7 @@ def get_task_service(db: Session = Depends(get_db)) -> TaskService:
 
 
 def handle_result(result, to_dto=None):
-    """Shared Result -> HTTP translation. Routers never inspect ORM models
-    or sessions directly (Explicit-1) — this is the only place a Result's
-    error gets turned into an HTTP status."""
+    """Translate a service result into an HTTP response."""
     if isinstance(result, Ok):
         return to_dto(result.value) if to_dto else result.value
     error = result.error

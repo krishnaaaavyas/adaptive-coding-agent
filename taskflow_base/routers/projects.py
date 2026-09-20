@@ -17,8 +17,3 @@ def get_project_service(db: Session = Depends(get_db)) -> ProjectService:
 @router.post("/projects", response_model=ProjectDTO)
 def create_project(payload: ProjectCreateDTO, service: ProjectService = Depends(get_project_service)):
     return handle_result(service.create_project(payload), ProjectDTO.from_model)
-
-
-# DELETE /projects/{project_id} intentionally absent — this is the
-# Explicit-1 / Explicit-2 held-out endpoint. The agent under test adds it
-# during the experiment; it is not part of the frozen base repository.

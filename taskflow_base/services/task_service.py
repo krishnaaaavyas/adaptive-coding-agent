@@ -30,8 +30,6 @@ class TaskService:
         return Ok(self.task_repo.save(task))
 
     def update_tags(self, task_id: int, tags: list[str]) -> Result[TaskModel, ServiceError]:
-        # Second use of tag normalization — this is what makes _normalize_tags
-        # a repeated-logic extraction (Fuzzy-3), not a one-off inline helper.
         task = self.task_repo.get(task_id)
         if task is None:
             return Err(TaskNotFoundError(task_id))

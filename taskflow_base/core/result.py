@@ -1,6 +1,4 @@
-"""Result[T, E] — service methods return this for expected failures instead
-of raising. See Explicit-2 in the Phase 1 pilot spec.
-"""
+"""Result types for representing successful and failed service outcomes."""
 from dataclasses import dataclass
 from typing import Generic, TypeVar, Union
 

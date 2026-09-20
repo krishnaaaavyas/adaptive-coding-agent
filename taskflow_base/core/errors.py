@@ -2,8 +2,7 @@
 
 
 class ServiceError(Exception):
-    """Base for all expected service-layer failures. These are returned
-    as Err(...), never raised, per Explicit-2."""
+    """Base for service-layer failures represented in Result values."""
 
 
 class ValidationError(ServiceError):

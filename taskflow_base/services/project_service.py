@@ -20,16 +20,7 @@ class ProjectService:
         return Ok(self.project_repo.save(project))
 
     def delete_project(self, project_id: int):
-        """HELD-OUT TASK TARGET (Explicit-1 and Explicit-2).
-
-        Deliberately unimplemented. The agent under test implements this
-        method during the experiment — not the harness. A correct
-        implementation: looks up the project via self.project_repo (never
-        touching a Session/ORM model directly, per Explicit-1), returns
-        Err(ProjectNotFoundError(...)) rather than raising if missing
-        (Explicit-2), and returns Ok(None) on success.
-        """
-        raise NotImplementedError("held-out task: implemented by the agent under test")
+        raise NotImplementedError("project deletion is not implemented")
 
     def _validate_create(self, payload: ProjectCreateDTO) -> list[str]:
         errors = []
