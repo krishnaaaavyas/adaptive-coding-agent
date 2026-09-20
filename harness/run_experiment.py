@@ -103,7 +103,7 @@ def parse_multi_file_generation(
 
         if match:
             if current_path is not None:
-                sections[current_path] = "".join(content_lines)
+                sections[current_path] = extract_code("".join(content_lines))
 
             section_path = match.group(1)
             _validate_relative_target(section_path)
@@ -129,7 +129,7 @@ def parse_multi_file_generation(
         content_lines.append(line)
 
     if current_path is not None:
-        sections[current_path] = "".join(content_lines)
+        sections[current_path] = extract_code("".join(content_lines))
 
     missing = [target for target in requested_targets if target not in sections]
     if missing:

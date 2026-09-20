@@ -35,8 +35,8 @@ def test_valid_two_file_response(tmp_path: Path):
         "services/comment_service.py": None,
     }
     assert applied == {
-        "core/errors.py": "class CommentError(Exception):\n    pass\n",
-        "services/comment_service.py": "from core.errors import CommentError\n",
+        "core/errors.py": "class CommentError(Exception):\n    pass",
+        "services/comment_service.py": "from core.errors import CommentError",
     }
     assert (tmp_path / "core/errors.py").read_text(encoding="utf-8") == applied[
         "core/errors.py"
@@ -44,6 +44,60 @@ def test_valid_two_file_response(tmp_path: Path):
     assert (tmp_path / "services/comment_service.py").read_text(
         encoding="utf-8"
     ) == applied["services/comment_service.py"]
+
+
+def test_two_fenced_sections_are_normalized_before_application(tmp_path: Path):
+    generation = (
+        "=== FILE: core/errors.py ===\n"
+        "```python\n"
+        "class CommentError(Exception):\n"
+        "    pass\n"
+        "```\n"
+        "=== FILE: services/comment_service.py ===\n"
+        "```python\n"
+        "from core.errors import CommentError\n"
+        "```\n"
+    )
+
+    _, applied = apply_multi_file_generation(tmp_path, TARGETS, generation)
+
+    assert applied == {
+        "core/errors.py": "class CommentError(Exception):\n    pass",
+        "services/comment_service.py": "from core.errors import CommentError",
+    }
+    assert "```" not in (tmp_path / "core/errors.py").read_text(
+        encoding="utf-8"
+    )
+    assert "```" not in (tmp_path / "services/comment_service.py").read_text(
+        encoding="utf-8"
+    )
+
+
+def test_fenced_and_unfenced_sections_are_normalized_independently(
+    tmp_path: Path,
+):
+    generation = (
+        "=== FILE: core/errors.py ===\n"
+        "```python\n"
+        "class CommentError(Exception):\n"
+        "    pass\n"
+        "```\n"
+        "=== FILE: services/comment_service.py ===\n"
+        "from core.errors import CommentError\n"
+    )
+
+    _, applied = apply_multi_file_generation(tmp_path, TARGETS, generation)
+
+    assert applied == {
+        "core/errors.py": "class CommentError(Exception):\n    pass",
+        "services/comment_service.py": "from core.errors import CommentError",
+    }
+    assert "```" not in (tmp_path / "core/errors.py").read_text(
+        encoding="utf-8"
+    )
+    assert "```" not in (tmp_path / "services/comment_service.py").read_text(
+        encoding="utf-8"
+    )
 
 
 def test_missing_requested_file():
