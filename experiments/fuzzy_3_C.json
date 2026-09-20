@@ -10,5 +10,6 @@
     "core/result.py",
     "core/errors.py"
   ],
+  "target_file": "services/comment_service.py",
   "rule_file": "rules/fuzzy_3_rule.json"
 }

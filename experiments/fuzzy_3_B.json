@@ -10,5 +10,6 @@
     "core/result.py",
     "core/errors.py"
   ],
+  "target_file": "services/comment_service.py",
   "memory_file": "memory/fuzzy_3_examples.json"
 }
