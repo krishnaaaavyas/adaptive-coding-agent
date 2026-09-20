@@ -14,6 +14,7 @@ from harness.scorers.fuzzy_1 import score_fuzzy_1
 from harness.scorers.fuzzy_2 import score_fuzzy_2
 
 
+
 BASE_REPO = Path("taskflow_base")
 FILE_HEADER = re.compile(r"^=== FILE: (.+) ===$")
 
@@ -545,6 +546,7 @@ def score_convention(experiment: str, workspace: Path) -> dict:
     "explicit_2": score_explicit_2,
     "explicit_3": score_explicit_3,
     "fuzzy_1": score_fuzzy_1,
+    "fuzzy_2": score_fuzzy_2,
 }
 
     if experiment not in scorers:
