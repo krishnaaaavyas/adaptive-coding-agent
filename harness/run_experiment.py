@@ -11,6 +11,7 @@ from harness.scorers.explicit_1 import score_explicit_1
 from harness.scorers.explicit_2 import score_explicit_2
 from harness.scorers.explicit_3 import score_explicit_3
 from harness.scorers.fuzzy_1 import score_fuzzy_1
+from harness.scorers.fuzzy_2 import score_fuzzy_2
 
 
 BASE_REPO = Path("taskflow_base")

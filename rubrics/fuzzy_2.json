@@ -1,0 +1,29 @@
+{
+  "experiment": "fuzzy_2",
+  "version": "1.0",
+  "frozen": true,
+  "description": "Measures whether a new resource follows the repository pattern of using a resource-specific NotFoundError subtype.",
+  "criteria": [
+    {
+      "id": "resource_specific_error_defined",
+      "points": 1,
+      "description": "CommentNotFoundError is defined."
+    },
+    {
+      "id": "inherits_not_found_error",
+      "points": 1,
+      "description": "CommentNotFoundError subclasses NotFoundError."
+    },
+    {
+      "id": "get_comment_uses_specific_error",
+      "points": 1,
+      "description": "CommentService.get_comment returns CommentNotFoundError when the comment does not exist."
+    },
+    {
+      "id": "no_generic_not_found_return",
+      "points": 1,
+      "description": "get_comment does not use the generic NotFoundError directly for the missing-comment case."
+    }
+  ],
+  "pass_threshold": 3
+}
