@@ -13,3 +13,9 @@ class CommentRepository:
             .filter(CommentModel.id == comment_id)
             .first()
         )
+    
+    def save(self, comment: CommentModel) -> CommentModel:
+        self.db.add(comment)
+        self.db.commit()
+        self.db.refresh(comment)
+        return comment

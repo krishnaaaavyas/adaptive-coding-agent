@@ -12,6 +12,7 @@ from harness.scorers.explicit_2 import score_explicit_2
 from harness.scorers.explicit_3 import score_explicit_3
 from harness.scorers.fuzzy_1 import score_fuzzy_1
 from harness.scorers.fuzzy_2 import score_fuzzy_2
+from harness.scorers.fuzzy_3 import score_fuzzy_3
 
 
 
@@ -547,6 +548,7 @@ def get_scorer(experiment: str):
         "explicit_3": score_explicit_3,
         "fuzzy_1": score_fuzzy_1,
         "fuzzy_2": score_fuzzy_2,
+        "fuzzy_3": score_fuzzy_3,
     }
 
     if experiment not in scorers:

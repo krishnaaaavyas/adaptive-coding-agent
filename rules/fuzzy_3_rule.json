@@ -1,0 +1,6 @@
+{
+  "scope": "repository",
+  "confirmed": true,
+  "source": "convention_induction",
+  "rule": "When the same non-trivial normalization transformation is needed by two or more operations in a service, extract it into one shared private _normalize_* helper and have those operations reuse it."
+}

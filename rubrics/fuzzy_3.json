@@ -1,0 +1,29 @@
+{
+  "experiment": "fuzzy_3",
+  "version": "1.0",
+  "frozen": true,
+  "description": "Measures whether repeated normalization logic is extracted into one shared private helper when used by multiple operations.",
+  "criteria": [
+    {
+      "id": "normalization_helper_exists",
+      "points": 1,
+      "description": "CommentService defines a private _normalize_* helper containing meaningful content normalization."
+    },
+    {
+      "id": "create_uses_helper",
+      "points": 1,
+      "description": "create_comment uses the private normalization helper."
+    },
+    {
+      "id": "edit_uses_same_helper",
+      "points": 1,
+      "description": "edit_comment uses the same private normalization helper."
+    },
+    {
+      "id": "normalization_centralized",
+      "points": 1,
+      "description": "The repeated normalization transformation is centralized in the helper rather than independently duplicated in create_comment and edit_comment."
+    }
+  ],
+  "pass_threshold": 3
+}

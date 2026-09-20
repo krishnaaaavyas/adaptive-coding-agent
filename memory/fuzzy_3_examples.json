@@ -1,0 +1,17 @@
+{
+  "type": "repository_experience",
+  "examples": [
+    {
+      "task": "Create a task while normalizing its tags.",
+      "implementation": "def create_task(self, payload):\n    task = TaskModel(\n        title=payload.title,\n        project_id=payload.project_id,\n        tags=self._normalize_tags(payload.tags),\n    )\n    return Ok(self.task_repo.save(task))"
+    },
+    {
+      "task": "Update an existing task's tags.",
+      "implementation": "def update_tags(self, task_id, tags):\n    task = self.task_repo.get(task_id)\n    if task is None:\n        return Err(TaskNotFoundError(task_id))\n    task.tags = self._normalize_tags(tags)\n    return Ok(self.task_repo.save(task))"
+    },
+    {
+      "task": "Shared implementation used by both task operations.",
+      "implementation": "def _normalize_tags(self, tags):\n    cleaned = sorted(set(t.strip().lower() for t in tags if t.strip()))\n    return \",\".join(cleaned)"
+    }
+  ]
+}
