@@ -1,11 +1,4 @@
-"""Base ServiceError plus resource-named subtypes.
-
-Fuzzy-2 convention (see pilot spec): each resource defines its own
-<Resource>NotFoundError subtype, carrying the resource's identifying
-field, subclassing the shared NotFoundError. Establish it here for
-`tasks` and `projects` — `comments` deliberately does not have one yet;
-that's the held-out inference target.
-"""
+"""Service-layer error types."""
 
 
 class ServiceError(Exception):
