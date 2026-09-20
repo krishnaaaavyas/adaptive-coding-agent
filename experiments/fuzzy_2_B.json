@@ -2,11 +2,13 @@
   "experiment": "fuzzy_2",
   "condition": "B",
   "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
-  "task": "Implement support for retrieving comments. Add the error type needed for missing comments and create services/comment_service.py containing CommentService.get_comment. Follow the architecture and coding patterns demonstrated by the repository.",
+  "task": "Implement services/comment_service.py containing CommentService.get_comment and add any corresponding service-layer error type needed for missing comments. Follow the architecture and coding patterns demonstrated by the repository.",
   "context_files": [
     "core/errors.py",
     "services/task_service.py",
     "repositories/task_repository.py",
+    "repositories/comment_repository.py",
+    "models/comment.py",
     "core/result.py"
   ],
   "target_files": [

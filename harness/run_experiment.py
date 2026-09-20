@@ -249,7 +249,7 @@ def main():
     config = json.loads(
         config_path.read_text(encoding="utf-8")
     )
-
+    get_scorer(config["experiment"])
     target_files, multi_file = get_target_files(config)
 
     # -----------------------------
@@ -540,7 +540,24 @@ REPOSITORY CONTEXT:
     if test_result["stderr"]:
         print(test_result["stderr"])
 
+def get_scorer(experiment: str):
+    scorers = {
+        "explicit_1": score_explicit_1,
+        "explicit_2": score_explicit_2,
+        "explicit_3": score_explicit_3,
+        "fuzzy_1": score_fuzzy_1,
+        "fuzzy_2": score_fuzzy_2,
+    }
+
+    if experiment not in scorers:
+        raise ValueError(
+            f"No scorer registered for experiment: {experiment}"
+        )
+
+    return scorers[experiment]
+
 def score_convention(experiment: str, workspace: Path) -> dict:
+    return get_scorer(experiment)(workspace)
     scorers = {
     "explicit_1": score_explicit_1,
     "explicit_2": score_explicit_2,
