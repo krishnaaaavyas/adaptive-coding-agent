@@ -1,0 +1,6 @@
+{
+  "scope": "repository",
+  "confirmed": true,
+  "source": "convention_induction",
+  "rule": "When a service retrieves a resource that may not exist, use a resource-specific <Resource>NotFoundError subtype of NotFoundError for that missing-resource case."
+}
