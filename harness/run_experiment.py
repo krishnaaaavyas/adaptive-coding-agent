@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import re
 import sys
 
 from harness.context import build_context
@@ -13,6 +14,7 @@ from harness.scorers.fuzzy_1 import score_fuzzy_1
 
 
 BASE_REPO = Path("taskflow_base")
+FILE_HEADER = re.compile(r"^=== FILE: (.+) ===$")
 
 
 def extract_code(generation: str) -> str:
@@ -30,6 +32,151 @@ def extract_code(generation: str) -> str:
         text = "\n".join(lines).strip()
 
     return text
+
+
+def _validate_relative_target(relative_path: str) -> None:
+    if not isinstance(relative_path, str) or not relative_path:
+        raise ValueError("Target file paths must be non-empty strings.")
+
+    # Check both path syntaxes so output cannot escape a workspace even when
+    # an experiment is moved between Windows and POSIX hosts.
+    normalized = relative_path.replace("\\", "/")
+    parts = normalized.split("/")
+
+    if normalized.startswith("/") or re.match(r"^[A-Za-z]:", normalized):
+        raise ValueError(f"Target file path must be relative: {relative_path}")
+
+    if ".." in parts:
+        raise ValueError(
+            f"Target file path cannot contain '..': {relative_path}"
+        )
+
+
+def get_target_files(config: dict) -> tuple[list[str], bool]:
+    has_target_file = "target_file" in config
+    has_target_files = "target_files" in config
+
+    if has_target_file == has_target_files:
+        raise ValueError(
+            "Experiment config must define exactly one of "
+            "'target_file' or 'target_files'."
+        )
+
+    if has_target_file:
+        targets = [config["target_file"]]
+        multi_file = False
+    else:
+        targets = config["target_files"]
+        multi_file = True
+
+        if not isinstance(targets, list) or not targets:
+            raise ValueError("'target_files' must be a non-empty list.")
+
+    for target in targets:
+        _validate_relative_target(target)
+
+    if len(set(targets)) != len(targets):
+        raise ValueError("Experiment target files must not contain duplicates.")
+
+    return targets, multi_file
+
+
+def parse_multi_file_generation(
+    generation: str,
+    requested_targets: list[str],
+) -> dict[str, str]:
+    for target in requested_targets:
+        _validate_relative_target(target)
+
+    if len(set(requested_targets)) != len(requested_targets):
+        raise ValueError("Requested target files must not contain duplicates.")
+
+    sections: dict[str, str] = {}
+    current_path = None
+    content_lines: list[str] = []
+
+    for line in generation.splitlines(keepends=True):
+        header_text = line.rstrip("\r\n")
+        match = FILE_HEADER.fullmatch(header_text)
+
+        if match:
+            if current_path is not None:
+                sections[current_path] = "".join(content_lines)
+
+            section_path = match.group(1)
+            _validate_relative_target(section_path)
+
+            if section_path not in requested_targets:
+                raise ValueError(f"Unexpected file section: {section_path}")
+
+            if section_path in sections or section_path == current_path:
+                raise ValueError(f"Duplicate file section: {section_path}")
+
+            current_path = section_path
+            content_lines = []
+            continue
+
+        if header_text.startswith("=== FILE"):
+            raise ValueError(f"Malformed file header: {header_text}")
+
+        if current_path is None:
+            raise ValueError(
+                "Multi-file generation must begin with an exact file header."
+            )
+
+        content_lines.append(line)
+
+    if current_path is not None:
+        sections[current_path] = "".join(content_lines)
+
+    missing = [target for target in requested_targets if target not in sections]
+    if missing:
+        raise ValueError(
+            "Missing requested file section(s): " + ", ".join(missing)
+        )
+
+    return sections
+
+
+def _workspace_target(workspace: Path, relative_path: str) -> Path:
+    _validate_relative_target(relative_path)
+    workspace_root = workspace.resolve()
+    path_parts = relative_path.replace("\\", "/").split("/")
+    target = (workspace / Path(*path_parts)).resolve()
+
+    if not target.is_relative_to(workspace_root):
+        raise ValueError(f"Target file is outside workspace: {relative_path}")
+
+    return target
+
+
+def apply_multi_file_generation(
+    workspace: Path,
+    requested_targets: list[str],
+    generation: str,
+) -> tuple[dict[str, str | None], dict[str, str]]:
+    # Parse and validate the complete response, including every destination,
+    # before performing any filesystem mutation.
+    parsed = parse_multi_file_generation(generation, requested_targets)
+    destinations = {
+        relative_path: _workspace_target(workspace, relative_path)
+        for relative_path in requested_targets
+    }
+    originals = {
+        relative_path: (
+            destination.read_text(encoding="utf-8")
+            if destination.exists()
+            else None
+        )
+        for relative_path, destination in destinations.items()
+    }
+
+    for relative_path in requested_targets:
+        destination = destinations[relative_path]
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        destination.write_text(parsed[relative_path], encoding="utf-8")
+
+    return originals, parsed
 
 
 def load_json_file(path_string: str):
@@ -101,6 +248,8 @@ def main():
         config_path.read_text(encoding="utf-8")
     )
 
+    target_files, multi_file = get_target_files(config)
+
     # -----------------------------
     # Load adaptation information
     # -----------------------------
@@ -140,7 +289,7 @@ def main():
     # Base system prompt
     # -----------------------------
 
-    system_prompt = """
+    single_file_system_prompt = """
 You are modifying an existing Python repository.
 
 Study the supplied repository files and follow the patterns already
@@ -152,16 +301,43 @@ Do not use Markdown fences.
 Do not explain your answer.
 """.strip()
 
+    if multi_file:
+        requested_headers = "\n".join(
+            f"=== FILE: {target} ==="
+            for target in target_files
+        )
+        system_prompt = f"""
+You are modifying an existing Python repository.
+
+Study the supplied repository files and follow the patterns already
+demonstrated by the codebase.
+
+Return ONLY the complete replacement contents of every requested target file.
+Use exactly one section for each requested file, with these exact headers:
+
+{requested_headers}
+
+Place each file's complete contents immediately after its header.
+Do not use Markdown fences.
+Do not explain your answer.
+""".strip()
+    else:
+        system_prompt = single_file_system_prompt
+
     # -----------------------------
     # Base task prompt
     # -----------------------------
+
+    if multi_file:
+        target_description = "TARGET FILES:\n" + "\n".join(target_files)
+    else:
+        target_description = f"TARGET FILE:\n{target_files[0]}"
 
     user_prompt = f"""
 TASK:
 {config["task"]}
 
-TARGET FILE:
-{config["target_file"]}
+{target_description}
 
 REPOSITORY CONTEXT:
 
@@ -219,31 +395,40 @@ REPOSITORY CONTEXT:
         ]
     )
 
-    clean_generation = extract_code(
-        generation
-    )
-
     # -----------------------------
     # Apply generated code
     # -----------------------------
 
-    target = workspace / config["target_file"]
-
-    if target.exists():
-        original = target.read_text(
-            encoding="utf-8"
+    if multi_file:
+        originals, applied_generations = apply_multi_file_generation(
+            workspace,
+            target_files,
+            generation,
         )
-    else:
+        target = None
         original = None
-        target.parent.mkdir(
-            parents=True,
-            exist_ok=True,
-    )
+        clean_generation = None
+    else:
+        clean_generation = extract_code(
+            generation
+        )
+        target = _workspace_target(workspace, target_files[0])
 
-    target.write_text(
-        clean_generation + "\n",
-        encoding="utf-8",
-    )
+        if target.exists():
+            original = target.read_text(
+                encoding="utf-8"
+            )
+        else:
+            original = None
+            target.parent.mkdir(
+                parents=True,
+                exist_ok=True,
+            )
+
+        target.write_text(
+            clean_generation + "\n",
+            encoding="utf-8",
+        )
 
     # -----------------------------
     # Verification
@@ -270,7 +455,6 @@ REPOSITORY CONTEXT:
         "model": config["model"],
         "workspace": str(workspace),
         "context_files": config["context_files"],
-        "target_file": config["target_file"],
         "task": config["task"],
         "overall_success": overall_success,
 
@@ -287,9 +471,7 @@ REPOSITORY CONTEXT:
         "system_prompt": system_prompt,
         "user_prompt": user_prompt,
 
-        "original_target": original,
         "raw_generation": generation,
-        "applied_generation": clean_generation,
 
         "tests_passed": test_result["passed"],
         "test_returncode": test_result[
@@ -304,6 +486,23 @@ REPOSITORY CONTEXT:
         "convention_result": convention_result,
     }
 
+    if multi_file:
+        result.update(
+            {
+                "target_files": target_files,
+                "original_targets": originals,
+                "applied_generations": applied_generations,
+            }
+        )
+    else:
+        result.update(
+            {
+                "target_file": target_files[0],
+                "original_target": original,
+                "applied_generation": clean_generation,
+            }
+        )
+
     result_path = save_result(result)
 
     # -----------------------------
@@ -313,7 +512,12 @@ REPOSITORY CONTEXT:
     print()
     print("Generation saved and applied.")
     print(f"Result: {result_path}")
-    print(f"Target: {target}")
+    if multi_file:
+        print("Targets:")
+        for relative_path in target_files:
+            print(f"  {_workspace_target(workspace, relative_path)}")
+    else:
+        print(f"Target: {target}")
     print(f"Overall success: {overall_success}")
     print(
         f"Tests passed: "
