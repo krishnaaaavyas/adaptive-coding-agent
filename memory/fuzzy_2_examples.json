@@ -1,0 +1,13 @@
+{
+  "type": "repository_experience",
+  "examples": [
+    {
+      "task": "Retrieve a task and handle the case where it does not exist.",
+      "implementation": "class TaskNotFoundError(NotFoundError):\n    def __init__(self, task_id):\n        self.task_id = task_id\n\n\ndef get_task(self, task_id):\n    task = self.task_repo.get(task_id)\n    if task is None:\n        return Err(TaskNotFoundError(task_id))\n    return Ok(task)"
+    },
+    {
+      "task": "Retrieve a project and handle the case where it does not exist.",
+      "implementation": "class ProjectNotFoundError(NotFoundError):\n    def __init__(self, project_id):\n        self.project_id = project_id\n\n\ndef get_project(self, project_id):\n    project = self.project_repo.get(project_id)\n    if project is None:\n        return Err(ProjectNotFoundError(project_id))\n    return Ok(project)"
+    }
+  ]
+}
