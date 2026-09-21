@@ -1,0 +1,14 @@
+[
+  {"file": "valid_canonical.py", "wiring": "valid_canonical_wiring.py", "category": "valid delegation", "expected_pass": true, "description": "Frozen router wiring proves the unannotated canonical dependency is ProjectRepository."},
+  {"file": "valid_renamed_dependency.py", "category": "valid delegation", "expected_pass": true, "description": "Renamed injected dependency performs deletion."},
+  {"file": "valid_local_alias.py", "category": "valid delegation", "expected_pass": true, "description": "A local alias retains injected dependency provenance."},
+  {"file": "valid_lookup_then_delete.py", "category": "valid delegation", "expected_pass": true, "description": "Lookup and deletion both use the injected dependency."},
+  {"file": "direct_session.py", "category": "direct persistence", "expected_pass": false, "description": "The service deletes and commits through a session."},
+  {"file": "repository_plus_database.py", "category": "mixed persistence", "expected_pass": false, "description": "Repository deletion cannot compensate for direct database persistence."},
+  {"file": "constructed_repository.py", "category": "constructed persistence", "expected_pass": false, "description": "The method constructs its own repository."},
+  {"file": "name_only_repo.py", "category": "provenance decoy", "expected_pass": false, "description": "A repository-like name has no constructor injection provenance."},
+  {"file": "dead_repository_delete.py", "category": "dead-code decoy", "expected_pass": false, "description": "Repository deletion after return is unreachable."},
+  {"file": "dead_after_terminal_branches.py", "category": "dead-code decoy", "expected_pass": false, "description": "Repository deletion after two terminating branches is unreachable."},
+  {"file": "unrelated_repository_call.py", "category": "operation decoy", "expected_pass": false, "description": "An unrelated injected repository call is not deletion delegation."},
+  {"file": "unrelated_injected_delete.py", "category": "provenance decoy", "expected_pass": false, "description": "An unrelated injected object exposing delete has no ProjectRepository provenance."}
+]

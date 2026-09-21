@@ -22,3 +22,30 @@ false negatives. It cannot infer the business meaning of arbitrary branches,
 so functional target tests remain responsible for proving the returned
 outcomes correspond to actual repository behavior. Those limits keep these
 scorers focused on their frozen structural conventions.
+
+Explicit-1 accepts ProjectRepository provenance only from a straightforward
+constructor annotation importing that type or the frozen router wiring
+ProjectService(ProjectRepository(...)). The receiving service attribute may be
+renamed after provenance is established. Renamed unannotated dependencies
+without equivalent explicit wiring intentionally fail; names and the presence
+of a delete method are not evidence. Factory injection, container lookups,
+helper-mediated delegation, and dynamic attribute access can produce false
+negatives. It recognizes obvious direct database/session/engine calls and
+constructors, not every possible persistence API.
+
+Explicit-3 resolves direct UUID imports, straightforward aliases, qualified
+uuid.UUID, and required Annotated UUID fields. Complex type aliases and custom
+Pydantic field factories are outside its narrow static contract. It rejects
+only the frozen internal-key names rather than all relationship fields ending
+in _id.
+
+Fuzzy-1 recognizes the frozen blank-content predicates based on strip, direct
+private _validate_* calls, simple result assignments, and ordinary if gates.
+Delegated predicates, complex boolean/data flow, and helper calls hidden behind
+aliases can produce false negatives. It deliberately does not encode a comment
+length limit or prove persistence behavior.
+
+Fuzzy-2 recognizes direct or qualified Result/error construction and a simple
+local assignment of the specific error before Err. It does not infer that a
+branch represents a missing repository value, prove identifier propagation,
+or follow delegated Result factories and complex control flow.

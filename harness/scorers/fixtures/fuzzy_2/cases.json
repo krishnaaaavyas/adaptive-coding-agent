@@ -1,0 +1,13 @@
+[
+  {"name": "valid_direct", "errors": "valid_direct/errors.py", "service": "valid_direct/service.py", "category": "valid construction", "expected_pass": true, "description": "Direct Err(CommentNotFoundError(...)) and Ok outcomes."},
+  {"name": "valid_assigned_error", "errors": "valid_assigned_error/errors.py", "service": "valid_assigned_error/service.py", "category": "valid construction", "expected_pass": true, "description": "Specific error is assigned before being wrapped in Err."},
+  {"name": "valid_qualified", "errors": "valid_qualified/errors.py", "service": "valid_qualified/service.py", "category": "valid construction", "expected_pass": true, "description": "Qualified base, error, and Result constructors."},
+  {"name": "missing_specific_class", "errors": "missing_specific_class/errors.py", "service": "missing_specific_class/service.py", "category": "missing definition", "expected_pass": false, "description": "CommentNotFoundError is absent."},
+  {"name": "wrong_base", "errors": "wrong_base/errors.py", "service": "wrong_base/service.py", "category": "wrong inheritance", "expected_pass": false, "description": "Specific error does not subtype NotFoundError."},
+  {"name": "generic_result", "errors": "generic_result/errors.py", "service": "generic_result/service.py", "category": "generic error", "expected_pass": false, "description": "Reachable missing-style outcome uses generic NotFoundError."},
+  {"name": "raises_specific", "errors": "raises_specific/errors.py", "service": "raises_specific/service.py", "category": "exception violation", "expected_pass": false, "description": "Specific error is raised rather than returned in Err."},
+  {"name": "bare_specific", "errors": "bare_specific/errors.py", "service": "bare_specific/service.py", "category": "bare error", "expected_pass": false, "description": "Specific error is returned without Err."},
+  {"name": "dead_specific", "errors": "dead_specific/errors.py", "service": "dead_specific/service.py", "category": "dead-code decoy", "expected_pass": false, "description": "Specific Err construction follows an unconditional return."},
+  {"name": "token_decoy", "errors": "token_decoy/errors.py", "service": "token_decoy/service.py", "category": "token decoy", "expected_pass": false, "description": "Imports and strings do not define or return the specific error."},
+  {"name": "specific_plus_generic", "errors": "specific_plus_generic/errors.py", "service": "specific_plus_generic/service.py", "category": "mixed errors", "expected_pass": false, "description": "A specific Err cannot compensate for another reachable generic Err."}
+]

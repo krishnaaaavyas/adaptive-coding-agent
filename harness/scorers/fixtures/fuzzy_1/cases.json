@@ -1,0 +1,16 @@
+[
+  {"file": "valid_validate_create.py", "category": "valid extraction", "expected_pass": true, "description": "Canonical _validate_create list and Result gate."},
+  {"file": "valid_validate_content.py", "category": "valid extraction", "expected_pass": true, "description": "A differently named private validator returns a boolean."},
+  {"file": "valid_inverted_gate.py", "category": "valid branching", "expected_pass": true, "description": "An inverted validation gate uses an explicit failure else branch."},
+  {"file": "valid_assigned_validation_error.py", "category": "valid construction", "expected_pass": true, "description": "ValidationError is assigned before being wrapped in Err."},
+  {"file": "inline_only.py", "category": "inline violation", "expected_pass": false, "description": "Content validation exists only in create_comment."},
+  {"file": "public_helper.py", "category": "naming violation", "expected_pass": false, "description": "Meaningful validation is in a public non-_validate helper."},
+  {"file": "unused_validate_helper.py", "category": "unused helper", "expected_pass": false, "description": "A correctly named meaningful helper is never called."},
+  {"file": "dead_helper_call.py", "category": "dead-code decoy", "expected_pass": false, "description": "The helper call occurs after an unconditional return."},
+  {"file": "meaningless_conditional.py", "category": "meaningless helper", "expected_pass": false, "description": "An arbitrary conditional does not validate blank content."},
+  {"file": "ignored_helper_result.py", "category": "ignored result", "expected_pass": false, "description": "The meaningful helper result controls no validation gate."},
+  {"file": "unrelated_helper_inline_content.py", "category": "unrelated helper", "expected_pass": false, "description": "The helper validates unrelated data while content remains inline."},
+  {"file": "dead_result_tokens.py", "category": "dead-code decoy", "expected_pass": false, "description": "Dead Err and ValidationError tokens cannot satisfy the failure structure."},
+  {"file": "raised_validation_error.py", "category": "exception violation", "expected_pass": false, "description": "Expected validation failure is raised instead of returned."},
+  {"file": "helper_plus_inline_duplicate.py", "category": "duplicate validation", "expected_pass": false, "description": "Extracted validation is also reimplemented inline."}
+]

@@ -1,0 +1,17 @@
+[
+  {"file": "valid_uuid.py", "category": "valid annotation", "expected_pass": true, "description": "Required UUID imported directly."},
+  {"file": "valid_qualified_uuid.py", "category": "valid annotation", "expected_pass": true, "description": "Required qualified uuid.UUID."},
+  {"file": "valid_uuid_alias.py", "category": "valid annotation", "expected_pass": true, "description": "Straightforward UUID import alias."},
+  {"file": "valid_annotated_uuid.py", "category": "valid annotation", "expected_pass": true, "description": "Required Annotated UUID."},
+  {"file": "invalid_str.py", "category": "wrong type", "expected_pass": false, "description": "public_id is a string."},
+  {"file": "invalid_int.py", "category": "wrong type", "expected_pass": false, "description": "public_id is an integer."},
+  {"file": "invalid_optional.py", "category": "nullable type", "expected_pass": false, "description": "Optional UUID admits None."},
+  {"file": "invalid_union_none.py", "category": "nullable type", "expected_pass": false, "description": "PEP 604 UUID union admits None."},
+  {"file": "invalid_union_other.py", "category": "broad union", "expected_pass": false, "description": "UUID union admits strings."},
+  {"file": "invalid_default_none.py", "category": "nullable default", "expected_pass": false, "description": "Strict annotation is weakened by a None default."},
+  {"file": "internal_id.py", "category": "internal key exposure", "expected_pass": false, "description": "DTO exposes id."},
+  {"file": "internal_internal_id.py", "category": "internal key exposure", "expected_pass": false, "description": "DTO exposes internal_id."},
+  {"file": "internal_db_id.py", "category": "internal key exposure", "expected_pass": false, "description": "DTO exposes db_id."},
+  {"file": "internal_pk.py", "category": "internal key exposure", "expected_pass": false, "description": "DTO exposes pk while a relationship task_id remains legitimate."},
+  {"file": "uuid_token_decoy.py", "category": "token decoy", "expected_pass": false, "description": "A UUID annotation elsewhere does not type CommentDTO.public_id."}
+]
