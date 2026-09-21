@@ -1,0 +1,14 @@
+[
+  {"file": "valid_normalize_content.py", "category": "valid alternative", "expected_pass": true, "description": "Shared _normalize_content method."},
+  {"file": "valid_clean_content.py", "category": "valid alternative", "expected_pass": true, "description": "Shared _clean_content method with no required naming prefix."},
+  {"file": "valid_module_sanitizer.py", "category": "valid alternative", "expected_pass": true, "description": "Shared module-level callable using other supported operations."},
+  {"file": "valid_shared_with_unrelated_operations.py", "category": "false-positive resistance", "expected_pass": true, "description": "Unrelated single-operation string cleanup does not count as inline reimplementation."},
+  {"file": "duplicated_inline.py", "category": "obvious violation", "expected_pass": false, "description": "Both operations duplicate normalization inline."},
+  {"file": "helper_create_only.py", "category": "partial use", "expected_pass": false, "description": "Only create uses the meaningful helper."},
+  {"file": "helper_edit_only.py", "category": "partial use", "expected_pass": false, "description": "Only edit uses the meaningful helper."},
+  {"file": "naming_only_unused.py", "category": "naming-only decoy", "expected_pass": false, "description": "Correctly named helper is unused and not meaningful."},
+  {"file": "dead_unrelated_call.py", "category": "dead/unrelated decoy", "expected_pass": false, "description": "Shared audit call and dead normalization body are unrelated."},
+  {"file": "dead_shared_call.py", "category": "dead-code decoy", "expected_pass": false, "description": "Calls after unconditional returns are unreachable."},
+  {"file": "separate_near_identical_helpers.py", "category": "split implementation", "expected_pass": false, "description": "Each operation uses a different near-identical helper."},
+  {"file": "shared_plus_inline.py", "category": "over-application", "expected_pass": false, "description": "Shared extraction exists but an operation repeats both case and whitespace normalization."}
+]

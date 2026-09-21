@@ -1,0 +1,12 @@
+[
+  {"file": "valid_early_return.py", "category": "valid alternative", "expected_pass": true, "description": "Missing resource returns Err before successful Ok."},
+  {"file": "valid_if_else.py", "category": "valid alternative", "expected_pass": true, "description": "Explicit if/else returns Result on both branches."},
+  {"file": "valid_qualified_calls.py", "category": "valid alternative", "expected_pass": true, "description": "Qualified Result constructor calls are accepted."},
+  {"file": "valid_positive_branch.py", "category": "valid alternative", "expected_pass": true, "description": "An inverted positive branch may return Ok before the failure Err."},
+  {"file": "raises_missing.py", "category": "obvious violation", "expected_pass": false, "description": "Expected missing-resource path raises."},
+  {"file": "superficial_tokens.py", "category": "token decoy", "expected_pass": false, "description": "Ok/Err names exist but are not terminal outcomes."},
+  {"file": "partial_failures.py", "category": "partial use", "expected_pass": false, "description": "One relevant failure path uses Err and another does not."},
+  {"file": "dead_result.py", "category": "dead-code decoy", "expected_pass": false, "description": "Result returns occur only after a terminal return or false guard."},
+  {"file": "dead_err_decoy.py", "category": "dead-code decoy", "expected_pass": false, "description": "Err after a raise cannot repair the expected failure path."},
+  {"file": "non_result_success.py", "category": "non-result terminal", "expected_pass": false, "description": "Failure returns Err but success returns a bare value."}
+]
