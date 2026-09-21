@@ -7,7 +7,11 @@ from harness.context import build_context
 from harness.inference import generate
 from harness.leakage import LeakageDetectedError, scan_leakage
 from harness.results import save_result
-from harness.workspace import create_workspace, run_tests
+from harness.workspace import create_workspace
+from harness.evaluation import (
+    TARGET_DIRECTORY, artifact_fingerprints, error_info, evaluate, finalize,
+    fingerprints, new_evaluation, target_source,
+)
 from harness.scorers.explicit_1 import score_explicit_1
 from harness.scorers.explicit_2 import score_explicit_2
 from harness.scorers.explicit_3 import score_explicit_3
@@ -310,21 +314,16 @@ def generate_with_preflight(
     print("Generating...")
     return generate(messages)
 
-def main():
-    if len(sys.argv) != 2:
-        print(
-            "Usage: python -m harness.run_experiment "
-            "experiments/<experiment>.json"
-        )
-        raise SystemExit(1)
-
-    config_path = Path(sys.argv[1])
-
-    config = json.loads(
-        config_path.read_text(encoding="utf-8")
-    )
-    get_scorer(config["experiment"])
+def _execute(config, config_path, result):
     target_files, multi_file = get_target_files(config)
+    source = target_source(config, config_path, BASE_REPO)
+    result["target_tests"] = {"source": str(source)}
+    for name in config["context_files"]:
+        _workspace_target(BASE_REPO, name)
+    for name in target_files:
+        destination = _workspace_target(BASE_REPO, name)
+        if destination.is_relative_to((BASE_REPO / TARGET_DIRECTORY).resolve()):
+            raise ValueError("Generated targets cannot occupy the private evaluator directory")
 
     # -----------------------------
     # Load adaptation information
@@ -355,6 +354,13 @@ def main():
     # -----------------------------
 
     workspace = create_workspace(BASE_REPO)
+    result["workspace"] = str(workspace)
+    if (workspace / TARGET_DIRECTORY).exists():
+        raise ValueError("Private target-test directory already exists before inference")
+    if source.is_relative_to(workspace.resolve()):
+        raise ValueError("Target tests cannot be inside the generated workspace")
+    before = fingerprints(workspace)
+    result["evaluation"]["regression"]["fingerprints"] = before
 
     context = build_context(
         workspace,
@@ -473,13 +479,34 @@ REPOSITORY CONTEXT:
             "content": user_prompt,
         },
     ]
+    result.update(memory=memory, rule=rule, system_prompt=system_prompt,
+                  user_prompt=user_prompt)
     generation = generate_with_preflight(messages, model_sources)
+    result["raw_generation"] = generation
 
     # -----------------------------
     # Apply generated code
     # -----------------------------
 
     if multi_file:
+        try:
+            parse_multi_file_generation(generation, target_files)
+        except ValueError as exc:
+            # A malformed model response is not an evaluator malfunction.
+            result["model_output_error"] = str(exc)
+            result["original_targets"] = {
+                name: (_workspace_target(workspace, name).read_text(encoding="utf-8")
+                       if _workspace_target(workspace, name).exists() else None)
+                for name in target_files
+            }
+            result["applied_generations"] = {}
+            evaluate(workspace, source, before, [],
+                     lambda root: score_convention(config["experiment"], root),
+                     result["evaluation"])
+            target_evaluation = result["evaluation"]["target"]
+            if target_evaluation["status"] == "completed":
+                target_evaluation.update(passed=False, model_output_error=str(exc))
+            return
         originals, applied_generations = apply_multi_file_generation(
             workspace,
             target_files,
@@ -510,113 +537,60 @@ REPOSITORY CONTEXT:
             encoding="utf-8",
         )
 
-    # -----------------------------
-    # Verification
-    # -----------------------------
+    if multi_file:
+        result.update(original_targets=originals, applied_generations=applied_generations)
+    else:
+        result.update(original_target=original, applied_generation=clean_generation)
+    artifact_before = artifact_fingerprints(workspace)
+    result["evaluation"]["artifact"]["fingerprints"] = artifact_before
+    evaluate(workspace, source, before, target_files,
+             lambda root: score_convention(config["experiment"], root),
+             result["evaluation"], artifact_before)
 
-    test_result = run_tests(workspace)
 
-    convention_result = score_convention(
-        config["experiment"],
-        workspace,
-    )
-    overall_success = (
-    test_result["passed"]
-    and convention_result["passed"]
-) 
-
-    # -----------------------------
-    # Save experiment evidence
-    # -----------------------------
-
+def run_experiment(config_path: Path) -> dict:
+    """Execute and persist one v2 run, including infrastructure-invalid attempts."""
+    config_path = Path(config_path)
     result = {
-        "experiment": config["experiment"],
-        "condition": config["condition"],
-        "model": config["model"],
-        "workspace": str(workspace),
-        "context_files": config["context_files"],
-        "task": config["task"],
-        "overall_success": overall_success,
-
-        "memory_file": config.get(
-            "memory_file"
-        ),
-        "memory": memory,
-
-        "rule_file": config.get(
-            "rule_file"
-        ),
-        "rule": rule,
-
-        "system_prompt": system_prompt,
-        "user_prompt": user_prompt,
-
-        "raw_generation": generation,
-
-        "tests_passed": test_result["passed"],
-        "test_returncode": test_result[
-            "returncode"
-        ],
-        "test_stdout": test_result["stdout"],
-        "test_stderr": test_result["stderr"],
-
-        "convention_passed": convention_result[
-            "passed"
-        ],
-        "convention_result": convention_result,
+        "evaluation_protocol": "v2", "run_status": "invalid_infrastructure",
+        "experiment": config_path.stem, "condition": "unknown",
+        "config_path": str(config_path), "evaluation": new_evaluation(),
+        "errors": [],
     }
+    try:
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        if not isinstance(config, dict):
+            raise ValueError("Experiment configuration must be an object")
+        result["config"] = config
+        for field in ("experiment", "condition", "model", "context_files", "task",
+                      "target_file", "target_files", "memory_file", "rule_file"):
+            if field in config:
+                result[field] = config[field]
+        _execute(config, config_path, result)
+    except LeakageDetectedError as exc:
+        # Preserve Step-2's exception and fail-fast diagnostics after recording it.
+        result["errors"].append(error_info("leakage_preflight", exc))
+        finalize(result)
+        save_result(result)
+        raise
+    except Exception as exc:
+        result["errors"].append(error_info("execution", exc))
+    finalize(result)
+    path = save_result(result)
+    print(f"Result: {path}")
+    print(f"Run status: {result['run_status']}")
+    print(f"Overall success: {result['overall_success']}")
+    return result
 
-    if multi_file:
-        result.update(
-            {
-                "target_files": target_files,
-                "original_targets": originals,
-                "applied_generations": applied_generations,
-            }
-        )
-    else:
-        result.update(
-            {
-                "target_file": target_files[0],
-                "original_target": original,
-                "applied_generation": clean_generation,
-            }
-        )
 
-    result_path = save_result(result)
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: python -m harness.run_experiment experiments/<experiment>.json")
+        raise SystemExit(1)
+    result = run_experiment(Path(sys.argv[1]))
+    if result["run_status"] != "valid":
+        raise SystemExit(2)
 
-    # -----------------------------
-    # Console summary
-    # -----------------------------
-
-    print()
-    print("Generation saved and applied.")
-    print(f"Result: {result_path}")
-    if multi_file:
-        print("Targets:")
-        for relative_path in target_files:
-            print(f"  {_workspace_target(workspace, relative_path)}")
-    else:
-        print(f"Target: {target}")
-    print(f"Overall success: {overall_success}")
-    print(
-        f"Tests passed: "
-        f"{test_result['passed']}"
-    )
-    print(
-        f"Convention passed: "
-        f"{convention_result['passed']}"
-    )
-    print(
-        f"Convention reason: "
-        f"{convention_result['reason']}"
-    )
-
-    if test_result["stdout"]:
-        print(test_result["stdout"])
-
-    if test_result["stderr"]:
-        print(test_result["stderr"])
 
 def get_scorer(experiment: str):
     scorers = {
@@ -637,20 +611,7 @@ def get_scorer(experiment: str):
 
 def score_convention(experiment: str, workspace: Path) -> dict:
     return get_scorer(experiment)(workspace)
-    scorers = {
-    "explicit_1": score_explicit_1,
-    "explicit_2": score_explicit_2,
-    "explicit_3": score_explicit_3,
-    "fuzzy_1": score_fuzzy_1,
-    "fuzzy_2": score_fuzzy_2,
-}
 
-    if experiment not in scorers:
-        raise ValueError(
-            f"No scorer registered for experiment: {experiment}"
-        )
-
-    return scorers[experiment](workspace)
 
 if __name__ == "__main__":
     main()
