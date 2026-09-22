@@ -1,7 +1,9 @@
 import itertools
 import json
+from datetime import datetime, timedelta
 from pathlib import Path
 from unittest.mock import Mock
+import uuid
 
 import pytest
 
@@ -64,6 +66,48 @@ def experiment(tmp_path, monkeypatch):
               "target_file": "app.py", "target_tests": {"source": "target_tests"}}
     path.write_text(json.dumps(config))
     monkeypatch.setattr(runner, "BASE_REPO", base)
+    monkeypatch.setattr(runner, "get_scorer", Mock(return_value=Mock()))
+    monkeypatch.setattr(
+        runner.provenance,
+        "require_clean_git",
+        lambda repository_root, manifest: manifest.setdefault(
+            "repository",
+            {
+                "git_commit": "test-commit",
+                "tracked_clean": True,
+                "untracked_files": [],
+            },
+        ),
+    )
+
+    def populate_manifest(manifest, **kwargs):
+        manifest.update(
+            base_repository={"tree_sha256": "base"},
+            scorer={
+                "name": "example",
+                "version": "example scorer v1",
+                "source_sha256": "scorer",
+            },
+            scorer_validation={"fixture_tree_sha256": "fixtures"},
+            target_tests={"tree_sha256": "target"},
+            regression_tests={"tree_sha256": "regression"},
+            protocol={
+                "evaluation_protocol": "v2",
+                "protocol_document_sha256": "protocol",
+            },
+        )
+        return manifest
+
+    monkeypatch.setattr(
+        runner.provenance,
+        "populate_run_manifest",
+        populate_manifest,
+    )
+    monkeypatch.setattr(
+        runner.provenance,
+        "verify_run_manifest",
+        lambda manifest, **kwargs: True,
+    )
     monkeypatch.setattr(
         runner,
         "generate",
@@ -99,6 +143,148 @@ def test_independent_gates(experiment, monkeypatch, target, regression, conventi
         assert result["evaluation"][gate]["passed"] is expected
     saved = json.loads(next(Path("results").glob("*.json")).read_text())
     assert saved == result
+
+
+def test_valid_run_keeps_uuid4_and_utc_manifest_identity(experiment, monkeypatch):
+    path, _, _, _ = experiment
+    monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
+
+    result = runner.run_experiment(path)
+    manifest = result["run_manifest"]
+
+    assert uuid.UUID(manifest["run_id"]).version == 4
+    assert datetime.fromisoformat(manifest["started_at_utc"]).utcoffset() == timedelta(0)
+    assert manifest["schema_version"] == "1"
+    assert manifest["repository"]["tracked_clean"] is True
+
+
+def test_dirty_repository_aborts_before_generation_with_partial_manifest(
+    experiment,
+    monkeypatch,
+):
+    path, _, _, _ = experiment
+
+    def dirty_repository(_repository_root, manifest):
+        manifest["repository"] = {
+            "git_commit": "dirty-commit",
+            "tracked_clean": False,
+            "untracked_files": [],
+        }
+        raise runner.provenance.ProvenanceError(
+            "Official Protocol-v2 runs require a clean tracked working tree",
+            manifest,
+        )
+
+    monkeypatch.setattr(
+        runner.provenance,
+        "require_clean_git",
+        dirty_repository,
+    )
+
+    result = runner.run_experiment(path)
+    manifest = result["run_manifest"]
+
+    runner.generate.assert_not_called()
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert result["errors"][0]["stage"] == "provenance"
+    assert uuid.UUID(manifest["run_id"]).version == 4
+    assert manifest["repository"]["tracked_clean"] is False
+    assert "config" in manifest
+
+
+def test_provenance_hash_failure_aborts_before_generation(
+    experiment,
+    monkeypatch,
+):
+    path, _, _, _ = experiment
+
+    def fail_manifest(manifest, **_kwargs):
+        manifest["base_repository"] = {"tree_sha256": "established"}
+        raise runner.provenance.ProvenanceError(
+            "Required provenance tree is missing",
+            manifest,
+        )
+
+    monkeypatch.setattr(
+        runner.provenance,
+        "populate_run_manifest",
+        fail_manifest,
+    )
+
+    result = runner.run_experiment(path)
+
+    runner.generate.assert_not_called()
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert result["errors"][0]["stage"] == "provenance"
+    assert result["run_manifest"]["base_repository"] == {
+        "tree_sha256": "established"
+    }
+
+
+def test_final_provenance_mismatch_preserves_evaluation_and_manifest(
+    experiment,
+    monkeypatch,
+):
+    path, _, _, _ = experiment
+    monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
+    observed = {}
+
+    def fail_final_verification(manifest, **_kwargs):
+        observed["manifest"] = json.loads(json.dumps(manifest))
+        raise runner.provenance.ProvenanceIntegrityError(
+            [
+                {
+                    "field": "config.sha256",
+                    "expected": manifest["config"]["sha256"],
+                    "actual": "changed",
+                }
+            ]
+        )
+
+    monkeypatch.setattr(
+        runner.provenance,
+        "verify_run_manifest",
+        fail_final_verification,
+    )
+
+    result = runner.run_experiment(path)
+
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert result["errors"][-1]["stage"] == "provenance_integrity"
+    assert result["errors"][-1]["mismatches"][0]["field"] == "config.sha256"
+    assert result["run_manifest"] == observed["manifest"]
+    assert result["raw_generation"] == "VALUE = 2\n"
+    assert result["applied_generation"] == "VALUE = 2"
+    assert result["evaluation"]["target"]["status"] == "completed"
+    assert result["evaluation"]["regression"]["status"] == "completed"
+    assert result["evaluation"]["convention"]["status"] == "completed"
+
+
+def test_final_provenance_verifier_failure_invalidates_completed_run(
+    experiment,
+    monkeypatch,
+):
+    path, _, _, _ = experiment
+    monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
+    monkeypatch.setattr(
+        runner.provenance,
+        "verify_run_manifest",
+        Mock(side_effect=OSError("final verification unavailable")),
+    )
+
+    result = runner.run_experiment(path)
+
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert result["errors"][-1]["stage"] == "provenance_integrity"
+    assert result["errors"][-1]["message"] == "final verification unavailable"
+    assert result["raw_generation"] == "VALUE = 2\n"
+    assert result["evaluation"]["target"]["passed"] is True
+    assert result["evaluation"]["regression"]["passed"] is True
+    assert result["evaluation"]["convention"]["passed"] is True
 
 
 def test_privacy_lifecycle_and_source_change(experiment, monkeypatch):
@@ -479,7 +665,7 @@ def test_scorer_mutating_application_source_invalidates_run(
     path, _, _, _ = experiment
     monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
 
-    def mutating_scorer(experiment_name, workspace):
+    def mutating_scorer(experiment_name, workspace, expected_version):
         (workspace / "app.py").write_text("VALUE = 100\n")
         return {"passed": True}
 

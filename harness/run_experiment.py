@@ -9,6 +9,7 @@ from harness.inference import (
     initial_model_identity, validate_model_config,
 )
 from harness.leakage import LeakageDetectedError, scan_leakage
+from harness import provenance
 from harness.results import save_result
 from harness.workspace import create_workspace
 from harness.evaluation import (
@@ -25,6 +26,9 @@ from harness.scorers.fuzzy_3 import score_fuzzy_3
 
 
 BASE_REPO = Path("taskflow_base")
+REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
+SCORER_FIXTURES = REPOSITORY_ROOT / "harness" / "scorers" / "fixtures"
+PROTOCOL_DOCUMENT = REPOSITORY_ROOT / "harness" / "PROTOCOL_V2.md"
 FILE_HEADER = re.compile(r"^=== FILE: (.+) ===$")
 
 
@@ -324,6 +328,25 @@ def _execute(config, config_path, result):
     target_files, multi_file = get_target_files(config)
     source = target_source(config, config_path, BASE_REPO)
     result["target_tests"] = {"source": str(source)}
+    try:
+        scorer = get_scorer(config["experiment"])
+    except Exception as exc:
+        raise provenance.ProvenanceError(
+            f"Scorer registration is unavailable: {exc}",
+            result["run_manifest"],
+        ) from exc
+    provenance.populate_run_manifest(
+        result["run_manifest"],
+        repository_root=REPOSITORY_ROOT,
+        config_path=config_path,
+        base_repository=BASE_REPO,
+        scorer=scorer,
+        experiment=config["experiment"],
+        fixtures_root=SCORER_FIXTURES,
+        target_tests=source,
+        protocol_document=PROTOCOL_DOCUMENT,
+    )
+    scorer_version = result["run_manifest"]["scorer"]["version"]
     for name in config["context_files"]:
         _workspace_target(BASE_REPO, name)
     for name in target_files:
@@ -515,7 +538,11 @@ REPOSITORY CONTEXT:
             }
             result["applied_generations"] = {}
             evaluate(workspace, source, before, [],
-                     lambda root: score_convention(config["experiment"], root),
+                     lambda root: score_convention(
+                         config["experiment"],
+                         root,
+                         scorer_version,
+                     ),
                      result["evaluation"])
             target_evaluation = result["evaluation"]["target"]
             if target_evaluation["status"] == "completed":
@@ -558,20 +585,53 @@ REPOSITORY CONTEXT:
     artifact_before = artifact_fingerprints(workspace)
     result["evaluation"]["artifact"]["fingerprints"] = artifact_before
     evaluate(workspace, source, before, target_files,
-             lambda root: score_convention(config["experiment"], root),
+             lambda root: score_convention(
+                 config["experiment"],
+                 root,
+                 scorer_version,
+             ),
              result["evaluation"], artifact_before)
+
+
+def _verify_final_provenance(result, config_path):
+    manifest = result["run_manifest"]
+    if not provenance.manifest_is_complete(manifest):
+        return
+    try:
+        config = result["config"]
+        source = target_source(config, config_path, BASE_REPO)
+        scorer = get_scorer(config["experiment"])
+        provenance.verify_run_manifest(
+            manifest,
+            repository_root=REPOSITORY_ROOT,
+            config_path=config_path,
+            base_repository=BASE_REPO,
+            scorer=scorer,
+            experiment=config["experiment"],
+            fixtures_root=SCORER_FIXTURES,
+            target_tests=source,
+            protocol_document=PROTOCOL_DOCUMENT,
+        )
+    except Exception as exc:
+        error = error_info("provenance_integrity", exc)
+        if isinstance(exc, provenance.ProvenanceIntegrityError):
+            error["mismatches"] = exc.mismatches
+        result["errors"].append(error)
 
 
 def run_experiment(config_path: Path) -> dict:
     """Execute and persist one v2 run, including infrastructure-invalid attempts."""
+    manifest = provenance.new_run_manifest()
     config_path = Path(config_path)
     result = {
         "evaluation_protocol": "v2", "run_status": "invalid_infrastructure",
         "experiment": config_path.stem, "condition": "unknown",
         "config_path": str(config_path), "evaluation": new_evaluation(),
-        "errors": [],
+        "errors": [], "run_manifest": manifest,
     }
     try:
+        provenance.record_config(manifest, config_path, REPOSITORY_ROOT)
+        provenance.require_clean_git(REPOSITORY_ROOT, manifest)
         config = json.loads(config_path.read_text(encoding="utf-8"))
         if not isinstance(config, dict):
             raise ValueError("Experiment configuration must be an object")
@@ -584,14 +644,20 @@ def run_experiment(config_path: Path) -> dict:
     except LeakageDetectedError as exc:
         # Preserve Step-2's exception and fail-fast diagnostics after recording it.
         result["errors"].append(error_info("leakage_preflight", exc))
+        _verify_final_provenance(result, config_path)
         finalize(result)
         save_result(result)
         raise
     except InferenceInfrastructureError as exc:
         result.update(exc.metadata)
         result["errors"].append(error_info(exc.stage, exc))
+    except provenance.ProvenanceError as exc:
+        if exc.manifest is not None:
+            result["run_manifest"] = exc.manifest
+        result["errors"].append(error_info("provenance", exc))
     except Exception as exc:
         result["errors"].append(error_info("execution", exc))
+    _verify_final_provenance(result, config_path)
     finalize(result)
     path = save_result(result)
     print(f"Result: {path}")
@@ -626,8 +692,25 @@ def get_scorer(experiment: str):
 
     return scorers[experiment]
 
-def score_convention(experiment: str, workspace: Path) -> dict:
-    return get_scorer(experiment)(workspace)
+def score_convention(
+    experiment: str,
+    workspace: Path,
+    expected_version: str | None = None,
+) -> dict:
+    scorer = get_scorer(experiment)
+    if expected_version is None:
+        expected_version = provenance.declared_scorer_metadata(
+            experiment,
+            scorer,
+        )["version"]
+    result = scorer(workspace)
+    if result.get("scorer_version") != expected_version:
+        raise provenance.ProvenanceError(
+            f"Scorer version mismatch for {experiment}: "
+            f"manifest={expected_version!r}, "
+            f"result={result.get('scorer_version')!r}"
+        )
+    return result
 
 
 if __name__ == "__main__":
