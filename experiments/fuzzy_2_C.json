@@ -1,7 +1,10 @@
 {
   "experiment": "fuzzy_2",
   "condition": "C",
-  "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+  "model": {
+    "label": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+    "expected_served_id": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M"
+  },
   "task": "Implement services/comment_service.py containing CommentService.get_comment and add any corresponding service-layer error type needed for missing comments. Follow the architecture and coding patterns demonstrated by the repository.",
   "context_files": [
     "core/errors.py",

@@ -7,7 +7,45 @@ import pytest
 
 from harness import evaluation as ev
 from harness import run_experiment as runner
+from harness.inference import InferenceInfrastructureError
 from harness.leakage import LeakageDetectedError
+
+
+MODEL = {"label": "fake", "expected_served_id": "fake-served"}
+
+
+def generated(content):
+    return {
+        "content": content,
+        "model_identity": {
+            "configured_label": "fake",
+            "expected_served_id": "fake-served",
+            "served_id": "fake-served",
+            "verification_status": "verified",
+            "server_metadata": {},
+        },
+        "generation": {
+            "temperature": 0.0,
+            "max_tokens": 1200,
+            "seed": None,
+            "finish_reason": "stop",
+            "usage": {},
+            "timings": None,
+        },
+        "runtime": {
+            "provider": "llama.cpp",
+            "version": "test",
+            "build": 1,
+            "commit": "test",
+            "system_fingerprint": "test",
+        },
+        "prompt_protocol": {
+            "system_prompt_sha256": "test",
+            "user_prompt_sha256": "test",
+            "chat_template": None,
+            "chat_template_verification": "unavailable",
+        },
+    }
 
 
 @pytest.fixture
@@ -21,12 +59,16 @@ def experiment(tmp_path, monkeypatch):
     source.mkdir(parents=True)
     (source / "test_feature.py").write_text("def test_feature():\n    assert True\n")
     path = source.parent / "A.json"
-    config = {"experiment": "example", "condition": "A", "model": "fake",
+    config = {"experiment": "example", "condition": "A", "model": MODEL,
               "task": "Implement the feature.", "context_files": ["app.py"],
               "target_file": "app.py", "target_tests": {"source": "target_tests"}}
     path.write_text(json.dumps(config))
     monkeypatch.setattr(runner, "BASE_REPO", base)
-    monkeypatch.setattr(runner, "generate", Mock(return_value="VALUE = 2\n"))
+    monkeypatch.setattr(
+        runner,
+        "generate",
+        Mock(return_value=generated("VALUE = 2\n")),
+    )
     monkeypatch.setattr(runner, "score_convention", Mock(return_value={"passed": True}))
     return path, config, base, source
 
@@ -65,13 +107,14 @@ def test_privacy_lifecycle_and_source_change(experiment, monkeypatch):
     (source / "test_feature.py").write_text(f"# {marker}\ndef test_feature():\n    assert True\n")
     events = []
 
-    def generate(messages):
+    def generate(messages, model):
         workspace = next(Path("workspaces").iterdir())
         assert not (workspace / ev.TARGET_DIRECTORY).exists()
         assert not list(workspace.rglob("test_feature.py"))
         assert marker not in str(messages)
         events.append("inference")
-        return "VALUE = 2\n"
+        assert model == MODEL
+        return generated("VALUE = 2\n")
 
     def execute(workspace, location, generated):
         assert (workspace / "app.py").read_text() == "VALUE = 2\n"
@@ -108,6 +151,43 @@ def test_source_inside_repository_rejected(experiment):
     runner.generate.assert_not_called()
 
 
+def test_old_string_model_config_is_infrastructure_invalid(experiment):
+    path, config, _, _ = experiment
+    config["model"] = "fake"
+    path.write_text(json.dumps(config))
+
+    result = runner.run_experiment(path)
+
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert result["errors"][0]["stage"] == "model_config"
+    runner.generate.assert_not_called()
+
+
+def test_inference_identity_failure_is_recorded_as_infrastructure(experiment):
+    path, _, _, _ = experiment
+    identity = {
+        "configured_label": "fake",
+        "expected_served_id": "fake-served",
+        "served_id": "wrong-served",
+        "verification_status": "mismatch",
+        "server_metadata": {},
+    }
+    runner.generate.side_effect = InferenceInfrastructureError(
+        "model_identity",
+        "served model mismatch",
+        {"model_identity": identity},
+    )
+
+    result = runner.run_experiment(path)
+
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert result["model_identity"] == identity
+    assert result["errors"][0]["stage"] == "model_identity"
+    assert "raw_generation" not in result
+
+
 @pytest.mark.parametrize("crash", [RuntimeError("scorer crashed"), ValueError("scorer unavailable")])
 def test_scorer_errors_are_infrastructure(experiment, monkeypatch, crash):
     path, _, _, _ = experiment
@@ -136,7 +216,9 @@ def test_regression_tampering_detected(experiment, monkeypatch, mutation):
     config.pop("target_file")
     config["target_files"] = ["app.py"]
     path.write_text(json.dumps(config))
-    runner.generate.return_value = "=== FILE: app.py ===\nVALUE = 2\n"
+    runner.generate.return_value = generated(
+        "=== FILE: app.py ===\nVALUE = 2\n"
+    )
 
     def tamper(workspace, targets, generation):
         result = apply(workspace, targets, generation)
@@ -171,7 +253,9 @@ def test_direct_generated_regression_edit(experiment, monkeypatch):
     path, config, _, _ = experiment
     config["target_file"] = "tests/test_existing.py"
     path.write_text(json.dumps(config))
-    runner.generate.return_value = "def test_existing():\n    assert True # changed\n"
+    runner.generate.return_value = generated(
+        "def test_existing():\n    assert True # changed\n"
+    )
     execute = Mock(return_value=suite(True))
     monkeypatch.setattr(ev, "run_suite", execute)
     result = runner.run_experiment(path)
@@ -207,13 +291,17 @@ def test_real_pytest_suites_are_separate(experiment):
 def test_generated_collection_setup_failure_is_model_failure(experiment, kind):
     path, _, _, source = experiment
     if kind == "syntax":
-        runner.generate.return_value = "def broken(:\n"
+        runner.generate.return_value = generated("def broken(:\n")
     elif kind == "import":
-        runner.generate.return_value = "import nonexistent_generated_dependency\n"
+        runner.generate.return_value = generated(
+            "import nonexistent_generated_dependency\n"
+        )
     elif kind == "setup":
-        runner.generate.return_value = "def feature():\n    raise ValueError('broken')\n"
+        runner.generate.return_value = generated(
+            "def feature():\n    raise ValueError('broken')\n"
+        )
     else:
-        runner.generate.return_value = "VALUE = 2\n"
+        runner.generate.return_value = generated("VALUE = 2\n")
     (source / "test_feature.py").write_text(
         "import app\nimport pytest\n"
         "@pytest.fixture\ndef value():\n    return app.feature()\n"
@@ -253,7 +341,9 @@ def test_malformed_response_is_model_failure(experiment, monkeypatch):
     config.pop("target_file")
     config["target_files"] = ["app.py"]
     path.write_text(json.dumps(config))
-    runner.generate.return_value = "response without required file header"
+    runner.generate.return_value = generated(
+        "response without required file header"
+    )
     monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
     result = runner.run_experiment(path)
     assert result["run_status"] == "valid"

@@ -1,7 +1,10 @@
 {
   "experiment": "fuzzy_3",
   "condition": "A",
-  "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+  "model": {
+    "label": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+    "expected_served_id": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M"
+  },
   "task": "Create services/comment_service.py containing CommentService.create_comment and CommentService.edit_comment. Both operations receive comment content as a string. Before saving it, content must have surrounding whitespace removed and be converted to lowercase. Use the repository's existing coding patterns.",
   "context_files": [
     "services/task_service.py",

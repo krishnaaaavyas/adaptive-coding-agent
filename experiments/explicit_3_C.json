@@ -1,7 +1,10 @@
 {
   "experiment": "explicit_3",
   "condition": "C",
-  "model": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+  "model": {
+    "label": "Qwen2.5-Coder-7B-Instruct-Q4_K_M",
+    "expected_served_id": "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF:Q4_K_M"
+  },
   "task": "Create dto/comment_dto.py containing a CommentDTO for exposing comments through the public API. Follow the DTO conventions demonstrated by the repository.",
   "context_files": [
     "dto/project_dto.py",

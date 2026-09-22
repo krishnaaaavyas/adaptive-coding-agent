@@ -4,7 +4,10 @@ import re
 import sys
 
 from harness.context import build_context
-from harness.inference import generate
+from harness.inference import (
+    InferenceInfrastructureError, build_prompt_protocol, generate,
+    initial_model_identity, validate_model_config,
+)
 from harness.leakage import LeakageDetectedError, scan_leakage
 from harness.results import save_result
 from harness.workspace import create_workspace
@@ -246,6 +249,7 @@ Implementation:
 def generate_with_preflight(
     messages: list[dict],
     sources: list[tuple[str, str]],
+    model: dict,
 ):
     findings = []
     covered_message_findings = set()
@@ -312,9 +316,11 @@ def generate_with_preflight(
         raise LeakageDetectedError(errors)
 
     print("Generating...")
-    return generate(messages)
+    return generate(messages, model)
 
 def _execute(config, config_path, result):
+    model = validate_model_config(config.get("model"))
+    result["model_identity"] = initial_model_identity(model)
     target_files, multi_file = get_target_files(config)
     source = target_source(config, config_path, BASE_REPO)
     result["target_tests"] = {"source": str(source)}
@@ -481,7 +487,15 @@ REPOSITORY CONTEXT:
     ]
     result.update(memory=memory, rule=rule, system_prompt=system_prompt,
                   user_prompt=user_prompt)
-    generation = generate_with_preflight(messages, model_sources)
+    result["prompt_protocol"] = build_prompt_protocol(messages)
+    inference = generate_with_preflight(messages, model_sources, model)
+    result.update(
+        model_identity=inference["model_identity"],
+        generation=inference["generation"],
+        runtime=inference["runtime"],
+        prompt_protocol=inference["prompt_protocol"],
+    )
+    generation = inference["content"]
     result["raw_generation"] = generation
 
     # -----------------------------
@@ -573,6 +587,9 @@ def run_experiment(config_path: Path) -> dict:
         finalize(result)
         save_result(result)
         raise
+    except InferenceInfrastructureError as exc:
+        result.update(exc.metadata)
+        result["errors"].append(error_info(exc.stage, exc))
     except Exception as exc:
         result["errors"].append(error_info("execution", exc))
     finalize(result)

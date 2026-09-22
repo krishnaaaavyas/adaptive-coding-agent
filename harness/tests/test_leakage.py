@@ -6,6 +6,9 @@ from harness.leakage import LeakageDetectedError, scan_leakage
 from harness import run_experiment
 
 
+MODEL = {"label": "fake", "expected_served_id": "fake-served"}
+
+
 @pytest.mark.parametrize(
     "text, expected_pattern",
     [
@@ -38,6 +41,7 @@ def test_warning_only_language_does_not_abort(monkeypatch, capsys):
     result = run_experiment.generate_with_preflight(
         [{"role": "user", "content": text}],
         [("rule", text)],
+        MODEL,
     )
 
     assert result == "generated code"
@@ -106,6 +110,7 @@ def test_preflight_aborts_before_inference(monkeypatch, capsys):
         run_experiment.generate_with_preflight(
             [{"role": "user", "content": "Fuzzy-3"}],
             [("repository context", "Fuzzy-3")],
+            MODEL,
         )
 
     generation.assert_not_called()
@@ -128,6 +133,7 @@ def test_final_message_leakage_aborts_when_sources_are_incomplete(monkeypatch):
                 {"role": "user", "content": "Use the expected solution."},
             ],
             [("task prompt", "Implement the feature.")],
+            MODEL,
         )
 
     generation.assert_not_called()
