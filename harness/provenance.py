@@ -238,6 +238,7 @@ def verify_run_manifest(
     fixtures_root,
     target_tests,
     protocol_document,
+    adaptation_document=None,
 ):
     """Compare current provenance inputs with the immutable original manifest."""
     if not manifest_is_complete(manifest):
@@ -328,6 +329,33 @@ def verify_run_manifest(
         manifest["protocol"]["protocol_document_sha256"],
         lambda: file_sha256(protocol_document),
     )
+    if "adaptation_conditions" in manifest:
+        if adaptation_document is None:
+            mismatches.append(
+                {
+                    "field": "adaptation_conditions.document_sha256",
+                    "expected": manifest["adaptation_conditions"][
+                        "document_sha256"
+                    ],
+                    "actual": None,
+                    "error": "Adaptation protocol document path is unavailable",
+                }
+            )
+        else:
+            compare(
+                "adaptation_conditions.document_sha256",
+                manifest["adaptation_conditions"]["document_sha256"],
+                lambda: file_sha256(adaptation_document),
+            )
+    elif adaptation_document is not None:
+        mismatches.append(
+            {
+                "field": "adaptation_conditions.document_sha256",
+                "expected": "recorded hash",
+                "actual": None,
+                "error": "Structured run manifest lacks adaptation document hash",
+            }
+        )
 
     if mismatches:
         raise ProvenanceIntegrityError(mismatches)
@@ -345,6 +373,7 @@ def populate_run_manifest(
     fixtures_root,
     target_tests,
     protocol_document,
+    adaptation_document=None,
 ):
     """Populate all required provenance, preserving partial data on failure."""
     try:
@@ -372,6 +401,10 @@ def populate_run_manifest(
             "evaluation_protocol": "v2",
             "protocol_document_sha256": file_sha256(protocol_document),
         }
+        if adaptation_document is not None:
+            manifest["adaptation_conditions"] = {
+                "document_sha256": file_sha256(adaptation_document),
+            }
     except ProvenanceError as exc:
         if exc.manifest is None:
             exc.manifest = manifest

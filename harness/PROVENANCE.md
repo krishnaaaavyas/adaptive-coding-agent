@@ -11,6 +11,12 @@ version, that scorer's validation fixture subtree, evaluator-private target
 tests, regression tests, and the Protocol-v2 document. SHA-256 is used for all
 file and tree digests.
 
+Structured Step-7 runs additionally record the exact SHA-256 of
+ADAPTATION_CONDITIONS.md and verify it again before persistence. Their
+adaptation values are inline in the experiment config, so the existing
+exact-byte config digest covers the intervention content without duplicating it
+in the manifest. Step 7 does not support external structured adaptation files.
+
 ## Canonical tree encoding
 
 Runtime directories named __pycache__ or .pytest_cache and files ending in

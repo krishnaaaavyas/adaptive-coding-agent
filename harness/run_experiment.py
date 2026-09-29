@@ -3,6 +3,11 @@ import json
 import re
 import sys
 
+from harness.adaptation import (
+    adaptation_metadata,
+    apply_structured_adaptation,
+    validate_adaptation_config,
+)
 from harness.context import build_context
 from harness.inference import (
     InferenceInfrastructureError, build_prompt_protocol, generate,
@@ -29,6 +34,7 @@ BASE_REPO = Path("taskflow_base")
 REPOSITORY_ROOT = Path(__file__).resolve().parent.parent
 SCORER_FIXTURES = REPOSITORY_ROOT / "harness" / "scorers" / "fixtures"
 PROTOCOL_DOCUMENT = REPOSITORY_ROOT / "harness" / "PROTOCOL_V2.md"
+ADAPTATION_DOCUMENT = REPOSITORY_ROOT / "harness" / "ADAPTATION_CONDITIONS.md"
 FILE_HEADER = re.compile(r"^=== FILE: (.+) ===$")
 
 
@@ -323,6 +329,8 @@ def generate_with_preflight(
     return generate(messages, model)
 
 def _execute(config, config_path, result):
+    adaptation_state = validate_adaptation_config(config)
+    result["adaptation_metadata"] = adaptation_metadata(adaptation_state)
     model = validate_model_config(config.get("model"))
     result["model_identity"] = initial_model_identity(model)
     target_files, multi_file = get_target_files(config)
@@ -345,6 +353,11 @@ def _execute(config, config_path, result):
         fixtures_root=SCORER_FIXTURES,
         target_tests=source,
         protocol_document=PROTOCOL_DOCUMENT,
+        adaptation_document=(
+            ADAPTATION_DOCUMENT
+            if adaptation_state["mode"] == "structured"
+            else None
+        ),
     )
     scorer_version = result["run_manifest"]["scorer"]["version"]
     for name in config["context_files"]:
@@ -359,24 +372,30 @@ def _execute(config, config_path, result):
     # -----------------------------
 
     memory = None
+    evidence = None
     rule = None
 
-    if "memory_file" in config:
-        memory = load_json_file(
-            config["memory_file"]
-        )
+    if adaptation_state["mode"] == "legacy":
+        if "memory_file" in config:
+            memory = load_json_file(
+                config["memory_file"]
+            )
 
-    if "rule_file" in config:
-        rule = load_json_file(
-            config["rule_file"]
-        )
+        if "rule_file" in config:
+            rule = load_json_file(
+                config["rule_file"]
+            )
 
-    # Prevent accidental condition contamination.
-    if memory is not None and rule is not None:
-        raise ValueError(
-            "Experiment cannot load both memory and rule "
-            "for A/B/C comparison."
-        )
+        # Preserve historical A/B/C contamination protection.
+        if memory is not None and rule is not None:
+            raise ValueError(
+                "Experiment cannot load both memory and rule "
+                "for A/B/C comparison."
+            )
+    else:
+        memory = adaptation_state["components"]["memory"]
+        evidence = adaptation_state["components"]["evidence"]
+        rule = adaptation_state["components"]["rule"]
 
     # -----------------------------
     # Create isolated workspace
@@ -460,33 +479,35 @@ REPOSITORY CONTEXT:
     ]
 
     # -----------------------------
-    # Condition B: episodic memory
+    # Adaptation information
     # -----------------------------
 
-    if memory is not None:
-        memory_context = render_memory(memory)
-        model_sources.append(("memory", memory_context))
-        user_prompt = (
-            f"{memory_context}\n\n"
-            f"{user_prompt}"
+    if adaptation_state["mode"] == "structured":
+        user_prompt, structured_sources = apply_structured_adaptation(
+            user_prompt,
+            adaptation_state,
         )
+        model_sources.extend(structured_sources)
+    else:
+        if memory is not None:
+            memory_context = render_memory(memory)
+            model_sources.append(("memory", memory_context))
+            user_prompt = (
+                f"{memory_context}\n\n"
+                f"{user_prompt}"
+            )
 
-    # -----------------------------
-    # Condition C: confirmed rule
-    # -----------------------------
+        if rule is not None:
+            rule_context = (
+                "CONFIRMED REPOSITORY RULE:\n\n"
+                f"        {rule['rule']}"
+            )
+            model_sources.append(("rule", rule_context))
 
-    if rule is not None:
-        rule_context = f"""
-        CONFIRMED REPOSITORY RULE:
-
-        {rule["rule"]}
-        """.strip()
-        model_sources.append(("rule", rule_context))
-
-        user_prompt = (
-            f"{rule_context}\n\n"
-            f"{user_prompt}"
-        )
+            user_prompt = (
+                f"{rule_context}\n\n"
+                f"{user_prompt}"
+            )
 
     # -----------------------------
     # Run model
@@ -496,6 +517,7 @@ REPOSITORY CONTEXT:
     print(f"Condition:  {config['condition']}")
     print(f"Workspace:  {workspace}")
     print(f"Memory loaded: {memory is not None}")
+    print(f"Evidence loaded: {evidence is not None}")
     print(f"Rule loaded: {rule is not None}")
 
     messages = [
@@ -508,8 +530,9 @@ REPOSITORY CONTEXT:
             "content": user_prompt,
         },
     ]
-    result.update(memory=memory, rule=rule, system_prompt=system_prompt,
-                  user_prompt=user_prompt)
+    if adaptation_state["mode"] == "legacy":
+        result.update(memory=memory, rule=rule)
+    result.update(system_prompt=system_prompt, user_prompt=user_prompt)
     result["prompt_protocol"] = build_prompt_protocol(messages)
     inference = generate_with_preflight(messages, model_sources, model)
     result.update(
@@ -611,6 +634,11 @@ def _verify_final_provenance(result, config_path):
             fixtures_root=SCORER_FIXTURES,
             target_tests=source,
             protocol_document=PROTOCOL_DOCUMENT,
+            adaptation_document=(
+                ADAPTATION_DOCUMENT
+                if result["adaptation_metadata"]["schema"] == "structured"
+                else None
+            ),
         )
     except Exception as exc:
         error = error_info("provenance_integrity", exc)

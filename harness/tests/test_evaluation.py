@@ -96,6 +96,10 @@ def experiment(tmp_path, monkeypatch):
                 "protocol_document_sha256": "protocol",
             },
         )
+        if kwargs.get("adaptation_document") is not None:
+            manifest["adaptation_conditions"] = {
+                "document_sha256": "adaptation"
+            }
         return manifest
 
     monkeypatch.setattr(
@@ -156,6 +160,99 @@ def test_valid_run_keeps_uuid4_and_utc_manifest_identity(experiment, monkeypatch
     assert datetime.fromisoformat(manifest["started_at_utc"]).utcoffset() == timedelta(0)
     assert manifest["schema_version"] == "1"
     assert manifest["repository"]["tracked_clean"] is True
+
+
+@pytest.mark.parametrize(
+    "condition,adaptation,expected_headings",
+    [
+        ("A", {}, set()),
+        ("B", {"memory": "A concrete previous episode."}, {"EPISODIC MEMORY"}),
+        (
+            "M",
+            {"evidence": "Relevant cases delegate persistence through services."},
+            {"REPOSITORY EVIDENCE"},
+        ),
+        (
+            "C",
+            {"rule": "Persistence operations must use services."},
+            {"CONFIRMED REPOSITORY RULE"},
+        ),
+        (
+            "BC",
+            {
+                "memory": "A concrete previous episode.",
+                "rule": "Persistence operations must use services.",
+            },
+            {"EPISODIC MEMORY", "CONFIRMED REPOSITORY RULE"},
+        ),
+    ],
+)
+def test_structured_conditions_build_only_their_prompt_sections(
+    experiment,
+    monkeypatch,
+    condition,
+    adaptation,
+    expected_headings,
+):
+    path, config, _, _ = experiment
+    config.update(
+        condition=condition,
+        adaptation_schema="1",
+        adaptation=adaptation,
+    )
+    path.write_text(json.dumps(config))
+    monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
+
+    result = runner.run_experiment(path)
+    prompt = result["user_prompt"]
+
+    headings = {
+        "EPISODIC MEMORY",
+        "REPOSITORY EVIDENCE",
+        "CONFIRMED REPOSITORY RULE",
+    }
+    for heading in headings:
+        assert (f"{heading}:" in prompt) is (heading in expected_headings)
+    assert "TASK:\nImplement the feature." in prompt
+    assert "REPOSITORY CONTEXT:" in prompt
+    assert result["adaptation_metadata"]["schema"] == "structured"
+    assert result["adaptation_metadata"]["condition"] == condition
+    assert result["run_manifest"]["adaptation_conditions"] == {
+        "document_sha256": "adaptation"
+    }
+
+
+def test_invalid_structured_adaptation_aborts_before_generate(experiment):
+    path, config, _, _ = experiment
+    config.update(
+        condition="B",
+        adaptation_schema="1",
+        adaptation={},
+    )
+    path.write_text(json.dumps(config))
+
+    result = runner.run_experiment(path)
+
+    assert result["run_status"] == "invalid_infrastructure"
+    assert result["overall_success"] is None
+    assert "Condition B requires" in result["errors"][0]["message"]
+    runner.generate.assert_not_called()
+
+
+def test_legacy_config_remains_legacy_and_has_no_new_sections(
+    experiment,
+    monkeypatch,
+):
+    path, _, _, _ = experiment
+    monkeypatch.setattr(ev, "run_suite", lambda *args: suite(True))
+
+    result = runner.run_experiment(path)
+
+    assert result["adaptation_metadata"]["schema"] == "legacy"
+    assert result["adaptation_metadata"]["schema_version"] is None
+    assert "adaptation_conditions" not in result["run_manifest"]
+    assert "EPISODIC MEMORY:" not in result["user_prompt"]
+    assert "REPOSITORY EVIDENCE:" not in result["user_prompt"]
 
 
 def test_dirty_repository_aborts_before_generation_with_partial_manifest(

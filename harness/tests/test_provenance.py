@@ -56,6 +56,7 @@ def provenance_snapshot(git_repository):
     fixtures = git_repository / "fixtures"
     active_fixtures = fixtures / "explicit_1"
     protocol = git_repository / "PROTOCOL_V2.md"
+    adaptation_protocol = git_repository / "ADAPTATION_CONDITIONS.md"
     config.parent.mkdir()
     regression.mkdir(parents=True)
     target.mkdir()
@@ -66,6 +67,7 @@ def provenance_snapshot(git_repository):
     (target / "test_target.py").write_text("assert True\n", encoding="utf-8")
     (active_fixtures / "cases.json").write_text("{}\n", encoding="utf-8")
     protocol.write_text("protocol\n", encoding="utf-8")
+    adaptation_protocol.write_text("adaptation protocol\n", encoding="utf-8")
     git(git_repository, "add", ".")
     git(git_repository, "commit", "-q", "-m", "provenance inputs")
 
@@ -92,6 +94,7 @@ def provenance_snapshot(git_repository):
         "target": target,
         "fixtures": active_fixtures,
         "protocol": protocol,
+        "adaptation_protocol": adaptation_protocol,
     }
 
 
@@ -521,3 +524,68 @@ def test_original_manifest_hashes_are_preserved_after_mismatch(
         verify_snapshot(provenance_snapshot)
 
     assert provenance_snapshot["manifest"] == original_manifest
+
+
+def test_structured_run_records_adaptation_protocol_hash(provenance_snapshot):
+    manifest = provenance.new_run_manifest()
+    arguments = {
+        **provenance_snapshot["arguments"],
+        "adaptation_document": provenance_snapshot["adaptation_protocol"],
+    }
+    provenance.record_config(
+        manifest,
+        provenance_snapshot["config"],
+        provenance_snapshot["repository"],
+    )
+
+    provenance.populate_run_manifest(manifest, **arguments)
+
+    assert manifest["adaptation_conditions"] == {
+        "document_sha256": provenance.file_sha256(
+            provenance_snapshot["adaptation_protocol"]
+        )
+    }
+    assert provenance.verify_run_manifest(manifest, **arguments) is True
+
+
+def test_adaptation_protocol_mutation_fails_final_verification(
+    provenance_snapshot,
+):
+    manifest = provenance.new_run_manifest()
+    arguments = {
+        **provenance_snapshot["arguments"],
+        "adaptation_document": provenance_snapshot["adaptation_protocol"],
+    }
+    provenance.record_config(
+        manifest,
+        provenance_snapshot["config"],
+        provenance_snapshot["repository"],
+    )
+    provenance.populate_run_manifest(manifest, **arguments)
+    provenance_snapshot["adaptation_protocol"].write_text(
+        "changed adaptation protocol\n",
+        encoding="utf-8",
+    )
+
+    with pytest.raises(provenance.ProvenanceIntegrityError) as exc_info:
+        provenance.verify_run_manifest(manifest, **arguments)
+
+    assert "adaptation_conditions.document_sha256" in mismatch_fields(exc_info)
+
+
+def test_inline_structured_adaptation_is_covered_by_exact_config_hash(tmp_path):
+    config = tmp_path / "structured.json"
+    first = {
+        "adaptation_schema": "1",
+        "condition": "B",
+        "adaptation": {"memory": "first episode"},
+    }
+    config.write_text(json.dumps(first), encoding="utf-8")
+    manifest = provenance.new_run_manifest()
+    before = provenance.record_config(manifest, config, tmp_path)["sha256"]
+
+    first["adaptation"]["memory"] = "changed episode"
+    config.write_text(json.dumps(first), encoding="utf-8")
+    after = provenance.file_sha256(config)
+
+    assert before != after
