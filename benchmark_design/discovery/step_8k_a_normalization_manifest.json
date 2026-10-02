@@ -1,0 +1,16 @@
+{
+  "created_at_utc": "2026-10-02T11:44:58.079243+00:00",
+  "normalization_procedure_version": "1",
+  "normalization_schema_version": "1",
+  "normalized_artifact": "normalized/step_8k_a_normalized.json",
+  "normalized_sha256": "59abbe050f2cc5267bd6037f0998e264aa08c9bfaaedfbfd8186219cae085409",
+  "omissions": [
+    {
+      "rule_category": "editorial-prioritization",
+      "source_location": "raw/step_8k_a_raw_report.md: section 6, line 877"
+    }
+  ],
+  "raw_artifact": "raw/step_8k_a_raw_report.md",
+  "raw_sha256": "065bc9b7c0d33456ae1962036d388d39e7a06cd89b4d1b5bb346853acadd24e1",
+  "status": "frozen"
+}
