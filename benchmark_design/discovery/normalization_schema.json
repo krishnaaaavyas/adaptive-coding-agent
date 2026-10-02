@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "candidates": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "candidate_id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "character": {
+            "enum": [
+              "CRISP",
+              "PATTERN-LIKE",
+              "UNCLEAR",
+              null
+            ]
+          },
+          "confidence": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "discovery_concerns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "distinct_occurrences": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "historical_overlap": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observed_behavior": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "origin": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "possible_overlaps": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "repository": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "short_name": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "candidate_id",
+          "repository",
+          "short_name",
+          "observed_behavior",
+          "origin",
+          "character",
+          "confidence",
+          "evidence",
+          "distinct_occurrences",
+          "historical_overlap",
+          "possible_overlaps",
+          "discovery_concerns"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "negative_observations": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "decision": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "observation_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "observed_idea": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "repository": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "observation_id",
+          "repository",
+          "observed_idea",
+          "decision",
+          "reason",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidates",
+    "negative_observations"
+  ],
+  "type": "object"
+}

@@ -9,6 +9,7 @@ from harness.adaptation import (
     validate_adaptation_config,
 )
 from harness.context import build_context
+from harness.isolation import require_model_path
 from harness.inference import (
     InferenceInfrastructureError, build_prompt_protocol, generate,
     initial_model_identity, validate_model_config,
@@ -201,6 +202,7 @@ def apply_multi_file_generation(
 
 
 def load_json_file(path_string: str):
+    require_model_path(path_string)
     path = Path(path_string)
 
     if not path.exists():
@@ -260,7 +262,13 @@ def generate_with_preflight(
     messages: list[dict],
     sources: list[tuple[str, str]],
     model: dict,
+    *,
+    source_paths: tuple[Path, ...] = (),
 ):
+    # Explicit filesystem origins supplied by the caller, never inferred from
+    # descriptive labels or message bodies. Read boundaries check these earlier.
+    for path in source_paths:
+        require_model_path(path)
     findings = []
     covered_message_findings = set()
 
@@ -361,6 +369,7 @@ def _execute(config, config_path, result):
     )
     scorer_version = result["run_manifest"]["scorer"]["version"]
     for name in config["context_files"]:
+        require_model_path(BASE_REPO / name)
         _workspace_target(BASE_REPO, name)
     for name in target_files:
         destination = _workspace_target(BASE_REPO, name)
@@ -534,7 +543,13 @@ REPOSITORY CONTEXT:
         result.update(memory=memory, rule=rule)
     result.update(system_prompt=system_prompt, user_prompt=user_prompt)
     result["prompt_protocol"] = build_prompt_protocol(messages)
-    inference = generate_with_preflight(messages, model_sources, model)
+    source_paths = [workspace / name for name in config["context_files"]]
+    if adaptation_state["mode"] == "legacy":
+        source_paths.extend(Path(config[field]) for field in ("memory_file", "rule_file")
+                            if field in config)
+    inference = generate_with_preflight(
+        messages, model_sources, model, source_paths=tuple(source_paths)
+    )
     result.update(
         model_identity=inference["model_identity"],
         generation=inference["generation"],

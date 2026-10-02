@@ -2,6 +2,8 @@
 
 import re
 
+from harness.isolation import require_model_path
+
 
 ADAPTATION_SCHEMA_VERSION = "1"
 STRUCTURED_CONDITIONS = {"A", "B", "M", "C", "BC"}
@@ -77,6 +79,9 @@ def _reject_patterns(label, text, patterns):
 
 def validate_adaptation_config(config):
     """Return explicit legacy or validated structured adaptation state."""
+    for field in ("memory_file", "rule_file"):
+        if field in config:
+            require_model_path(config[field])
     has_schema = "adaptation_schema" in config
     has_adaptation = "adaptation" in config
 
