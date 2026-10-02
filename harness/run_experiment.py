@@ -337,6 +337,11 @@ def generate_with_preflight(
     return generate(messages, model)
 
 def _execute(config, config_path, result):
+    if "repository_context_policy" in config or "policy_id" in config:
+        raise ValueError(
+            "Versioned repository-context requests cannot use the legacy v2 runner; "
+            "use harness.context_policy.prepare.prepare_run for certified no-generation admission"
+        )
     adaptation_state = validate_adaptation_config(config)
     result["adaptation_metadata"] = adaptation_metadata(adaptation_state)
     model = validate_model_config(config.get("model"))
