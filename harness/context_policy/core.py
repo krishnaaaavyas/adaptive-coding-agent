@@ -11,6 +11,8 @@ from typing import Callable
 
 POLICY_ID = "current-repo-v1-draft3"
 POLICY_SHA256 = "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b"
+IMPLEMENTATION_REVISION = "current-repo-v1-draft3-implementation-r2"
+IMPLEMENTATION_REVISION_SHA256 = "ccb9484cd342c00a3c8e49a9df5af745e9ab2a29fc24a26234e2fd24cc9d6bbb"
 EVIDENCE_ID = "study1-curated-evidence-v1"
 P_LIMIT, K_LIMIT, H_LIMIT, INVENTORY_LIMIT, GENERATION = 4096, 12288, 4096, 2048, 2048
 SOURCE_LIMIT = 1048576
@@ -89,6 +91,21 @@ def ascii_lower(text):
 def runtime_identity():
     return {"implementation": platform.python_implementation(), "version": platform.python_version(),
             "unicode": unicodedata.unidata_version, "executable_sha256": digest(__import__("pathlib").Path(sys.executable).read_bytes())}
+
+
+def implementation_identity():
+    """Hash installed policy sources, not a live product tree or Git checkout.
+
+    This is a deterministic source-build identity, not a claimed Git commit or
+    binary-distribution attestation. Deployment certification remains external.
+    """
+    from pathlib import Path
+    root = Path(__file__).parent
+    manifest = [{"path": p.name, "sha256": digest(p.read_bytes())}
+                for p in sorted(root.glob("*.py"), key=lambda p: p.name.encode("utf-8"))]
+    return {"revision": IMPLEMENTATION_REVISION, "revision_sha256": IMPLEMENTATION_REVISION_SHA256,
+            "build_kind": "installed-policy-python-source-manifest",
+            "build_sha256": digest(canonical_json(manifest)), "source_manifest": manifest}
 
 
 def verify_parser():

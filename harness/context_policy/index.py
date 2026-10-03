@@ -5,7 +5,8 @@ from collections import defaultdict
 from dataclasses import dataclass
 import re
 
-from .core import POLICY_SHA256, fail, u, verify_parser
+from .core import (POLICY_ID, POLICY_SHA256, IMPLEMENTATION_REVISION,
+                   IMPLEMENTATION_REVISION_SHA256, fail, u, verify_parser)
 
 
 def structural(p):
@@ -29,8 +30,11 @@ class Route:
 class PythonIndex:
     def __init__(self, snapshot, config):
         verify_parser()
-        if (not isinstance(config, dict) or set(config) != {"policy_id", "policy_sha256", "root_alias_mode", "root_alias_basename"}
-                or config["policy_id"] != "current-repo-v1-draft3" or config["policy_sha256"] != POLICY_SHA256):
+        if (not isinstance(config, dict) or set(config) != {"policy_id", "policy_sha256", "root_alias_mode", "root_alias_basename",
+                                                         "implementation_revision", "implementation_revision_sha256"}
+                or config["policy_id"] != POLICY_ID or config["policy_sha256"] != POLICY_SHA256
+                or config["implementation_revision"] != IMPLEMENTATION_REVISION
+                or config["implementation_revision_sha256"] != IMPLEMENTATION_REVISION_SHA256):
             fail("infrastructure_invalid", "configuration_invalid", 1)
         mode, root = config["root_alias_mode"], config["root_alias_basename"]
         init = next((p for p in ("__init__.py", "__init__.pyi") if p in snapshot.files), None)
@@ -62,6 +66,7 @@ class PythonIndex:
         self.routes = {name: tuple(sorted(rows, key=lambda r: (u(r.provider), r.base, r.prefixed))) for name, rows in routes.items()}
         self.modules = {name: tuple(sorted({r.provider for r in rows}, key=u)) for name, rows in self.routes.items()}
         self.declarations, self.names = defaultdict(set), defaultdict(list)
+        self.declaration_reasons = defaultdict(list)
         self.edges, self.edge_reasons, self.diagnostics = {}, {}, []
         for p in self.files:
             try:
@@ -75,14 +80,20 @@ class PythonIndex:
                 if isinstance(node, (ast.ClassDef, ast.FunctionDef, ast.AsyncFunctionDef)):
                     owners = parents + (node.name,)
                     qualified = ".".join(owners)
-                    aliases = {node.name, qualified}
+                    aliases = [(node.name, "unqualified"), (qualified, "owner_qualified")]
                     base = self.owned[p]
                     if base:
-                        aliases.add(base + "." + qualified)
+                        aliases.append((base + "." + qualified, "module_qualified"))
                     if self.root:
-                        aliases.add(".".join(filter(None, (self.root, base, qualified))))
-                    for alias in aliases:
+                        aliases.append((".".join(filter(None, (self.root, base, qualified))), "root_qualified"))
+                    for alias, alias_kind in aliases:
                         self.declarations[alias].add(p)
+                        self.declaration_reasons[alias].append({
+                            "alias": alias, "alias_kind": alias_kind, "path": p,
+                            "name": node.name, "owner_qualified": qualified,
+                            "owned_module": base, "node_kind": type(node).__name__,
+                            "line": node.lineno, "column": node.col_offset,
+                        })
                     self.names[p].append(node.name)
                     next_parents = owners
                 for child in ast.iter_child_nodes(node):

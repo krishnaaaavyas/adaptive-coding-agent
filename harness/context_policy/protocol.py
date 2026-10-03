@@ -172,16 +172,37 @@ class OutputResult:
     normalized_sha256: str | None
     diagnostics: tuple
     output_tokens: int | None
+    raw_bytes: bytes | None = None
+    normalized_bytes: bytes | None = None
+    finish_reason: str | None = None
+    terminal_accounting_bytes: bytes | None = None
+    integrity_verified: bool = False
+    token_limit: bool = False
 
 
-def completion(text, task, *, integrity_verified, token_limit, output_tokens):
+def completion(text, task, *, integrity_verified, token_limit, output_tokens,
+               finish_reason=None, terminal_token_accounting=None):
+    """Parse once and retain observed output facts, without guessing runtime facts.
+
+    finish_reason and terminal_token_accounting are supplied by the serving
+    interface after generation. Missing facts remain None; token_limit is the
+    existing externally verified classification input, not inferred from text.
+    """
     diagnostics, artifacts, raw_hash, normalized_hash = [], [], None, None
-    if not integrity_verified:
-        return OutputResult("infrastructure_invalid", (), None, None, ("runtime_integrity",), output_tokens)
+    raw_bytes, normalized_bytes = None, None
+    terminal_bytes = None if terminal_token_accounting is None else canonical_json(terminal_token_accounting)
     try:
-        raw_hash = digest(text.encode("utf-8"))
+        raw_bytes = text.encode("utf-8")
+        raw_hash = digest(raw_bytes)
+    except (UnicodeError, ValueError, AttributeError):
+        pass
+    if not integrity_verified:
+        return OutputResult("infrastructure_invalid", (), raw_hash, None, ("runtime_integrity",), output_tokens,
+                            raw_bytes, None, finish_reason, terminal_bytes, integrity_verified, token_limit)
+    try:
         normalized = normalized_text(text, bom=False)
-        normalized_hash = digest(normalized.encode())
+        normalized_bytes = normalized.encode("utf-8")
+        normalized_hash = digest(normalized_bytes)
     except (UnicodeError, ValueError, AttributeError):
         normalized = None
         diagnostics.append("invalid_completion_text")
@@ -210,4 +231,5 @@ def completion(text, task, *, integrity_verified, token_limit, output_tokens):
             if not diagnostics:
                 artifacts = [(row[0], normalized[row[2]:headers[n + 1][1] if n + 1 < len(headers) else len(normalized)]) for n, row in enumerate(headers)]
     category = "output_capacity_failure" if token_limit else "output_format_failure" if diagnostics else "artifact_ready"
-    return OutputResult(category, tuple(artifacts), raw_hash, normalized_hash, tuple(sorted(set(diagnostics))), output_tokens)
+    return OutputResult(category, tuple(artifacts), raw_hash, normalized_hash, tuple(sorted(set(diagnostics))), output_tokens,
+                        raw_bytes, normalized_bytes, finish_reason, terminal_bytes, integrity_verified, token_limit)

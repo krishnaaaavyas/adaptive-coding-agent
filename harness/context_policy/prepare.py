@@ -31,7 +31,7 @@ class PreparedRun:
 def prepare_run(configuration, *, acquisition_inputs, public_envelope, public_certificate,
                 registry, registry_certificate, cutoff, task_release_sequence,
                 cutoff_certificate,
-                profile, profile_certificate, tokenizer, authentication, mode="official"):
+                profile, profile_certificate, tokenizer, authentication, mode="official", run_identity=None):
     """Execute normative phases; accept no filesystem paths or manual K/H.
 
     Certification trust roots and tokenizer callbacks are external interfaces.
@@ -49,6 +49,7 @@ def prepare_run(configuration, *, acquisition_inputs, public_envelope, public_ce
         configuration = json.loads(canonical_json(configuration))
         registry = json.loads(canonical_json(registry))
         profile = json.loads(canonical_json(profile))
+        run_identity = None if run_identity is None else json.loads(canonical_json(run_identity))
     except (ValueError, UnicodeError, TypeError):
         fail("infrastructure_invalid", "metadata_invalid", 1)
     # Phase 1: validate all authenticated infrastructure before task admission.
@@ -70,5 +71,6 @@ def prepare_run(configuration, *, acquisition_inputs, public_envelope, public_ce
     reference = output_preflight(task, acquisition.snapshot, tokenizer)
     conditions = treatments(task, acquisition.snapshot, k, view, profile, tokenizer, reference)
     from .provenance import provenance
-    audit = canonical_json(provenance(task, acquisition, index, configuration, k, view, conditions, profile, tokenizer))
+    audit = canonical_json(provenance(task, acquisition, index, configuration, k, view, conditions, profile, tokenizer,
+                                     run_identity=run_identity))
     return PreparedRun(task, admission, k, view, conditions, acquisition.identity, audit, digest(audit))

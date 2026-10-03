@@ -61,6 +61,9 @@ class EligibleRegistry:
     ledger_root: str
     cutoff: int
     excluded: tuple
+    registry_sha256: str | None = None
+    cutoff_binding_sha256: str | None = None
+    first_public_release_sequence: int | None = None
 
 
 def cutoff_payload(registry, cutoff, task_release_sequence, public_task_sha256):
@@ -197,7 +200,8 @@ def registry_view(registry, certificate, auth, *, cutoff, task_release_sequence,
         active.sort(key=lambda r: (-r.availability, r.body_sha256, u(r.key)))
         view_identity = digest(canonical_json({"registry_sha256": digest(canonical_json(registry)),
                                              "cutoff": cutoff, "active": [r.key for r in active]}))
-        return EligibleRegistry(tuple(active), view_identity, previous, cutoff, tuple(excluded))
+        return EligibleRegistry(tuple(active), view_identity, previous, cutoff, tuple(excluded),
+                                digest(canonical_json(registry)), digest(canonical_json(binding)), task_release_sequence)
     except (KeyError, TypeError, ValueError, UnicodeError):
         fail("infrastructure_invalid", "registry_invalid", 1)
 

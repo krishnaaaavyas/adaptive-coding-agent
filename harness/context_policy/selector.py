@@ -55,6 +55,7 @@ class Anchor:
     reason: str
     occurrence: str
     metadata: tuple = ()
+    resolution_reasons: tuple = ()
 
 
 def anchors(task, snapshot, index):
@@ -95,8 +96,15 @@ def anchors(task, snapshot, index):
                         results, rank = index.declarations[attempt], 4
             if results:
                 for p in sorted(results, key=u):
+                    resolution = ()
+                    if rank == 3:
+                        resolution = tuple(tuple(sorted({"alias": attempt, "owned_module": r.base,
+                                                       "provider": r.provider, "root_prefixed": r.prefixed}.items()))
+                                           for r in index.routes[attempt] if r.provider == p)
+                    elif rank == 4:
+                        resolution = tuple(tuple(sorted(r.items())) for r in index.declaration_reasons[attempt] if r["path"] == p)
                     found.append(Anchor(p, (rank, location, u(p)), protect, kind, candidate,
-                                        (("delimiter_offset", delimiter),) if delimiter is not None else ()))
+                                        (("delimiter_offset", delimiter),) if delimiter is not None else (), resolution))
                 return
     for candidate, offset, kind, delimiter in spans(task.instructions):
         match(candidate, (0, offset), kind, delimiter)
@@ -206,6 +214,8 @@ class KContext:
     inventory_paths: tuple
     inventory_omitted: bool
     contributions: tuple
+    inventory_serialized: bytes
+    inventory_allowance: int
 
 
 def select(task, snapshot, index):
@@ -252,4 +262,4 @@ def select(task, snapshot, index):
     serialized = K_OPEN + b"".join(protected_blocks) + inventory + b"".join(optional) + K_CLOSE
     assert len(serialized) <= K_LIMIT
     return KContext(serialized, digest(serialized), protected, inferred, tuple(selected), occurrences,
-                    nominations, tuple(skipped), tuple(emitted_inventory), omitted, tuple(contributions))
+                    nominations, tuple(skipped), tuple(emitted_inventory), omitted, tuple(contributions), inventory, allowance)

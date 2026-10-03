@@ -5,6 +5,52 @@ inference. The canonical researcher artifact is
 `benchmark_design/context_policy/current-repo-v1-draft3.json`; its SHA-256 is
 bound by `core.POLICY_SHA256` and every public selector configuration.
 
+## Implementation repair identity
+
+The Step 8K-B.1E2 repair retains the normative draft3 identifier and exact
+P/K/H framing by explicit user authorization. Its distinct behavior identity is
+`current-repo-v1-draft3-implementation-r2`, described by the researcher-only
+`benchmark_design/context_policy/implementation-r2.json`. Configuration now
+requires `implementation_revision` and `implementation_revision_sha256`, in
+addition to the existing four fields. Acquisition authentication binds these
+fields through the configuration hash; the index rejects missing/old identities.
+The original artifact/report/provenance remain historical inputs, not relabeled
+records of this repair. Admission changes are not hidden under an old config.
+
+F1 rejects Unicode 14 category Cc and the superscript COM/LPT device basenames.
+F3 merges previously detected infrastructure diagnostics with authentication
+failures. F5 verifies every supplied product regular-file blob before filtering;
+filtered files may still be metadata-only. No budgets, caps, selection/expansion
+policy, historical packing, output grammar, or treatment framing changed.
+
+## Restricted staged provenance
+
+`prepare_run` emits `current-repo-v1-provenance-v2` at stage `prepared`.
+It includes captured receipt/manifest identities, exact treatment bytes/hashes,
+inventory presence/omission and accounting, H record/lane accounting, module,
+declaration and import routes, and the installed policy source-build hash.
+Standalone K tokenization is diagnostic: unavailable measurements are null
+with a reason and cannot alter treatment admission.
+
+The task interface receives a decoded envelope. Its raw identity is explicitly
+J of that input before normalization; it is not an invented transport-byte hash.
+Transport fields remain null. Optional `run_identity` supplies separately
+certified `implementation_repository_commit` and `product_repository_commit`;
+absent commits remain null. No live product repository or Git lookup is used to
+fill missing identities. The computed source-build hash is not a binary/runtime
+distribution attestation. External release/acquisition workflows certify commits
+and immutable implementation deployment.
+
+Preparation records no completion/finish/terminal facts. After a separately
+authorized generation, `protocol.completion` accepts the actual `finish_reason`
+and `terminal_token_accounting` and retains raw/normalized output bytes and the
+existing classification inputs. `provenance.record_completion` returns a new
+restricted record at stage `completion_recorded`, leaving the prepared record
+and all model messages unchanged. Missing runtime facts remain null. External
+common-admission and matching metadata must refer to already frozen/certified
+artifacts, not a population selected after outcomes. This interface does not
+perform inference, certify semantic matching, or authorize a run.
+
 `prepare.prepare_run` is the versioned integration entry point. It validates
 authenticated infrastructure, admits P/targets, constructs K once, checks
 the current-target output reference, and prepares all five condition messages

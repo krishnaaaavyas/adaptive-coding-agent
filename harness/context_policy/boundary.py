@@ -22,10 +22,10 @@ def path(value, *, normalize=False):
         raise ValueError("non-NFC path")
     for component in value.split("/"):
         if (component in ("", ".", "..") or component.endswith((" ", "."))
-                or any(ord(c) < 32 or ord(c) == 127 or c in '\\<>:"|?*' for c in component)):
+                or any(unicodedata.category(c) == "Cc" or c in '\\<>:"|?*' for c in component)):
             raise ValueError("invalid component")
         stem = component.split(".")[0].upper()
-        if stem in ("CON", "PRN", "AUX", "NUL") or re.fullmatch(r"(?:COM|LPT)[1-9]", stem):
+        if stem in ("CON", "PRN", "AUX", "NUL") or re.fullmatch(r"(?:COM|LPT)[1-9¹²³]", stem):
             raise ValueError("reserved component")
     return value
 
@@ -57,6 +57,8 @@ class PublicTask:
     targets: tuple[str, ...]
     serialized: bytes
     sha256: str
+    raw_serialized: bytes
+    raw_sha256: str
 
 
 def public_task(envelope, certificate, auth, *, mode="official"):
@@ -89,7 +91,10 @@ def public_task(envelope, certificate, auth, *, mode="official"):
         require_auth(auth, payload, certificate, mode)
     except PolicyFailure:
         fail("task_invalid", "public_task_uncertified", 2)
-    return PublicTask(instructions, tuple(targets), data, digest(data))
+    # The interface receives a decoded envelope, not transport bytes. Preserve
+    # J of that exact input before normalization; do not claim a wire identity.
+    raw = canonical_json(envelope)
+    return PublicTask(instructions, tuple(targets), data, digest(data), raw, digest(raw))
 
 
 @dataclass(frozen=True)
@@ -116,6 +121,7 @@ class Acquisition:
     _entries: object
     _denied: tuple[str, ...]
     identity: str
+    receipt_bytes: bytes
 
     @classmethod
     def verify(cls, product_manifest, denied, existence, raw_files, receipt, certificate,
@@ -170,6 +176,13 @@ class Acquisition:
                 if type(size) is not int or size < 0 or not re.fullmatch("[0-9a-f]{64}", raw_hash):
                     raise ValueError("content identity")
                 bundle_rows.append({"path": p, "raw_size": size, "raw_sha256": raw_hash})
+                # Filtering does not waive integrity for a supplied blob.
+                # Filtered files may be metadata-only, but captured bytes must
+                # match the signed identity before eligibility is considered.
+                if p in raw_files:
+                    raw = bytes(raw_files[p])
+                    if len(raw) != size or digest(raw) != raw_hash:
+                        raise ValueError("acquisition drift")
                 code = "eligible"
                 if prohibited(p):
                     code = "excluded"
@@ -180,9 +193,6 @@ class Acquisition:
                 else:
                     if p not in raw_files:
                         raise ValueError("missing content")
-                    raw = bytes(raw_files[p])
-                    if len(raw) != size or digest(raw) != raw_hash:
-                        raise ValueError("acquisition drift")
                     try:
                         texts[p] = file_text(raw)
                         hashes[p] = raw_hash
@@ -201,8 +211,8 @@ class Acquisition:
             if not expected["acquisition_identity"] or receipt != expected:
                 raise ValueError("receipt binding")
             require_auth(auth, receipt, certificate, mode)
-        except PolicyFailure:
-            raise
+        except PolicyFailure as exc:
+            diagnostics.extend(exc.diagnostics)
         except (KeyError, TypeError, ValueError, UnicodeError):
             diagnostics.append(Diagnostic("infrastructure_invalid", "snapshot_invalid", 1))
         raise_diagnostics(diagnostics)
@@ -210,7 +220,8 @@ class Acquisition:
         snapshot = ProductSnapshot(MappingProxyType(texts), MappingProxyType(hashes), MappingProxyType(raw_sizes), dirs,
                                    expected["snapshot_bundle_sha256"])
         frozen_entries = MappingProxyType({p: MappingProxyType(e) for p, e in entries.items()})
-        return cls(snapshot, frozen_entries, denied, digest(canonical_json(receipt)))
+        receipt_bytes = canonical_json(receipt)
+        return cls(snapshot, frozen_entries, denied, digest(receipt_bytes), receipt_bytes)
 
     def admit(self, task):
         diagnostics, results = [], []
