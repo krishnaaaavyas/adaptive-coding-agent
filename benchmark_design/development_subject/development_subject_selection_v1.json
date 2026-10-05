@@ -1,0 +1,899 @@
+{
+  "protocol_version": "development-subject-selection-v1",
+  "status": "FROZEN_DESIGN",
+  "prepared_date": "2026-10-04",
+  "prepared_timezone": "Asia/Calcutta",
+  "protocol_document": "DEVELOPMENT_SUBJECT_SELECTION_V1.md",
+  "policy": {
+    "active_development_subject_count_after_selection": 1,
+    "confirmation_track": {
+      "first_subject": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "status": "PENDING_COMPUTE",
+      "methodology_unchanged": true,
+      "protected_controls": ["BF16", "TP1", "context", "generation", "LoRA"]
+    },
+    "historical_pilots": "Historical development evidence only; no pooling with future experiments and no second active track.",
+    "outcome_blind": true,
+    "permitted_selection_evidence": [
+      "static_metadata", "license", "architecture", "documented_runtime_compatibility",
+      "published_coding_evidence", "resource_requirements", "tokenizer_template",
+      "reproducibility", "separately_authorized_nonprotected_runtime_feasibility"
+    ],
+    "prohibited_selection_evidence": [
+      "Study_1_2_3_adaptation_outcomes", "protected_task_performance",
+      "favorable_adaptation_effect", "desired_research_conclusion", "historical_pilot_outcomes"
+    ],
+    "common_requirements": {
+      "requirements_id": "development-subject-common-requirements-v1",
+      "document": "DEVELOPMENT_SUBJECT_COMMON_REQUIREMENTS_V1.md",
+      "status": "FROZEN_DESIGN_LATER_EVIDENCE_PENDING",
+      "requirements_freeze_blocker_closed": true,
+      "freeze_gate": "REVIEW_FREEZE_CLOSED_DESIGN_ONLY",
+      "source_policy": {
+        "path": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+        "status": "proposed-not-frozen",
+        "sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b",
+        "adoption": "Exact proposed draft3 evaluation byte budgets and controls; does not freeze or modify upstream."
+      },
+      "evaluation_context_tokens": null,
+      "evaluation_input_tokens": null,
+      "evaluation_output_tokens": 2048,
+      "evaluation": {
+        "status": "BYTE_ENVELOPE_DETERMINED_TOKEN_BOUND_PENDING",
+        "PKH_adoption": "INHERITED_EXACTLY_AS_UTF8_BYTE_CEILINGS",
+        "P_bytes": 4096,
+        "K_bytes": 12288,
+        "H_bytes": 4096,
+        "inventory_bytes_within_K": 2048,
+        "BC_owned_portion_bytes_within_H": 2048,
+        "public_wrapper_bytes": 30,
+        "system_content_bytes": 553,
+        "maximum_user_content_bytes": 20510,
+        "maximum_system_plus_user_content_bytes": 21063,
+        "content_bound_excludes": "Chat-template, BOS and generation-prompt overhead; not a token bound.",
+        "input_tokens_requirement": "I_t = maximum actual rendered input tokens across the independently specified population and all required conditions, including template/special-token/generation-prompt overhead.",
+        "context_capacity_requirement": "effective native capacity >= I_t + evaluation_output_tokens",
+        "reference_preflight": "raw_reference_tokens + terminal_allowance_tokens <= evaluation_output_tokens",
+        "terminal_allowance_tokens": 1,
+        "controls": {
+          "clipping": false,
+          "completions": 1,
+          "context_shifting": false,
+          "decoding": "greedy",
+          "frequency_penalty": 0,
+          "max_generation": 2048,
+          "presence_penalty": 0,
+          "repetition_penalty": 1,
+          "retries": 0,
+          "seed": 0,
+          "temperature": 0,
+          "text_stops": [],
+          "top_k": "disabled",
+          "top_p": 1,
+          "truncation": false
+        },
+        "fairness": [
+          "identical_K_bytes_and_hash",
+          "same_within_model_task_capacity_and_controls",
+          "all_condition_preoutcome_common_admission",
+          "no_padding_A",
+          "no_budget_transfer_BC",
+          "no_candidate_capacity_population_filtering",
+          "M_C_information_matching_certified"
+        ],
+        "blockers": [
+          "EVAL_POPULATION",
+          "EVAL_TOKEN_BOUND"
+        ]
+      },
+      "adaptation_sequence_tokens": null,
+      "training_sequence": {
+        "status": "DESIGN_FROZEN_TOKEN_ACCOUNTING_PENDING",
+        "capacity_requirement": "Support every complete eligible stage example; at least maximum full-example tokenized length across full H1/H2/H3 datasets under pinned training renderer.",
+        "common_content_bound": "Frozen Workload section 2: inherited historical P/K byte ceilings, complete canonical targets within draft3 source_raw eligibility and exact header/framing bound; actual token lengths remain profile evidence.",
+        "truncation_policy": "PROHIBITED_FOR_INPUTS_AND_LABELS",
+        "overlength_policy": "Dataset/envelope blocker or insufficient candidate/runtime; no candidate-specific exclusion, shortening or subsampling.",
+        "splitting_chunking_packing": "Prohibited by frozen Workload/Recipe v1; any future change requires explicit candidate-independent version review, never a capacity fallback.",
+        "prerequisite": "Frozen Workload section 2 defines the format/content policy; actual complete-example dataset and authenticated token/mask receipts remain pending before comparison."
+      },
+      "history_envelope_H1_H2_H3": {
+        "status": "DESIGN_FROZEN_MANIFEST_COUNTS_PENDING",
+        "stages": {
+          "H1": {
+            "example_count": null,
+            "bytes": null,
+            "token_total": null
+          },
+          "H2": {
+            "example_count": null,
+            "bytes": null,
+            "token_total": null
+          },
+          "H3": {
+            "example_count": null,
+            "bytes": null,
+            "token_total": null
+          }
+        },
+        "invariant": "Full eligible authorized accumulated history at each predeclared authenticated cutoff; accumulated stage prefixes with explicit revision/withdrawal lineage.",
+        "chronology": "Authorized source, construction, certification and availability precede cutoff and current-target release; frozen Workload sections 2-3 define the label and milestone rules.",
+        "capacity": "Process entire stage datasets over resumable sessions; corpus need not fit a single sequence.",
+        "H_prompt_budget_is_training_corpus_cap": false,
+        "candidate_specific_subsampling_allowed": false,
+        "prerequisites": [
+          "source_and_label_contract",
+          "stage_cutoffs",
+          "revision_dedup_transformation_policy",
+          "immutable_full_stage_manifests",
+          "coverage_checks"
+        ]
+      },
+      "adaptation_comparison_recipe": {
+        "status": "DESIGN_FROZEN_MODULE_MAPPING_RUNTIME_PENDING",
+        "lifecycle": [
+          "authenticate_ORIGINAL_base",
+          "fresh_native_PEFT_adapter",
+          "train_full_eligible_stage_history",
+          "save",
+          "destroy_worker",
+          "reload_ORIGINAL_plus_saved_adapter",
+          "native_evaluation",
+          "repeat_from_ORIGINAL_for_next_stage"
+        ],
+        "new_stage_fresh_optimizer_scheduler_RNG": true,
+        "adapter_on_adapter_allowed": false,
+        "merged_parent_allowed": false,
+        "within_stage_resume": "Only authenticated same-stage checkpoint with matching base/config/history and complete optimizer/scheduler/RNG/sampler/step state under compatible frozen runtime; otherwise restart from ORIGINAL.",
+        "design_documents": ["DEVELOPMENT_SUBJECT_WORKLOAD_V1.md", "DEVELOPMENT_SUBJECT_RECIPE_JUSTIFICATION_V1.md"],
+        "unresolved": ["TRAINING_RECIPE_MODULE_MAPPING", "TRAINING_RECIPE_RUNTIME", "TRAINING_DATA_SPEC_TOKEN_ACCOUNTING"]
+      },
+      "resource_accounting": {
+        "status": "DIMENSIONS_DEFINED_FULL_WORKLOAD_EVIDENCE_PENDING",
+        "paid_GPU_compute_allowed": false,
+        "particular_Colab_GPU_assumed": false,
+        "dimensions": [
+          "peak_GPU_memory",
+          "peak_host_RAM",
+          "peak_local_disk",
+          "peak_and_retained_persistent_storage",
+          "full_history_wall_clock_training_time",
+          "inference_evaluation_time",
+          "scorer_test_time_where_relevant",
+          "checkpoint_save_upload_verify_time",
+          "original_and_adapter_reload_time",
+          "merge_export_conversion_time_if_required",
+          "restart_lost_work_reacquisition_verification_resume_or_stage_restart_cost"
+        ],
+        "comparison": "Selection v1 exact priority and dominance rules on matched workloads/bounds; no weighted score.",
+        "native_and_deployment_costs_separate": true,
+        "partial_work_counts_as_full_stage_time": false,
+        "rule": "Observe hardware, reject insufficient runtime, work locally and verify durable Drive checkpoints; no requirement weakening."
+      },
+      "local_deployment": {
+        "status": "MACHINE_CLASS_DEFINED_EVIDENCE_PENDING",
+        "OS": "Windows",
+        "system_RAM_GB_as_supplied": 24,
+        "GPU": "RTX 2050",
+        "VRAM_GB_as_supplied": 4,
+        "usable_RAM_bytes": null,
+        "usable_VRAM_bytes": null,
+        "usable_disk_bytes": null,
+        "quantization_level": null,
+        "latency_requirement": null,
+        "latency_policy": "Frozen Workload section 5: reported comparison dimension only; no numerical hard threshold. Operational completion/resource-integrity remains required.",
+        "CPU_and_offload_permitted": true,
+        "prototype_workload": "Provisionally inherit evaluation message/output envelope; added product workload requires prior specification.",
+        "required": "Document same-original GGUF/llama.cpp architecture/template route and OS/runtime/cache/offload/conversion/storage peaks.",
+        "authoritative_Study_evaluation": false,
+        "blockers": [
+          "LOCAL_DISK",
+          "LOCAL_RESOURCE_EVIDENCE",
+          "LOCAL_USABILITY"
+        ]
+      },
+      "intended_prototype_license_use": {
+        "status": "PRIVATE_USE_DESIGN_FROZEN_LICENSE_AUDIT_PENDING",
+        "activities": [
+          "research",
+          "obtain_and_store_original",
+          "parameter_efficient_fine_tuning",
+          "store_reload_adapters_checkpoints_privately_including_Drive",
+          "local_inference",
+          "native_evaluation",
+          "merge_export_where_required",
+          "quantization_conversion",
+          "private_internal_prototype_integration"
+        ],
+        "public_redistribution_required": false,
+        "public_hosted_service_or_sale_assumed": false,
+        "required": "Source-based checkpoint/stack terms must permit or not prohibit required activities; document and resolve conditions, not legal conclusions.",
+        "scope_expansion_requires_review": true
+      },
+      "runtime_reproducibility": {
+        "status": "PINNING_REQUIREMENTS_DEFINED_PINS_NOT_ESTABLISHED",
+        "pin": [
+          "exact_original_revision_and_file_hashes",
+          "tokenizer_files_encoding_options",
+          "chat_template_and_renderer",
+          "system_generation_prompt",
+          "native_package_versions_builds",
+          "hardware_determinism_limits",
+          "QLoRA_quantizer_settings_compute_dtype_if_used",
+          "adapter_targets_rank_initialization",
+          "optimizer_scheduler_loss_batch_coverage",
+          "training_seed_repeat_policy",
+          "generation_controls",
+          "context_output_training_capacity",
+          "dataset_history_cutoff_manifests",
+          "scorer_test_protocol_config_hashes"
+        ],
+        "legacy_llama_cpp_transport_is_native_authority": false
+      },
+      "native_authority": "Pinned ORIGINAL base + native PEFT adapter where applicable + frozen native Hugging Face/PEFT runtime/tokenizer/template/controls.",
+      "deployment": "Separate merge/export -> quantization -> GGUF -> llama.cpp fidelity track; no numerical equivalence assumed and no rewrite of native results.",
+      "failure_rule": "BLOCKED_NO_ELIGIBLE_SUBJECT / requirements review if no candidate satisfies the frozen envelope on free compute; no silent weakening.",
+      "numeric_provenance": {
+        "P": {
+          "value": 4096,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/budgets/P",
+          "derivation": "Exact copy; inventory is inside K.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "K": {
+          "value": 12288,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/budgets/K",
+          "derivation": "Exact copy; inventory is inside K.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "H": {
+          "value": 4096,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/budgets/H",
+          "derivation": "Exact copy; inventory is inside K.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "inventory": {
+          "value": 2048,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/budgets/inventory",
+          "derivation": "Exact copy; inventory is inside K.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "generation": {
+          "value": 2048,
+          "unit": "tokens",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/budgets/generation",
+          "derivation": "Exact copy; inventory is inside K.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "BC_owned_portion": {
+          "value": 2048,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/H/BC_owned",
+          "derivation": "Exact owned portions inside total H.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "terminal_allowance": {
+          "value": 1,
+          "unit": "tokens",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/output/terminal_allowance",
+          "derivation": "Exact reference allowance within generation reserve.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "public_wrapper": {
+          "value": 30,
+          "unit": "UTF8_bytes",
+          "source_artifact": "harness/context_policy/protocol.py",
+          "source_locator": "messages",
+          "derivation": "len([PUBLIC_TASK] + LF) + len(LF + [/PUBLIC_TASK] + LF), exact UTF-8 literals.",
+          "classification": "DETERMINISTIC_DERIVATION"
+        },
+        "system_content": {
+          "value": 553,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/system",
+          "derivation": "len(system.encode(UTF-8)), excluding template.",
+          "classification": "DETERMINISTIC_DERIVATION"
+        },
+        "maximum_user_content": {
+          "value": 20510,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/budgets/{P,K,H}; harness/context_policy/protocol.py:messages",
+          "derivation": "4096 + 12288 + 4096 + 30; framing already included in K/H.",
+          "classification": "DETERMINISTIC_DERIVATION"
+        },
+        "maximum_message_content": {
+          "value": 21063,
+          "unit": "UTF8_bytes",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/system; /budgets/{P,K,H}; harness/context_policy/protocol.py:messages",
+          "derivation": "20510 + 553, excluding chat-template overhead.",
+          "classification": "DETERMINISTIC_DERIVATION"
+        },
+        "control_completions": {
+          "value": 1,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/completions",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_frequency_penalty": {
+          "value": 0,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/frequency_penalty",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_max_generation": {
+          "value": 2048,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/max_generation",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_presence_penalty": {
+          "value": 0,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/presence_penalty",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_repetition_penalty": {
+          "value": 1,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/repetition_penalty",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_retries": {
+          "value": 0,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/retries",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_seed": {
+          "value": 0,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/seed",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_temperature": {
+          "value": 0,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/temperature",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "control_top_p": {
+          "value": 1,
+          "unit": "control_value",
+          "source_artifact": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+          "source_locator": "/profile_schema/controls/top_p",
+          "derivation": "Exact evaluation control; seed does not declare training seed policy.",
+          "classification": "INHERITED_EXACTLY"
+        },
+        "system_RAM": {
+          "value": 24,
+          "unit": "GB_as_supplied",
+          "source_artifact": "C:/Users/admin/.codex/attachments/d7f476f8-01cf-47f6-bb1c-b01a66b0a0e7/Pasted text.txt",
+          "source_locator": "section 6 Local deployment envelope",
+          "derivation": "User machine class; not free/usable memory and no unit conversion.",
+          "classification": "USER_SUPPLIED"
+        },
+        "GPU_VRAM": {
+          "value": 4,
+          "unit": "GB_as_supplied",
+          "source_artifact": "C:/Users/admin/.codex/attachments/d7f476f8-01cf-47f6-bb1c-b01a66b0a0e7/Pasted text.txt",
+          "source_locator": "section 6 Local deployment envelope",
+          "derivation": "User machine class; not free/usable VRAM and no unit conversion.",
+          "classification": "USER_SUPPLIED"
+        }
+      },
+      "remaining_blockers": [
+        "PRE_DISCOVERY_AUDIT_ENVELOPE",
+        "EVAL_POPULATION",
+        "EVAL_TOKEN_BOUND",
+        "TRAINING_DATA_SPEC",
+        "HISTORY_DATASET",
+        "TRAINING_RECIPE",
+        "RESOURCE_EVIDENCE",
+        "LOCAL_DISK",
+        "LOCAL_RESOURCE_EVIDENCE",
+        "LOCAL_USABILITY",
+        "LICENSE_AUDIT",
+        "FIDELITY_SPEC",
+        "COMPLETION_IMPLEMENTATION"
+      ],
+      "rule": "Review and freeze justified requirements independently of candidate preference before landscape comparison. Blocked numbers are not invented; no execution or audit authorized."
+    },
+    "gate_statuses": ["PASS", "FAIL", "PENDING_EVIDENCE", "PENDING_RUNTIME"],
+    "all_gates_apply": true,
+    "ranking_requires_all_gates_pass": true,
+    "failure_eliminates_candidate": true,
+    "pending_blocks_selection": true,
+    "hard_gates": [
+      {"id": "G01", "requirement": "openly_obtainable_weights"},
+      {"id": "G02", "requirement": "license_suitable_for_research_and_intended_prototype"},
+      {"id": "G03", "requirement": "no_proprietary_or_commercial_AI_API_dependency"},
+      {"id": "G04", "requirement": "realistic_free_Colab_LoRA_or_QLoRA"},
+      {"id": "G05", "requirement": "reproducible_open_training_stack"},
+      {"id": "G06", "requirement": "pinnable_tokenizer_and_chat_template"},
+      {"id": "G07", "requirement": "pinnable_exact_checkpoint_and_revision"},
+      {"id": "G08", "requirement": "required_experimental_context_and_output_budget"},
+      {"id": "G09", "requirement": "practical_fresh_original_base_rebuilds"},
+      {"id": "G10", "requirement": "practical_Windows_24GB_RAM_RTX2050_4GB_VRAM_deployment"},
+      {"id": "G11", "requirement": "quantized_local_serving_without_equivalence_claim"}
+    ],
+    "tiebreak_order": [
+      "lower_free_compute_burden",
+      "simpler_more_reproducible_adaptation_stack",
+      "lower_local_serving_burden",
+      "stronger_independent_coding_capability_evidence",
+      "newer_model_or_checkpoint"
+    ],
+    "comparison_rules": {
+      "outcomes": ["BETTER", "EQUAL", "WORSE", "INCOMPARABLE"],
+      "advance_only_on_established_equality": true,
+      "incomparability_blocks_final_comparison": true,
+      "resource_dimensions": ["peak_VRAM", "peak_host_RAM", "disk", "full_stage_compute_time", "original_reload_export_IO", "restart_work"],
+      "resource_dominance": "No worsening in compared dimensions; strict improvement with nonoverlapping bounds or matched evidence for the same frozen workload.",
+      "stack_dominance": "Strict subset of required custom patches, kernels, conversions, manual steps and unpinned dependencies, with the same supported lifecycle.",
+      "arbitrary_benchmark_thresholds": false,
+      "weighted_score": false
+    },
+    "incumbent_advantage": {
+      "applies_only_if_incumbent_eligible": true,
+      "replacement_requires": "Strict dominance improvement at priority 1, 2 or 3; equality at all earlier priorities; no demonstrated regression in other burden dimensions or comparable independent coding evidence.",
+      "unsupported_improvement_not_material": true,
+      "coding_score_or_recency_alone_not_material": true,
+      "pending_incumbent_blocks_final_selection": true
+    },
+    "redundancy": {
+      "identical_original_identity_deduplicated": true,
+      "equivalence_dimensions": ["architecture_base", "documented_training_ancestry", "tokenizer_serialization", "adaptation_runtime_resource_regime"],
+      "equivalence_requires_all_dimensions_evidenced": true,
+      "representative_rule": "Hard gates, exact five priorities, then incumbent advantage; one representative per evidenced equivalent-role group.",
+      "single_subject_even_if_nonredundant": true,
+      "exact_tie_without_eligible_incumbent": "UTF-8 bytewise ascending repository@immutable_revision; administrative resolution after equality through priority 5, never for incomparability."
+    },
+    "authoritative_representation": {
+      "base": "original_pinned_checkpoint",
+      "adapter": "native_PEFT_LoRA_or_QLoRA",
+      "stack": "native_Hugging_Face_PEFT",
+      "frozen_controls": ["base_dtype_and_quantizer", "compute_dtype", "adapter_recipe", "optimizer", "seeds", "runtime_versions", "tokenizer", "chat_template", "generation", "context_output_budget"],
+      "Study_1_2_3_requires_native": true,
+      "deployment_transform": ["native_adapted_model", "merge_export_if_required", "quantization", "GGUF", "llama.cpp_local_serving"],
+      "deployment_equivalence_assumed": false
+    },
+    "deployment_fidelity": {
+      "status": "NOT_AUTHORIZED",
+      "same_fixed_prompts_tasks": true,
+      "dimensions": ["task_test_success", "output_validity", "convention_adherence", "behavioral_regressions"],
+      "token_equality_assumed": false,
+      "acceptance_rules": null,
+      "failure_rewrites_native_results": false
+    },
+    "compute": {
+      "paid_GPU_compute_allowed": false,
+      "free_Colab_availability_type_lifetime_quotas_assumed_stable": false,
+      "required": ["resumable", "checkpointed", "hardware_observing", "reject_insufficient_runtime", "continue_later_without_counting_partial_work"],
+      "weaken_requirements_to_fit_runtime": false
+    },
+    "completion": {
+      "success_path": ["PLANNED", "STARTED", "STAGING", "VALIDATING", "MANIFESTED", "FINALIZING", "COMPLETE"],
+      "non_counting_states": ["INTERRUPTED", "FAILED_VALIDATION", "REJECTED_RUNTIME"],
+      "only_COMPLETE_counts": true,
+      "valid_negative_task_results_count_when_complete": true,
+      "required": ["unique_run_id", "frozen_inputs_and_expected_inventory", "native_identity", "workload_coverage", "validation", "byte_counts_and_SHA256", "persistent_copy_verification", "sealed_manifest", "atomic_finalization_or_verified_completion_receipt"],
+      "Drive_publication": "Immutable versioned blobs verified first; final completion receipt references sealed manifest; consumers verify the entire referenced bundle.",
+      "implementation_status": "SPECIFIED_NOT_IMPLEMENTED"
+    },
+    "storage": {
+      "git_repository": ["source_code", "configs", "protocol", "scorers", "manifests_schemas", "notebooks_launchers"],
+      "persistent_external_initially_Google_Drive": ["adapters", "checkpoints", "large_generated_outputs", "experiment_snapshots", "required_persistent_caches", "sealed_bundles_receipts"],
+      "Colab_local_disk": ["disposable_workspace", "training_inference_cache", "temporary_model_copies", "staging_artifacts", "high_churn_working_files"],
+      "training_IO": "Work locally where possible; package, hash, upload and verify durable checkpoints rather than high-churn writes to many small Drive files."
+    },
+    "training": {
+      "foundation_from_scratch_allowed": false,
+      "methods": ["LoRA", "QLoRA", "other_explicitly_authorized_parameter_efficient_method"],
+      "H1_H2_H3_parent": "ORIGINAL_frozen_base",
+      "history": "full_eligible_accumulated_history_for_each_stage",
+      "new_stage_fresh_adapter_optimizer": true,
+      "adapter_on_adapter_allowed": false,
+      "merged_derivative_parent_allowed": false,
+      "within_stage_resume": "Only authenticated same-stage checkpoint with matching base, history, recipe, optimizer, scheduler, RNG, sampler and step state under compatible frozen runtime; otherwise restart stage from original."
+    },
+    "claims": {
+      "current": "Reviewed/frozen candidate-independent design exists; no candidate selection, runtime infrastructure or feasibility is established.",
+      "not_established": ["successful_adaptation", "accumulated_history_improves_unseen_tasks", "LoRA_improves_over_memory_rules", "GGUF_preserves_behavior", "generalization_to_confirmation_models"]
+    },
+    "next_stage": {
+      "prerequisite": "candidate_independent_design_reviewed_and_frozen_AND_PRE_DISCOVERY_AUDIT_ENVELOPE_PASS_AND_separate_audit_authorization",
+      "stage": "bounded_current_primary_source_candidate_landscape_audit",
+      "predeclare": ["cutoff", "candidate_scope", "source_policy", "stopping_rule"],
+      "runtime_checks_require_separate_authorization": true
+    },
+    "pre_discovery_audit_envelope_gate": {
+      "id": "PRE_DISCOVERY_AUDIT_ENVELOPE",
+      "resolution_stage": "PRE_DISCOVERY",
+      "REVIEW_FREEZE_scope": "Candidate-independent Development Subject design only; audit envelope instantiation is not required for design freeze.",
+      "design_freeze_closes_this_gate": false,
+      "PASS_requirement": "Complete cutoff, candidate scope, permitted source list/source classes and stopping rule explicitly instantiated, independently reviewed/approved and frozen before any candidate identity or candidate-derived evidence collection.",
+      "blocks_until_PASS": ["candidate_model_landscape_search", "candidate_metadata_collection", "candidate_inspection", "formal_candidate_audit", "comparison", "selection"],
+      "retroactive_envelope_definition_allowed": false,
+      "existing_incumbent": "Retain only the unassessed user-designated historical role; no new candidate facts or gate exemption.",
+      "collection_authorized_now": false
+    },
+    "authorization": {
+      "this_task": "User-authorized governance-order repair, adversarial review, README, candidate-independent design freeze, seed receipt and checkpoint commit only",
+      "candidate_information_collection": false,
+      "design_freeze": true,
+      "model_download": false,
+      "inference": false,
+      "training": false,
+      "protected_candidate_inspection": false,
+      "protected_task_evaluation": false,
+      "Study_1_2_3": false,
+      "frozen_protocol_modification": false,
+      "product_repository_modification": false,
+      "winning_model_selection": false,
+      "commit": true
+    }
+  },
+  "design_review": {
+    "package_id": "development-subject-design-v1",
+    "status": "FROZEN_DESIGN",
+    "REVIEW_FREEZE": "CLOSED_DESIGN_ONLY",
+    "review_result": "APPROVED_CANDIDATE_INDEPENDENT_DESIGN_ONLY",
+    "reviewer": "Codex (/root), outcome-blind adversarial review under explicit user authorization",
+    "freeze_manifest": "DEVELOPMENT_SUBJECT_FREEZE_MANIFEST_V1.json",
+    "scientific_design_leaves": {
+      "EVAL_POPULATION_DESIGN": "FROZEN_DESIGN",
+      "TRAINING_DATA_SPEC_DESIGN": "FROZEN_DESIGN",
+      "HISTORY_DATASET_DESIGN": "FROZEN_DESIGN",
+      "TRAINING_RECIPE_DESIGN": "FROZEN_DESIGN",
+      "LOCAL_USABILITY_DESIGN": "FROZEN_DESIGN"
+    },
+    "PRE_DISCOVERY_AUDIT_ENVELOPE": "PENDING_EVIDENCE",
+    "candidate_information_collection_authorized": false,
+    "upstream_dependency": "current-repo-v1-draft3 remains proposed-not-frozen; its identity/budgets are adopted exactly without modification",
+    "later_execution_prerequisites": [
+      "production authentication/trust-root inputs",
+      "native orchestration and official-run conformance",
+      "all applicable static/runtime eligibility and study authorizations"
+    ],
+    "selection_record_review_scope": "Candidate-selection review remains NOT_REVIEWED; design approval does not approve candidate facts or selection"
+  },
+  "selection_record_schema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Development Subject selection v1 record",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["protocol_version", "status", "incumbent", "candidates", "active_development_subject", "evidence_sources", "unresolved_blockers", "review", "pre_discovery_audit_envelope"],
+    "properties": {
+      "protocol_version": {"const": "development-subject-selection-v1"},
+      "status": {"enum": ["NOT_SELECTED", "AUDIT_PENDING", "PENDING_EVIDENCE", "PENDING_RUNTIME", "BLOCKED_NO_ELIGIBLE_SUBJECT", "SELECTED_PENDING_REVIEW", "SELECTION_COMPLETE"]},
+      "incumbent": {"$ref": "#/$defs/identity"},
+      "candidates": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/candidate"}},
+      "active_development_subject": {"anyOf": [{"type": "null"}, {"$ref": "#/$defs/identity"}]},
+      "evidence_sources": {"type": "array", "items": {"$ref": "#/$defs/source"}},
+      "unresolved_blockers": {"type": "array", "items": {"type": "string"}},
+      "review": {"$ref": "#/$defs/review"},
+      "pre_discovery_audit_envelope": {"$ref": "#/$defs/audit_envelope_gate"}
+    },
+    "allOf": [
+      {
+        "if": {"properties": {"pre_discovery_audit_envelope": {"properties": {"status": {"not": {"const": "PASS"}}}}}},
+        "then": {
+          "properties": {
+            "status": {"const": "NOT_SELECTED"},
+            "incumbent": {"$ref": "#/$defs/pre_discovery_incumbent_identity"},
+            "active_development_subject": {"type": "null"},
+            "evidence_sources": {"items": {"properties": {"type": {"enum": ["USER_REQUEST", "REPOSITORY_GOVERNANCE"]}}}},
+            "candidates": {
+              "maxItems": 1,
+              "items": {"properties": {
+                "identity": {"$ref": "#/$defs/pre_discovery_incumbent_identity"},
+                "is_incumbent": {"const": true},
+                "license": {"properties": {"identifier": {"type": "null"}, "text_revision_or_hash": {"type": "null"}, "conditions": {"type": "null"}, "assessment": {"$ref": "#/$defs/pre_discovery_assessment"}}},
+                "parameter_count": {"properties": {"total": {"type": "null"}, "active": {"type": "null"}, "evidence_ids": {"maxItems": 0}}},
+                "architecture": {"properties": {"description": {"type": "null"}, "evidence_ids": {"maxItems": 0}}},
+                "native_weight_storage_estimate": {"properties": {"bytes": {"type": "null"}, "dtype": {"type": "null"}, "assumptions": {"type": "null"}, "evidence_ids": {"maxItems": 0}}},
+                "Colab_feasibility": {"$ref": "#/$defs/pre_discovery_assessment"},
+                "adaptation_stack": {"$ref": "#/$defs/pre_discovery_assessment"},
+                "tokenizer_template_pinning": {"properties": {"tokenizer_revision": {"type": "null"}, "tokenizer_sha256": {"type": "null"}, "template_sha256": {"type": "null"}, "rendering_runtime": {"type": "null"}, "assessment": {"$ref": "#/$defs/pre_discovery_assessment"}}},
+                "local_deployment": {"$ref": "#/$defs/pre_discovery_assessment"},
+                "hard_gate_results": {"additionalProperties": {"$ref": "#/$defs/pre_discovery_assessment"}},
+                "redundancy_disposition": {"properties": {"status": {"const": "UNASSESSED"}, "group_id": {"type": "null"}, "representative_candidate_id": {"type": "null"}, "evidence_ids": {"maxItems": 0}}},
+                "tiebreak_evidence": {"maxItems": 0},
+                "materially_beats_incumbent": {"type": "null"},
+                "final_disposition": {"const": "UNASSESSED"}
+              }}
+            }
+          }
+        }
+      },
+      {
+        "if": {"properties": {"status": {"const": "SELECTION_COMPLETE"}}},
+        "then": {
+          "properties": {
+            "active_development_subject": {"allOf": [{"$ref": "#/$defs/identity"}, {"properties": {"revision": {"type": "string", "minLength": 1}}}]},
+            "candidates": {"contains": {"properties": {"final_disposition": {"const": "SELECTED"}}, "required": ["final_disposition"]}, "minContains": 1, "maxContains": 1},
+            "review": {"properties": {"status": {"const": "APPROVED"}, "outcome_blind_declaration": {"const": true}, "reviewer": {"type": "string", "minLength": 1}, "reviewed_at": {"type": "string", "format": "date-time"}, "frozen_protocol_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "frozen_record_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}
+          }
+        }
+      }
+    ],
+    "$defs": {
+      "pre_discovery_incumbent_identity": {"const": {"repository": "Qwen/Qwen2.5-Coder-7B-Instruct", "revision": null}},
+      "pre_discovery_assessment": {"properties": {"status": {"const": "PENDING_EVIDENCE"}, "evidence_ids": {"maxItems": 0}}},
+      "audit_envelope_gate": {
+        "type": "object", "additionalProperties": false,
+        "required": ["status", "envelope", "review_status", "reviewer", "reviewed_at", "outcome_blind_declaration", "frozen_at", "frozen_envelope_sha256", "hash_scope", "reason"],
+        "properties": {
+          "status": {"enum": ["PENDING_EVIDENCE", "PASS"]},
+          "envelope": {"anyOf": [{"type": "null"}, {
+            "type": "object", "additionalProperties": false,
+            "required": ["cutoff", "candidate_scope", "source_policy", "stopping_rule"],
+            "properties": {
+              "cutoff": {"type": "string", "format": "date-time"},
+              "candidate_scope": {"type": "string", "minLength": 1},
+              "source_policy": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+              "stopping_rule": {"type": "string", "minLength": 1}
+            }
+          }]},
+          "review_status": {"enum": ["NOT_REVIEWED", "CHANGES_REQUESTED", "APPROVED"]},
+          "reviewer": {"type": ["string", "null"]},
+          "reviewed_at": {"type": ["string", "null"], "format": "date-time"},
+          "outcome_blind_declaration": {"type": ["boolean", "null"]},
+          "frozen_at": {"type": ["string", "null"], "format": "date-time"},
+          "frozen_envelope_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "hash_scope": {"const": "SHA256 of UTF-8 sorted-key compact JSON envelope, ensure_ascii=true, no trailing newline"},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "allOf": [{
+          "if": {"properties": {"status": {"const": "PASS"}}},
+          "then": {"properties": {
+            "envelope": {"type": "object"},
+            "review_status": {"const": "APPROVED"},
+            "reviewer": {"type": "string", "minLength": 1},
+            "reviewed_at": {"type": "string"},
+            "outcome_blind_declaration": {"const": true},
+            "frozen_at": {"type": "string"},
+            "frozen_envelope_sha256": {"type": "string"}
+          }}
+        }]
+      },
+      "nullable_text": {"type": ["string", "null"]},
+      "nullable_nonnegative_number": {"type": ["number", "null"], "minimum": 0},
+      "evidence_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+      "identity": {
+        "type": "object", "additionalProperties": false,
+        "required": ["repository", "revision"],
+        "properties": {"repository": {"type": "string", "minLength": 1}, "revision": {"$ref": "#/$defs/nullable_text"}}
+      },
+      "assessment": {
+        "type": "object", "additionalProperties": false,
+        "required": ["status", "evidence_ids", "reason"],
+        "properties": {
+          "status": {"enum": ["PASS", "FAIL", "PENDING_EVIDENCE", "PENDING_RUNTIME"]},
+          "evidence_ids": {"$ref": "#/$defs/evidence_ids"},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "allOf": [{"if": {"properties": {"status": {"enum": ["PASS", "FAIL"]}}}, "then": {"properties": {"evidence_ids": {"minItems": 1}}}}]
+      },
+      "source": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "type", "location", "revision_or_version", "retrieved_date", "locator", "supports", "limitations", "snapshot_sha256"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "type": {"enum": ["USER_REQUEST", "REPOSITORY_GOVERNANCE", "PRIMARY_MODEL_SOURCE", "PRIMARY_STACK_SOURCE", "INDEPENDENT_CODING_EVALUATION", "VENDOR_REPORTED_CODING_EVIDENCE", "AUTHORIZED_RUNTIME_RECEIPT"]},
+          "location": {"type": "string", "minLength": 1},
+          "revision_or_version": {"$ref": "#/$defs/nullable_text"},
+          "retrieved_date": {"type": "string", "format": "date"},
+          "locator": {"type": "string"},
+          "supports": {"type": "array", "items": {"type": "string"}},
+          "limitations": {"type": "string"},
+          "snapshot_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}
+        }
+      },
+      "comparison": {
+        "type": "object", "additionalProperties": false,
+        "required": ["against_candidate_id", "criterion", "outcome", "evidence_ids", "reason"],
+        "properties": {
+          "against_candidate_id": {"type": "string"},
+          "criterion": {"enum": ["lower_free_compute_burden", "simpler_more_reproducible_adaptation_stack", "lower_local_serving_burden", "stronger_independent_coding_capability_evidence", "newer_model_or_checkpoint"]},
+          "outcome": {"enum": ["BETTER", "EQUAL", "WORSE", "INCOMPARABLE"]},
+          "evidence_ids": {"$ref": "#/$defs/evidence_ids"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      },
+      "candidate": {
+        "type": "object", "additionalProperties": false,
+        "required": ["candidate_id", "identity", "is_incumbent", "identity_evidence_ids", "license", "parameter_count", "architecture", "native_weight_storage_estimate", "Colab_feasibility", "adaptation_stack", "tokenizer_template_pinning", "local_deployment", "hard_gate_results", "redundancy_disposition", "tiebreak_evidence", "materially_beats_incumbent", "final_disposition", "disposition_reason", "unresolved_blockers"],
+        "properties": {
+          "candidate_id": {"type": "string", "minLength": 1},
+          "identity": {"$ref": "#/$defs/identity"},
+          "is_incumbent": {"type": "boolean"},
+          "identity_evidence_ids": {"$ref": "#/$defs/evidence_ids"},
+          "license": {
+            "type": "object", "additionalProperties": false,
+            "required": ["identifier", "text_revision_or_hash", "conditions", "assessment"],
+            "properties": {"identifier": {"$ref": "#/$defs/nullable_text"}, "text_revision_or_hash": {"$ref": "#/$defs/nullable_text"}, "conditions": {"$ref": "#/$defs/nullable_text"}, "assessment": {"$ref": "#/$defs/assessment"}}
+          },
+          "parameter_count": {
+            "type": "object", "additionalProperties": false, "required": ["total", "active", "evidence_ids"],
+            "properties": {"total": {"$ref": "#/$defs/nullable_nonnegative_number"}, "active": {"$ref": "#/$defs/nullable_nonnegative_number"}, "evidence_ids": {"$ref": "#/$defs/evidence_ids"}}
+          },
+          "architecture": {
+            "type": "object", "additionalProperties": false, "required": ["description", "evidence_ids"],
+            "properties": {"description": {"$ref": "#/$defs/nullable_text"}, "evidence_ids": {"$ref": "#/$defs/evidence_ids"}}
+          },
+          "native_weight_storage_estimate": {
+            "type": "object", "additionalProperties": false, "required": ["bytes", "dtype", "assumptions", "evidence_ids"],
+            "properties": {"bytes": {"$ref": "#/$defs/nullable_nonnegative_number"}, "dtype": {"$ref": "#/$defs/nullable_text"}, "assumptions": {"$ref": "#/$defs/nullable_text"}, "evidence_ids": {"$ref": "#/$defs/evidence_ids"}}
+          },
+          "Colab_feasibility": {"$ref": "#/$defs/assessment"},
+          "adaptation_stack": {"$ref": "#/$defs/assessment"},
+          "tokenizer_template_pinning": {
+            "type": "object", "additionalProperties": false, "required": ["tokenizer_revision", "tokenizer_sha256", "template_sha256", "rendering_runtime", "assessment"],
+            "properties": {"tokenizer_revision": {"$ref": "#/$defs/nullable_text"}, "tokenizer_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "template_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "rendering_runtime": {"$ref": "#/$defs/nullable_text"}, "assessment": {"$ref": "#/$defs/assessment"}}
+          },
+          "local_deployment": {"$ref": "#/$defs/assessment"},
+          "hard_gate_results": {
+            "type": "object", "additionalProperties": false,
+            "required": ["G01", "G02", "G03", "G04", "G05", "G06", "G07", "G08", "G09", "G10", "G11"],
+            "properties": {
+              "G01": {"$ref": "#/$defs/assessment"}, "G02": {"$ref": "#/$defs/assessment"}, "G03": {"$ref": "#/$defs/assessment"},
+              "G04": {"$ref": "#/$defs/assessment"}, "G05": {"$ref": "#/$defs/assessment"}, "G06": {"$ref": "#/$defs/assessment"},
+              "G07": {"$ref": "#/$defs/assessment"}, "G08": {"$ref": "#/$defs/assessment"}, "G09": {"$ref": "#/$defs/assessment"},
+              "G10": {"$ref": "#/$defs/assessment"}, "G11": {"$ref": "#/$defs/assessment"}
+            }
+          },
+          "redundancy_disposition": {
+            "type": "object", "additionalProperties": false, "required": ["status", "group_id", "representative_candidate_id", "evidence_ids", "reason"],
+            "properties": {"status": {"enum": ["UNASSESSED", "DISTINCT", "REPRESENTATIVE", "REDUNDANT", "IDENTITY_ALIAS"]}, "group_id": {"$ref": "#/$defs/nullable_text"}, "representative_candidate_id": {"$ref": "#/$defs/nullable_text"}, "evidence_ids": {"$ref": "#/$defs/evidence_ids"}, "reason": {"type": "string"}}
+          },
+          "tiebreak_evidence": {"type": "array", "items": {"$ref": "#/$defs/comparison"}},
+          "materially_beats_incumbent": {"type": ["boolean", "null"]},
+          "final_disposition": {"enum": ["UNASSESSED", "PENDING_EVIDENCE", "PENDING_RUNTIME", "ELIMINATED_HARD_GATE", "REDUNDANT_NOT_SELECTED", "ELIGIBLE_NOT_SELECTED", "SELECTED"]},
+          "disposition_reason": {"type": "string"},
+          "unresolved_blockers": {"type": "array", "items": {"type": "string"}}
+        },
+        "allOf": [
+          {
+            "if": {"properties": {"final_disposition": {"enum": ["SELECTED", "ELIGIBLE_NOT_SELECTED"]}}},
+            "then": {
+              "properties": {
+                "identity": {"properties": {"revision": {"type": "string", "minLength": 1}}},
+                "hard_gate_results": {"additionalProperties": {"properties": {"status": {"const": "PASS"}}}}
+              }
+            }
+          }
+        ]
+      },
+      "review": {
+        "type": "object", "additionalProperties": false,
+        "required": ["status", "reviewer", "reviewed_at", "outcome_blind_declaration", "decision_rationale", "frozen_protocol_sha256", "frozen_record_sha256", "record_hash_scope"],
+        "properties": {
+          "status": {"enum": ["NOT_REVIEWED", "CHANGES_REQUESTED", "APPROVED"]},
+          "reviewer": {"$ref": "#/$defs/nullable_text"},
+          "reviewed_at": {"type": ["string", "null"], "format": "date-time"},
+          "outcome_blind_declaration": {"type": ["boolean", "null"]},
+          "decision_rationale": {"$ref": "#/$defs/nullable_text"},
+          "frozen_protocol_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "frozen_record_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+          "record_hash_scope": {"const": "SHA256 of UTF-8 sorted-key compact JSON selection_record with review.frozen_record_sha256 set to null, ensure_ascii=true, no trailing newline"}
+        }
+      }
+    }
+  },
+  "selection_record": {
+    "protocol_version": "development-subject-selection-v1",
+    "status": "NOT_SELECTED",
+    "pre_discovery_audit_envelope": {
+      "status": "PENDING_EVIDENCE",
+      "envelope": null,
+      "review_status": "NOT_REVIEWED",
+      "reviewer": null,
+      "reviewed_at": null,
+      "outcome_blind_declaration": null,
+      "frozen_at": null,
+      "frozen_envelope_sha256": null,
+      "hash_scope": "SHA256 of UTF-8 sorted-key compact JSON envelope, ensure_ascii=true, no trailing newline",
+      "reason": "Mandatory independent pre-discovery approval/freeze remains pending. Design freeze alone authorizes no candidate information collection. No envelope instantiated."
+    },
+    "incumbent": {"repository": "Qwen/Qwen2.5-Coder-7B-Instruct", "revision": null},
+    "candidates": [
+      {
+        "candidate_id": "incumbent-qwen2.5-coder-7b-instruct",
+        "identity": {"repository": "Qwen/Qwen2.5-Coder-7B-Instruct", "revision": null},
+        "is_incumbent": true,
+        "identity_evidence_ids": ["USER_REQUEST"],
+        "license": {"identifier": null, "text_revision_or_hash": null, "conditions": null, "assessment": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Exact checkpoint license and intended prototype use have not been audited."}},
+        "parameter_count": {"total": null, "active": null, "evidence_ids": []},
+        "architecture": {"description": null, "evidence_ids": []},
+        "native_weight_storage_estimate": {"bytes": null, "dtype": null, "assumptions": null, "evidence_ids": []},
+        "Colab_feasibility": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "No current source audit or runtime check; use PENDING_RUNTIME if static evidence cannot establish the frozen workload."},
+        "adaptation_stack": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Exact open stack and native recipe remain unaudited."},
+        "tokenizer_template_pinning": {"tokenizer_revision": null, "tokenizer_sha256": null, "template_sha256": null, "rendering_runtime": null, "assessment": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "No future tokenizer/template pins established."}},
+        "local_deployment": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Windows 24 GB RAM / RTX 2050 4 GB VRAM route and disk needs not audited."},
+        "hard_gate_results": {
+          "G01": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Original weight access terms not audited."},
+          "G02": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "License suitability not audited."},
+          "G03": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "End-to-end open stack not audited."},
+          "G04": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Full free-Colab workload and recovery feasibility unresolved."},
+          "G05": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Training/save/reload stack not pinned or audited."},
+          "G06": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Tokenizer/template identity not pinned."},
+          "G07": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Exact original checkpoint revision not pinned."},
+          "G08": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Frozen byte/full-example design exists; profile token proof and effective native capacity remain unverified."},
+          "G09": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Practical original-base stage rebuilds not established."},
+          "G10": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Machine class/usability design is frozen; candidate-specific resource/route evidence remains unverified."},
+          "G11": {"status": "PENDING_EVIDENCE", "evidence_ids": [], "reason": "Same-original GGUF/llama.cpp route not audited; fidelity is separate."}
+        },
+        "redundancy_disposition": {"status": "UNASSESSED", "group_id": null, "representative_candidate_id": null, "evidence_ids": [], "reason": "No challenger landscape or equivalence assessment performed."},
+        "tiebreak_evidence": [],
+        "materially_beats_incumbent": null,
+        "final_disposition": "UNASSESSED",
+        "disposition_reason": "Incumbent identity only; historical use gives no current gate exemption or final selection.",
+        "unresolved_blockers": ["Immutable checkpoint and tokenizer/template pins", "License/architecture/parameter/storage source audit", "Full-workload Colab and stack feasibility", "Local deployment envelope"]
+      }
+    ],
+    "active_development_subject": null,
+    "evidence_sources": [
+      {
+        "id": "USER_REQUEST",
+        "type": "USER_REQUEST",
+        "location": "C:/Users/admin/.codex/attachments/4d9a9240-69d5-464f-b007-ed16d63066c2/Pasted text.txt",
+        "revision_or_version": null,
+        "retrieved_date": "2026-10-04",
+        "locator": "BACKGROUND and sections A-N",
+        "supports": ["Incumbent identity and historical role", "Separate confirmation track", "Required selection/governance constraints"],
+        "limitations": "User-supplied role designation, not independent checkpoint metadata, gate evidence or experimental evidence.",
+        "snapshot_sha256": null
+      }
+    ],
+    "unresolved_blockers": [
+      "Candidate-selection evidence review/acceptance remains pending; design REVIEW_FREEZE is CLOSED",
+      "PRE_DISCOVERY_AUDIT_ENVELOPE: complete independent approval/freeze before any candidate information collection",
+      "Design frozen; actual population/history manifests, profile token/mask proof, module mapping and applicable runtime evidence remain pending under Stage Gates",
+      "Bounded current primary-source candidate landscape audit",
+      "Separately authorized runtime verification wherever static evidence is insufficient",
+      "Local disk and deployment envelope",
+      "Later fidelity acceptance criteria and separate authorization",
+      "Future atomic completion/recovery implementation and verification"
+    ],
+    "review": {
+      "status": "NOT_REVIEWED",
+      "reviewer": null,
+      "reviewed_at": null,
+      "outcome_blind_declaration": null,
+      "decision_rationale": null,
+      "frozen_protocol_sha256": null,
+      "frozen_record_sha256": null,
+      "record_hash_scope": "SHA256 of UTF-8 sorted-key compact JSON selection_record with review.frozen_record_sha256 set to null, ensure_ascii=true, no trailing newline"
+    }
+  }
+}

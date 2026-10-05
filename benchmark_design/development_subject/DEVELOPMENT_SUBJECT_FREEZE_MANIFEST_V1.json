@@ -1,0 +1,291 @@
+{
+  "manifest_id": "development-subject-freeze-manifest-v1",
+  "package_id": "development-subject-design-v1",
+  "version": "v1",
+  "status": "FROZEN_CANDIDATE_INDEPENDENT_DESIGN",
+  "frozen_at": "2026-10-05T14:43:19Z",
+  "timestamp_timezone": "UTC",
+  "scope": "Six candidate-independent design artifacts only. No subject selection, dataset instantiation, runtime certification, study authorization, deployment certification or adaptation-efficacy claim.",
+  "serialization": "UTF-8 without BOM, LF. SHA-256 covers exact raw artifact bytes, not text-normalized checkout contents.",
+  "review": {
+    "verdict": "PASS_DESIGN_SCOPE",
+    "reviewer": "Codex (/root), outcome-blind adversarial review under explicit user authorization",
+    "severity_counts": {
+      "BLOCKER": 0,
+      "MAJOR": 0,
+      "MINOR": 0,
+      "NOTE": 2
+    },
+    "notes": [
+      "All later evidence/execution obligations remain pending; a frozen design is not an empirical result.",
+      "Schema structure/hash commitments do not prove evidence adequacy, truthful timestamps or production authentication; applicable independent semantic review/signing remains required."
+    ],
+    "minimum_audit_checks": [
+      "candidate-shopping leakage",
+      "future-task leakage",
+      "history/evaluation contamination",
+      "memory/rule/weight condition contamination",
+      "H0/H1/H2/H3 chronology and independence",
+      "adapter-on-adapter prevention",
+      "training-label leakage",
+      "accepted/rejected/edited episode semantics",
+      "PERSONAL vs REPOSITORY/TEAM isolation",
+      "evaluation-population independence",
+      "context-policy compatibility",
+      "P/K/H budget consistency",
+      "native evaluation authority",
+      "QLoRA recipe completeness",
+      "final underfull batch semantics",
+      "loss normalization",
+      "seed derivation/self-reference",
+      "runtime-vs-scientific decision separation",
+      "local deployment vs authoritative evaluation separation",
+      "resource-accounting obligations",
+      "claims stronger than evidence",
+      "unresolved prerequisite accidentally marked complete",
+      "JSON/schema semantic consistency",
+      "contradictions across six artifacts",
+      "later candidate knowledge silently altering workload"
+    ],
+    "validation": [
+      "Scientific policies, hard gates/tiebreaks and exact seed algorithm preserved.",
+      "Fourteen pre-discovery bypass mutations rejected by schema.",
+      "README positioning/status/paths verified; its guarded model-free command passed 134 tests under CPython 3.11.9.",
+      "No candidate-audit envelope is required for design freeze; complete independent envelope PASS remains mandatory before every candidate information collection."
+    ]
+  },
+  "REVIEW_FREEZE": {
+    "status": "CLOSED_DESIGN_ONLY",
+    "scientific_design_leaves": {
+      "EVAL_POPULATION_DESIGN": "FROZEN_DESIGN",
+      "TRAINING_DATA_SPEC_DESIGN": "FROZEN_DESIGN",
+      "HISTORY_DATASET_DESIGN": "FROZEN_DESIGN",
+      "TRAINING_RECIPE_DESIGN": "FROZEN_DESIGN",
+      "LOCAL_USABILITY_DESIGN": "FROZEN_DESIGN"
+    }
+  },
+  "PRE_DISCOVERY_AUDIT_ENVELOPE": {
+    "status": "PENDING_EVIDENCE",
+    "envelope": null,
+    "collection_authorized": false,
+    "design_freeze_does_not_close_gate": true
+  },
+  "frozen_artifacts": [
+    {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_SELECTION_V1.md",
+      "version": "v1",
+      "byte_size": 25903,
+      "line_count": 374,
+      "sha256": "78f0b4611edde65afbce2ee34662a4fdb48344db6beb2bdb676f807a94cdcbaf"
+    },
+    {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_COMMON_REQUIREMENTS_V1.md",
+      "version": "v1",
+      "byte_size": 27240,
+      "line_count": 369,
+      "sha256": "d8942271f6dead5c63ae81457b3d23fb3bf9d1e82062555bc57c8452db99592d"
+    },
+    {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_STAGE_GATES_V1.md",
+      "version": "v1",
+      "byte_size": 31243,
+      "line_count": 304,
+      "sha256": "eaf0474043aeaaff8b3dca75e71cbecbf84a78b3b74e3ae68628c19821af6a33"
+    },
+    {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_WORKLOAD_V1.md",
+      "version": "v1",
+      "byte_size": 51356,
+      "line_count": 562,
+      "sha256": "28b9cca7006a0c13c5f7ee197dea028f3d534ac991826ba7e8b3ae722ccd1aeb"
+    },
+    {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_RECIPE_JUSTIFICATION_V1.md",
+      "version": "v1",
+      "byte_size": 31623,
+      "line_count": 297,
+      "sha256": "c6d431abcfb9dc08aee6563bb14e40cad2f6be0465799001cb5e7bfef727a834"
+    },
+    {
+      "path": "benchmark_design/development_subject/development_subject_selection_v1.json",
+      "version": "v1",
+      "byte_size": 53791,
+      "line_count": 899,
+      "sha256": "19d0e1e589219b8fbf94160cda98758d6f9c5e21baa479beac881d81e61450d0"
+    }
+  ],
+  "seed_receipt": {
+    "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_SEED_RECEIPT_V1.json",
+    "version": "v1",
+    "byte_size": 2771,
+    "line_count": 77,
+    "sha256": "35240acd82634f49ee1dc4ab7085c30b610d7c4b8fcfde04834e35955813734f"
+  },
+  "candidate_record": {
+    "status": "NOT_SELECTED",
+    "active_development_subject": null,
+    "candidate_gate_statuses": {
+      "G01": "PENDING_EVIDENCE",
+      "G02": "PENDING_EVIDENCE",
+      "G03": "PENDING_EVIDENCE",
+      "G04": "PENDING_EVIDENCE",
+      "G05": "PENDING_EVIDENCE",
+      "G06": "PENDING_EVIDENCE",
+      "G07": "PENDING_EVIDENCE",
+      "G08": "PENDING_EVIDENCE",
+      "G09": "PENDING_EVIDENCE",
+      "G10": "PENDING_EVIDENCE",
+      "G11": "PENDING_EVIDENCE"
+    },
+    "selection_review": "NOT_REVIEWED"
+  },
+  "unresolved_later_gates": [
+    {
+      "id": "PRE_DISCOVERY_AUDIT_ENVELOPE",
+      "stage": "PRE_DISCOVERY",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Explicit complete cutoff, candidate scope, permitted source list/source classes and stopping rule, independently reviewed/approved and frozen under separate authorization before any candidate/model-landscape search, metadata collection, inspection, formal audit, comparison or selection. No candidate identity/evidence collection before PASS; no retroactive envelope."
+    },
+    {
+      "id": "EVAL_POPULATION_MANIFEST",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Authorized immutable population/envelope manifests and coverage receipts, with candidate-independent construction and no private content given to discovery workers. Conservative proof must cover the fixed workload, not a smaller candidate-filtered subset."
+    },
+    {
+      "id": "EVAL_TOKEN_BOUND_STATIC",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Exact primary-source pins and justified tokenizer/rendering capacity analysis for the fixed evaluation envelope; explicitly adequate proof or a precise runtime-certification dependency. A dependency records audit progress but does not pass G08."
+    },
+    {
+      "id": "HISTORY_DATASET_MANIFESTS",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Authorized immutable full eligible stage manifests with cutoffs, lineage, content/count/coverage receipts and source/label certification. Counts are construction facts, not guessed requirements. Token totals remain profile-dependent."
+    },
+    {
+      "id": "TRAINING_RECIPE_MODULE_MAPPING",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Source-backed exact target-rule-to-module mapping, supported native PEFT/quantizer/optimizer stack, base/tokenizer pins and faithful instantiation of common workload. Differences or unsupported coverage are explicit blockers, not lighter treatments."
+    },
+    {
+      "id": "RESOURCE_EVIDENCE_STATIC",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Source-backed complete-workload accounting for GPU/host/disk, full training/evaluation, save/reload/export when required and interruption/rebuild cost. Record whether documentation establishes each gate or requires runtime proof; a deferred proof leaves the gate pending."
+    },
+    {
+      "id": "LOCAL_DISK",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Authorized observed usable disk/storage baseline, conversion location and source-backed required peak/retained footprint comparison. No candidate-specific budget reduction. Capture time/limitations and later recheck before use."
+    },
+    {
+      "id": "LOCAL_RESOURCE_EVIDENCE_STATIC",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Documented same-original GGUF/llama.cpp path and complete RAM/VRAM/cache/OS/offload/conversion/storage accounting for the fixed prototype workload, with a clear sufficiency finding or runtime dependency. Conversion support is not fidelity."
+    },
+    {
+      "id": "LICENSE_AUDIT",
+      "stage": "STATIC_CANDIDATE_AUDIT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Pinned primary license text and evidence for every declared private research/prototype activity, resolved conditions and reviewer assessment. Public redistribution is not required by current scope. No unsupported legal conclusion."
+    },
+    {
+      "id": "EVAL_TOKEN_BOUND_RUNTIME",
+      "stage": "RUNTIME_CERTIFICATION",
+      "status": "PENDING_TRIGGER_ASSESSMENT",
+      "conditional": true,
+      "closure_requires": "Authorized authenticated no-generation rendering/tokenization and capacity receipts covering the fixed population/envelope and all conditions, exact controls/reference reserve and sufficient effective context. Use nonprotected coverage inputs or authorized isolated custodian receipts; no adaptation-benefit evaluation."
+    },
+    {
+      "id": "TRAINING_DATA_SPEC_TOKEN_ACCOUNTING",
+      "stage": "RUNTIME_CERTIFICATION",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Authenticated candidate-profile token/length/mask receipts or accepted conservative proof covering every full stage example, with complete-example capacity and no shortening. Actual forward/backward fit is certified under resource evidence when required."
+    },
+    {
+      "id": "TRAINING_RECIPE_RUNTIME",
+      "stage": "RUNTIME_CERTIFICATION",
+      "status": "PENDING_TRIGGER_ASSESSMENT",
+      "conditional": true,
+      "closure_requires": "Separately authorized nonprotected synthetic lifecycle certification of original/fresh adapter, backward support, save/reload/native identity and repeat-from-original under the common recipe. No stage adapter continuation and no measured adaptation benefit as selection evidence."
+    },
+    {
+      "id": "RESOURCE_EVIDENCE_RUNTIME",
+      "stage": "RUNTIME_CERTIFICATION",
+      "status": "PENDING_TRIGGER_ASSESSMENT",
+      "conditional": true,
+      "closure_requires": "Authorized observed-hardware/resource traces and recovery/checkpoint receipts for the unchanged common envelope, with justified full-stage bounds and repeated rebuild feasibility. Reject insufficient assignments; no paid fallback or workload relaxation."
+    },
+    {
+      "id": "LOCAL_RESOURCE_EVIDENCE_RUNTIME",
+      "stage": "RUNTIME_CERTIFICATION",
+      "status": "PENDING_TRIGGER_ASSESSMENT",
+      "conditional": true,
+      "closure_requires": "Authorized Windows route/conversion/resource verification for the fixed workload, recorded OS/free RAM/VRAM/disk/cache/offload and same-original artifact lineage. No inference or conversion is performed by this governance task."
+    },
+    {
+      "id": "LOCAL_USABILITY_RUNTIME",
+      "stage": "RUNTIME_CERTIFICATION",
+      "status": "PENDING_TRIGGER_ASSESSMENT",
+      "conditional": true,
+      "closure_requires": "Authorized local timing/session/valid-output observations or accepted conservative usability proof against LOCAL_USABILITY_DESIGN, using nonprotected fixed prompts. This proves operability, not adapted-behavior fidelity."
+    },
+    {
+      "id": "COMPLETION_IMPLEMENTATION",
+      "stage": "POST_SELECTION_PRE_EXPERIMENT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Reviewed/versioned native runner, frozen run/config/manifest/scorer identities, staging/hash/persistent-copy checks, atomic final receipt, interrupted/resume reconciliation and negative-result handling verified on nonprotected fixtures; official-run provenance/isolation/conformance ready. Exact native profile is frozen before scientific runs."
+    },
+    {
+      "id": "FIDELITY_SPEC_DESIGN",
+      "stage": "LATER_DEPLOYMENT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Reviewed fixed paired prompt/task set, rendering/budget/scorer controls, transformation lineage, repeat/exclusion/acceptance rules fixed before either compared output is observed. Any protected-task reuse requires separate authorization."
+    },
+    {
+      "id": "FIDELITY_SPEC_EVIDENCE",
+      "stage": "LATER_DEPLOYMENT",
+      "status": "PENDING_EVIDENCE",
+      "conditional": false,
+      "closure_requires": "Separately authorized authenticated paired native/local outputs and task/test, validity, convention and regression comparisons under the fixed fidelity design; report disagreements and failures without assuming token equality."
+    }
+  ],
+  "additional_pre_experiment_obligations": [
+    "Authorized cohort/history construction and certification; protected contents confined to authorized custodians.",
+    "Pre-outcome inferential/sample-size/dependence/missing-run plan.",
+    "Disjoint nonprotected Study-3 calibration if a singular strongest deployable condition is required; otherwise full paired panel.",
+    "Production trust-root/signing verification, native orchestration and applicable official-run conformance.",
+    "Separate study/treatment and acquisition/runtime authorizations; reserved weight treatments are not activated.",
+    "Authentic seed receipt publication/signing before training outcomes; no seed reroll or silent protocol change."
+  ],
+  "upstream": {
+    "path": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+    "sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b",
+    "status": "proposed-not-frozen",
+    "modified": false
+  },
+  "README_review": {
+    "path": "README.md",
+    "status": "VERIFIED_PRODUCT_FIRST",
+    "autonomous_runtime_quickstart": "UNDER_DEVELOPMENT",
+    "license_claim": "NONE"
+  },
+  "manifest_self_reference": "This manifest is not among its frozen_artifacts and contains no hash of itself. The seed receipt contains no manifest hash, and neither Workload nor Recipe contains seed values/receipt hashes."
+}

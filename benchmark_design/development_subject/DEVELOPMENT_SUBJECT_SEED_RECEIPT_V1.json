@@ -1,0 +1,77 @@
+{
+  "receipt_id": "development-subject-training-seed-receipt-v1",
+  "package_id": "development-subject-design-v1",
+  "version": "v1",
+  "status": "INSTANTIATED_VERIFIED",
+  "issued_at": "2026-10-05T14:43:19Z",
+  "namespace": {
+    "workload": {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_WORKLOAD_V1.md",
+      "version": "v1",
+      "byte_size": 51356,
+      "line_count": 562,
+      "sha256": "28b9cca7006a0c13c5f7ee197dea028f3d534ac991826ba7e8b3ae722ccd1aeb"
+    },
+    "recipe": {
+      "path": "benchmark_design/development_subject/DEVELOPMENT_SUBJECT_RECIPE_JUSTIFICATION_V1.md",
+      "version": "v1",
+      "byte_size": 31623,
+      "line_count": 297,
+      "sha256": "c6d431abcfb9dc08aee6563bb14e40cad2f6be0465799001cb5e7bfef727a834"
+    },
+    "order": [
+      "workload",
+      "recipe"
+    ]
+  },
+  "derivation": {
+    "domain": "development-subject-training-seeds-v1",
+    "domain_encoding": "UTF-8 ASCII",
+    "separator": "one NUL byte",
+    "hash": "SHA-256",
+    "hash_inputs": "domain || NUL || workload_hash_bytes[32] || recipe_hash_bytes[32] || uint32_be(slot) || uint32_be(counter)",
+    "slots": [
+      0,
+      1,
+      2
+    ],
+    "counter_start_each_slot": 0,
+    "mapping": "1 + (uint32_be(first_four_digest_bytes) modulo (2^31 - 1))",
+    "collision_rule": "Increment counter for the current slot until distinct from earlier slots.",
+    "timestamp_candidate_stage_condition_corpus_score_are_not_inputs": true
+  },
+  "slots": [
+    {
+      "slot": 0,
+      "collision_counter": 0,
+      "sha256_digest": "84246a71d510b955d710ca59989a2d1a9e512c32f05923a24aecda4cf3a9ae23",
+      "seed": 69495411
+    },
+    {
+      "slot": 1,
+      "collision_counter": 0,
+      "sha256_digest": "f252e1a21d2bfa9a13bdc8086df307ec1f0684d512a129b2ab285a54cddd14fa",
+      "seed": 1918034340
+    },
+    {
+      "slot": 2,
+      "collision_counter": 0,
+      "sha256_digest": "43d4e754816d36c67bc07a9a4762fdb4617c202650053352643e8e65e12de49a",
+      "seed": 1138026325
+    }
+  ],
+  "seed_roster": [
+    69495411,
+    1918034340,
+    1138026325
+  ],
+  "pairing": "Same ordered roster across comparable H stages and weight conditions; fresh stage RNG, authenticated same-stage resume only.",
+  "claim_limit": "Resource-aware project minimum replication; no power, optimality or bitwise determinism claim.",
+  "attestation": {
+    "issued_by": "Codex (/root)",
+    "basis": "Explicit user authorization and verified deterministic derivation before outcomes",
+    "publication": "Versioned Git checkpoint",
+    "cryptographic_signature": null,
+    "authentication_limit": "No cryptographic signature claimed. Applicable production signing/authentication remains required before training; this receipt grants no execution authority."
+  }
+}
