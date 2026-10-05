@@ -1,0 +1,70 @@
+{
+  "status": "IMPLEMENTATION CONTENT-ADDRESSED; MODEL-FREE TESTS PASS; PENDING TARGET LINUX ATTESTATION",
+  "frozen_requirement_status": "PENDING",
+  "content_root_sha256": "bab6bf6dc0eff2567f07031ff7c1b52eb34af8db3f359455e8881afe3b022c27",
+  "implementation_hash_established": true,
+  "model_free_batches": [
+    {
+      "path": "test_results/model_free_batch_1.json",
+      "bytes": 335,
+      "sha256": "eb95ad0ef7a94183ccb916a067e4cc4b62ae80ae440e5c0f8c2c2c2f123146d4"
+    },
+    {
+      "path": "test_results/model_free_batch_2.json",
+      "bytes": 335,
+      "sha256": "eb95ad0ef7a94183ccb916a067e4cc4b62ae80ae440e5c0f8c2c2c2f123146d4"
+    },
+    {
+      "path": "test_results/model_free_batch_3.json",
+      "bytes": 335,
+      "sha256": "eb95ad0ef7a94183ccb916a067e4cc4b62ae80ae440e5c0f8c2c2c2f123146d4"
+    },
+    {
+      "path": "test_results/preparation_batch_1.json",
+      "bytes": 203,
+      "sha256": "920331e141244e0d7150a5735d6e074ce53df3678092fc4f263de093163b799b"
+    },
+    {
+      "path": "test_results/preparation_batch_2.json",
+      "bytes": 203,
+      "sha256": "920331e141244e0d7150a5735d6e074ce53df3678092fc4f263de093163b799b"
+    }
+  ],
+  "latest_runner_tests": 25,
+  "latest_target_contract_tests": 11,
+  "independent_literal_oracle": {
+    "path": "tests/oracle.py",
+    "bytes": 2412,
+    "sha256": "4be5dae7bf47bba17df0698174553b43fc855381ddb36ba05464189557e8d1e7"
+  },
+  "oracle_does_not_import_production": true,
+  "independent_reviewer_assigned": false,
+  "Windows_results": [
+    "single child invocation",
+    "zero retries",
+    "raw IDs/bytes/events preserved",
+    "strict UTF8/no replacement",
+    "one justified final terminal removal",
+    "CRLF/CR to LF only",
+    "schema/semantic validation",
+    "scoped output/no overwrite",
+    "append provenance SHA chain/exclusive lock",
+    "100ms host-memory observer",
+    "missing telemetry classC/PENDING",
+    "injected worker classB mechanical failure",
+    "repeat/stale state detection",
+    "application broker rejects attempted network/outside/credential operations",
+    "callback remains text"
+  ],
+  "OS_enforcement": "PENDING_TARGET_LINUX_ATTESTATION",
+  "OS_config_is_PASS": false,
+  "native_dispatch_executed": false,
+  "native_runtime_semantics_certified": false,
+  "limitations": [
+    "Prepared native dispatcher supports prerequisite-gated first generation, retains semantic/schema/provenance receipts, and never auto-PASSes frozen gates. The full A–S lifecycle schedule remains frozen and unexecuted.",
+    "Native effective engine/kernel/control behavior and full phase peaks require target receipts. Requested-control labels are not evidence of realized runtime controls.",
+    "Observer has RSS/HWM/PSS/cgroup memory.current/peak and selected-device polling hooks; framework allocator synchronized phase counters not measured. No resource gate PASS from polling alone.",
+    "Actual selected image/host enforcement missing; application broker denial is not OS network proof."
+  ],
+  "no_actual_Qwen_gate_PASS": true
+}

@@ -1,0 +1,68 @@
+{
+  "certified": false,
+  "model_repository": "openai/gpt-oss-20b",
+  "model_revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+  "selected_model_package": [
+    "model-00000-of-00002.safetensors",
+    "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors"
+  ],
+  "runtime": {
+    "repository": "vllm-project/vllm",
+    "version": "0.16.0",
+    "revision": "89a77b10846fd96273cce78d86d2556ea582d26e"
+  },
+  "platform": "Linux/CUDA; not installed or launched",
+  "source_dependencies": {
+    "torch": "2.9.1",
+    "flashinfer-python": "0.6.3",
+    "transformers": "4.57.6"
+  },
+  "full_binary_kernel_container_lock_verified": false,
+  "serializer": "openai-harmony 0.0.8 typed conversations; ordinary TextContent; exact token-ID input",
+  "system_instructions_sha256": "6b1dc9131a329b6257dc351f37c541a846c725c7f1020e5cabddd8bee821b330",
+  "reasoning_effort_proposal": "medium",
+  "reasoning_effort_frozen": false,
+  "clock_and_metadata_frozen_for_study": false,
+  "fixture_date": "2026-10-03",
+  "engine_proposal": {
+    "max_model_len": 32768,
+    "max_num_seqs": 1,
+    "tensor_parallel_size": 1,
+    "dtype": "bfloat16",
+    "checkpoint_quantization": "native mxfp4",
+    "generation_config": "vllm",
+    "enable_prefix_caching": false,
+    "speculative_decoding": false
+  },
+  "sampling_proposal": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repetition_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "seed": 0,
+    "stop": [],
+    "stop_token_ids": [
+      200002,
+      199999,
+      200012
+    ],
+    "ignore_eos": false,
+    "max_tokens": 2048,
+    "min_tokens": 0,
+    "n": 1,
+    "truncate_prompt_tokens": null,
+    "skip_special_tokens": false
+  },
+  "generated_token_counter": "one max_tokens counter includes analysis/final/header/control/terminal tokens",
+  "retries": 0,
+  "tools": [],
+  "builtin_tools": [],
+  "history": [],
+  "completion_projection_certified": false,
+  "request_isolation_certified": false,
+  "native_quantized_training_supported_at_transformers_pin": false
+}

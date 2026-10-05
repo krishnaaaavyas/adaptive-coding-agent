@@ -1,0 +1,69 @@
+{
+  "policy_id": "qwen30-infrastructure-repair-v1",
+  "frozen_pre_outcome": true,
+  "eligible_class": "B",
+  "invariants": [
+    "checkpoint repository/revision/bodies",
+    "native BF16 profile; TP1",
+    "P/K/H bytes, budgets and serialization",
+    "BC lane ownership",
+    "32768 deployed context",
+    "2048 generated-token cap and admission reserve",
+    "full replacement semantics",
+    "entire completion retention and terminal accounting",
+    "task population",
+    "all generation controls including seed",
+    "zero retries",
+    "output parser semantics",
+    "candidate admission",
+    "adaptation condition definitions",
+    "no tools/retrieval/network/reasoning projection",
+    "frozen fixture set, repetitions and acceptance predicates"
+  ],
+  "bounds": {
+    "implemented_attempts_per_root_cause": 2,
+    "implemented_attempts_per_track_total": 6,
+    "attempt_definition": "Any implemented corrective configuration/code change followed by a gate rerun, whether successful or not",
+    "same_root_cause_cannot_be_renamed_to_reset_budget": true,
+    "exhaustion_action": "STOP_REPAIR; retain QUARANTINED or PENDING evidence, no automatic A classification or model replacement"
+  },
+  "required_repair_fields": [
+    "repair_id",
+    "failure_id",
+    "class",
+    "exact_symptom",
+    "affected_gate",
+    "root_cause_evidence",
+    "files_config_changed",
+    "semantic_invariance_justification",
+    "dependent_gates_invalidated",
+    "rerun_set",
+    "before_hashes",
+    "after_hashes",
+    "reviewer_disposition",
+    "reviewer_identity",
+    "attempt_counters",
+    "timestamps",
+    "new_run_ids"
+  ],
+  "review": {
+    "required": true,
+    "role": "Independent infrastructure reviewer",
+    "assigned_identity": null,
+    "assignment_status": "PENDING_BEFORE_FIRST_REPAIR",
+    "dispositions": [
+      "APPROVE_INVARIANT_PRESERVING",
+      "REJECT",
+      "PENDING_MORE_EVIDENCE"
+    ],
+    "review_before_rerun": true
+  },
+  "invalidation_rule": "Affected gates plus all transitive dependents in gate_dependency_graph.json. Shared runtime/wrapper/control edits invalidate their earliest owning gates and descendants. No ad hoc smaller rerun set.",
+  "completion_rule": "All required reruns PASS with fresh evidence tied to after-hashes; original failure and rejected attempts remain append-only",
+  "evidence_repair_class_C": "Only collection of missing evidence; never relabel old incomplete run PASS; emit new evidence/run ID and invalidate consumers if evidence input changed",
+  "normative_change_action": "REJECT_REPAIR; A if incompatibility demonstrated, otherwise PENDING separate future normative amendment; no amendment here",
+  "generation_retries": 0,
+  "controlled_gate_rerun_is_request_retry": false,
+  "rerun_distinction": "New governed run after approved repair; each manifest retains original failed run and each request still has exactly one invocation",
+  "repair_log": []
+}

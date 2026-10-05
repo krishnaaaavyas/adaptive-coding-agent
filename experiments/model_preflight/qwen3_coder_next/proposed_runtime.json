@@ -1,0 +1,71 @@
+{
+  "status": "PROPOSED; NOT AN OFFICIAL VERIFIED RUN PROFILE",
+  "model_repository": "Qwen/Qwen3-Coder-Next",
+  "model_revision": "a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb",
+  "runtime": {
+    "repository": "vllm-project/vllm",
+    "version": "v0.16.0",
+    "revision": "89a77b10846fd96273cce78d86d2556ea582d26e"
+  },
+  "transformers": {
+    "repository": "huggingface/transformers",
+    "version": "v4.57.6",
+    "revision": "753d61104116eefc8ffc977327b441ee0c8d599f"
+  },
+  "capacity": 32768,
+  "dtype": "bfloat16",
+  "tensor_parallel_size": 4,
+  "controls": {
+    "clipping": false,
+    "completions": 1,
+    "context_shifting": false,
+    "decoding": "greedy",
+    "frequency_penalty": 0,
+    "max_generation": 2048,
+    "presence_penalty": 0,
+    "repetition_penalty": 1,
+    "retries": 0,
+    "seed": 0,
+    "temperature": 0,
+    "text_stops": [],
+    "top_k": "disabled",
+    "top_p": 1,
+    "truncation": false
+  },
+  "sampling_params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "repetition_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "seed": 0,
+    "max_tokens": 2048,
+    "n": 1,
+    "stop": [],
+    "stop_token_ids": [
+      151643
+    ],
+    "ignore_eos": false,
+    "min_tokens": 0,
+    "truncate_prompt_tokens": null,
+    "skip_special_tokens": false
+  },
+  "primary_eos_token_id": 151645,
+  "native_terminal_ids": [
+    151645,
+    151643
+  ],
+  "terminal_allowance": 1,
+  "deployment": {
+    "platform": "Linux CUDA; not this Windows workstation",
+    "torch": "2.9.1",
+    "flashinfer": "0.6.3",
+    "generation_config": "vllm",
+    "enable_prefix_caching": false,
+    "max_num_seqs": 1
+  },
+  "request_transport": "pre-rendered exact local token IDs; no tools; fresh sequence; no retry; no context shifting, clipping or truncation",
+  "output_transport": "retain raw output token IDs/finish reason/stop reason/count; remove only one verified final native terminal token from completion bytes; do not blanket-strip special tokens",
+  "determinism_limitations": "Greedy and seed do not certify cross-hardware or cross-kernel bitwise determinism; freeze hardware, kernels and complete environment before study."
+}

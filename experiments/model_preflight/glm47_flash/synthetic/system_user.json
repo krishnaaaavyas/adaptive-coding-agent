@@ -1,0 +1,1 @@
+{"messages": [{"role": "system", "content": "Synthetic system."}, {"role": "user", "content": "Synthetic user."}], "rendered": "[gMASK]<sop><|system|>Synthetic system.<|user|>Synthetic user.<|assistant|><think>", "token_ids": [154822, 154824, 154826, 36940, 17531, 1849, 13, 154827, 36940, 17531, 1196, 13, 154828, 154841]}

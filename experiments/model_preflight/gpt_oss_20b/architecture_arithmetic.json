@@ -1,0 +1,19 @@
+{
+  "basis": "ESTIMATED from pinned complete module shapes; no tensor instantiation/header/body verification",
+  "components": {
+    "embedding_and_head": 1158266880,
+    "attention_weights": 637009920,
+    "attention_biases": 192000,
+    "attention_sinks": 1536,
+    "expert_weights": 19110297600,
+    "expert_biases": 6635520,
+    "router": 2212608,
+    "layer_norms_and_final": 141120
+  },
+  "total_parameters": 20914757184,
+  "source_reported_total": "21B (rounded)",
+  "source_reported_active": "3.6B (rounded)",
+  "bf16_weight_bytes": 41829514368,
+  "full_attention_kv_bytes_at_32768": 805306368,
+  "sliding_kv_bytes_at_128": 3145728
+}

@@ -1,0 +1,65 @@
+{
+  "decision": "STOP MODEL SHOPPING: YES",
+  "static_landscape_closed": true,
+  "frozen_rule_source": "landscape_closure/REPORT.md sections 15 and 22\u201323",
+  "bounded_queue_complete": true,
+  "queue": [
+    "Qwen3-Coder-30B-A3B-Instruct",
+    "Qwen3-Coder-Next",
+    "gpt-oss-20b",
+    "Devstral-Small-2-24B-Instruct-2512",
+    "GLM-4.7-Flash",
+    "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16"
+  ],
+  "required_core_gaps_resolved": [
+    "ordinary_dense_attention_MLP",
+    "ordinary_attention_routed_MoE",
+    "hybrid_recurrent_DeltaNet",
+    "MLA",
+    "Mamba2_state_space"
+  ],
+  "named_fallbacks_resolved": true,
+  "fallbacks_triggered": [],
+  "optional_regimes_made_mandatory": false,
+  "optional_or_reference_regimes_outside_core_claim": [
+    "Gemma native channels",
+    "Granite modest dense resources",
+    "dense DeltaNet interaction",
+    "conditional-memory lookup",
+    "latent expert heads",
+    "CSA/QSA",
+    "cluster-scale variants"
+  ],
+  "optional_gap_rule_application": "No completed bounded preflight establishes an additional feasible conditional-memory/latent/native-channel regime required by the stated five-core-mechanism claim. Existing optional/reference interactions remain outside it, not declared redundant or impossible.",
+  "claims_limited_to_retained_and_later_verified_mechanisms": true,
+  "reopen_discovery_only_for": [
+    "Concrete factual blocker in an intended admission, documented pre-outcome and tied to a named gap/trigger",
+    "Actually material new release/regime under an explicit stated cutoff revision",
+    "If conditional license/specialized training evidence establishes an independently feasible known regime required for an explicitly expanded breadth claim, resolve that named scope gap before claiming comprehensive closure"
+  ],
+  "not_reopen_for": [
+    "benchmark magnitude",
+    "expected coding quality",
+    "anticipated adaptation gain",
+    "desire for an impressive/larger roster",
+    "optional sensitivity alone"
+  ],
+  "static_infrastructure_roster_frozen": true,
+  "final_experimental_roster_frozen": false,
+  "final_protocol_external_freeze": false,
+  "infrastructure_success_claimed": false,
+  "Study1_readiness_claimed": false,
+  "protocol_modified": false,
+  "new_model_search": false,
+  "new_checkpoint_introduced": false,
+  "weight_bodies_acquired": false,
+  "model_instantiated": false,
+  "adapter_executed": false,
+  "inference_occurred": false,
+  "GPU_execution": false,
+  "protected_candidates_accessed": false,
+  "benchmark_outcomes_used": false,
+  "commit_made": false,
+  "1G2A_started": false,
+  "next_boundary": "STOP after closure; any later infrastructure execution is a separate authorized step"
+}

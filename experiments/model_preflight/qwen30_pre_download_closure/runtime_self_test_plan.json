@@ -1,0 +1,37 @@
+{
+  "implementation": {
+    "path": "build/runtime_self_test.py",
+    "bytes": 4323,
+    "sha256": "25c456d019508b098979cead5660c2a620b6969571eb7634f3135a5fcbbebc02"
+  },
+  "executed_on_target": false,
+  "BUILD_TIME_status": "PENDING_TARGET_BUILD",
+  "TARGET_RUNTIME_status": "PENDING_TARGET_RUNTIME",
+  "current_model_free_runner_tests": "PASS; distinct from runtime image self-test",
+  "build_checks": [
+    "CPython3.11.9",
+    "Unicode14",
+    "Linuxamd64",
+    "180 exact distribution identities including3 source-built",
+    "installed distribution RECORD SHA256",
+    "NVCC12.8.90",
+    "Torch12.8 userspace declaration",
+    "vLLM _C and FlashAttention extensions",
+    "input source archive identity",
+    "runner/observer/oracle/build hash binding",
+    "SBOM OS/runtime .so/generated wheel hashes"
+  ],
+  "target_checks": [
+    "actual driver/GPU/compiled architecture compatibility",
+    "loaded CUDA libraries and selected kernel/cache inventory",
+    "actual cgroup/PSS/device/framework phase peak coverage",
+    "CPU-only actual container enforcement probes"
+  ],
+  "forbidden_in_this_step": [
+    "model instantiation",
+    "adapter instantiation",
+    "forward/inference/training",
+    "GPU execution"
+  ],
+  "no_models_in_self_test": true
+}

@@ -1,0 +1,10 @@
+{
+  "basis": "Verified byte-level BPE with NFC normalization, all 256 byte symbols and no added BOS/EOS. Tokens are bounded by normalized UTF-8 bytes, not raw bytes. This records tested synthetic cases, not an exhaustive universal normalized-size proof.",
+  "fixed_rendered_overhead_bytes": 663,
+  "max_variable_bytes": 20480,
+  "max_raw_rendered_bytes": 21143,
+  "max_tested_normalized_bytes": 37323,
+  "max_tested_normalized_byte_bound_with_generation": 39371,
+  "native_capacity": 262144,
+  "proposed_runtime_capacity": 32768
+}

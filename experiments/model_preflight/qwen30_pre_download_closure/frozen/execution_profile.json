@@ -1,0 +1,93 @@
+{
+  "frozen_pre_outcome": true,
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "acquisition_environment": {
+    "network": "Only authenticated exact-revision origin for later approved acquisition",
+    "secrets": "Acquisition process only; never inherited/mounted into execution",
+    "staging": "Dedicated root with >=250000000000 free bytes before acquisition",
+    "body_procedure": [
+      "Acquire only16 declared shard paths from exact revision into temporary files",
+      "Stream SHA256 + byte-count; reject mismatch; retain receipts, never accept ETag as body proof",
+      "Validate safetensors headers/index keys/dtypes without instantiating model",
+      "Atomic promote only complete authenticated snapshot; chmod read-only",
+      "Hash/authenticate downloaded runtime inputs independently; build runtime before offline execution"
+    ],
+    "this_step_acquisition": false
+  },
+  "execution_environment": {
+    "platform": "Linux amd64 CUDA",
+    "network": "disabled by OS/container network namespace; --network=none",
+    "image": "final content-addressed digest PENDING; mutable tags prohibited",
+    "user": "dedicated non-root UID/GID PENDING exact image",
+    "root_filesystem": "read-only",
+    "capabilities": "drop ALL",
+    "privilege_escalation": false,
+    "mounts": [
+      {
+        "role": "authenticated original",
+        "target": "/models/original",
+        "mode": "read-only"
+      },
+      {
+        "role": "frozen synthetic request bundle",
+        "target": "/inputs",
+        "mode": "read-only"
+      },
+      {
+        "role": "scoped run receipts/raw bytes",
+        "target": "/outputs/<run_id>",
+        "mode": "read-write"
+      },
+      {
+        "role": "fresh temporary and kernel-cache state",
+        "target": "/scratch/<run_id>",
+        "mode": "ephemeral scoped"
+      }
+    ],
+    "denied_mounts": [
+      "product repository",
+      "protected candidates/tasks",
+      "private scorers/outcomes",
+      "user home/credentials",
+      "Docker socket",
+      "SSH socket",
+      "host root",
+      "prior adapters/derivatives in pristine worker"
+    ],
+    "input_worker_boundary": "Supervisor prepares allowlisted input bytes/token IDs; worker sees only frozen model/runtime/input/scopedoutput; no dynamic repository reads",
+    "GPU_exposure": "One verified device UUID only; TP1",
+    "request_concurrency": 1,
+    "calls_per_request": 1,
+    "retry_count": 0,
+    "tools": [],
+    "retrieval": false,
+    "model_output_execution": "Never execute as shell, Python, callback or tool request",
+    "reset": [
+      "New sequence/KV per request",
+      "Prefix cache disabled",
+      "No conversation/history accumulation inside worker",
+      "Fresh process/RNG/adapter/optimizer for lifecycle and K/R reset boundaries",
+      "Kernel cache either immutable predeclared hash or new scoped scratch; always record identity"
+    ],
+    "outputs_required": [
+      "raw_generated_token_ids",
+      "strict_raw_byte_blob",
+      "finish_reason",
+      "stop_reason",
+      "terminal_removal_receipt",
+      "normalized_completion_sha256",
+      "resource_trace",
+      "run_manifest"
+    ],
+    "isolation_enforcement": "External OS mount/network/capability boundary, not model obedience",
+    "seccomp_apparmor_profile_hashes": null,
+    "runner_code_and_binary_hashes": null
+  },
+  "separation_rule": "Destroy acquisition credentials/session; execution starts from hash-verified snapshot and immutable runtime with no acquisition network",
+  "future_execution_status": "NOT_RUN",
+  "design_ready": true,
+  "executable_isolation_attested": false
+}

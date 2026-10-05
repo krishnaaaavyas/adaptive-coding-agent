@@ -7,3 +7,16 @@ taskflow.zip
 results/*
 !results/.gitkeep
 workspaces/
+
+/experiments/model_preflight/*/tokenizer_dependencies/
+/experiments/model_preflight/*/dependencies_wheels/
+/experiments/model_preflight/*/encoding_cache/
+/experiments/model_preflight/*/upstream/
+/experiments/model_preflight/*/sources/
+!/experiments/model_preflight/cross_model_audit/sources/
+!/experiments/model_preflight/landscape_closure/sources/
+/experiments/model_preflight/landscape_closure/sources/*
+!/experiments/model_preflight/landscape_closure/sources/project_inputs/
+/experiments/model_preflight/qwen30_pre_download_closure/test_results/model_free_runs/
+/experiments/model_preflight/qwen30_pre_download_closure/build_context/
+/experiments/model_preflight/qwen30_pre_download_closure/build/target_build/

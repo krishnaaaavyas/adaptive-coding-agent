@@ -1,0 +1,208 @@
+{
+  "repository": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+  "revision": "55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128",
+  "independently_verified": true,
+  "created_at_utc": "2025-11-28T11:27:11.000Z",
+  "last_modified_at_utc": "2026-07-15T12:20:36.000Z",
+  "gated": false,
+  "private": false,
+  "license": "apache-2.0",
+  "license_evidence": "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/README.md",
+  "standalone_license_present": false,
+  "product_eligibility": "PASS_STATIC: software-engineering use and Apache-2.0 declaration; retain license/NOTICE obligations",
+  "model_type": "mistral3",
+  "architecture": "REDACTED_SECRET",
+  "text_config": {
+    "attention_dropout": 0.0,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 5120,
+    "initializer_range": 0.02,
+    "intermediate_size": 32768,
+    "max_position_embeddings": 393216,
+    "model_type": "ministral3",
+    "num_attention_heads": 32,
+    "num_hidden_layers": 40,
+    "num_key_value_heads": 8,
+    "rms_norm_eps": 1e-05,
+    "rope_parameters": {
+      "beta_fast": 32.0,
+      "beta_slow": 1.0,
+      "factor": 48.0,
+      "llama_4_scaling_beta": 0.1,
+      "mscale": 1.0,
+      "mscale_all_dim": 1.0,
+      "original_max_position_embeddings": 8192,
+      "rope_theta": 100000000.0,
+      "rope_type": "yarn",
+      "type": "yarn"
+    },
+    "sliding_window": null,
+    "use_cache": true,
+    "vocab_size": 131072
+  },
+  "vision_config": {
+    "attention_dropout": 0.0,
+    "head_dim": 64,
+    "hidden_act": "silu",
+    "hidden_size": 1024,
+    "image_size": 1540,
+    "initializer_range": 0.02,
+    "intermediate_size": 4096,
+    "model_type": "pixtral",
+    "num_attention_heads": 16,
+    "num_channels": 3,
+    "num_hidden_layers": 24,
+    "patch_size": 14,
+    "rope_parameters": {
+      "rope_theta": 10000.0,
+      "rope_type": "default"
+    }
+  },
+  "spatial_merge_size": 2,
+  "modality_components_retained_but_excluded": [
+    "model.vision_tower",
+    "model.multi_modal_projector"
+  ],
+  "parameter_count_non_scale_inferred": 24011361280,
+  "index_total_parameters_including_560_scales": 24011361840,
+  "group_parameters": {
+    "attention": 2097152000,
+    "embedding": 671088640,
+    "lm_head": 671088640,
+    "mlp": 20132659200,
+    "projector": 35652608,
+    "text_norm": 414720,
+    "vision": 403305472
+  },
+  "dense_ordinary_text": true,
+  "attention": "40 layers; GQA 32 Q / 8 KV heads; head_dim 128; full attention",
+  "mlp": "SiLU gated dense MLP, 5120 -> 32768 -> 5120; separate bias-free gate/up/down",
+  "native_context_config": 393216,
+  "card_advertised_context": "256k",
+  "generation_config_max_length": 262144,
+  "deployed_context": 32768,
+  "tokenizer_class": "TokenizersBackend",
+  "tokenizer_normalizer": null,
+  "quantization_config": {
+    "activation_scheme": "static",
+    "dequantize": false,
+    "modules_to_not_convert": [
+      "model.vision_tower",
+      "model.multi_modal_projector",
+      "lm_head"
+    ],
+    "quant_method": "fp8",
+    "weight_block_size": null
+  },
+  "original_quantization_declared": {
+    "qformat_weight": "fp8_e4m3",
+    "qscheme_act": "TENSOR"
+  },
+  "config_dtype_is_not_storage_dtype": "bfloat16 compute declaration with native mixed FP8/BF16 weight packaging",
+  "selected_packaging": "six model-* HF safetensors shards",
+  "selected_shard_count": 6,
+  "selected_declared_bytes": 25793059408,
+  "index_payload_declared_bytes": 25792912480,
+  "selected_lfs_identities": [
+    {
+      "rfilename": "model-00001-of-00006.safetensors",
+      "blobId": "ad31577a04bf0ac39d60eea2322f1a261a0a1021",
+      "size": 4907440626,
+      "lfs": {
+        "sha256": "380035da60c7cc474cb7358888a1c50c70679bb3fb7f70870c2400f93ac51d70",
+        "size": 4907440626,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00006.safetensors",
+      "blobId": "11f4cf85276db12a6aba8f4f1b878ed983344e7d",
+      "size": 4996664584,
+      "lfs": {
+        "sha256": "2caed6d3fb5af9c97b8c70e1424a9e517454e01451332834fba4fdb4e7a18280",
+        "size": 4996664584,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00003-of-00006.safetensors",
+      "blobId": "29d9b7c9ba43234178ae85c968f32b14462ca6cc",
+      "size": 4980946432,
+      "lfs": {
+        "sha256": "e2bab376f49baa1da58c0a737f688cbfe185dc6a994fa2870d62b7c8b36e3360",
+        "size": 4980946432,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00004-of-00006.safetensors",
+      "blobId": "b5db2d6cb1e13e486e87cecc3a114cd56b76c7f0",
+      "size": 4980946416,
+      "lfs": {
+        "sha256": "63c422f7a5c1460967068c0ceff65eb31f136f64872e281841313e8c669e7c50",
+        "size": 4980946416,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00005-of-00006.safetensors",
+      "blobId": "ad825168cf933bf48e9c9b70d678d1851116c7d0",
+      "size": 4996675032,
+      "lfs": {
+        "sha256": "ec99fd6a7faf35b43e38e60f531e9ee5d67c4292773d71246038b9eb508e373a",
+        "size": 4996675032,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00006-of-00006.safetensors",
+      "blobId": "5d865e7f0d6d1e1101b6ee73714c6342d323076c",
+      "size": 930386318,
+      "lfs": {
+        "sha256": "8efdf4d1c2425a2a7956bf43ae343f44a825a90a87e341ff02f708da2923a0b1",
+        "size": 930386318,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "alternate_packaging": [
+    {
+      "rfilename": "consolidated-00001-of-00002.safetensors",
+      "blobId": "776ec6ee0aaa6a1df61eed89e73e871e9a5984cf",
+      "size": 19839869982,
+      "lfs": {
+        "sha256": "dfa96c3ccb824ac308eeeaa86fd1ce01aca4e3311e1aaa27a498ec3b7302e165",
+        "size": 19839869982,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "consolidated-00002-of-00002.safetensors",
+      "blobId": "224320e367aa57861eb3b486da58697214b69278",
+      "size": 5953165906,
+      "lfs": {
+        "sha256": "b783163b5ee6fb9595fde29d6072e81be8fcc24ea576d09ecc3dc7611ababb97",
+        "size": 5953165906,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "alternate_bytes_not_added_to_selected": 25793035888,
+  "weight_bodies_downloaded": false,
+  "tensor_headers_downloaded": false,
+  "body_dtype_shape_scale_values_verified": false,
+  "landscape_discrepancies": [],
+  "landscape_refinements": [
+    "landscape terminal_config null/null is absence in root config, not missing native BOS/EOS; generation/tokenizer files establish 1/2/11",
+    "24B rounded marketing label resolved to exact inferred non-scale count",
+    "scale dtype/scalar shape inferred by payload arithmetic; must inspect bodies later"
+  ],
+  "source_urls": [
+    "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/config.json",
+    "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/params.json",
+    "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/generation_config.json",
+    "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/model.safetensors.index.json",
+    "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/tokenizer_config.json"
+  ]
+}

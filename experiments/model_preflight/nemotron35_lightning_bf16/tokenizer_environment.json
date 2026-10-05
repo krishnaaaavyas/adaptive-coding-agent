@@ -1,0 +1,17 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "tokenizers": "0.23.2",
+  "jinja2": "3.1.6",
+  "compiler_source_commit": "02d8fb9784e8f14a1251e4c992cd82a5762417c6",
+  "compiler_source_sha256": "976ecbdd024eea4457524d76ced50b368b5592af3970526e4bd9063672da6dd4",
+  "compiler_function_sha256": "481679925e73849de8dda430f0f45fe2b676bc9194b5da438751daa71a2d16a6",
+  "cached_compiler_function_sha256": "352b67f74754c9abfc5693c94e03a3f7771c07aa60f3503be6cc9f67c0f6f60f",
+  "availability_global": "Exact installed Jinja2 3.1.6 metadata check; no rendering logic changed",
+  "dependency_source": "Read-only reuse of authenticated D1 tokenizer libraries; no prior model conclusions reused",
+  "model_libraries_imported": false,
+  "torch_imported": false,
+  "peft_imported": false,
+  "full_official_parser_executed": false,
+  "parser_environment_required_later": "CPython3.11.9 / Unicode14.0.0"
+}

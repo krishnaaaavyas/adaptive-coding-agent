@@ -1,0 +1,32 @@
+{
+  "transformers": {
+    "repository": "huggingface/transformers",
+    "version": "4.57.6",
+    "revision": "753d61104116eefc8ffc977327b441ee0c8d599f"
+  },
+  "peft": {
+    "repository": "huggingface/peft",
+    "version": "0.18.0",
+    "revision": "77daa8d3b7decf2b40238ab47e2c1bd0f26c7749"
+  },
+  "vllm": {
+    "repository": "vllm-project/vllm",
+    "version": "0.16.0",
+    "revision": "89a77b10846fd96273cce78d86d2556ea582d26e"
+  },
+  "harmony": {
+    "repository": "openai/harmony",
+    "revision": "abd677f7ac962629c808197caa1feb9e3e95d2b0",
+    "version": "source-commit"
+  },
+  "gpt_oss": {
+    "repository": "openai/gpt-oss",
+    "revision": "7b583341fe16729127f6d5b94a7b09ccae97e1a1",
+    "version": "source-commit"
+  },
+  "cookbook": {
+    "repository": "openai/openai-cookbook",
+    "revision": "0eac1447d4e24d06e47c459ca5e98f248b9413cf",
+    "version": "source-commit"
+  }
+}

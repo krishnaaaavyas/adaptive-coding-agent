@@ -1,0 +1,2 @@
+# Historical preflight manifests bind exact bytes, including source and goldens.
+experiments/model_preflight/** -text

@@ -1,0 +1,138 @@
+{
+  "frozen_pre_outcome": true,
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "items": [
+    {
+      "id": "CHECKPOINT",
+      "status": "PASS",
+      "requirement": "Exact repo/SHA and16-shard declarations frozen",
+      "evidence": "runtime_lock.json / expected_checkpoint_bodies.json",
+      "mandatory": true
+    },
+    {
+      "id": "BODY_MANIFEST",
+      "status": "PASS",
+      "requirement": "Expected lengths/hash/layout metadata available; acquired bodies deliberately not verified yet",
+      "evidence": "expected_checkpoint_bodies.json",
+      "mandatory": true
+    },
+    {
+      "id": "STORAGE",
+      "status": "PENDING",
+      "requirement": "Target >=250GB free staging and>=64GiB plausible host RAM provision (128GiB preferred) not evidenced",
+      "evidence": "hardware_requirements.json",
+      "mandatory": true
+    },
+    {
+      "id": "HASHING_PROCEDURE",
+      "status": "PASS",
+      "requirement": "Stream/count/hash, header/index validation, atomic promotion and read-only isolation specified",
+      "evidence": "execution_profile.json",
+      "mandatory": true
+    },
+    {
+      "id": "RUNTIME_SOURCE",
+      "status": "PASS",
+      "requirement": "vLLM commit and eight archived source matches, TF/PEFT/CPython source pins and base digest metadata resolved",
+      "evidence": "runtime_lock.json",
+      "mandatory": true
+    },
+    {
+      "id": "RUNTIME_BUILD",
+      "status": "PENDING",
+      "requirement": "Complete exact transitive/build/Python Linux binary identities and final image build inputs/digest absent",
+      "evidence": "runtime_lock.json",
+      "mandatory": true
+    },
+    {
+      "id": "ISOLATION_DESIGN",
+      "status": "PASS",
+      "requirement": "Offline scoped mounts, no-tools and fixed negative probes specified",
+      "evidence": "execution_profile.json",
+      "mandatory": true
+    },
+    {
+      "id": "RUNNER_ATTESTATION",
+      "status": "PENDING",
+      "requirement": "Raw-stream runner/observer build hashes and enforcement implementation not attested",
+      "evidence": "execution_profile.json",
+      "mandatory": true
+    },
+    {
+      "id": "FIXTURES",
+      "status": "PASS",
+      "requirement": "Literal and historical invented bytes/recipes and hashes frozen",
+      "evidence": "fixture_manifest.json",
+      "mandatory": true
+    },
+    {
+      "id": "DAG",
+      "status": "PASS",
+      "requirement": "HistoricalA-S mapping and repair invalidation DAG frozen",
+      "evidence": "gate_dependency_graph.json",
+      "mandatory": true
+    },
+    {
+      "id": "FAILURE_REPAIR",
+      "status": "PASS",
+      "requirement": "Three classes, finite repairs, invariants and provenance frozen",
+      "evidence": "failure_policy.json / repair_policy.json",
+      "mandatory": true
+    },
+    {
+      "id": "RUN_SCHEMA",
+      "status": "PASS",
+      "requirement": "External-run JSON schema frozen with fail-closed PASS evidence obligations",
+      "evidence": "run_manifest_schema.json",
+      "mandatory": true
+    },
+    {
+      "id": "NO_PROTECTED_DEPENDENCY",
+      "status": "PASS",
+      "requirement": "All fixture inputs invented/authenticated candidate-free historical conformance",
+      "evidence": "fixture_manifest.json",
+      "mandatory": true
+    },
+    {
+      "id": "NO_PROTOCOL_AMBIGUITY",
+      "status": "PASS",
+      "requirement": "Context/reserve/full stream/controls/BC/parser unchanged; unresolved executable observations remain gates",
+      "evidence": "generation_profile.json",
+      "mandatory": true
+    }
+  ],
+  "blockers": [
+    {
+      "id": "RUNTIME_BUILD",
+      "class": "C",
+      "status": "PENDING",
+      "blocking_before_weights": true,
+      "detail": "No final build recipe with complete exact transitive/build-tool/Linux Python binary hashes or final executable image digest. Stock vLLM Dockerfile CUDA12.9.1/Python3.12 defaults do not satisfy this profile."
+    },
+    {
+      "id": "TARGET_CAPACITY",
+      "class": "C",
+      "status": "PENDING",
+      "blocking_before_weights": true,
+      "detail": "No intended Linux target inventory proving free staging storage >=250GB, >=64GiB plausible host RAM floor (128GiB preferred) and selected TP1 CUDA-capable BF16 device provision. Historical local Windows inventory is insufficient and not refreshed."
+    },
+    {
+      "id": "RUNNER_ATTESTATION",
+      "class": "C",
+      "status": "PENDING",
+      "blocking_before_weights": true,
+      "detail": "No content-addressed implementation/attestation of the specified offline raw-stream runner, isolation boundary and telemetry observer. This step freezes designs and schemas, not executable certification."
+    }
+  ],
+  "verdict": "NOT READY \u2014 RUNTIME_BUILD, TARGET_CAPACITY, RUNNER_ATTESTATION",
+  "all_mandatory_checks_must_pass": true,
+  "any_PENDING_FAIL_is_NO_GO": true,
+  "PASS_meaning_here": "Preparation design/source evidence only, never an executed A-S gate",
+  "acquisition_authorized_by_this_step": false,
+  "execution_authorized_by_this_step": false,
+  "next_permitted_preparation": "Resolve exact build/transitive identities and review runner/observer implementation and intended target capacity; retain versions, profile, rules and fixtures",
+  "stop_now": true
+}

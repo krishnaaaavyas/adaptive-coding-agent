@@ -1,0 +1,988 @@
+{
+  "frozen_pre_outcome": true,
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "fixtures": [
+    {
+      "id": "historical.capacity_ascii_0_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_0_A.json",
+      "bytes": 97998,
+      "sha256": "6b3a1d2cf76aa2c2875bb0ef3454efa3a2a153f0be48f65fd6f77db617fdc2e1",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_0_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_0_B.json",
+      "bytes": 121987,
+      "sha256": "83dabd1dd56a1ee6b7a5440914fc4034d443ae6cc6801dbba27d3d3741b88e0c",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_0_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_0_BC.json",
+      "bytes": 121952,
+      "sha256": "a2b23b969d0c22f55bbd089eea8a7f875c9ad118e202ea1ea13e5b85c46ce50e",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_0_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_0_C.json",
+      "bytes": 121987,
+      "sha256": "83dabd1dd56a1ee6b7a5440914fc4034d443ae6cc6801dbba27d3d3741b88e0c",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_0_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_0_M.json",
+      "bytes": 121987,
+      "sha256": "83dabd1dd56a1ee6b7a5440914fc4034d443ae6cc6801dbba27d3d3741b88e0c",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_1_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_1_A.json",
+      "bytes": 97990,
+      "sha256": "ea85cf1ec4ac8118e08cbad65a78d28a5ab15f629805f508190d8bbf96b6c708",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_1_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_1_B.json",
+      "bytes": 121971,
+      "sha256": "27876508ba7aba05ee817a55c1153ff62f2b5991ff3eb8942fe6fc6313e54aa7",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_1_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_1_BC.json",
+      "bytes": 121941,
+      "sha256": "48a88c45b9c0820d0bc3954ffa403639e6d1cbe4cc89dfaaf66e6db8cae90993",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_1_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_1_C.json",
+      "bytes": 121971,
+      "sha256": "27876508ba7aba05ee817a55c1153ff62f2b5991ff3eb8942fe6fc6313e54aa7",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_ascii_1_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_ascii_1_M.json",
+      "bytes": 121971,
+      "sha256": "27876508ba7aba05ee817a55c1153ff62f2b5991ff3eb8942fe6fc6313e54aa7",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_0_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_0_A.json",
+      "bytes": 58380,
+      "sha256": "3131343942d86785aa7776945d4d1eb2f5d84e2b9112c3ae59ef219ea166bc7f",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_0_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_0_B.json",
+      "bytes": 72350,
+      "sha256": "f6c9a6b06e7b6507abc368117e7f902e99fb20366dda0e89ebe25a2977ebe07b",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_0_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_0_BC.json",
+      "bytes": 72401,
+      "sha256": "d0d212fc1642d0c8a7497176e70023186cea48843e45c2ac9563f19aa427e378",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_0_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_0_C.json",
+      "bytes": 72350,
+      "sha256": "f6c9a6b06e7b6507abc368117e7f902e99fb20366dda0e89ebe25a2977ebe07b",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_0_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_0_M.json",
+      "bytes": 72350,
+      "sha256": "f6c9a6b06e7b6507abc368117e7f902e99fb20366dda0e89ebe25a2977ebe07b",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_1_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_1_A.json",
+      "bytes": 58374,
+      "sha256": "08439e7be9e849e4c332130eeebe6cd272a1b2f68cd658718c67e8377e037190",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_1_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_1_B.json",
+      "bytes": 72341,
+      "sha256": "6cab854050e5444df6cefa6fb71bee2b49cd0b93b0f462df8214e4cc66127019",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_1_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_1_BC.json",
+      "bytes": 72389,
+      "sha256": "e9dcb641a25876de708346fe2f5d80ecefe74b71db20f48137b22b2d01465f65",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_1_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_1_C.json",
+      "bytes": 72341,
+      "sha256": "6cab854050e5444df6cefa6fb71bee2b49cd0b93b0f462df8214e4cc66127019",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_code_delimiters_1_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_code_delimiters_1_M.json",
+      "bytes": 72341,
+      "sha256": "6cab854050e5444df6cefa6fb71bee2b49cd0b93b0f462df8214e4cc66127019",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_0_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_0_A.json",
+      "bytes": 203271,
+      "sha256": "3cef476e13988207df9cf964d22eaa98785a525d084657717bca9e016e4cd9dc",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_0_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_0_B.json",
+      "bytes": 262054,
+      "sha256": "1e364ceb369d43ecc761745ce16f4dab752acf6cef1d4b16b7be58b9176f5085",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_0_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_0_BC.json",
+      "bytes": 261711,
+      "sha256": "120d41220a1fd14a35fc0c52f1cd69eb5a9e2d3b9bbc0f1d612321a00d12ae2c",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_0_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_0_C.json",
+      "bytes": 262054,
+      "sha256": "1e364ceb369d43ecc761745ce16f4dab752acf6cef1d4b16b7be58b9176f5085",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_0_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_0_M.json",
+      "bytes": 262054,
+      "sha256": "1e364ceb369d43ecc761745ce16f4dab752acf6cef1d4b16b7be58b9176f5085",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_1_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_1_A.json",
+      "bytes": 203250,
+      "sha256": "4d90acd8e9dfd96e855c21041863101bca2c4030396325676c97f54beb3b16d2",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_1_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_1_B.json",
+      "bytes": 262010,
+      "sha256": "ea1ac7f9941e6e5d6f191b3eca8a52df648584abf64b5fc36d4102e1f04a6b74",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_1_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_1_BC.json",
+      "bytes": 261667,
+      "sha256": "feb304fdd78fada66f3b79b1d17897441223cf7624807b80a274f99115349583",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_1_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_1_C.json",
+      "bytes": 262010,
+      "sha256": "ea1ac7f9941e6e5d6f191b3eca8a52df648584abf64b5fc36d4102e1f04a6b74",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_nfc_expansion_1_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_nfc_expansion_1_M.json",
+      "bytes": 262010,
+      "sha256": "ea1ac7f9941e6e5d6f191b3eca8a52df648584abf64b5fc36d4102e1f04a6b74",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_0_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_0_A.json",
+      "bytes": 109493,
+      "sha256": "4dd4576e274076c3658a352b0437d570e3f9a04cc6c8e486b55ee3d75241877f",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_0_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_0_B.json",
+      "bytes": 137398,
+      "sha256": "9870d11825d490939bacfa137e7f00b99ebebf0fe5dab171a2ca0e5a83ac6060",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_0_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_0_BC.json",
+      "bytes": 137336,
+      "sha256": "6f22f12e44be5a81b7f2f33e166fe2966feebc7a25513833ad6610c70b973762",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_0_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_0_C.json",
+      "bytes": 137398,
+      "sha256": "9870d11825d490939bacfa137e7f00b99ebebf0fe5dab171a2ca0e5a83ac6060",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_0_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_0_M.json",
+      "bytes": 137398,
+      "sha256": "9870d11825d490939bacfa137e7f00b99ebebf0fe5dab171a2ca0e5a83ac6060",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_1_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_1_A.json",
+      "bytes": 109405,
+      "sha256": "06a7a58ccb4f06ee94b833e84e5bdbecae722ab3b72ce4211a6a56ed97253719",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_1_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_1_B.json",
+      "bytes": 137304,
+      "sha256": "306c1b129ea07935a61857a70de9b23476143c2e9a27117bc59ec87bdc695db9",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_1_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_1_BC.json",
+      "bytes": 137242,
+      "sha256": "713314cacf2e890092cdcb78d5a1958c941c3bd33e54f97c327c224b50dfd488",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_1_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_1_C.json",
+      "bytes": 137304,
+      "sha256": "306c1b129ea07935a61857a70de9b23476143c2e9a27117bc59ec87bdc695db9",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.capacity_unicode_1_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/capacity_unicode_1_M.json",
+      "bytes": 137304,
+      "sha256": "306c1b129ea07935a61857a70de9b23476143c2e9a27117bc59ec87bdc695db9",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "C",
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.empty_h",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/empty_h.json",
+      "bytes": 3417,
+      "sha256": "43a04ef457c533c08833a83811deb02b2d1d76d2e8d4b7fb47a1696ef3211381",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.empty_registry_A",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/empty_registry_A.json",
+      "bytes": 49421,
+      "sha256": "da995f211dd529fd5fc6ff1a63c9eea7bcdbf53b03556b6fb6bfc45a2122c985",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.empty_registry_B",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/empty_registry_B.json",
+      "bytes": 49421,
+      "sha256": "da995f211dd529fd5fc6ff1a63c9eea7bcdbf53b03556b6fb6bfc45a2122c985",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.empty_registry_BC",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/empty_registry_BC.json",
+      "bytes": 49421,
+      "sha256": "da995f211dd529fd5fc6ff1a63c9eea7bcdbf53b03556b6fb6bfc45a2122c985",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.empty_registry_C",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/empty_registry_C.json",
+      "bytes": 49421,
+      "sha256": "da995f211dd529fd5fc6ff1a63c9eea7bcdbf53b03556b6fb6bfc45a2122c985",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.empty_registry_M",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/empty_registry_M.json",
+      "bytes": 49421,
+      "sha256": "da995f211dd529fd5fc6ff1a63c9eea7bcdbf53b03556b6fb6bfc45a2122c985",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.multiline_code",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/multiline_code.json",
+      "bytes": 445,
+      "sha256": "b786b94970e7ca8d821e62874b8dc4a907c52ecd3aaa1f4678228b49762e97e2",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.protocol_delimiters",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/protocol_delimiters.json",
+      "bytes": 2714,
+      "sha256": "01d1b2c19e117ce587b883752a173a2771d89530e3ef68a212f9ce3a0ef7d024",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.system_user",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/system_user.json",
+      "bytes": 393,
+      "sha256": "83f5dc59f850a3192846b2c5153fb0366e58419e5c240041148f3109500a77ca",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.system_user_assistant",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/system_user_assistant.json",
+      "bytes": 564,
+      "sha256": "512d3293d1f2a461d6fe619db08da3163e4c019bd01763c5d621db880e1696a7",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "historical.unicode",
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/synthetic/unicode.json",
+      "bytes": 565,
+      "sha256": "397922657ca2d9bbc3e71856cc3fa48b568f91c07d3a3294a17a80bc1bdae224",
+      "purpose": "Authenticated existing invented native tokenizer/template and boundary serialization",
+      "expected_invariant": "Exact stored rendered UTF8 bytes and token_ids; P/K/H component byte budgets/BC ownership unchanged; full2048 reserve",
+      "gates": [
+        "D",
+        "I"
+      ],
+      "origin": "Frozen prior Qwen30 synthetic fixture; not protected task/evidence",
+      "protected_content": false
+    },
+    {
+      "id": "golden.P_GOLDEN",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/goldens/P_GOLDEN.utf8",
+      "bytes": 47,
+      "sha256": "9560bcdca58383e4b01b290506752d1daabea345440c636ace349cccf6ecb946",
+      "purpose": "Independent test-layer literal serialization/reference artifact",
+      "expected_invariant": "Exact bytes and SHA256; no production serializer-generated oracle; delimiter-looking data remains literal",
+      "gates": [
+        "D",
+        "G",
+        "I"
+      ],
+      "origin": "AST literal extraction from independently authored conformance test, without module execution",
+      "protected_content": false
+    },
+    {
+      "id": "golden.K_GOLDEN",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/goldens/K_GOLDEN.utf8",
+      "bytes": 146,
+      "sha256": "9a209c405a177ed5db17ae54102233297ea258ce22d5bee3b27d903843896f44",
+      "purpose": "Independent test-layer literal serialization/reference artifact",
+      "expected_invariant": "Exact bytes and SHA256; no production serializer-generated oracle; delimiter-looking data remains literal",
+      "gates": [
+        "D",
+        "G",
+        "I"
+      ],
+      "origin": "AST literal extraction from independently authored conformance test, without module execution",
+      "protected_content": false
+    },
+    {
+      "id": "golden.H_GOLDEN",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/goldens/H_GOLDEN.utf8",
+      "bytes": 79,
+      "sha256": "563e008c399e61f43fa2a8cf62890d8747c12748d9d9c7aaebf79a1469d69f16",
+      "purpose": "Independent test-layer literal serialization/reference artifact",
+      "expected_invariant": "Exact bytes and SHA256; no production serializer-generated oracle; delimiter-looking data remains literal",
+      "gates": [
+        "D",
+        "G",
+        "I"
+      ],
+      "origin": "AST literal extraction from independently authored conformance test, without module execution",
+      "protected_content": false
+    },
+    {
+      "id": "golden.REF_GOLDEN",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/goldens/REF_GOLDEN.utf8",
+      "bytes": 42,
+      "sha256": "9b90bcf9516863f1b9eb1af264109c7518200eb1b1aceb15f63a9b51411360a0",
+      "purpose": "Independent test-layer literal serialization/reference artifact",
+      "expected_invariant": "Exact bytes and SHA256; no production serializer-generated oracle; delimiter-looking data remains literal",
+      "gates": [
+        "D",
+        "G",
+        "I"
+      ],
+      "origin": "AST literal extraction from independently authored conformance test, without module execution",
+      "protected_content": false
+    },
+    {
+      "id": "invented.natural_single",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/natural_single.json",
+      "bytes": 1735,
+      "sha256": "24a8d983707af5a237e49ab5800e162b25015925358dc8ac818fb4f577bb4b90",
+      "purpose": "Pre-outcome fixed invented infrastructure prompt design",
+      "expected_invariant": "Frozen literal inputs; retain whole stream/native event; no retries/output cleanup; target before/after reset exact for divergent probe",
+      "gates": [
+        "G",
+        "J",
+        "K",
+        "P",
+        "Q",
+        "S"
+      ],
+      "origin": "Hand-authored synthetic input only; no completion generated",
+      "protected_content": false
+    },
+    {
+      "id": "invented.natural_multi",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/natural_multi.json",
+      "bytes": 1802,
+      "sha256": "85f33326b12defbae2005d4867a093033dd5ae556d90941fdfd75b0cb741d2e6",
+      "purpose": "Pre-outcome fixed invented infrastructure prompt design",
+      "expected_invariant": "Frozen literal inputs; retain whole stream/native event; no retries/output cleanup; target before/after reset exact for divergent probe",
+      "gates": [
+        "G",
+        "J",
+        "K",
+        "P",
+        "Q",
+        "S"
+      ],
+      "origin": "Hand-authored synthetic input only; no completion generated",
+      "protected_content": false
+    },
+    {
+      "id": "invented.forced_2048",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/forced_2048.json",
+      "bytes": 1954,
+      "sha256": "117bc1c157991d487ac9f1a935b02c4120742e20dc6d1839d0d3dceebd7fc157",
+      "purpose": "Pre-outcome fixed invented infrastructure prompt design",
+      "expected_invariant": "One unchanged-control invocation; actual LENGTH2048 required, early natural stop leaves H PENDING; no prompt substitution",
+      "gates": [
+        "H",
+        "J",
+        "K"
+      ],
+      "origin": "Hand-authored synthetic input only; no completion generated",
+      "protected_content": false
+    },
+    {
+      "id": "invented.divergent_prior",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/divergent_prior.json",
+      "bytes": 1990,
+      "sha256": "ee465f18ad23a8d38d363213699188a7e855b850de39f9dbfe2f648319c19dfa",
+      "purpose": "Pre-outcome fixed invented infrastructure prompt design",
+      "expected_invariant": "Frozen literal inputs; retain whole stream/native event; no retries/output cleanup; target before/after reset exact for divergent probe",
+      "gates": [
+        "S"
+      ],
+      "origin": "Hand-authored synthetic input only; no completion generated",
+      "protected_content": false
+    },
+    {
+      "id": "literal.terminal_vectors",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/terminal_vectors.json",
+      "bytes": 1733,
+      "sha256": "173e5a0a2ec6e93194319cd10063d44e2d81b8c8824b3fc5793dda777002c912",
+      "purpose": "Native terminal and cap-precedence transport design",
+      "expected_invariant": "Final observed native terminal only; count whole vector; mock cannot PASS real H/F",
+      "gates": [
+        "F",
+        "H",
+        "I"
+      ],
+      "origin": "Independent hand-authored test vectors",
+      "protected_content": false
+    },
+    {
+      "id": "literal.raw_byte_vectors",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/raw_byte_vectors.json",
+      "bytes": 944,
+      "sha256": "3572c566e0f175ede82ec604581190edde35367d563b3bcfc88a24bcc1edf644",
+      "purpose": "Lossless byte retention and strict normalization",
+      "expected_invariant": "Independent literal hex; raw hash before normalized hash; no invalid-byte hiding or literalU+FFFD loss",
+      "gates": [
+        "I"
+      ],
+      "origin": "Independent hand-authored bytes",
+      "protected_content": false
+    },
+    {
+      "id": "literal.capacity_operational",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/capacity_operational.json",
+      "bytes": 1024,
+      "sha256": "31e1690f8e644e718a1887945df159dcac324102fa962ff3cf0fc400e48cdd14",
+      "purpose": "Actual full context allocation and one-token overlength rejection",
+      "expected_invariant": "Pure infrastructure token probe; exact30,720+2,048 capacity; no candidate admission",
+      "gates": [
+        "C",
+        "M"
+      ],
+      "origin": "Independent arithmetic recipe; not executed",
+      "protected_content": false
+    },
+    {
+      "id": "literal.isolation_negative_probes",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/isolation_negative_probes.json",
+      "bytes": 1685,
+      "sha256": "522e0539eaf9d36c557def41889b13a4def7972061c3be7fd5fd84d381032ccd",
+      "purpose": "OS deny boundary and single-call enforcement",
+      "expected_invariant": "All fixed synthetic probes pass before model load; actual protected paths never read",
+      "gates": [
+        "L",
+        "S"
+      ],
+      "origin": "Hand-authored negative-probe plan",
+      "protected_content": false
+    },
+    {
+      "id": "literal.lifecycle_history",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/lifecycle_history.json",
+      "bytes": 860,
+      "sha256": "98e6fb5492efa419776a0641d6c7f189c2780c05d3e208986363bd8918098b6e",
+      "purpose": "Minimal forward/backward and accumulated ORIGINAL rebuild",
+      "expected_invariant": "Invented literal teacher-forced labels; seed/history/order/steps fixed; no observed model output used as training label",
+      "gates": [
+        "O",
+        "P",
+        "Q",
+        "R"
+      ],
+      "origin": "Hand-authored synthetic inputs/labels, not model completions",
+      "protected_content": false
+    },
+    {
+      "id": "literal.teacher_forced_labels",
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/fixtures/teacher_forced_labels.json",
+      "bytes": 991,
+      "sha256": "9b084f1b97259cf3baa047ad28d42543b381add6373abe36293a9110c72c5d7d",
+      "purpose": "Exact independent teacher-forced numeric comparison inputs for P/Q",
+      "expected_invariant": "Label bytes/hashes and mask fixed; never consume generated output as golden or training label",
+      "gates": [
+        "P",
+        "Q"
+      ],
+      "origin": "Hand-authored input labels; no model output",
+      "protected_content": false
+    }
+  ],
+  "expected_count": 65,
+  "historical_fixture_count": 51,
+  "serialization_conditions": [
+    "A",
+    "B",
+    "M",
+    "C",
+    "BC"
+  ],
+  "conditions_executed": false,
+  "new_prompt_token_vectors_status": "Not materialized here. Immutable input bytes and independent authoritative-tokenizer construction path frozen; D must persist IDs/hash and compare worker before any model output.",
+  "golden_independence": "P/K/H/reference are literal independently authored test-layer bytes; controls and SYSTEM are manually typed; no production constant imports or serializer output used as oracle",
+  "all_content_invented_or_existing_candidate_free_conformance": true,
+  "execution_status": "NOT_RUN",
+  "freeze_amendment": "Any byte/recipe/invariant change creates a new governance revision and invalidates consuming gates; no post-output fixture selection"
+}

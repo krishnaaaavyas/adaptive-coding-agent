@@ -1,0 +1,329 @@
+{
+  "repository": "Qwen/Qwen3-Coder-Next",
+  "revision": "a7fbcb5c0e12d62a448eaa0e260346bf5dcc0feb",
+  "class": "Qwen2TokenizerFast",
+  "declared_class": "Qwen2Tokenizer",
+  "is_fast": true,
+  "vocab_size": 151643,
+  "length": 151669,
+  "canonical_vocab_sha256": "c96fa22dee2dd9c98c4f0c73ea423e21907bc96abda81fa5c6b2e24a670c66bf",
+  "template_sha256": "c79a833039a43602150cce0902403d6e376c50930c1b2a139b2964e1f0c322a0",
+  "template_bytes": 6068,
+  "special_tokens_map": {
+    "eos_token": "<|im_end|>",
+    "pad_token": "<|endoftext|>",
+    "additional_special_tokens": [
+      "<|im_start|>",
+      "<|im_end|>",
+      "<|object_ref_start|>",
+      "<|object_ref_end|>",
+      "<|box_start|>",
+      "<|box_end|>",
+      "<|quad_start|>",
+      "<|quad_end|>",
+      "<|vision_start|>",
+      "<|vision_end|>",
+      "<|vision_pad|>",
+      "<|image_pad|>",
+      "<|video_pad|>"
+    ]
+  },
+  "all_special_ids": [
+    151645,
+    151643,
+    151644,
+    151646,
+    151647,
+    151648,
+    151649,
+    151650,
+    151651,
+    151652,
+    151653,
+    151654,
+    151655,
+    151656
+  ],
+  "added_tokens": {
+    "151643": {
+      "content": "<|endoftext|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151644": {
+      "content": "<|im_start|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151645": {
+      "content": "<|im_end|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151646": {
+      "content": "<|object_ref_start|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151647": {
+      "content": "<|object_ref_end|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151648": {
+      "content": "<|box_start|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151649": {
+      "content": "<|box_end|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151650": {
+      "content": "<|quad_start|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151651": {
+      "content": "<|quad_end|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151652": {
+      "content": "<|vision_start|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151653": {
+      "content": "<|vision_end|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151654": {
+      "content": "<|vision_pad|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151655": {
+      "content": "<|image_pad|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151656": {
+      "content": "<|video_pad|>",
+      "special": true,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151657": {
+      "content": "<tool_call>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151658": {
+      "content": "</tool_call>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151659": {
+      "content": "<|fim_prefix|>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151660": {
+      "content": "<|fim_middle|>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151661": {
+      "content": "<|fim_suffix|>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151662": {
+      "content": "<|fim_pad|>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151663": {
+      "content": "<|repo_name|>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151664": {
+      "content": "<|file_sep|>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151665": {
+      "content": "<tool_response>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151666": {
+      "content": "</tool_response>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151667": {
+      "content": "<think>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    },
+    "151668": {
+      "content": "</think>",
+      "special": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "single_word": false
+    }
+  },
+  "bos_token_id": null,
+  "eos_token_id": 151645,
+  "pad_token_id": 151643,
+  "padding_side": "right",
+  "truncation_side": "right",
+  "model_max_length": 1048576,
+  "authoritative_native_capacity": 262144,
+  "backend_model_type": "BPE",
+  "backend_normalizer": {
+    "type": "NFC"
+  },
+  "backend_pre_tokenizer": {
+    "type": "Sequence",
+    "pretokenizers": [
+      {
+        "type": "Split",
+        "pattern": {
+          "Regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+        },
+        "behavior": "Isolated",
+        "invert": false
+      },
+      {
+        "type": "ByteLevel",
+        "add_prefix_space": false,
+        "trim_offsets": false,
+        "use_regex": false
+      }
+    ]
+  },
+  "backend_post_processor": {
+    "type": "ByteLevel",
+    "add_prefix_space": false,
+    "trim_offsets": false,
+    "use_regex": false
+  },
+  "all_256_byte_symbols_present": true,
+  "encode_add_special_tokens_true": [
+    20339,
+    17556
+  ],
+  "encode_add_special_tokens_false": [
+    20339,
+    17556
+  ],
+  "empty_encode": [],
+  "padding_example": {
+    "input_ids": [
+      [
+        20339,
+        17556,
+        151643
+      ],
+      [
+        20339,
+        17556,
+        27268
+      ]
+    ],
+    "attention_mask": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        1,
+        1
+      ]
+    ]
+  }
+}

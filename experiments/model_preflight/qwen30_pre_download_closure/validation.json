@@ -1,0 +1,262 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "Prior governance/roster/Draft2/Draft3/current-r2 explicit integrity allowlist",
+      "result": "PASS",
+      "detail": {
+        "files": 1317,
+        "mismatches": [],
+        "method": "Hash-only explicit previous paths, no protected candidate/task/scorer/outcome enumeration or content inspection"
+      }
+    },
+    {
+      "check": "Frozen exact copy adaptation_lifecycle_plan.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy execution_profile.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy execution_schedule.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy expected_checkpoint_bodies.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy failure_policy.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy fixture_manifest.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy gate_dependency_graph.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy generation_profile.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy hardware_requirements.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy pre_download_checklist.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy repair_policy.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy repeatability_policy.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy resource_measurement_policy.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy runtime_lock.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy run_manifest_schema.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Frozen exact copy semantic_receipt_rules.json",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "HEAD unchanged",
+      "result": "PASS",
+      "detail": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b"
+    },
+    {
+      "check": "No tracked/product edits or commit",
+      "result": "PASS",
+      "detail": {
+        "tracked_diff": "",
+        "status": "?? experiments/model_preflight/"
+      }
+    },
+    {
+      "check": "Independent Python metadata edge/specifier verification after cu128 override",
+      "result": "PASS",
+      "detail": {
+        "packages": 179,
+        "active_edges": 369,
+        "errors": [],
+        "ABI_proof": false
+      }
+    },
+    {
+      "check": "Frozen package/CUDA/Triton/NCCL identities retained",
+      "result": "PASS",
+      "detail": {
+        "torch": "2.9.0+cu128",
+        "vllm": "0.11.2",
+        "transformers": "4.57.6",
+        "peft": "0.18.0",
+        "tokenizers": "0.22.2",
+        "jinja2": "3.1.6",
+        "triton": "3.5.0",
+        "flashinfer-python": "0.5.2",
+        "nvidia-nccl-cu12": "2.27.5",
+        "nvidia-cuda-nvrtc-cu12": "12.8.93",
+        "nvidia-cuda-runtime-cu12": "12.8.90"
+      }
+    },
+    {
+      "check": "Frozen base/platform/runtime retained",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Retrieved exact code archive content hashes",
+      "result": "PASS",
+      "detail": {
+        "archives": 7,
+        "Qwen_bodies": 0
+      }
+    },
+    {
+      "check": "FlashInfer cache metadata dependencies resolved",
+      "result": "PASS",
+      "detail": "Range metadata only; complete wheel hash verification remains PENDING"
+    },
+    {
+      "check": "Apt exact metadata closure recorded",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Apt signed-header index SHA declarations match cached indexes",
+      "result": "PASS",
+      "detail": {
+        "index_count": 6,
+        "actual_GPGV": "PENDING_TARGET_BUILD",
+        "Deb_body_authentication": "PENDING_INPUT_COLLECTION"
+      }
+    },
+    {
+      "check": "Runner/build/observer/isolation/oracle content root",
+      "result": "PASS",
+      "detail": {
+        "files": 49,
+        "root_sha256": "bab6bf6dc0eff2567f07031ff7c1b52eb34af8db3f359455e8881afe3b022c27",
+        "bad": []
+      }
+    },
+    {
+      "check": "Owned Python syntax without execution/import",
+      "result": "PASS",
+      "detail": []
+    },
+    {
+      "check": "Target contract JSON schema well-formed",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Literal oracle independent of production imports",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "Latest model_free tests PASS",
+      "result": "PASS",
+      "detail": {
+        "batch": "model_free_batch_3.json",
+        "tests": 25,
+        "all_previous_batches_retained": 3
+      }
+    },
+    {
+      "check": "Latest preparation tests PASS",
+      "result": "PASS",
+      "detail": {
+        "batch": "preparation_batch_2.json",
+        "tests": 11,
+        "all_previous_batches_retained": 2
+      }
+    },
+    {
+      "check": "All model-free attempts retained append-only hash chain",
+      "result": "PASS",
+      "detail": {
+        "entries": 38,
+        "head_sha256": "4f7876b92dbbd43d3c10496241df696f387951d7f21d7d38d2b36ccf5483b3f8"
+      }
+    },
+    {
+      "check": "Retained synthetic schema/sidecar evidence and no actual Qwen PASS",
+      "result": "PASS",
+      "detail": {
+        "receipts": 36,
+        "errors": []
+      }
+    },
+    {
+      "check": "Recheck preserves every frozen mandatory requirement",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "All previous PENDING correctly remain PENDING despite partial evidence",
+      "result": "PASS",
+      "detail": null
+    },
+    {
+      "check": "No fabricated image/target/OS evidence",
+      "result": "PASS",
+      "detail": null
+    }
+  ],
+  "pre_download_verdict": "NOT READY — RUNTIME_BUILD, TARGET_CAPACITY, RUNNER_ATTESTATION",
+  "current_target_image_runtime_tests": "NOT_RUN/PENDING",
+  "current_model_free_tests": 36,
+  "prohibitions": {
+    "weights_downloaded": false,
+    "model_instantiated": false,
+    "adapter_instantiated": false,
+    "inference": false,
+    "model_forward": false,
+    "training": false,
+    "GPU_used_or_rented": false,
+    "A_S_started": false,
+    "A_B_M_C_BC_experiments": false,
+    "Study1_2_3": false,
+    "protected_candidates_tasks_scorers_outcomes_accessed": false,
+    "protocol_changed": false,
+    "product_tracked_files_modified": false,
+    "commit_made": false
+  },
+  "scope_attestation_basis": "All executed commands restricted to preparation metadata/source retrieval, model-free stdlib/jsonschema/packaging tests and explicit frozen artifact hashes; no native worker, target probe, Docker build or framework self-test executed. Runtime/target proof remains pending.",
+  "head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "git_status": "?? experiments/model_preflight/",
+  "validation_role": "Implementer verification, not an assigned independent reviewer"
+}

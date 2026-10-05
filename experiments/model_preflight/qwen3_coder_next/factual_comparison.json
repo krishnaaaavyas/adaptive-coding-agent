@@ -1,0 +1,107 @@
+{
+  "scope": "checkpoint/tokenizer/template metadata only; no earlier token-count or performance results read",
+  "files": {
+    "config.json": {
+      "previous_sha256": "e2c8d8eea39471785cd93379d8b48241ad7dcda299013155dd02526e34a0de62",
+      "next_sha256": "a7b8098d3b05777f12bb5677a26bf1240a1bb09def1b06b29e6be86cae2e84f8"
+    },
+    "tokenizer.json": {
+      "previous_sha256": "19564a48c4f71a2a1b937cce34c737a1e662b171c5f5d7edf641a15cd896f07d",
+      "next_sha256": "19564a48c4f71a2a1b937cce34c737a1e662b171c5f5d7edf641a15cd896f07d"
+    },
+    "vocab.json": {
+      "previous_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "next_sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "merges.txt": {
+      "previous_sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "next_sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    "chat_template.jinja": {
+      "previous_sha256": "5a38bfa05833266240066aedc497decc9b00cc0d3e3b8cceea98cf530196ab06",
+      "next_sha256": "c79a833039a43602150cce0902403d6e376c50930c1b2a139b2964e1f0c322a0"
+    }
+  },
+  "previous_config": {
+    "architectures": [
+      "Qwen3MoeForCausalLM"
+    ],
+    "attention_bias": false,
+    "attention_dropout": 0.0,
+    "bos_token_id": 151643,
+    "decoder_sparse_step": 1,
+    "eos_token_id": 151645,
+    "head_dim": 128,
+    "hidden_act": "silu",
+    "hidden_size": 2048,
+    "initializer_range": 0.02,
+    "intermediate_size": 6144,
+    "max_position_embeddings": 262144,
+    "max_window_layers": 48,
+    "mlp_only_layers": [],
+    "model_type": "qwen3_moe",
+    "moe_intermediate_size": 768,
+    "norm_topk_prob": true,
+    "num_attention_heads": 32,
+    "num_experts": 128,
+    "num_experts_per_tok": 8,
+    "num_hidden_layers": 48,
+    "num_key_value_heads": 4,
+    "output_router_logits": false,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": null,
+    "rope_theta": 10000000,
+    "router_aux_loss_coef": 0.001,
+    "sliding_window": null,
+    "tie_word_embeddings": false,
+    "torch_dtype": "bfloat16",
+    "transformers_version": "4.52.3",
+    "use_cache": true,
+    "use_sliding_window": false,
+    "vocab_size": 151936
+  },
+  "next_config": {
+    "architectures": [
+      "Qwen3NextForCausalLM"
+    ],
+    "attention_bias": false,
+    "attention_dropout": 0,
+    "bos_token_id": 151643,
+    "decoder_sparse_step": 1,
+    "eos_token_id": 151645,
+    "full_attention_interval": 4,
+    "head_dim": 256,
+    "hidden_act": "silu",
+    "hidden_size": 2048,
+    "initializer_range": 0.02,
+    "intermediate_size": 5120,
+    "linear_conv_kernel_dim": 4,
+    "linear_key_head_dim": 128,
+    "linear_num_key_heads": 16,
+    "linear_num_value_heads": 32,
+    "linear_value_head_dim": 128,
+    "max_position_embeddings": 262144,
+    "mlp_only_layers": [],
+    "model_type": "qwen3_next",
+    "moe_intermediate_size": 512,
+    "norm_topk_prob": true,
+    "num_attention_heads": 16,
+    "num_experts": 512,
+    "num_experts_per_tok": 10,
+    "num_hidden_layers": 48,
+    "num_key_value_heads": 2,
+    "output_router_logits": false,
+    "partial_rotary_factor": 0.25,
+    "rms_norm_eps": 1e-06,
+    "rope_scaling": null,
+    "rope_theta": 5000000,
+    "router_aux_loss_coef": 0.001,
+    "shared_expert_intermediate_size": 512,
+    "tie_word_embeddings": false,
+    "torch_dtype": "bfloat16",
+    "transformers_version": "4.57.0.dev0",
+    "use_cache": true,
+    "use_sliding_window": false,
+    "vocab_size": 151936
+  }
+}

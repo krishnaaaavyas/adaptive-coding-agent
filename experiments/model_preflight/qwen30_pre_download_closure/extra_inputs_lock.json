@@ -1,0 +1,38 @@
+{
+  "flash_attention_gitlinks": [
+    {
+      "path": "csrc/composable_kernel",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "888317e698e9803c62bd38568abc9e05d7709f33",
+      "selected": false,
+      "reason": "ROCm composable_kernel not used by frozen CUDA build"
+    },
+    {
+      "path": "sources/archives/flash-attention-cutlass.tar.gz",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "62750a2b75c802660e4894434dc55e839f322277",
+      "selected": true,
+      "url": "https://codeload.github.com/NVIDIA/cutlass/tar.gz/62750a2b75c802660e4894434dc55e839f322277",
+      "bytes": 31379102,
+      "sha256": "78816d6c6d97793b5b59ef2a702174cb85b78dfcefc8fe2489964de2e42f17d2"
+    }
+  ],
+  "flashinfer_jit_cache": {
+    "name": "flashinfer-jit-cache",
+    "version": "0.5.2+cu128",
+    "filename": "flashinfer_jit_cache-0.5.2+cu128-cp39-abi3-manylinux_2_28_x86_64.whl",
+    "url": "https://github.com/flashinfer-ai/flashinfer/releases/download/v0.5.2/flashinfer_jit_cache-0.5.2%2Bcu128-cp39-abi3-manylinux_2_28_x86_64.whl",
+    "bytes": 1074967261,
+    "sha256": "8e8afa03ca179581ff13cd0d59db1048fc3610103962d9bf13f628acfe026c35",
+    "body_downloaded": false,
+    "body_hash_verified": false,
+    "metadata_requires_dist": [],
+    "metadata_path": "sources/flashinfer-jit-cache-METADATA.txt",
+    "metadata_sha256": "5088cc16cb1163c4510d6a0127b23be1ce743315178bdd41d97f758eddae3473",
+    "metadata_authentication": "RANGE_READ_ONLY; full pinned wheel digest verification still required",
+    "range_metadata_read": true
+  },
+  "tree_source_url": "https://api.github.com/repos/vllm-project/flash-attention/git/trees/58e0626a692f09241182582659e3bf8f16472659?recursive=1"
+}

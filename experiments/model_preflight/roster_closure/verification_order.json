@@ -1,0 +1,143 @@
+{
+  "status": "FROZEN STATIC ENGINEERING RECOMMENDATION; NOT EXECUTED",
+  "priority_rule": [
+    "coverage gain",
+    "fresh-original adaptation testability",
+    "verification burden",
+    "resource burden",
+    "retain both if still tied"
+  ],
+  "coverage_subdimensions_from_landscape_14": [
+    "architecture/adaptation",
+    "serialization",
+    "adaptation resource",
+    "inference resource"
+  ],
+  "coverage_assessment": "Assess incremental intended core mechanisms and native families; overlapping full-attention blocks do not double-count Next as an independent ordinary-MoE substitute. No invented weighted score.",
+  "sequence": [
+    "qwen3_coder_30b_a3b",
+    "devstral_small2_2512",
+    "glm47_flash",
+    "nemotron35_lightning_bf16",
+    "qwen3_coder_next"
+  ],
+  "sequence_models": [
+    "Qwen3-Coder-30B-A3B-Instruct",
+    "Devstral-Small-2-24B-Instruct-2512",
+    "GLM-4.7-Flash",
+    "NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+    "Qwen3-Coder-Next"
+  ],
+  "ordering_decisions": [
+    {
+      "before": "qwen3_coder_30b_a3b",
+      "after": "devstral_small2_2512",
+      "coverage": "At the initial baseline every owner adds a core primitive and native wrapper; no performance score or survivor count distinguishes them.",
+      "adaptation_testability": "Native BF16 ordinary attention on Qwen30 avoids Devstral original-FP8 reconstruction/scale/alias and multimodal-key validation at the first baseline.",
+      "verification_burden": "Use established single-sequence full-attention baseline before adding a conversion and different serializer; Qwen30 runtime source lock is an explicit pre-execution gate.",
+      "resource_burden": "Devstral BF16 is smaller, but resources are a later tiebreak and do not override the earlier conversion/testability distinction."
+    },
+    {
+      "before": "devstral_small2_2512",
+      "after": "glm47_flash",
+      "coverage": "Both add an unrepresented mechanism and serialization after Qwen; dense and MLA are both retained.",
+      "adaptation_testability": "Ordinary dense q/k/v/o and MLP module forwards precede compressed/low-rank attention and expert tensor packing.",
+      "verification_burden": "Resolve Devstral own-original reconstruction explicitly, then add MLA kernel/cache/export validation; no source-supported path is discarded.",
+      "resource_burden": "Devstral reconstructed base ~44.725 GiB versus GLM main ~55.774 GiB supports this engineering sequence; neither estimate is a fit guarantee."
+    },
+    {
+      "before": "glm47_flash",
+      "after": "nemotron35_lightning_bf16",
+      "coverage": "MLA and Mamba each add a new core mechanism and native default-thinking wrapper; both retained.",
+      "adaptation_testability": "Ordinary MLA projection adapter flow precedes reference Mamba scan/dispatch and wrapper-bypass restrictions.",
+      "verification_burden": "Mamba needs SSM/conv/KV reset plus known dt-clamp parity and kernel warmup/reset verification in addition to full suffix checks.",
+      "resource_burden": "Comparable base residency; recurrent backward/workspace uncertainty, rather than active parameter count, is recorded."
+    },
+    {
+      "before": "nemotron35_lightning_bf16",
+      "after": "qwen3_coder_next",
+      "coverage": "Mamba and DeltaNet are independent; Nemotron additionally introduces a serializer not yet checked, while Next shares the already checked Qwen family.",
+      "adaptation_testability": "Next requires separately verified full/linear projection branches and distributed same-original adaptation; no Next pass is inherited.",
+      "verification_burden": "Defer Next sharded load/reset/adapter/export until smaller configurations establish baseline governance/transport; preserve Qwen30 before Next.",
+      "resource_burden": "Next ~148.405 GiB BF16 tensor payload and multi-GPU planning exceeds Nemotron ~58.819 GiB main payload. No hardware ceiling or quality exclusion."
+    }
+  ],
+  "Qwen30_before_Next_preserved": true,
+  "previous_absolute_adjacency_not_required": "Earlier order compared only the two Qwens; completed independent gap representatives now occur between them.",
+  "tie_policy": "No candidate removed to impose a model count. Retain both on a genuine tie; sequence is a methodological staging recommendation, not a proof of a unique optimal order.",
+  "minimum_first_configuration": "qwen3_coder_30b_a3b",
+  "minimum_required_path": {
+    "configurations": [
+      "qwen3_coder_30b_a3b"
+    ],
+    "source_gate_ids": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S"
+    ],
+    "scope": "Native original BF16, conservative attention LoRA, entire raw suffix, full context/control/terminal/isolation/repeat/resource gates, save/reload/serve-or-merge and second fresh ORIGINAL cycle",
+    "source_lock_before_any_execution": "Resolve vLLM 0.11.2 immutable source/build against archived hashes; no silent replacement with 0.16.0/0.30.0",
+    "no_pass_transfer": true,
+    "failure_does_not_automatically_drop_others": true
+  },
+  "extended_mechanism_coverage_path": {
+    "configurations": [
+      "devstral_small2_2512",
+      "glm47_flash",
+      "nemotron35_lightning_bf16",
+      "qwen3_coder_next"
+    ],
+    "scope": "Independent conservative lifecycle per non-redundant configuration, plus only those hybrid/MLP/expert gates required for the particular intended claim",
+    "conditional_scope_claims": {
+      "dense_MLP": "Devstral P",
+      "Mamba_input_projection": "Nemotron R",
+      "DeltaNet_projection": "Next O full/linear branches",
+      "stacked_expert": "GLM Q or Nemotron S plus their scope-dependent lifecycle/export/resource checks",
+      "ordinary_expert": "Separately declared Qwen expert scope-specific checks; not automatically included in historical A\u2013S"
+    },
+    "all_survivors_all_expensive_scopes_required": false
+  },
+  "failure_policy_handoff": {
+    "A": {
+      "class": "PROTOCOL/MODEL INCOMPATIBILITY",
+      "action": "STOP that configuration/model track"
+    },
+    "B": {
+      "class": "INFRASTRUCTURE/CONFIGURATION DEFECT",
+      "action": "QUARANTINE \u2192 bounded repair \u2192 rerun affected/dependent gates"
+    },
+    "C": {
+      "class": "MEASUREMENT/VERIFICATION INCOMPLETE",
+      "action": "PENDING; never convert to PASS"
+    },
+    "repair_invariants": [
+      "same immutable original checkpoint",
+      "P/K/H and lane budgets",
+      "32768 context",
+      "2048 output reserve",
+      "entire completion semantics",
+      "task population",
+      "frozen generation controls",
+      "normative protocol behavior"
+    ],
+    "execution_status": "HANDOFF ONLY; 1G2A NOT STARTED",
+    "bounded_repair_note": "Declare repair scope/attempt bound and dependency graph in later 1G2A before measurements; this audit invents no repair budget."
+  },
+  "spending_or_infrastructure_execution_authorized": false
+}

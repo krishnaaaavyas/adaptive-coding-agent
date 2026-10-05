@@ -1,0 +1,98 @@
+[
+  {
+    "name": "system_user",
+    "rendered_bytes": 386,
+    "input_tokens": 80,
+    "render_sha256": "5521a0ee6a644ff47bd24289c56598a711b149d8d897302b010aeb5ba162c9ad",
+    "token_ids_sha256": "aebb03f9126913e1f2855c396b6c83b08114efd778dc0932840396e8bc4bc338",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 80,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "system_user_assistant",
+    "rendered_bytes": 458,
+    "input_tokens": 89,
+    "render_sha256": "5daf273b841fe628b708e279bd0fa8a7a6bfc49a3da1b25bc0abb11be0339c4b",
+    "token_ids_sha256": "262b0d36ba13da29e41f47e660f88e27e03ac3f8ab437370a05b6c7e2360ed94",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 89,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "multiline_code",
+    "rendered_bytes": 401,
+    "input_tokens": 85,
+    "render_sha256": "f6e1e95c5dd46318ca30bed12bea23b96e1d23ec4e4e4b4c8fe453e7ade6b6ca",
+    "token_ids_sha256": "67d2fd926073df7750513b83fcd1fefcb8d2ea0869b9274729e0965eff36ee6c",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 85,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "unicode",
+    "rendered_bytes": 408,
+    "input_tokens": 84,
+    "render_sha256": "2a82d8f8bb318372b28f36a5cd83c3215f5f6ac52891332698b84499e42c6343",
+    "token_ids_sha256": "d0d159076458829b84c44f304369734a6c0406ce289b8d4e02b0b7f42cf21605",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 84,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "nfc_sensitive",
+    "rendered_bytes": 922,
+    "input_tokens": 180,
+    "render_sha256": "262ef727fb2e3e60d1870deac2cc33543ac4541f72da4b0d8201d52d2af6fba4",
+    "token_ids_sha256": "6b1593adfaaf7815faaa86556bcf5a3c1f99457559723c088bef9ccb41e5a313",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 180,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "protocol_delimiters",
+    "rendered_bytes": 1095,
+    "input_tokens": 243,
+    "render_sha256": "9d7e7ec51ca718b33ffa87a6e05d531c30e43873f26605ce2e9e6714232c798c",
+    "token_ids_sha256": "bb8b23559bd0079ebcfa312ded136c94e6754469bc01533631976f7781d2e508",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 243,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "harmony_native_delimiters",
+    "rendered_bytes": 987,
+    "input_tokens": 206,
+    "render_sha256": "e514f9713ebf5f4696352e6b3896ba76945609c38fd4561fa726ca2fb4c8eff0",
+    "token_ids_sha256": "c36377e6788f253141459e927e1776495e53351efc046047d18ba376c6cbad36",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 184,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  },
+  {
+    "name": "empty_h",
+    "rendered_bytes": 1321,
+    "input_tokens": 265,
+    "render_sha256": "a33456122169891f099af02d7da6f1462ad3035637027d447db1961319fc742f",
+    "token_ids_sha256": "6ea19e4f7961d3869eeda5d0e1077fcbea89a0c06981c7173a020b9b3872c251",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 265,
+    "upstream_jinja_raw_harmony_encoding_parity": true
+  }
+]

@@ -1,0 +1,687 @@
+STEP 8K-B.1G2A-0R — QWEN30 PRE-DOWNLOAD BLOCKER CLOSURE
+
+Continue from the completed Qwen30 infrastructure-governance step.
+
+CURRENT VERDICT
+
+NOT READY — RUNTIME_BUILD, TARGET_CAPACITY, RUNNER_ATTESTATION.
+
+The governance revision is frozen.
+
+SUBJECT
+
+Qwen/Qwen3-Coder-30B-A3B-Instruct
+revision:
+b2cff646eb4bb1d68355c01b18ae02e7cf42d120
+
+PURPOSE
+
+Close ONLY the three preparation blockers required by the frozen
+fail-closed pre-download checklist:
+
+1. RUNTIME_BUILD
+2. TARGET_CAPACITY
+3. RUNNER_ATTESTATION
+
+Then independently re-evaluate the existing pre-download checklist.
+
+This step must NOT download Qwen model weights or begin A–S execution.
+
+==================================================
+0. AUTHORITATIVE INPUTS
+==================================================
+
+Use the completed artifacts under:
+
+experiments/model_preflight/qwen30_infrastructure_governance/
+
+Treat as frozen:
+
+- failure policy
+- repair policy
+- gate dependency DAG
+- generation profile
+- fixture manifest
+- repeatability policy
+- resource measurement policy
+- adaptation lifecycle plan
+- run manifest schema
+- execution schedule
+- hardware requirements
+- semantic receipt rules
+- pre-download checklist
+
+Also use the controlling Qwen30 static preflight, cross-model audit,
+roster closure, Draft2/Draft3 and current implementation-r2 provenance.
+
+Do not modify frozen semantics merely to close a blocker.
+
+==================================================
+1. STRICT PROHIBITIONS
+==================================================
+
+DO NOT:
+
+- download Qwen checkpoint weight bodies
+- instantiate Qwen30
+- instantiate adapters
+- run model inference
+- run model forward passes
+- run training
+- begin A–S
+- use protected candidates/tasks/scorers/outcomes
+- run A/B/M/C/BC
+- run Study1/2/3
+- change checkpoint
+- change roster/order
+- change P/K/H
+- change 32768 context
+- change 2048 generated-token cap
+- change native/full-stream semantics
+- change generation controls
+- change frozen fixture contents
+- change repeat counts
+- change acceptance tolerances
+- change adaptation scope
+- change merge/export route
+- introduce retries
+- commit changes
+
+No GPU rental/use is authorized merely to make this preparation step
+look complete.
+
+==================================================
+2. BLOCKER A — RUNTIME_BUILD
+==================================================
+
+Turn the frozen source-level runtime specification into a complete,
+reproducible EXECUTABLE BUILD DEFINITION.
+
+The target remains:
+
+Linux amd64
+CPython 3.11.9
+Unicode 14.0.0
+PyTorch 2.9.0 + CUDA 12.8
+vLLM 0.11.2 source at:
+275de34170654274616082721348b7edd9741d32
+
+Transformers 4.57.6 at:
+753d61104116eefc8ffc977327b441ee0c8d599f
+
+PEFT 0.18.0 at:
+77daa8d3b7decf2b40238ab47e2c1bd0f26c7749
+
+Tokenizers 0.22.2
+Jinja2 3.1.6
+
+Preserve all other frozen identities from runtime_lock.json.
+
+Do NOT use upstream mutable Dockerfile defaults as proof.
+
+Produce a fully pinned custom build recipe.
+
+Resolve and pin, as far as obtainable before execution:
+
+- base image by digest
+- apt repository state/snapshot strategy
+- apt package names + versions
+- compiler/build-tool versions
+- CPython 3.11.9 build or immutable binary route
+- pip/bootstrap versions
+- complete Python dependency closure
+- wheel/source hashes
+- vLLM source commit
+- vLLM build flags
+- CUDA build/runtime libraries
+- Triton
+- CUTLASS
+- FlashAttention/vLLM attention source
+- FlashInfer
+- NCCL even if TP1 runtime does not materially use collectives
+- tokenizer/template dependencies
+- PEFT
+- Transformers
+- any architecture-specific runtime dependencies
+- runner dependencies
+- observer dependencies
+
+Generate:
+
+- immutable Dockerfile/build definition
+- constraints/lock file
+- source manifest
+- expected binary/package manifest
+- deterministic build script
+- build verification script
+- SBOM-generation procedure
+- image-digest capture procedure
+
+IMPORTANT:
+
+A build recipe is not itself a final executable lock.
+
+If building the image is possible WITHOUT GPU and WITHOUT model weights,
+you MAY build it in this step.
+
+If the current machine cannot build the CUDA/vLLM image reliably,
+produce the complete deterministic build bundle and classify final
+image digest as PENDING_TARGET_BUILD.
+
+Do not fake an image digest.
+
+The blocker may be classified:
+
+CLOSED
+or
+PARTIALLY CLOSED — TARGET BUILD REQUIRED
+or
+PENDING — <specific unresolved dependency>.
+
+==================================================
+3. RUNTIME SELF-TESTS WITHOUT MODEL WEIGHTS
+==================================================
+
+Implement runtime self-tests that do NOT instantiate Qwen30.
+
+Where possible they should verify:
+
+- Python == 3.11.9
+- Unicode database == 14.0.0
+- exact package versions
+- package hashes
+- vLLM source/build identity
+- Transformers source identity
+- PEFT identity
+- Tokenizers identity
+- Jinja identity
+- CUDA userspace identity
+- compiled extension presence
+- selected kernel/build metadata
+- runner version/hash
+- observer version/hash
+
+GPU-dependent checks may remain PENDING until target execution.
+
+Clearly separate:
+
+BUILD-TIME PASS
+TARGET-RUNTIME PASS
+PENDING TARGET EVIDENCE.
+
+==================================================
+4. BLOCKER B — TARGET_CAPACITY
+==================================================
+
+Do NOT choose a cloud provider based on brand, benchmark quality or
+convenience.
+
+Define a MACHINE-READABLE TARGET ATTESTATION CONTRACT that a future
+execution host must satisfy BEFORE model acquisition.
+
+The frozen planning requirements remain authoritative unless the
+existing governance artifact explicitly marks them estimates.
+
+At minimum attest:
+
+- Linux amd64
+- physical GPU count
+- exact GPU model
+- GPU UUID
+- compute capability
+- total VRAM
+- currently available VRAM before acquisition/execution
+- ECC mode if available
+- MIG state
+- TP topology
+- host RAM total/available
+- storage total/free
+- filesystem
+- writable scratch
+- CUDA driver
+- driver version
+- CUDA compatibility
+- kernel
+- CPU architecture
+- container runtime
+- ability to enforce offline network namespace
+- ability to mount model snapshot read-only
+- ability to exclude host/project/protected mounts
+- clock/timing source
+- cgroup/resource-observer support
+
+For Qwen30 frozen TP1 profile:
+
+require evidence compatible with one selected device.
+
+Do not silently switch to TP2.
+
+The planning envelope from governance remains:
+
+- ~56.872 GiB BF16 model payload
+- ~3 GiB KV at 32768 before workspace
+- 70 GiB initially free device memory plausible minimum planning point
+- 80 GiB free preferred safety margin
+- 64 GiB host RAM plausible floor
+- 128 GiB preferred
+- 250,000,000,000 bytes free storage before acquisition
+
+Do not convert estimates into measured guarantees.
+
+Create:
+
+target_attestation_schema.json
+target_capacity_policy.json
+target_probe.sh
+target_probe.py if useful
+target_attestation_validator.py
+
+The probe must NOT access protected project material.
+
+It should be runnable on a future GPU host BEFORE downloading Qwen.
+
+==================================================
+5. TARGET CAPACITY DISPOSITION
+==================================================
+
+Because no provider has yet been selected, distinguish:
+
+TARGET CONTRACT COMPLETE
+from
+ACTUAL TARGET ATTESTED.
+
+If no actual compatible host is currently available:
+
+do NOT fail the model.
+
+Return:
+
+TARGET CONTRACT COMPLETE — ACTUAL HOST ATTESTATION PENDING
+
+This is acceptable preparation evidence but does NOT by itself
+authorize acquisition.
+
+If a compatible target is already available and can be inspected
+without renting/buying anything, it may be attested.
+
+Do not provision/rent hardware in this step.
+
+==================================================
+6. BLOCKER C — RUNNER_ATTESTATION
+==================================================
+
+Implement the actual external execution runner/supervisor specified by
+the frozen governance artifacts.
+
+This is real infrastructure code, but it must be testable WITHOUT
+Qwen weights.
+
+The runner must enforce/record:
+
+- one request per invocation
+- retry count zero
+- explicit input artifact
+- exact prompt token IDs supplied/recorded
+- raw generated token IDs
+- raw generated byte artifact
+- finish reason
+- stop reason
+- terminal event
+- terminal-removal receipt
+- normalized output hash
+- effective generation controls
+- process identity
+- runtime identity
+- model identity fields
+- resource telemetry hooks
+- isolation receipts
+- provenance hashes
+- gate ID/result
+- failure classification
+- invocation count
+
+Do not implement semantic cleanup.
+
+Do not implement final-only extraction.
+
+Do not implement automatic retry.
+
+Do not execute model-generated shell/Python/tool commands.
+
+==================================================
+7. OS-LEVEL ISOLATION
+==================================================
+
+Implement or prepare the exact OS-level enforcement mechanism.
+
+The design must support later verification of:
+
+- network disabled during execution
+- no acquisition credentials
+- no Docker socket
+- no SSH agent/socket
+- no host root mount
+- no product repository mount
+- no protected candidate/scorer/outcome mount
+- read-only authenticated model mount
+- read-only frozen input/runtime mounts
+- scoped writable output
+- fresh scratch
+- dropped Linux capabilities
+- non-root execution
+- seccomp/AppArmor or equivalent profile where available
+- no tool callbacks
+- no dynamic retrieval
+
+Do not claim enforcement PASS merely from configuration text.
+
+Produce explicit machine-verifiable receipts.
+
+==================================================
+8. SYNTHETIC RUNNER TEST HARNESS
+==================================================
+
+Create a MODEL-FREE synthetic worker that exercises the runner contract.
+
+It may emit invented deterministic token IDs/bytes/events.
+
+It must NOT imitate or claim Qwen behavior.
+
+Use it only to test infrastructure mechanics.
+
+Test at minimum:
+
+- normal one-call completion receipt
+- native-terminal receipt
+- LENGTH receipt at exactly 2048 invented IDs
+- invalid UTF-8 rejection/strict handling
+- CRLF/CR normalization receipt
+- internal special-token retention
+- retry prohibition
+- attempted network access denied
+- attempted outside-file read denied
+- attempted credential access denied
+- attempted callback/tool execution not executed
+- output path confinement
+- telemetry artifact creation
+- manifest schema validation
+- semantic receipt validation
+- append-only provenance
+- injected worker failure
+- missing telemetry → PENDING
+- repeat mismatch detection
+- stale state/history detection
+
+All content must be invented and non-protected.
+
+==================================================
+9. INDEPENDENT ORACLE REQUIREMENT
+==================================================
+
+Do not derive expected runner behavior from the same production
+constants/functions being tested.
+
+Create literal independent expectations for:
+
+- generation controls
+- terminal accounting
+- retry count
+- normalization
+- isolation decisions
+- manifest-required fields
+- gate disposition
+
+This is the same anti-circularity principle established by the earlier
+context-policy F2 finding.
+
+==================================================
+10. RUNNER CONTENT ADDRESSING
+==================================================
+
+After implementation, compute and record hashes for:
+
+- supervisor
+- worker interface
+- isolation configuration
+- seccomp/AppArmor profile
+- observer
+- semantic validator
+- schema validator
+- synthetic test fixtures
+- independent oracle
+- build scripts
+
+Produce a runner attestation manifest.
+
+The later executable environment must bind these exact hashes.
+
+==================================================
+11. RUNNER VALIDATION
+==================================================
+
+Run ONLY model-free tests.
+
+No Qwen model.
+No Hugging Face model inference.
+No adapter.
+No GPU required.
+
+Validate:
+
+- runner schema
+- semantic receipts
+- one-call rule
+- no-retry rule
+- raw stream preservation
+- strict decoding
+- normalization
+- isolation probes where supported locally
+- telemetry logic
+- provenance
+- failure classification
+- repeat comparison
+
+If an OS enforcement feature cannot be proven on the current Windows
+host, mark:
+
+PENDING TARGET LINUX ATTESTATION.
+
+Do not weaken the Linux requirement.
+
+==================================================
+12. REVIEWER ROLE
+==================================================
+
+The governance report requires reviewer assignment before repair.
+
+Define the role now without inventing an external person.
+
+Create reviewer_policy.json specifying:
+
+- implementer role
+- independent reviewer role
+- what requires reviewer approval
+- repair review procedure
+- conflict rule
+- evidence required
+- signed/hash-bound disposition format
+
+If no independent reviewer is presently assigned, record:
+
+REVIEWER_IDENTITY_PENDING
+
+This does not need to block initial acquisition unless the frozen
+governance checklist says it does, but it MUST block any future
+repair requiring reviewer approval.
+
+Do not self-label the same execution as independent review.
+
+==================================================
+13. RE-EVALUATE THE EXISTING PRE-DOWNLOAD CHECKLIST
+==================================================
+
+Do not create easier criteria.
+
+Apply the already frozen checklist.
+
+For each previous PENDING item record:
+
+- previous state
+- new evidence
+- current state
+- reason
+
+Pay particular attention to:
+
+RUNTIME_BUILD
+TARGET_CAPACITY
+RUNNER_ATTESTATION
+
+The final verdict must be exactly one:
+
+READY FOR AUTHENTICATED QWEN30 ACQUISITION
+
+or
+
+NOT READY — <remaining blockers>
+
+Acquisition requires every mandatory checklist item to satisfy its
+frozen requirement.
+
+If target contract exists but no real execution host has been
+attested and the checklist requires actual target proof:
+
+remain NOT READY.
+
+That is the correct result.
+
+==================================================
+14. DO NOT CONFLATE ACQUISITION WITH EXECUTION
+==================================================
+
+Even if the result becomes:
+
+READY FOR AUTHENTICATED QWEN30 ACQUISITION
+
+this does NOT mean:
+
+- Gate A PASS
+- Gate B PASS
+- A–S started
+- model runnable
+- GPU fit demonstrated
+- inference authorized
+- Study1 authorized
+
+It means only that authenticated weight acquisition may be the next
+separately authorized action.
+
+==================================================
+15. REQUIRED OUTPUT DIRECTORY
+==================================================
+
+Create a new dedicated directory, for example:
+
+experiments/model_preflight/qwen30_pre_download_closure/
+
+Do not overwrite the frozen governance directory.
+
+At minimum create:
+
+REPORT.md
+blocker_resolution.json
+runtime_build_lock.json
+runtime_build_manifest.json
+runtime_self_test_plan.json
+target_attestation_schema.json
+target_capacity_policy.json
+runner_attestation.json
+runner_manifest.json
+reviewer_policy.json
+pre_download_recheck.json
+source_manifest.json
+artifact_manifest.json
+validation.json
+
+Plus the actual deterministic build/runner/observer/isolation/test
+files required by the implementation.
+
+==================================================
+16. VALIDATION
+==================================================
+
+Verify:
+
+- prior governance artifacts unchanged
+- roster closure unchanged
+- Draft2/Draft3 unchanged
+- checkpoint identity unchanged
+- generation profile unchanged
+- fixtures unchanged
+- repeat counts unchanged
+- acceptance predicates unchanged
+- adaptation scope unchanged
+- no model weights downloaded
+- no model instantiated
+- no adapter instantiated
+- no inference
+- no training
+- no GPU use/rental
+- no protected candidate access
+- no benchmark outcome access
+- no product repository modifications
+- no commit
+- git HEAD unchanged
+
+==================================================
+17. REPORT STRUCTURE
+==================================================
+
+REPORT.md:
+
+1. Verdict
+2. Scope/prohibitions
+3. Frozen inputs
+4. RUNTIME_BUILD resolution
+5. Executable build definition
+6. Runtime self-test design/results
+7. TARGET_CAPACITY contract
+8. Actual target-attestation status
+9. RUNNER_ATTESTATION implementation
+10. OS isolation implementation
+11. Synthetic runner tests
+12. Independent oracle
+13. Runner content addressing
+14. Reviewer policy
+15. Pre-download checklist re-evaluation
+16. Remaining blockers
+17. Freeze boundaries
+18. Files created/modified
+19. Claim limitations
+20. Final recommendation
+
+Finish with:
+
+Qwen30 repo/SHA:
+RUNTIME_BUILD:
+TARGET_CAPACITY:
+RUNNER_ATTESTATION:
+Actual compatible target attested: YES/NO
+Runtime final image digest established: YES/NO
+Runner implementation hash established: YES/NO
+Model-free runner tests:
+Pre-download verdict:
+Weights downloaded: NO
+Model instantiated: NO
+Inference occurred: NO
+Training occurred: NO
+GPU used/rented: NO
+Protected candidates accessed: NO
+Protocol changed: NO
+Commit made: NO
+Final HEAD/status:
+
+STOP.
+
+Do not acquire Qwen weights.
+Do not start A–S.

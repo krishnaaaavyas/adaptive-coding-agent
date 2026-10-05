@@ -1,0 +1,31 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\.venv\\Scripts\\python.exe",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "packages": {
+    "Jinja2": "3.1.6",
+    "MarkupSafe": "3.0.4",
+    "PyYAML": "6.0.3",
+    "certifi": "2026.7.22",
+    "charset-normalizer": "3.5.2",
+    "colorama": "0.4.6",
+    "filelock": "4.0.9",
+    "fsspec": "2026.9.0",
+    "huggingface_hub": "0.36.2",
+    "idna": "3.20",
+    "numpy": "2.5.3",
+    "packaging": "26.3",
+    "regex": "2026.9.29",
+    "requests": "2.34.2",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.22.2",
+    "tqdm": "4.70.1",
+    "transformers": "4.57.6",
+    "typing_extensions": "4.16.0",
+    "urllib3": "2.8.0"
+  },
+  "policy_sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b",
+  "policy_json_sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b",
+  "full_policy_parser_executed": false,
+  "note": "Python 3.12 tokenizer-only framing check; official parser requires CPython 3.11.9/Unicode 14.0."
+}

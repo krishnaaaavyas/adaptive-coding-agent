@@ -1,0 +1,19 @@
+{
+  "kind": "HAND_AUTHORED_EVALUATION_INPUT_LABELS_NOT_MODEL_OUTPUTS",
+  "labels": {
+    "invented.natural_single": {
+      "utf8_hex": "64656620696e6672617374727563747572655f70726f626528293a0a2020202072657475726e20370a",
+      "bytes": 41,
+      "sha256": "b819782c49d666a05fc2e59c07909680abc0e68de176db423775e2826c0ba6df"
+    },
+    "invented.natural_multi": {
+      "utf8_hex": "3d3d3d2046494c453a20616c7068612e7079203d3d3d0a56414c5545203d20310a3d3d3d2046494c453a20626574612e7079203d3d3d0a56414c5545203d20320a",
+      "bytes": 65,
+      "sha256": "3ffcb2cddb375c8d79d2a3d0791ba65c43a8252add3dbee7c04b56d1a4e0c8fe"
+    }
+  },
+  "purpose": "Fixed teacher-forced logit positions for P/Q numeric roundtrip only; not a scored exact-match output requirement for G",
+  "mask": "Prompt labels -100; all replacement-label positions supervised; no padding for batch1",
+  "normalization": "Literal LF bytes, no post-hoc edits",
+  "constructed_before_any_runtime_behavior": true
+}

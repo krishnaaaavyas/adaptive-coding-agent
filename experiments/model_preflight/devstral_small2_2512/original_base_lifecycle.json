@@ -1,0 +1,108 @@
+{
+  "repository": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+  "revision": "55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128",
+  "status": "STATIC DESIGN / ALL MODEL LIFECYCLE STEPS NOT_RUN",
+  "inference_comparison": "pristine reconstructed BF16 original vs same-original BF16+adapter/merge; do not mix native FP8 baseline and BF16 adaptation without a separately justified representation design",
+  "cycle": [
+    "authenticate immutable original",
+    "fresh output directory and fresh CPU reconstruction from original",
+    "check reconstructed tensor root against canonical pristine root",
+    "fresh training model load",
+    "fresh adapter initialization",
+    "fresh optimizer and scheduler",
+    "authenticated RNG initialization",
+    "authorized future train",
+    "save adapter and metadata",
+    "destroy ALL training model/optimizer/adapter states",
+    "reconstruct SAME original again and verify pristine root",
+    "reload adapter for evaluation",
+    "direct serving or isolated merge/export",
+    "destroy evaluation state; next cycle starts from original again"
+  ],
+  "required_provenance": {
+    "original": [
+      "repo",
+      "immutable revision",
+      "six body byte counts/SHA256",
+      "all config/tokenizer/template hashes",
+      "index hash"
+    ],
+    "reconstruction": [
+      "original manifest root",
+      "software source/package/container hashes",
+      "CPU/hardware identity",
+      "conversion/key mapping/alias/dtype recipe hash",
+      "sorted tensor name shape dtype nbytes SHA256",
+      "canonical tensor root",
+      "export shard hashes"
+    ],
+    "adapter_initialization": [
+      "unique cycle ID",
+      "scope exact regex/expanded names",
+      "rank/alpha/dropout/bias configuration",
+      "initial adapter state hashes",
+      "initialization seed and RNG state hashes"
+    ],
+    "optimizer": [
+      "new instance receipt",
+      "no restored state",
+      "initial optimizer/scheduler manifest",
+      "step zero",
+      "allowed parameters only"
+    ],
+    "rng": [
+      "Python/NumPy/Torch CPU and all CUDA state hashes",
+      "deterministic settings",
+      "fixed hardware and kernel identities"
+    ],
+    "destruction": [
+      "training process exit",
+      "GPU allocator/process inventory",
+      "fresh evaluation process and empty caches",
+      "no optimizer/previous adapter handle accessible"
+    ],
+    "adapter_saved": [
+      "adapter .safetensors and adapter_config hashes",
+      "original root",
+      "pristine reconstruction root",
+      "cycle ID",
+      "scope and training provenance"
+    ],
+    "evaluation": [
+      "reconstructed pristine base root verified BEFORE adapter application",
+      "loaded adapter root",
+      "merge/export recipe root if used",
+      "output raw token/byte hashes"
+    ]
+  },
+  "derivative_contamination_rule": "Only artifacts typed ORIGINAL with exact repo/revision/body manifest may enter reconstruction; only matching authenticated PRISTINE_RECONSTRUCTION may create a fresh adapter. ADAPTER and MERGED_EVALUATION_DERIVATIVE are output-only and never adaptation parents.",
+  "derivative_storage": "Separate read-only original store, fresh reconstruction store, adapter store and evaluation-only derivative store; merged base_model_name_or_path metadata alone is insufficient proof",
+  "save_reload_export": {
+    "adapter_format": "adapter_model.safetensors + adapter_config.json + external provenance manifest",
+    "save_embedding_layers": false,
+    "safe_serialization": true,
+    "reload": "PeftModel.from_pretrained(fresh authenticated reconstructed model, saved adapter, is_trainable=False); match all saved keys",
+    "direct_serving": "vLLM Mistral3 SupportsLoRA and packed QKV/gate_up mapping source-supported; actual adapter key/dtype/rank translation NOT_RUN",
+    "merge_route": "reload adapter onto pristine full BF16 base -> merge_and_unload(safe_merge=True) -> save_pretrained(save_original_format=False, safe_serialization=True)",
+    "merge_precision": "BF16 base update with adapter compute dtype (often FP32); final BF16 rounding; direct-adapter and merged numerical/decision parity unverified",
+    "export": "full dense BF16 sharded safetensors/config/tokenizer/template, no quantization_config or FP8 scale entries; authenticated legacy attention-scaling alias",
+    "requires_dense_weights": true,
+    "may_be_next_base": false
+  },
+  "isolation": {
+    "status": "DESIGN / NOT_CERTIFIED",
+    "network": "air-gapped host/namespace network disabled; offline Hub/Transformers flags plus blocked sockets/egress; loopback-only IPC if indispensable",
+    "mounts": "Read-only immutable model and runtime package store + authenticated single-request token input; write-only scoped output; fresh tmpfs. Mount no project/candidate/benchmark/home/history/tool directories.",
+    "tools": "No tool registry/execution, retrieval/chat/reasoning parsers or plugins in serving process; treat any emitted marker as ordinary retained text",
+    "filesystem": "Non-root UID; read-only root filesystem; explicit mounts only; block host filesystem, symlink/reparse escape, process inspection and credentials; audit allowed OS/driver/runtime reads separately",
+    "history": "Single fresh token sequence per request; no conversation/session state",
+    "cache": "enable_prefix_caching=False; max_num_seqs=1; fresh process per cycle/adapted vs pristine partition; no cross-base/adapter cached KV",
+    "retries": "zero; fail on infrastructure error without regeneration",
+    "audits": "negative socket/read/tool probes on synthetic denied locations, mount/process traces and output receipts before candidate execution"
+  },
+  "fallback_triggered": false,
+  "protocol_modified": false,
+  "model_instantiated": false,
+  "adapter_instantiated": false,
+  "inference_occurred": false
+}

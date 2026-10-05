@@ -1,0 +1,25 @@
+id,test,procedure,acceptance,status
+A,Original body identity,Acquire48 authorized shards; verify exactLFS hashes/sizes and real dtype/shape/buffers; resolve incorrect index total_size,Authenticated original manifest,NOT_RUN
+B,Fresh original load/repack,"Load exact original, numeric expert stack/concat; verify main751 tensors/buffers and only212 known MTP exclusions; no fresh missing weights",Pristine tensor root and complete load receipt,NOT_RUN
+C,32768 capacity load,"Load pinned BF16 main with32768 and2048 reserve, MTP/speculation disabled",Effective config and measured load/prefill receipt,NOT_RUN
+D,Prompt/token parity,All51 exact default-thinking synthetic inputs vs runtime prompt IDs; no BOS0/history/tools/default injection,Matching byte/token hashes,NOT_RUN
+E,Entire suffix retention,Preserve every generated reasoning/content/role/tool marker in order; parser disabled; no content-only extraction,Full raw suffix receipt,NOT_RUN
+F,Thinking boundary,Input <think> counts as input; every emitted </think>/<think>/reasoning token counts as generated; no disabled-thinking accommodation,Boundary and total-count receipt,NOT_RUN
+G,Native EOS/tool stop,"Test154820/154827/154829; distinguish turn EOS and observation handoff; remove only one verified final terminal, no tool execution",Native event/terminal and retained tool-body audit,NOT_RUN
+H,Natural termination,Observe authorized synthetic natural terminal before limit without retry,Actual finish/count/stop-event receipt,NOT_RUN
+I,Frozen controls,"All15 unchanged controls/types, explicitneutral penalties/no stops/no processors, seed0",Independent effective controls certificate,NOT_RUN
+J,Forced2048 cap,"Later synthetic request reaches verified LENGTH2048; retain stream; EOS-at-cap separately adjudicated with native event, no count-only inference",Capacity failure for actual length event; no clipping/retry,NOT_RUN
+K,Raw IDs/bytes,ByteLevel inverse and literal specials; strict UTF-8 with invalid-byte retention; unmapped154856..154879 IDs fail closed rather than vanish,Raw/normalized bytes and removal receipts,NOT_RUN
+L,Same-process greedy repeat,Repeat fixed authorized synthetic input/base/hardware/controls; compare IDs/bytes,Determinism or explicit failure record,NOT_RUN
+M,Fresh-process repeat,Cold process repeat with same original and immutable environment,Repeatability boundary certificate,NOT_RUN
+N,Isolation/no-read/no-tools,Negative sockets/files/tool/history/retrieval/cache probes; no candidate/product mounts,Independent isolation traces,NOT_RUN
+O,Resources/timing,Measure original-load/pack/prefill/decode/train/save/reload/merge/reset peaks and timings,RAM/VRAM/disk/timing table,NOT_RUN
+P,MLA forward/backward,"Exact235 Linear targets/21,031,936 rank16 trainables; gradients finite/nonzero, base frozen, no MTP/router targets",Gradient/name/base-hash audit,NOT_RUN
+Q,Expert forward/backward,"Eager92 3D ParamWrapper targets plusMLA; zero-dropout and no kernel/compile; exact431,025,152 trainables; routed gradient/restore checks",ParamWrapper gradient/state and peak audit,NOT_RUN
+R,Adapter save/destroy/reload,Save scope/config/dtype/hash; destroy; load SAME original again; reload exact adapter inclparameter wrappers,Adapter coverage and logit/parity receipt,NOT_RUN
+S,Direct serving or merge/export,FullMLA direct route optional test; primary safe BF16 merge and inverse individual expert export; compare loader coverage/logits/outputs,"Authenticated evaluation derivative, no adapter bypass",NOT_RUN
+T,Second fresh original cycle,Fresh original load/repack again; canonical pristine hashes before fresh adapter/optimizer/RNG initialization,Same-original pristine root; stepzero receipt,NOT_RUN
+U,Contamination/reset,Prior adapter/optimizer/merged path/cache/history unavailable; derivative rejected as next-cycleparent,Destruction and fail-closed provenance audit,NOT_RUN
+V,MLA numerical/kernel parity,"Compare TF/vLLM rope interleave/scaling, compressedKV and weight absorption; ensure merged q/kv changes applied",Logit/cache/key-layout parity,NOT_RUN
+W,Dependency/parser environment,Resolve immutable Linux package/kernel/container/driver lock; CPython3.11.9/Unicode14 parser; disabled parsers verified,Complete runnable lock and official completion certificate,NOT_RUN
+X,Inverse export/MTP exclusion,Verify stack gate/up split/order and expert indices0..63; exported main content inverse parity; no unused MTP execution,751-main/9491-raw coverage and212 exclusion receipt,NOT_RUN

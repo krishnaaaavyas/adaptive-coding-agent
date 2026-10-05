@@ -1,0 +1,9 @@
+{
+  "fixed_rendered_overhead_bytes": 937,
+  "max_variable_bytes": 20480,
+  "max_input_byte_bound": 21417,
+  "max_bound_plus_reserve": 23465,
+  "basis": "No tokenizer normalization; byte BPE token count <= UTF-8 bytes for this explicit typed Harmony serialization. Tested 45 cases, no truncation.",
+  "native_capacity": 131072,
+  "proposed_runtime_capacity": 32768
+}

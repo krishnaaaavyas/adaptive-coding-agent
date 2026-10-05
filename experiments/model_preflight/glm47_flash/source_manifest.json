@@ -1,0 +1,1295 @@
+{
+  "subject_repository": "zai-org/GLM-4.7-Flash",
+  "subject_revision": "7dd20894a642a0aa287e9827cb1a1f7f91386b67",
+  "implementation_pins": {
+    "huggingface/transformers": "02d8fb9784e8f14a1251e4c992cd82a5762417c6",
+    "huggingface/peft": "532a05dd505c28993119b7715ee286f4234bf51b",
+    "vllm-project/vllm": "ced6857afa0ea7b2e3f0846a62e1394e90f15607"
+  },
+  "scope": "explicit public text/config/index/tokenizer and source files only; no model/adapter instantiation or recipes",
+  "weight_bodies_downloaded": false,
+  "tokenizer_vocabulary_exception": "Exact 20,217,442-byte JSON vocabulary, explicitly bounded to21MB; text tokenizer data, not model weights",
+  "files": [
+    {
+      "url": "https://huggingface.co/api/models/zai-org/GLM-4.7-Flash/revision/7dd20894a642a0aa287e9827cb1a1f7f91386b67?blobs=true",
+      "retrieved_at_utc": "2026-10-03T17:11:17.988789+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/hub_metadata.json",
+      "bytes": 19773,
+      "sha256": "5bb8bae35d4ce75dd58e84bbc99e4262966f016fdb7c0ab52d5e991f3b3d4836",
+      "http_date": "Sat, 03 Oct 2026 17:11:18 GMT",
+      "etag": "W/\"4d3d-YvuYA9G6j4U/C+qZgnSpILVP/+Q\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/README.md",
+      "retrieved_at_utc": "2026-10-03T17:11:17.991733+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/README.md",
+      "bytes": 8174,
+      "sha256": "7bfcbced42741ceb3fff8809f8d6c84ada9696850e257c4e53e6c2fe9ef4f9bf",
+      "http_date": "Sun, 13 Sep 2026 17:29:23 GMT",
+      "etag": "\"08ba74499e9f19eb5c5c77cbe4538b3164fa521b\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/LICENSE",
+      "retrieved_at_utc": "2026-10-03T17:11:17.993733+00:00",
+      "limit_bytes": 2000000,
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/config.json",
+      "retrieved_at_utc": "2026-10-03T17:11:17.993733+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/config.json",
+      "bytes": 1070,
+      "sha256": "dc9b97c7c9bed726a2e6939da4234d5c43abb3edec8812068c9a1af1dbc13acb",
+      "http_date": "Sat, 19 Sep 2026 12:03:18 GMT",
+      "etag": "\"6637ccbc226eb78776af6a66b6558ce6421be20e\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/generation_config.json",
+      "retrieved_at_utc": "2026-10-03T17:11:17.993733+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/generation_config.json",
+      "bytes": 181,
+      "sha256": "e19f4eb8be12cdb62a3737b52a332c7c142cbf5ee24a5de7d806f6132b782425",
+      "http_date": "Wed, 23 Sep 2026 18:27:33 GMT",
+      "etag": "\"1dfa4cbf88115f19b4c6fcb086cc5669d2ce5e57\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/tokenizer_config.json",
+      "retrieved_at_utc": "2026-10-03T17:11:17.994734+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/tokenizer_config.json",
+      "bytes": 7226,
+      "sha256": "31a173e2797ddc8b72ac996803513e627fc28d7aad02cfcce321a431d865c86d",
+      "http_date": "Tue, 22 Sep 2026 08:56:10 GMT",
+      "etag": "\"f6d3074564f6dd3a9431bd43b968cef999d58c54\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/special_tokens_map.json",
+      "retrieved_at_utc": "2026-10-03T17:11:17.996239+00:00",
+      "limit_bytes": 2000000,
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/chat_template.jinja",
+      "retrieved_at_utc": "2026-10-03T17:11:17.996239+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/chat_template.jinja",
+      "bytes": 3120,
+      "sha256": "d63ad536c3c81880043e22ec7fd08db42b4d8fb7c89c7138bc562bfa25281375",
+      "http_date": "Fri, 18 Sep 2026 01:37:03 GMT",
+      "etag": "\"2ab98ef068d62829d17c5ade1827b9f013fa2bbf\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/tokenizer.json",
+      "retrieved_at_utc": "2026-10-03T17:11:18.782616+00:00",
+      "limit_bytes": 20000000,
+      "status": "size_limit"
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/model.safetensors.index.json",
+      "retrieved_at_utc": "2026-10-03T17:11:18.816570+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "upstream/model.safetensors.index.json",
+      "bytes": 871830,
+      "sha256": "91e6e95ca21700f50904a680c8c4212f5aa16dc7c10a013f01c906957c889791",
+      "http_date": "Wed, 23 Sep 2026 08:59:51 GMT",
+      "etag": "\"215064e6cfa2a56b41b5ef618d82b802a103cdfc\""
+    },
+    {
+      "url": "https://api.github.com/repos/huggingface/transformers/commits/02d8fb9784e8f14a1251e4c992cd82a5762417c6",
+      "retrieved_at_utc": "2026-10-03T17:11:18.817734+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/commit.json",
+      "bytes": 6916,
+      "sha256": "cb373a91bada9f475f772e22e7a426b9c3518ab47f008318b4c8c5b9fc668c87",
+      "http_date": "Sat, 03 Oct 2026 17:11:19 GMT",
+      "etag": "W/\"cb373a91bada9f475f772e22e7a426b9c3518ab47f008318b4c8c5b9fc668c87\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/__init__.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.072256+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/__init__.py",
+      "bytes": 42011,
+      "sha256": "177433fc0648157babeb9f2116870964139bf27f7f5bd9aebcdf6af355080e60",
+      "http_date": "Sat, 03 Oct 2026 17:11:19 GMT",
+      "etag": "\"99c3cabbc47db2ea0b6d40b543d81253c51af972078f5360f92c27cb46013a7a\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/setup.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.075351+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/setup.py",
+      "bytes": 13137,
+      "sha256": "9e7be8bd5871a216c6c58549078b19ff7fea2271dbc954c5a41695e8a6cbd451",
+      "http_date": "Sat, 03 Oct 2026 17:11:19 GMT",
+      "etag": "\"93ca649de9a6e0475557254e7c4f67c2675fa58505d1798694b872df4f57fb8f\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/models/glm4_moe_lite/modeling_glm4_moe_lite.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.079822+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/models/glm4_moe_lite/modeling_glm4_moe_lite.py",
+      "bytes": 32958,
+      "sha256": "b2f8a8b1ebef9e7c5ba5da96fd23f30d4913078cabd5d25c7b1ce6a735bd9e78",
+      "http_date": "Sat, 03 Oct 2026 17:11:19 GMT",
+      "etag": "\"3316286447ddc1a2a58ad6ed25886aeb068440bafbcda6450d83b755d8078f8d\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/models/glm4_moe_lite/configuration_glm4_moe_lite.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.083815+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/models/glm4_moe_lite/configuration_glm4_moe_lite.py",
+      "bytes": 5082,
+      "sha256": "e93ae2b157896c237bcabbf2b56ef6f5b8053e4f29459370bf69afb999c7b00b",
+      "http_date": "Sat, 03 Oct 2026 17:11:19 GMT",
+      "etag": "\"03c28156b9c7e460ec05ff14d67178b44bcf2452a9dfa9c258a7ae1e26c8c2fe\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/models/glm4_moe/modeling_glm4_moe.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.128761+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/models/glm4_moe/modeling_glm4_moe.py",
+      "bytes": 27510,
+      "sha256": "6127f00504597ad383d589c3090263b6761bb0701e81cd31276082eb3d1c0d59",
+      "http_date": "Sat, 03 Oct 2026 17:11:19 GMT",
+      "etag": "\"48f6d49ef6d6d3466f2e74c9f59317dfbae4e877fdc41615d1fabcf56455dd26\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/conversion_mapping.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.421275+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/conversion_mapping.py",
+      "bytes": 114270,
+      "sha256": "59e4657cf685e436cbce5340bda1dfa26d33bcd0c0086098565cdc4dc603e603",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"ddd2b659e244c3aa1f8a9ef620d38434464ea80e0c130372223fcec35474dc72\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/core_model_loading.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.614412+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/core_model_loading.py",
+      "bytes": 84952,
+      "sha256": "c5b6bcdb6401a3cfdf825bc979d41ac3e7e075e09459021363dce5e68c54de22",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"d0ff3be6a15608da902686c0e50f54418ee2d00443c2f9e9690e3fe1c2b144cb\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/modeling_utils.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.622957+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/modeling_utils.py",
+      "bytes": 270712,
+      "sha256": "3a32f432917a1265fc3f26b2a36032b047b9c4d367ea75a5c8d389b1d268cda0",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"3b73d750984d33ec8a5890626ee33e914c49d6b125aebc62b9d336736c6e250a\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/utils/chat_template_utils.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.635027+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/utils/chat_template_utils.py",
+      "bytes": 26589,
+      "sha256": "976ecbdd024eea4457524d76ced50b368b5592af3970526e4bd9063672da6dd4",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"bc029a4769e25e2686701fc6ac266d07f6175e4afbb879b33c9070a68e4eef2a\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/tokenization_utils_tokenizers.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.633518+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/tokenization_utils_tokenizers.py",
+      "bytes": 71646,
+      "sha256": "32e4ff002092023720bdbe9101e01005a4a149a0729c82e05d7dbf497cbaa388",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"9f86f8c7bf0727a34bf2d8197490f747f155fcb853281f6a597cc75437384054\""
+    },
+    {
+      "url": "https://api.github.com/repos/huggingface/peft/commits/532a05dd505c28993119b7715ee286f4234bf51b",
+      "retrieved_at_utc": "2026-10-03T17:11:19.636540+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/commit.json",
+      "bytes": 30595,
+      "sha256": "edf599589c7a206c9f5b688291ea205ea8b4856191c8fa4f807fb77212457193",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "W/\"edf599589c7a206c9f5b688291ea205ea8b4856191c8fa4f807fb77212457193\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/__init__.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.912064+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/__init__.py",
+      "bytes": 8018,
+      "sha256": "b164d9f64e78f46e95d5e1213d6a3bd2c3e46fa6a37a345fcecdf1f7c3c3e281",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"ffde2d5ff461bc875277a9f7822c5f8e85852603c519b10ab9cfcac9aaecfd38\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/setup.py",
+      "retrieved_at_utc": "2026-10-03T17:11:19.967122+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/setup.py",
+      "bytes": 4780,
+      "sha256": "7463d1b17537b79e2735c90a9aedee7f11f914d345b624188ca2153c6a120246",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"fbb3bcfaa555b48699d0ca2f13e1f50156c2b9011b8715d0677a4df0878b2cb6\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/peft_model.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.106322+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/peft_model.py",
+      "bytes": 175366,
+      "sha256": "a1dd6b97b703bce297daa25d690056f220518a6b05100e268d10b4129f8feb26",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"bfedca837ce58734ccf764f5402c8f3febff5d1edc8c81413dd256de5146a5c2\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/mapping_func.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.108338+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/mapping_func.py",
+      "bytes": 8959,
+      "sha256": "c80fc5702d6df00a6f84756f3fbfdc5d495342bc8027dd03d09b993112bde8d2",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"4241fe1aad9cc64c81062baecd86fb14730586f033bdff693e8d4086c5d9e49e\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/tuners/lora/config.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.129915+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/tuners/lora/config.py",
+      "bytes": 77062,
+      "sha256": "3515982706a6d902db4ca289b09c620869d6a2f4737ff142a818c10e2fc37e36",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"ee394acdb2527d17ddaafcda07b9dbbd62749bb724e76325d1679eaccff50e3c\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/tuners/lora/layer.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.180059+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/tuners/lora/layer.py",
+      "bytes": 131623,
+      "sha256": "57a2aed32a1952463a89a4f41be500646a33c71fcc0f963f233c4cd9f57493e6",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"68ad46fc2d9c01e3ff5d57f5fb7f5b94318fdde79f6f2270740a3caa5fbd23c1\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/tuners/lora/model.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.241438+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/tuners/lora/model.py",
+      "bytes": 66668,
+      "sha256": "9da48b2bbcf029a59aa3033e78af9a21cecc4c17252df355a47bc74d96e6f7a8",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"ee31a3cdd6760c21f92841d84408f25cc6a3ea86eddb29ce16954ae1f3385a0c\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/tuners/tuners_utils.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.372326+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/tuners/tuners_utils.py",
+      "bytes": 134098,
+      "sha256": "78f1f865d48cf0172e3f1bca50fdffe5a76a133399edcb3d259925479f11c694",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"f776a604d01b98b45b0b9d99d02682f94530d3f3536999c29423b8ae6531cece\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/utils/save_and_load.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.411119+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/utils/save_and_load.py",
+      "bytes": 47444,
+      "sha256": "6afbb53933550a401a19e883ba888f4818eb507f64306f5619a56316b598289b",
+      "http_date": "Sat, 03 Oct 2026 17:11:20 GMT",
+      "etag": "\"ea0b0508a675f23096b8b84afd4829b72ed14f7807171c2e80a57d220c3b969c\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/src/peft/utils/other.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.503256+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__peft/src/peft/utils/other.py",
+      "bytes": 87425,
+      "sha256": "c4b869ab3e80eca243c9c21a34d2c3dcb21b8e2b38409383a7955222b545ba1b",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"e4912aba890d344344cb5581be2a8b9864471579a6fe34169a9d7609d9d5df45\""
+    },
+    {
+      "url": "https://api.github.com/repos/vllm-project/vllm/commits/ced6857afa0ea7b2e3f0846a62e1394e90f15607",
+      "retrieved_at_utc": "2026-10-03T17:11:20.639338+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/commit.json",
+      "bytes": 4891,
+      "sha256": "2d3c5a3b9d60b7dd995316fe0cf543c9a27201c4aea94119b4e0a49b6051a4b9",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "W/\"2d3c5a3b9d60b7dd995316fe0cf543c9a27201c4aea94119b4e0a49b6051a4b9\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/requirements/cuda.txt",
+      "retrieved_at_utc": "2026-10-03T17:11:20.732011+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/requirements/cuda.txt",
+      "bytes": 1237,
+      "sha256": "9393effcd139d93e343195924c455efd97bd914053d4f68365c0467e5dba1272",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"28d9dff6986a9f5421e86f4ac61cc62cf6396103d4fa73ad0fdde5d5ebaa2eee\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/requirements/common.txt",
+      "retrieved_at_utc": "2026-10-03T17:11:20.764424+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/requirements/common.txt",
+      "bytes": 3298,
+      "sha256": "f29221a64c8f625f9118e7a798b2ced6891348fb927b1f49036555270f1feb0b",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"4252133c47c3f9f1b104ddf6d9b59d7c70431bb457906f523d8acd4704cd6496\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/docker/Dockerfile",
+      "retrieved_at_utc": "2026-10-03T17:11:20.763422+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/docker/Dockerfile",
+      "bytes": 62641,
+      "sha256": "fde129b8d5072fae409147b81b85a7f3283c10669d7071d01d0251a2c927b926",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"172049392f878103ea553c2477c5264d3dc9f988a219d12eb4a2cd79f34f99c2\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/version.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.989296+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/version.py",
+      "bytes": 1339,
+      "sha256": "bd7a42776b630b611e2f5fa4698bc97e1f4f2583c35ccb246ec2e7bd43c83313",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"cacf34ef3ae000741fd71475917c9bb998e695edccfa0b42b01fcfca224a9683\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/registry.py",
+      "retrieved_at_utc": "2026-10-03T17:11:20.999527+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/models/registry.py",
+      "bytes": 64420,
+      "sha256": "a08a98aaae52ced32226aa647f58d682ac600b9572651a9b377b97846bc99212",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"ff050276e0428a4e6df32d8fd19ad55b50889827c89fb7bfadfe1549ba2f65e0\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/glm4_moe_lite.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.109047+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/models/glm4_moe_lite.py",
+      "bytes": 25072,
+      "sha256": "54c0aa46b234a4297b9f37513b1478cfe715acbae65efb2068afc2c6e4643f05",
+      "http_date": "Sat, 03 Oct 2026 17:11:21 GMT",
+      "etag": "\"fc66d5ec98a4508a60560bbd3a381a5394539fff514137b342282961ecc49372\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/deepseek_v2.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.252845+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/models/deepseek_v2.py",
+      "bytes": 78637,
+      "sha256": "c658788dc880c5e57400f3bc59537386f24605e157d3cad5b6d5bc8f31bf2328",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"3c0e6aecbe6ea8b4d91cf5c49b19a04b3eb856af90d58743aefe9caeaf7576c5\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/glm4_moe.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.404150+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/models/glm4_moe.py",
+      "bytes": 23128,
+      "sha256": "4c8e43c0e011a4f3026d6a07e712f76222ced20e262e6fe8d0cf7dc627bc447c",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"3f04416f873bde7ebfd61c8d099c5f77c5ccdfaa038c23eaa1b48c578314d916\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/layers/fused_moe/layer.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.448777+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/layers/fused_moe/layer.py",
+      "bytes": 18402,
+      "sha256": "def0b4e13bcc1e4e21ee10644e647e2eda1acbf0cc01e76d6128abb59ea08224",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"22c3c32caf53231021193b726dec53d5053bb40982e3b5632312556f9db83a75\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.542128+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/sampling_params.py",
+      "bytes": 56186,
+      "sha256": "f21efc98bf8ce8aab88eb67adb4207285e509a167d976e14d3e2e8282e024bea",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"db5a693df3641420336949a3ae8a94fe91239d85616275dafe4a28622db9c575\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/engine/arg_utils.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.703027+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/engine/arg_utils.py",
+      "bytes": 130770,
+      "sha256": "ead004ca266419cd25f54a7aefc0e20e1eb046f363b7f5cc977e14f52ee44bb1",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"b686d4f36832b6781f99fb59d92c2671b9736256d37b1e1bbbb2b718837d1727\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/entrypoints/llm.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.972487+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/entrypoints/llm.py",
+      "bytes": 41687,
+      "sha256": "52de4ac99489e004ef6c61d0bedc84aa96020dd58b8bd1ae500814b548b2b83e",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"3e9c95338e22377f88988a2b87ae99f05dde8e5d4bff3d4d9c0866272de7036a\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/outputs.py",
+      "retrieved_at_utc": "2026-10-03T17:11:21.973490+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/outputs.py",
+      "bytes": 14353,
+      "sha256": "346d1f9204a441867efc3af7c5a99d8a70ef0f69fe607dfa8a4a2557a82ca425",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"4757930dda1b996b179e46d5e33e0433e61a3c3c7d75374408df58562ed5216f\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/v1/core/sched/utils.py",
+      "retrieved_at_utc": "2026-10-03T17:11:22.126108+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/v1/core/sched/utils.py",
+      "bytes": 4351,
+      "sha256": "1ed988044eb8028c77ede875bd1a5fd05ff6998b455d61e3997d6a3d7fc1c3a7",
+      "http_date": "Sat, 03 Oct 2026 17:11:22 GMT",
+      "etag": "\"3b7f178dbacc5c25d7701081061f26452c5fd1ae59697751a1cbc787eebd092e\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/reasoning/glm4_moe_reasoning_parser.py",
+      "retrieved_at_utc": "2026-10-03T17:11:22.159476+00:00",
+      "limit_bytes": 2000000,
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/reasoning/glm45_reasoning_parser.py",
+      "retrieved_at_utc": "2026-10-03T17:11:22.285374+00:00",
+      "limit_bytes": 2000000,
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/tool_parsers/glm47_tool_parser.py",
+      "retrieved_at_utc": "2026-10-03T17:11:22.538011+00:00",
+      "limit_bytes": 2000000,
+      "status": "unavailable",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://docs.z.ai/guides/capabilities/thinking-mode",
+      "retrieved_at_utc": "2026-10-03T17:11:22.554561+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/zai/thinking-mode.html",
+      "bytes": 333100,
+      "sha256": "6201e36e920ec298b9567ebe5d7a28fc987f82935a35dedf00498f0999517204",
+      "http_date": "Sat, 03 Oct 2026 17:11:23 GMT",
+      "etag": "W/\"14a06z56j6274y4\""
+    },
+    {
+      "url": "https://huggingface.co/zai-org/GLM-4.7-Flash/resolve/7dd20894a642a0aa287e9827cb1a1f7f91386b67/tokenizer.json",
+      "retrieved_at_utc": "2026-10-03T17:12:41.134512+00:00",
+      "limit_bytes": 21000000,
+      "status": "retrieved",
+      "path": "upstream/tokenizer.json",
+      "bytes": 20217442,
+      "sha256": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d",
+      "http_date": "Sat, 03 Oct 2026 17:12:42 GMT",
+      "etag": "\"961c851c73a3e1f213cece750e312f56f35412b14dd461536a2b2b9abc19aa33\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/integrations/moe.py",
+      "retrieved_at_utc": "2026-10-03T17:15:57.690670+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/integrations/moe.py",
+      "bytes": 27977,
+      "sha256": "a4cdb41cd6c4e40a3e602644b5781a5dc53ac4ef227249db2ed40c7347990556",
+      "http_date": "Sat, 03 Oct 2026 17:15:58 GMT",
+      "etag": "\"3675c299a40d962405a8baf615027b28d58c97e24486d65a4eeb3be0cefd431a\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/integrations/hub_kernels.py",
+      "retrieved_at_utc": "2026-10-03T17:15:57.691672+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/integrations/hub_kernels.py",
+      "bytes": 51786,
+      "sha256": "a58d58697a463494e66f0384efee75bf1095a17fceda3d0374f8f6039befdb85",
+      "http_date": "Sat, 03 Oct 2026 17:15:58 GMT",
+      "etag": "\"90bf197b413323e91204e3f9e52beda154fa1c69312cc2cbd17909cfac952a00\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/transformers/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/integrations/__init__.py",
+      "retrieved_at_utc": "2026-10-03T17:15:57.692678+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/huggingface__transformers/src/transformers/integrations/__init__.py",
+      "bytes": 10039,
+      "sha256": "84fcc8cf8cca484fe6ffb9c9e85c24d9a6121e6dee35588daac5fe9755652c96",
+      "http_date": "Sat, 03 Oct 2026 17:15:58 GMT",
+      "etag": "\"6a61182c857667b322b82c988270a8266148dc2e6a4d25f796daec7796233d91\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/reasoning/__init__.py",
+      "retrieved_at_utc": "2026-10-03T17:15:57.692678+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/reasoning/__init__.py",
+      "bytes": 4377,
+      "sha256": "db21c175b232d8a51f28325e0e50663527f62e4679470bf436fd3df6349401bc",
+      "http_date": "Sat, 03 Oct 2026 17:15:58 GMT",
+      "etag": "\"03ede91c5cd5c8b1f838c8b75212915dffb5300fb92a633ba3fb8f06e049dfc3\""
+    },
+    {
+      "url": "https://api.github.com/repos/zai-org/GLM-4.5/commits/main",
+      "retrieved_at_utc": "2026-10-03T17:15:57.692678+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/zai/commit.json",
+      "bytes": 10268,
+      "sha256": "0ef1e1bbeccebf6b79396139f9d3dde5fb61145ac21868ce83aa702ae0bbf392",
+      "http_date": "Sat, 03 Oct 2026 17:15:58 GMT",
+      "etag": "W/\"0ef1e1bbeccebf6b79396139f9d3dde5fb61145ac21868ce83aa702ae0bbf392\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zai-org/GLM-4.5/170f20b2c10659008fdbc909d478bc2a75bc3627/README.md",
+      "retrieved_at_utc": "2026-10-03T17:15:58.471342+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/zai/README.md",
+      "bytes": 18229,
+      "sha256": "0228cee756768dbe9ef56ade05f47148ec032b75c046b3490c700de49f255446",
+      "http_date": "Sat, 03 Oct 2026 17:15:59 GMT",
+      "etag": "\"49825bfa7c126a5b21c42ccfec1b7e6843b37586e42fbe46ebffde725fe6a3be\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/zai-org/GLM-4.5/170f20b2c10659008fdbc909d478bc2a75bc3627/LICENSE",
+      "retrieved_at_utc": "2026-10-03T17:15:58.980124+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/zai/LICENSE",
+      "bytes": 11338,
+      "sha256": "7090a09a59cf55701feb04b2d4f99ce31fc4f31bbe1aaf33dd0dafd8e7546313",
+      "http_date": "Sat, 03 Oct 2026 17:15:59 GMT",
+      "etag": "\"e32c4bf4016735b332f84088a307a5c680800e649c828fea342aa3162b6339c9\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/reasoning/glm47_moe_reasoning_parser.py",
+      "retrieved_at_utc": "2026-10-03T17:22:31.659142+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/reasoning/glm47_moe_reasoning_parser.py",
+      "bytes": 236,
+      "sha256": "f1124342a23bb4c00754fc5117dc46115adff4b8cfbdc3d3e748ebe95883bdbb",
+      "http_date": "Sat, 03 Oct 2026 17:22:32 GMT",
+      "etag": "\"62e622045741dbf1e79316528ab00deb47c014466dba26a01e9d87fdeff506df\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/tool_parsers/__init__.py",
+      "retrieved_at_utc": "2026-10-03T17:22:31.661197+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/tool_parsers/__init__.py",
+      "bytes": 5434,
+      "sha256": "0d265c407dd5ebe43f4e2a1c39c68a7ab79209f4ac68643fb3dcc034d48185d4",
+      "http_date": "Sat, 03 Oct 2026 17:22:32 GMT",
+      "etag": "\"87fd25cf68a362d9b6ee8072873c09ebd7d3f9f46fc8011a4fa3a166b262d3e9\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/layers/mla.py",
+      "retrieved_at_utc": "2026-10-03T17:22:31.660191+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/layers/mla.py",
+      "bytes": 10291,
+      "sha256": "594f71cb59ca7e9d7e26d76914272ce1f5b7ca280107756ca9dd03b1403cf1a2",
+      "http_date": "Sat, 03 Oct 2026 17:22:32 GMT",
+      "etag": "\"9c85ca730552c1ecef8be44cd60cc57c4c97461aa51630cedf48e06aa36d8cca\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/config/model.py",
+      "retrieved_at_utc": "2026-10-03T17:22:31.661197+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/config/model.py",
+      "bytes": 106536,
+      "sha256": "f4168b67cc93ce72ff2a6d4c66974223e32fd0f1fab4c05e44bd68a275e18d69",
+      "http_date": "Sat, 03 Oct 2026 17:22:32 GMT",
+      "etag": "\"796c194fb9a8dbe22450db7c8ca83268c3bcfefa1336c63b74992cfec75590d2\""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/vllm-project/vllm/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/glm4_moe_lite_mtp.py",
+      "retrieved_at_utc": "2026-10-03T17:26:30.340640+00:00",
+      "limit_bytes": 2000000,
+      "status": "retrieved",
+      "path": "sources/vllm-project__vllm/vllm/model_executor/models/glm4_moe_lite_mtp.py",
+      "bytes": 19799,
+      "sha256": "c0e90ff74916218fd33fa1d7b39f5273c21112e0fc9ef685d681fc1134fd0b2e",
+      "http_date": "Sat, 03 Oct 2026 17:26:30 GMT",
+      "etag": "\"9080adda585b1a2fa4701041a57cc385bdbd90f83510aff96f8cad04a1cee9e0\""
+    }
+  ],
+  "official_deployment_repo_pin": "170f20b2c10659008fdbc909d478bc2a75bc3627",
+  "local_project_inputs": [
+    {
+      "path": "experiments/model_preflight/landscape_closure/REPORT.md",
+      "bytes": 100191,
+      "sha256": "45607662ace76a683ea7b536914ce21c52a9a885360b4f792ae2a66c032c09db"
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/landscape.csv",
+      "bytes": 337305,
+      "sha256": "0f7266ca4718541ea9a54b67e374269307eb3a040bc753cf5e3d8bd7bf211bdd"
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/source_manifest.json",
+      "bytes": 250639,
+      "sha256": "8d361f64e65ffe020b7661388892185eeaa5a035fba8f457722882bf11a26fa7"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/REPORT.md",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/sources/draft2.txt",
+      "bytes": 43599,
+      "sha256": "e51c19b1acd06723a26b4e2151825ac6b858ef3d1c68271da76a622127aa9536"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/sources/draft3.txt",
+      "bytes": 47405,
+      "sha256": "f0d5c27a14d7769846f592902288bacbe1b55701232d403150da669ff30d3acc"
+    },
+    {
+      "path": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+      "bytes": 62269,
+      "sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b"
+    },
+    {
+      "path": "harness/context_policy/protocol.py",
+      "bytes": 12307,
+      "sha256": "1c775d8bc0a1187e92a3c15e596b91747672796dd93f80e098dbc37c14fc9a45"
+    },
+    {
+      "path": "harness/context_policy/core.py",
+      "bytes": 8267,
+      "sha256": "db38809c2e027e059d182d7768d05d6cab263b7648761286870fbd92551bcbba"
+    },
+    {
+      "path": "harness/context_policy/evidence.py",
+      "bytes": 13413,
+      "sha256": "1b04969dcee0fd23a5a6707b4b5454c70d7bea618f3c5e7c7c7c87855b5f48af"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/check_tokenizer.py",
+      "bytes": 14122,
+      "sha256": "f3496b0f03c42b8422b9ed2bfd23477a21a0bcae08302d686a17ca669c6dd172"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/artifact_manifest.json",
+      "bytes": 50560,
+      "sha256": "50402e0909633b7557acc74d49658fe4e3aa75b70c658d8116da85ade915858d"
+    }
+  ],
+  "reused_dependency_artifacts": [
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/dependencies_wheels/jinja2-3.1.6-py3-none-any.whl",
+      "bytes": 134899,
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/dependencies_wheels/markupsafe-3.0.4-cp312-cp312-win_amd64.whl",
+      "bytes": 14303,
+      "sha256": "11935df9bf455ed0c04eb87bcd720f02b1fe5e02128a9430f23aed6f93336fc7"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/dependencies_wheels/packaging-26.3-py3-none-any.whl",
+      "bytes": 129956,
+      "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/dependencies_wheels/tokenizers-0.23.2-cp310-abi3-win_amd64.whl",
+      "bytes": 2863236,
+      "sha256": "2e96f5699d5249c9c64aa8412e044f727aae3a4098cf830f9901ec1afc361cde"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2-3.1.6.dist-info/METADATA",
+      "bytes": 2871,
+      "sha256": "68c5548fb67c4132a13898d9b31ec50c6bea2abdd915d921f214355c3a6499c8"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2-3.1.6.dist-info/RECORD",
+      "bytes": 2340,
+      "sha256": "2e9f60b12e1a436c1ac6fdbded6090b6b791eb8d6753935c49941846e05a294d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2-3.1.6.dist-info/WHEEL",
+      "bytes": 82,
+      "sha256": "ff6a3334508b59cf776cae1628708ef9e0d410d0e5a3e76073d714deaa2460ee"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2-3.1.6.dist-info/entry_points.txt",
+      "bytes": 58,
+      "sha256": "38bf39818535783f1cb8f9629227c59e05e97818dac65eab209f0a902ff7afe2"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2-3.1.6.dist-info/licenses/LICENSE.txt",
+      "bytes": 1475,
+      "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/__init__.py",
+      "bytes": 1928,
+      "sha256": "c717a93bd8bb0c7b2a910ae004476e2ed7e8cf6402b93ebf81b2f85d237585b5"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/_identifier.py",
+      "bytes": 1958,
+      "sha256": "ff361cb4d2b346a964fe6bab4cd973ae3bb514524bed56bf223aaa77b8a2da55"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/async_utils.py",
+      "bytes": 2834,
+      "sha256": "bcaf8f76cba8ace3275929c4913de25094489139d880ed93e8c9c6c43807239a"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/bccache.py",
+      "bytes": 14061,
+      "sha256": "821d2ab3daee9675e8d0f857e634c9cb6507cc8f3016743ade8fefc3b9e1cd18"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/compiler.py",
+      "bytes": 74131,
+      "sha256": "f51a42425e57f3c0479652623ec1cf876f791e1d2e029bf0149350baeb542de3"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/constants.py",
+      "bytes": 1433,
+      "sha256": "18ca05c9d045fe476969128fa0ce5c97932f8aab9544b57266d7e9e7ed7a8e0d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/debug.py",
+      "bytes": 6297,
+      "sha256": "0a71ea0831ddf81546bed8bff19b13a259d7361037102b18fba9ffda9c14f07c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/defaults.py",
+      "bytes": 1267,
+      "sha256": "6e805c4b0efc87e969db461b697489b2a900236b8dfe60ff4ed0b27697aae705"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/environment.py",
+      "bytes": 61513,
+      "sha256": "f6786b3fb0a1f8d6c65f4d30bf2af8cb2fae84d1ead8e09ceb48201ab9e2fdf9"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/exceptions.py",
+      "bytes": 5071,
+      "sha256": "8a81de1eb5b009635a5d7d629c798755b96f73885a3bb017b230a9dc67d6bf1d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/ext.py",
+      "bytes": 31875,
+      "sha256": "e4f1797877e1f265c02315c71d1076c576d7a218bca44de71d23b16baeae4bb1"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/filters.py",
+      "bytes": 55212,
+      "sha256": "3d0fc481df67f634a0b671906321782b98f69d8c21508ba584f9f28a691dafe9"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/idtracking.py",
+      "bytes": 10555,
+      "sha256": "fa5979948a7bde930bdc4ad46222098fbb5d996c5c1ff2250efdf203f862658a"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/lexer.py",
+      "bytes": 29786,
+      "sha256": "2d88988a8e9bafe4dea7d9cf72ea565ec3c4b6396ec37a75994fa534155151f9"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/loaders.py",
+      "bytes": 24055,
+      "sha256": "c08ae7c63bdc6ea8795705b6f0d4a47e8b620eaf2a342c4839215b1948922c1e"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/meta.py",
+      "bytes": 4397,
+      "sha256": "3930cf91a16f5361e0bf1fba6a4cfbd79e05f012166919af25c045bf0a291f0c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/nativetypes.py",
+      "bytes": 4210,
+      "sha256": "ec620600b54981dc8bf34a1925d4146947f04ade6ada549265b5edd1d35ffcce"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/nodes.py",
+      "bytes": 34579,
+      "sha256": "9b50eecdcafaaa1648f0943a57226050d8a78c07f96d0ce28d29839ccb2f531f"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/optimizer.py",
+      "bytes": 1651,
+      "sha256": "ac99c246543ba59b04126321b100e00bfa4ac831f13f94cf4bacd53c6b2072ef"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/parser.py",
+      "bytes": 40383,
+      "sha256": "94b385cb7b0498773921a1074621f5b1056721dda6a14433872789653b5d637d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/runtime.py",
+      "bytes": 34249,
+      "sha256": "80393e1af76b8895ea82c19b1e0adc2933f4629eb33d7ce1ceb2290851f78c05"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/sandbox.py",
+      "bytes": 15009,
+      "sha256": "330d9a8ad958d88f256bb15885c5f6606f41b5461c2e70f41a1ddddbd7035ab6"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/tests.py",
+      "bytes": 5926,
+      "sha256": "54bb018551675a0f8fc52073d4c8519cd5a03f5a2f5e4de778ed452d031e0bd4"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/utils.py",
+      "bytes": 24129,
+      "sha256": "ad1a77a3d7bb64a4b87f2ad645b10bc8b729b8655315c9e8a1a39ad6ac7f1489"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/jinja2/visitor.py",
+      "bytes": 3557,
+      "sha256": "11c9cbd4f2307ffe1154238cc6c44db91f005c76d2d6a7c074c384da780a273e"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe-3.0.4.dist-info/METADATA",
+      "bytes": 2764,
+      "sha256": "08fa79954ab288d778b0fee4f0e6c7dbc869e545a415747d1324622465d3b08d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe-3.0.4.dist-info/RECORD",
+      "bytes": 901,
+      "sha256": "a33813fa7018901d9a688bab566cfa7f371726b19ef782d5bfd2ae1fbcaf5b76"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe-3.0.4.dist-info/WHEEL",
+      "bytes": 101,
+      "sha256": "547199cfb31450578b25778938b82f94e190e69e750e6c850e3b6d657fa1a30f"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe-3.0.4.dist-info/licenses/LICENSE.txt",
+      "bytes": 1503,
+      "sha256": "4631ec0db5fd90a547e336817264c6798214338146f8ac94b4a57f96ee8c9ec4"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe-3.0.4.dist-info/top_level.txt",
+      "bytes": 11,
+      "sha256": "ab2d0f9637b9209bafb020637a32728430a310075c0cb2bfd9a81571ec7c67a5"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe/__init__.py",
+      "bytes": 13760,
+      "sha256": "f16b1936306299dc0ed098d142949dd00c2979dab90125cabeda5e09a5383f33"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe/_native.py",
+      "bytes": 218,
+      "sha256": "da9b64278d3209ca7d92adcbd4daa98237e9641fa86e789828514a50e9078784"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe/_speedups.c",
+      "bytes": 4527,
+      "sha256": "79f73a6b3739d166cac523629f1578ae4b485f6c7359f2ac2ef9dc0bc67723fc"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe/_speedups.cp312-win_amd64.pyd",
+      "bytes": 11776,
+      "sha256": "a1bf1fb566f920b5670dca3b31acb0148636cfff8aa8108d938f91550358b231"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe/_speedups.pyi",
+      "bytes": 42,
+      "sha256": "2d20e65d839e7c7e07569017b8bf2c97b02db4bc34a178759e3568559a76c2a4"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/markupsafe/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging-26.3.dist-info/METADATA",
+      "bytes": 3544,
+      "sha256": "70fdb89fc4d4a9a043bf7372b8972bcc883fddff34ab55e9cf80d73875384763"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging-26.3.dist-info/RECORD",
+      "bytes": 2339,
+      "sha256": "49910a2cb1de4511589f678097f0fd771a2b4266f944806edb1b846f11af324c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging-26.3.dist-info/WHEEL",
+      "bytes": 82,
+      "sha256": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging-26.3.dist-info/licenses/LICENSE",
+      "bytes": 197,
+      "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+      "bytes": 1344,
+      "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/__init__.py",
+      "bytes": 494,
+      "sha256": "6e758cdd0028b2cad74c739b9adc9c9f06f054932306280b878bfe59d39219b5"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_elffile.py",
+      "bytes": 3236,
+      "sha256": "1f025f54c573f1a85740c4fbd908cc1d1fb0c177c14377ebf5f09d6cd5368780"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_manylinux.py",
+      "bytes": 10000,
+      "sha256": "5b6e84324c42538ab4cdb148e2430fdba36f04427b0efda55bea083a35fa6136"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_musllinux.py",
+      "bytes": 2774,
+      "sha256": "0328fb827b1170c77df4c107d49be8df8d37262103490a61e8acad8a2f9cadff"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_parser.py",
+      "bytes": 12639,
+      "sha256": "88a348115209327497e453b635e5db099fd592f9335d710c7313b29cdb30c50c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_ranges.py",
+      "bytes": 30850,
+      "sha256": "b7b595f2e692aeb3697c545b85c24cbbcb4552f2adc6d9059aa82d0877e816b7"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_structures.py",
+      "bytes": 1109,
+      "sha256": "eb48d16c5efca7ccf930a9cd77a700a6b80e69d0891d5d03966526441a8565cb"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/_tokenizer.py",
+      "bytes": 5573,
+      "sha256": "cc25e57c0d564c89e15073471d6e1c264299ca946fb17c0e1e4af54ef7713ee6"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/dependency_groups.py",
+      "bytes": 11224,
+      "sha256": "5309cc564ca3022dfb594816e9d593bb09cdf34208c1fb8c5ec9afb6c670278c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/direct_url.py",
+      "bytes": 11645,
+      "sha256": "843baa95d04cbb49288de9d9fd77ee946e862cb603123e7e46a69e171fa7d06b"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/errors.py",
+      "bytes": 2680,
+      "sha256": "ea17c461701ff2ffc817ae7e94569d24e30889e04fdb120ab721178c6d67188b"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/licenses/__init__.py",
+      "bytes": 7859,
+      "sha256": "590d12eee73ddbec53b4e9ee5bfc64d9cb3aacb4940e8ebcba260757ce56740b"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/licenses/_spdx.py",
+      "bytes": 51122,
+      "sha256": "596ec35e2ca0ebcba9fd8343ff0a51625af548786257815f24b41f7e08613314"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/markers.py",
+      "bytes": 20554,
+      "sha256": "6cbe860d35d98d2b599e7f0ec73feab124e015711b30be9045e678c92940d9cc"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/metadata.py",
+      "bytes": 42059,
+      "sha256": "934149f420a5449e6f376aa61d6f26a0823eb82cc7c6a1c8cde5aa7be43d0f63"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/pylock.py",
+      "bytes": 35232,
+      "sha256": "1bce0a9fe63e42b87e8ced05da272baf16a68aa704b3718405e2735a6112467c"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/ranges.py",
+      "bytes": 83054,
+      "sha256": "b4781ce913e5dff9e07906f20585c54c3028e1f7ff56341828e79d522ddbfab6"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/requirements.py",
+      "bytes": 7040,
+      "sha256": "459476eb2107fe30e6b1310051a5bdb44c7d3b7f78e0e87bada268282cba62f5"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/specifiers.py",
+      "bytes": 52798,
+      "sha256": "661ad31ddf45ffb861d2626734f4e3d66966029b8fdb79586bb105825d8d9d59"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/tags.py",
+      "bytes": 38302,
+      "sha256": "0e717a082a79620d79cf0321b420df15593c4916fcda03c27cb9d82e07ef5d6e"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/utils.py",
+      "bytes": 12215,
+      "sha256": "a13742cd9994eeca5adfb0249d126408c478026eb1f48cb97afbf2fe9f28ecc6"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/packaging/version.py",
+      "bytes": 39040,
+      "sha256": "558b2fb50fd198c660a4c082f96b8919c565911b6b4b6e07f34b6b60c074be97"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers-0.23.2.dist-info/METADATA",
+      "bytes": 10082,
+      "sha256": "0485b3a1a959fa9fd8c50c92eefdf25edf1c6868affe71f7f3475d14c2894307"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers-0.23.2.dist-info/RECORD",
+      "bytes": 2836,
+      "sha256": "34e734be3b4a0570dd669c10b1cb62aaf07e830cdd3141d0d83addd8da5bfcd0"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers-0.23.2.dist-info/WHEEL",
+      "bytes": 96,
+      "sha256": "ec72fe4c6beae3839fa74ca164bfae4482051dc25322aaa4459550db06627733"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers-0.23.2.dist-info/sboms/tokenizers-python.cyclonedx.json",
+      "bytes": 153929,
+      "sha256": "ddd4b344ef086271d49cc5661cd50dc3838b4becabe57ddcaa9a727935018726"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/__init__.py",
+      "bytes": 3263,
+      "sha256": "6a5955273d382901d5b1f5284d887b24501464725977f6684485c2dfd2fb42f3"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/__init__.pyi",
+      "bytes": 52524,
+      "sha256": "0d88945ca6470a920298bd06454263c62bd5e3c0ddff9f7af97033ce91454a1a"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/decoders.pyi",
+      "bytes": 13377,
+      "sha256": "1054fb2e197ea97597145fdb52de9c79248a52f0e6526000d761b4b79b3b5893"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/decoders/__init__.py",
+      "bytes": 387,
+      "sha256": "42bd636c0d9fbeac23801058384c9a0e32c1c03c2405fb4fe63377b51bd3d638"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/__init__.py",
+      "bytes": 316,
+      "sha256": "f592367091cf0940995cfdfb18d9911ed07321888a5b3caa932d6bb5c61dacfc"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/base_tokenizer.py",
+      "bytes": 16907,
+      "sha256": "88151b6465e97b0acd8475cfc43dd61911d5637b297a87631653c4003b21b04e"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/bert_wordpiece.py",
+      "bytes": 5671,
+      "sha256": "8d150c4985350bb9d510364c29dc86dd5a7bf825289e0135906261bce3ff1073"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/byte_level_bpe.py",
+      "bytes": 4394,
+      "sha256": "a567db49e69ec3d6ad58a5fc35fdb321189aeaa840c1731f66069e20d227ce8f"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/char_level_bpe.py",
+      "bytes": 5599,
+      "sha256": "06dd79ac4719452cc9d917c47aad98bce5d9f30fd4606abd8ba3b7cbee35023e"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/sentencepiece_bpe.py",
+      "bytes": 3824,
+      "sha256": "e3f74915c36ccaf0bf175c019d60c1aae5acb1b50c57890ff811177ae1dcc6d2"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/implementations/sentencepiece_unigram.py",
+      "bytes": 7826,
+      "sha256": "2868e12335ee930264a5aa354087b95d5ac42003232a219a1c4ce90072fed48f"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/models.pyi",
+      "bytes": 15282,
+      "sha256": "f55524adef047320066f6615c060fd3c3f5b32ec7b293409964b4f2c03915f32"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/models/__init__.py",
+      "bytes": 186,
+      "sha256": "fb5366cf8249c8664ddab7303df402c9e835af956f8d77424e317f9668133e42"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/normalizers.pyi",
+      "bytes": 13394,
+      "sha256": "1a44587362b77da97c360da9d19a7d9c13631bddb6193cfbf359dd3f58cea9e5"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/normalizers/__init__.py",
+      "bytes": 870,
+      "sha256": "3e06ffc04d50428bf7b7f496e2f72c5d8ea55410d8c8635f606909324df023b7"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/pre_tokenizers.pyi",
+      "bytes": 15613,
+      "sha256": "f91f52d574533f20b48f27c597a2876c51bcd36745e4126213ef51950a936a9f"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/pre_tokenizers/__init__.py",
+      "bytes": 616,
+      "sha256": "d96109c008bb24d3f0337354918505be0263d279d25459b1d8ec2d4c7844d594"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/processors.pyi",
+      "bytes": 10742,
+      "sha256": "2aaff049e2219be021860229196f1ca6e53b95443a49be2b6b2b614e9239c00d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/processors/__init__.py",
+      "bytes": 318,
+      "sha256": "775e128fc63dccb4cf7deae794da8b549034e7c4068b02a8b544919f767e1908"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/py.typed",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/tokenizers.pyd",
+      "bytes": 7847936,
+      "sha256": "05848a2a85e1466d19242499ed6b8c016a886db79aca020792aa5598ded77ef9"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/tokenizers.pyi",
+      "bytes": 494,
+      "sha256": "c2f317dd4a714a86252efebd35049e2b5fb6b9c3f0823a92978b28e1983edb8b"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/tools/__init__.py",
+      "bytes": 56,
+      "sha256": "9892d5ac737514fdb709fe3f1095a8614761f324dbe416c914d7daf04739bc73"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/tools/visualizer-styles.css",
+      "bytes": 5020,
+      "sha256": "83df1126e7140a36273cbc17c9c7dc57e7406c7333a89a6767b3683ff7025019"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/tools/visualizer.py",
+      "bytes": 15930,
+      "sha256": "56e56686f49099eb3dbbe60440e1b7c1ec1d5ef62ea0c3c086a4efad36f07509"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/trainers.pyi",
+      "bytes": 14774,
+      "sha256": "a297e5c14c399883cf9aaa8d587adc1c1b1d3c7f6ed445670445448e3c77ceb4"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/trainers/__init__.py",
+      "bytes": 304,
+      "sha256": "7160b1f07101423d905ce3701e4afe3cab4026995d208957953542312e83b6a0"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/tokenizer_dependencies/tokenizers/trainers/__init__.pyi",
+      "bytes": 17954,
+      "sha256": "5f29b32e27980bf5ad4f8a5ad201f4d812545c8d480c95f87fdf601d784f0c04"
+    }
+  ],
+  "reuse_scope": "Only tokenizer fixture construction methodology, authenticated dependency software and workflow/provenance conventions reused; GLM conclusions independently based on its exact artifacts and pinned model-specific implementations.",
+  "execution_scope": "Tokenizers/Jinja compiler and canonical synthetic framing/packing only; no Torch/Transformers/PEFT/vLLM model/source module imported or recipes executed"
+}

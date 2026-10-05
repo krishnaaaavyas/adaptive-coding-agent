@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "tests_run": 11,
+  "failures": [],
+  "errors": [],
+  "all_inputs_invented": true,
+  "actual_target_attested": false,
+  "model_instantiated": false,
+  "GPU_queries": 0
+}

@@ -1,0 +1,86 @@
+{
+  "kind": "HAND_AUTHORED_DECODER_EVENT_VECTORS_NOT_GENERATED_COMPLETIONS",
+  "vectors": [
+    {
+      "id": "terminal.primary",
+      "tokens": [
+        151645
+      ],
+      "event": "STOP",
+      "stop_token": 151645,
+      "raw_count": 1,
+      "removed": 1
+    },
+    {
+      "id": "terminal.secondary",
+      "tokens": [
+        151643
+      ],
+      "event": "STOP",
+      "stop_token": 151643,
+      "raw_count": 1,
+      "removed": 1
+    },
+    {
+      "id": "terminal.internal",
+      "tokens": [
+        151645,
+        0,
+        151643
+      ],
+      "event": "STOP",
+      "stop_token": 151643,
+      "raw_count": 3,
+      "removed": 1,
+      "internal_151645_retained": true
+    },
+    {
+      "id": "terminal.none",
+      "tokens": [
+        0
+      ],
+      "event": "LENGTH",
+      "raw_count": 1,
+      "removed": 0,
+      "valid_fullcap_evidence": false
+    },
+    {
+      "id": "terminal.at_cap",
+      "tokens_recipe": {
+        "prefix_token": 0,
+        "prefix_repetitions": 2047,
+        "last": 151645
+      },
+      "event": "STOP",
+      "raw_count": 2048,
+      "removed": 1,
+      "valid_LENGTH_evidence": false
+    },
+    {
+      "id": "length.at_cap",
+      "tokens_recipe": {
+        "token": 0,
+        "repetitions": 2048
+      },
+      "event": "LENGTH",
+      "raw_count": 2048,
+      "removed": 0
+    },
+    {
+      "id": "terminal.unverified",
+      "tokens": [
+        151645
+      ],
+      "event": "UNKNOWN",
+      "removed": 0,
+      "result": "PENDING"
+    },
+    {
+      "id": "terminal.unknown_id",
+      "tokens": [
+        999999999
+      ],
+      "result": "FAIL_CLOSED_NO_SKIPPING"
+    }
+  ]
+}

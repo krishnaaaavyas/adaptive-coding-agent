@@ -1,0 +1,197 @@
+{
+  "status": "PASS",
+  "python": "3.11.9",
+  "unicode": "14.0.0",
+  "scope": "local hand-authored parser examples; no inference, transport certification or full conformance",
+  "source_checks": [
+    {
+      "id": "draft2",
+      "sha256": "e51c19b1acd06723a26b4e2151825ac6b858ef3d1c68271da76a622127aa9536",
+      "unchanged": true
+    },
+    {
+      "id": "draft3",
+      "sha256": "f0d5c27a14d7769846f592902288bacbe1b55701232d403150da669ff30d3acc",
+      "unchanged": true
+    },
+    {
+      "id": "request",
+      "sha256": "522148d364f679c3c28f369f3b668bfc941cae1691fc6474eeb561d037e28dcf",
+      "unchanged": true
+    },
+    {
+      "id": "preflight_30b",
+      "sha256": "94112c2641b7c687a783e17f1d355a69c0ecd61a75ec6e44eb6cd6fe205c930e",
+      "unchanged": true
+    },
+    {
+      "id": "preflight_next",
+      "sha256": "0f072060a129452240eca2c21fabc87f99132563a769599dbbcd054b417696b5",
+      "unchanged": true
+    },
+    {
+      "id": "preflight_gpt_oss",
+      "sha256": "7cf679b3177f287cf02a2d84f9f815062dc12bdc5f130573262d063af3ebae16",
+      "unchanged": true
+    },
+    {
+      "id": "implementation_protocol",
+      "sha256": "1c775d8bc0a1187e92a3c15e596b91747672796dd93f80e098dbc37c14fc9a45",
+      "unchanged": true
+    },
+    {
+      "id": "implementation_core",
+      "sha256": "db38809c2e027e059d182d7768d05d6cab263b7648761286870fbd92551bcbba",
+      "unchanged": true
+    },
+    {
+      "id": "implementation_artifact",
+      "sha256": "53ec09f8ca524d14b31b22cd9a2c4f3e5a33b26ae01ffc721a6d5b9c4bf7c523",
+      "unchanged": true
+    },
+    {
+      "id": "implementation_readme",
+      "sha256": "5da790277a49d85171e9f26c6015aa20e9c482364d3949f4e1aa9b6cd00b5868",
+      "unchanged": true
+    }
+  ],
+  "supplementary_inputs_unchanged": true,
+  "parser_checks": [
+    {
+      "name": "full_rendered_stream_after_terminal_removal",
+      "category": "artifact_ready",
+      "artifacts": [
+        [
+          "synthetic.py",
+          "<|channel|>analysis<|message|>Synthetic reasoning.<|end|><|start|>assistant<|channel|>final<|message|>def synthetic():\n    return 1\n"
+        ]
+      ],
+      "raw_sha256": "f1665fe40e5be38a28a8aaa14902e70de56c3bbb4083491279a309db3ae52a10",
+      "normalized_sha256": "f1665fe40e5be38a28a8aaa14902e70de56c3bbb4083491279a309db3ae52a10",
+      "diagnostics": [],
+      "model_generated": false
+    },
+    {
+      "name": "hypothetical_final_projection_not_authorized",
+      "category": "artifact_ready",
+      "artifacts": [
+        [
+          "synthetic.py",
+          "def synthetic():\n    return 1\n"
+        ]
+      ],
+      "raw_sha256": "05803a1963c3f5b46475c6797de6b7f47e24d0c279da88aba56fcd47e5976645",
+      "normalized_sha256": "05803a1963c3f5b46475c6797de6b7f47e24d0c279da88aba56fcd47e5976645",
+      "diagnostics": [],
+      "model_generated": false
+    },
+    {
+      "name": "illustrative_all_body_text_no_join_rule_adopted",
+      "category": "artifact_ready",
+      "artifacts": [
+        [
+          "synthetic.py",
+          "Synthetic reasoning.\ndef synthetic():\n    return 1\n"
+        ]
+      ],
+      "raw_sha256": "73b217dd80873133cc2eefdc58e2209eb627bccbba6203d3f613917b9f02c95a",
+      "normalized_sha256": "73b217dd80873133cc2eefdc58e2209eb627bccbba6203d3f613917b9f02c95a",
+      "diagnostics": [],
+      "model_generated": false
+    },
+    {
+      "name": "bom_fence_and_whitespace_preserved",
+      "category": "artifact_ready",
+      "artifacts": [
+        [
+          "synthetic.py",
+          "\ufeff```python\nx=1\n```\n"
+        ]
+      ],
+      "raw_sha256": "1c1e94c8d8a6f421bbb9c4dbfa2d0840391cfcfda2311c0d65272a88637436a9",
+      "normalized_sha256": "c3dd44ef59d4e06e3e8a411a100b4a1b24d0b2c884241e60420120aeb2010e23",
+      "diagnostics": [],
+      "model_generated": false
+    },
+    {
+      "name": "single_empty",
+      "category": "artifact_ready",
+      "artifacts": [
+        [
+          "synthetic.py",
+          ""
+        ]
+      ],
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normalized_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "diagnostics": [],
+      "model_generated": false
+    },
+    {
+      "name": "multi_empty_final_section",
+      "category": "artifact_ready",
+      "artifacts": [
+        [
+          "a.py",
+          "x=1\n"
+        ],
+        [
+          "b.py",
+          ""
+        ]
+      ],
+      "raw_sha256": "9b90bcf9516863f1b9eb1af264109c7518200eb1b1aceb15f63a9b51411360a0",
+      "normalized_sha256": "9b90bcf9516863f1b9eb1af264109c7518200eb1b1aceb15f63a9b51411360a0",
+      "diagnostics": [],
+      "model_generated": false
+    },
+    {
+      "name": "substantive_preamble_multi",
+      "category": "output_format_failure",
+      "artifacts": [],
+      "raw_sha256": "1f675ee5ce670c0dc15782d7387fdf501dbd08b3dac896f421403209dfee9297",
+      "normalized_sha256": "1f675ee5ce670c0dc15782d7387fdf501dbd08b3dac896f421403209dfee9297",
+      "diagnostics": [
+        "first_header_not_zero"
+      ],
+      "model_generated": false
+    },
+    {
+      "name": "cap_with_malformed_headers",
+      "category": "output_capacity_failure",
+      "artifacts": [],
+      "raw_sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "normalized_sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "diagnostics": [
+        "first_header_not_zero",
+        "header_vector_mismatch"
+      ],
+      "model_generated": false
+    },
+    {
+      "name": "integrity_precedes_capacity",
+      "category": "infrastructure_invalid",
+      "artifacts": [],
+      "raw_sha256": "9834a14ab9bcaa0f6a8da71073617eac8f004e596a3fa11d807b84631b825d9d",
+      "normalized_sha256": null,
+      "diagnostics": [
+        "runtime_integrity"
+      ],
+      "model_generated": false
+    },
+    {
+      "name": "nul_rejected",
+      "category": "output_format_failure",
+      "artifacts": [],
+      "raw_sha256": "14f825b2bbc32dd8d196367fa8776873069c12a8954d8da7513aa7704ddd09eb",
+      "normalized_sha256": null,
+      "diagnostics": [
+        "invalid_completion_text"
+      ],
+      "model_generated": false
+    }
+  ],
+  "matrix_rows": 38,
+  "matrix_status": "all NOT_RUN",
+  "report_sections": 17
+}

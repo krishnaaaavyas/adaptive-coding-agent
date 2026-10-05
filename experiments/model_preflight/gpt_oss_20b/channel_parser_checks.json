@@ -1,0 +1,156 @@
+[
+  {
+    "name": "analysis_then_final",
+    "hand_authored": true,
+    "model_generated": false,
+    "raw_rendered": "<|channel|>analysis<|message|>Synthetic reasoning.<|end|><|start|>assistant<|channel|>final<|message|>def synthetic():\n    return 1\n<|return|>",
+    "token_ids": [
+      200005,
+      35644,
+      200008,
+      190125,
+      57927,
+      13,
+      200007,
+      200006,
+      173781,
+      200005,
+      17196,
+      200008,
+      1314,
+      37001,
+      8595,
+      271,
+      622,
+      220,
+      16,
+      198,
+      200002
+    ],
+    "total_tokens": 21,
+    "terminal_token": 200002,
+    "parsed": [
+      {
+        "role": "assistant",
+        "name": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Synthetic reasoning."
+          }
+        ],
+        "channel": "analysis"
+      },
+      {
+        "role": "assistant",
+        "name": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "def synthetic():\n    return 1\n"
+          }
+        ],
+        "channel": "final"
+      }
+    ]
+  },
+  {
+    "name": "final_only",
+    "hand_authored": true,
+    "model_generated": false,
+    "raw_rendered": "<|channel|>final<|message|>def synthetic():\n    return 1\n<|return|>",
+    "token_ids": [
+      200005,
+      17196,
+      200008,
+      1314,
+      37001,
+      8595,
+      271,
+      622,
+      220,
+      16,
+      198,
+      200002
+    ],
+    "total_tokens": 12,
+    "terminal_token": 200002,
+    "parsed": [
+      {
+        "role": "assistant",
+        "name": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "def synthetic():\n    return 1\n"
+          }
+        ],
+        "channel": "final"
+      }
+    ]
+  },
+  {
+    "name": "handoff",
+    "hand_authored": true,
+    "model_generated": false,
+    "raw_rendered": " to=functions.synthetic<|channel|>commentary<|message|>{}<|call|>",
+    "token_ids": [
+      316,
+      28,
+      44580,
+      123679,
+      200005,
+      12606,
+      815,
+      200008,
+      12083,
+      200012
+    ],
+    "total_tokens": 10,
+    "terminal_token": 200012,
+    "parsed": [
+      {
+        "role": "assistant",
+        "name": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "{}"
+          }
+        ],
+        "channel": "commentary",
+        "recipient": "functions.synthetic"
+      }
+    ]
+  },
+  {
+    "name": "analysis_no_final",
+    "hand_authored": true,
+    "model_generated": false,
+    "raw_rendered": "<|channel|>analysis<|message|>Synthetic reasoning continues.",
+    "token_ids": [
+      200005,
+      35644,
+      200008,
+      190125,
+      57927,
+      15093,
+      13
+    ],
+    "total_tokens": 7,
+    "terminal_token": null,
+    "parsed": [
+      {
+        "role": "assistant",
+        "name": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "Synthetic reasoning continues."
+          }
+        ],
+        "channel": "analysis"
+      }
+    ]
+  }
+]

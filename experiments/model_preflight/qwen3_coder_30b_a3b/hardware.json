@@ -1,0 +1,10 @@
+{
+  "gpu": "NVIDIA GeForce RTX 2050, 4096 MiB, 581.86",
+  "gpu_query_exit": 0,
+  "host_ram_bytes": 25463480320,
+  "available_ram_bytes": 12495159296,
+  "disk_free_bytes": 24853585920,
+  "weight_load_performed": false,
+  "generation_performed": false,
+  "adapter_training_performed": false
+}

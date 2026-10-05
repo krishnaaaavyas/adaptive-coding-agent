@@ -1,0 +1,281 @@
+{
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "status": "SOURCE_LOCK_RESOLVED_EXECUTABLE_LOCK_PENDING",
+  "frozen_native_profile": true,
+  "complete_executable_lock": false,
+  "vllm": {
+    "version": "0.11.2",
+    "repository_commit": "275de34170654274616082721348b7edd9741d32",
+    "engine": "V1",
+    "archived_correspondence": [
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_sampling_params.py",
+          "bytes": 27443,
+          "sha256": "4816075ad7ede6eeca33ab6b155df3f015998157522a18e65e4c0bcb4d99c4ed"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/vllm/sampling_params.py",
+          "bytes": 27443,
+          "sha256": "4816075ad7ede6eeca33ab6b155df3f015998157522a18e65e4c0bcb4d99c4ed"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_processor.py",
+          "bytes": 26056,
+          "sha256": "681092d5ba78c872a3744ac8a263b9d0a46cdb344b8319f9c49ccef805210d85"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/vllm/v1/engine/processor.py",
+          "bytes": 26056,
+          "sha256": "681092d5ba78c872a3744ac8a263b9d0a46cdb344b8319f9c49ccef805210d85"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_output.py",
+          "bytes": 24627,
+          "sha256": "26f9de0e157562f993a31cd80f6313ab454688c1275aa6567fff24275bf2b72e"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/vllm/v1/engine/output_processor.py",
+          "bytes": 24627,
+          "sha256": "26f9de0e157562f993a31cd80f6313ab454688c1275aa6567fff24275bf2b72e"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_stop.py",
+          "bytes": 2374,
+          "sha256": "d5045434309c3268355566e6d3b898824ad2113c161b2336b929fa8299cc9de6"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/vllm/v1/core/sched/utils.py",
+          "bytes": 2374,
+          "sha256": "d5045434309c3268355566e6d3b898824ad2113c161b2336b929fa8299cc9de6"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_arg_utils.py",
+          "bytes": 89389,
+          "sha256": "37bcea9be048e694321d00cdbd068b8d2f7df253efceaaa2359b34df12d167f8"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/vllm/engine/arg_utils.py",
+          "bytes": 89389,
+          "sha256": "37bcea9be048e694321d00cdbd068b8d2f7df253efceaaa2359b34df12d167f8"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_qwen3_moe.py",
+          "bytes": 29268,
+          "sha256": "3130b50123415364d4d34debbec4907bb2b4c90263b38663dae641587e23b266"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/vllm/model_executor/models/qwen3_moe.py",
+          "bytes": 29268,
+          "sha256": "3130b50123415364d4d34debbec4907bb2b4c90263b38663dae641587e23b266"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_requirements_common.txt",
+          "bytes": 2548,
+          "sha256": "99d516f95c8e250e86086f5ccdfb3d501a1dae7d147cec90e8a3261cb7536c09"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/requirements/common.txt",
+          "bytes": 2548,
+          "sha256": "99d516f95c8e250e86086f5ccdfb3d501a1dae7d147cec90e8a3261cb7536c09"
+        },
+        "exact_match": true
+      },
+      {
+        "historical": {
+          "path": "experiments/model_preflight/qwen3_coder_30b_a3b/sources/vllm_requirements_cuda.txt",
+          "bytes": 626,
+          "sha256": "e424595c46a0a9b1d126911a89a53e99892f7178cabab6a201750905ec335e7a"
+        },
+        "resolved_commit_source": {
+          "path": "sources/vllm-project__vllm/requirements/cuda.txt",
+          "bytes": 626,
+          "sha256": "e424595c46a0a9b1d126911a89a53e99892f7178cabab6a201750905ec335e7a"
+        },
+        "exact_match": true
+      }
+    ],
+    "delivery": "CUDA12.8 source-build; final wheel hash PENDING"
+  },
+  "python": {
+    "implementation": "CPython",
+    "version": "3.11.9",
+    "unicode_version": "14.0.0",
+    "source_commit": "de54cf5be371a6f5e2e9f208c38def5f81d3ef02",
+    "linux_binary_sha256": null,
+    "stdlib_extension_library_hashes": null,
+    "status": "SOURCE_PIN_RESOLVED_BINARY_BUILD_PENDING",
+    "historical_windows_executable_hash_is_not_linux_identity": true
+  },
+  "torch": {
+    "filename": "torch-2.9.0+cu128-cp311-cp311-manylinux_2_28_x86_64.whl",
+    "url": "https://download-r2.pytorch.org/whl/cu128/torch-2.9.0%2Bcu128-cp311-cp311-manylinux_2_28_x86_64.whl",
+    "sha256": "e97c264478c9fc48f91832749d960f1e349aeb214224ebe65fb09435dd64c59a",
+    "body_downloaded": false,
+    "body_hash_verified": false,
+    "declared_build": "2.9.0+cu128",
+    "version": "2.9.0",
+    "installed_build_verification": "PENDING"
+  },
+  "transformers": {
+    "version": "4.57.6",
+    "repository_commit": "753d61104116eefc8ffc977327b441ee0c8d599f"
+  },
+  "peft": {
+    "version": "0.18.0",
+    "repository_commit": "77daa8d3b7decf2b40238ab47e2c1bd0f26c7749"
+  },
+  "tokenizers": {
+    "version": "0.22.2"
+  },
+  "jinja2": {
+    "version": "3.1.6"
+  },
+  "cuda": {
+    "selected_toolkit_release": "12.8.1",
+    "family": "12.8",
+    "nvcc_runtime_expectation": "12.8.90",
+    "nvrtc_expectation": "12.8.93",
+    "driver_linux_minimum": "570.124.06",
+    "driver_rule": "Conservative >= toolkit release driver; no reliance on older CUDA12.x minor compatibility/PTX exceptions",
+    "actual_driver": null,
+    "actual_loaded_library_identities": null,
+    "status": "EXPECTATIONS_FROZEN_ACTUALS_PENDING"
+  },
+  "platform": {
+    "os": "Ubuntu22.04 Linux",
+    "architecture": "linux/amd64",
+    "glibc_expectation": ">=2.28 for selected torch wheel; actual installed libc version, package and library hash PENDING",
+    "container_base": "nvidia/cuda@sha256:6617a625f4090c76c545a0e7d63f2e441718ef9af7f4efe7dd1242a29e289fd7",
+    "base_platform_manifest_digest": "sha256:6617a625f4090c76c545a0e7d63f2e441718ef9af7f4efe7dd1242a29e289fd7",
+    "base_manifest_list_digest": "sha256:a99a1860ba8e2916e5c3e73b72ec4c4301653a84586e05bfc9a2aa2d58027e97",
+    "registry_declared_not_layer_verified": true,
+    "registry_tag_used_only_to_discover_digest": "12.8.1-devel-ubuntu22.04",
+    "layer_bodies_downloaded": false,
+    "os_package_SBOM_hash": null
+  },
+  "build": {
+    "reference_dockerfile": {
+      "path": "sources/vllm-project__vllm/docker/Dockerfile",
+      "bytes": 21589,
+      "sha256": "90f3a92cb4cd3b052f1da2203076248b1e24412372fee587e1b969e07df1631b"
+    },
+    "reference_defaults": {
+      "CUDA_VERSION": "12.9.1",
+      "PYTHON_VERSION": "3.12"
+    },
+    "reference_dockerfile_is_not_executable_lock": true,
+    "required_customizations": [
+      "Digest-pinned22.04 CUDA12.8.1 base",
+      "Separately pinned exact CPython3.11.9 build; apt minor version is insufficient",
+      "Torch2.9.0+cu128 input",
+      "Resolve and hash all apt/build/Python transitive artifacts before offline build",
+      "Disable mutable network bootstrap/uv/get-pip/tag fetches; pin all subprocess build inputs",
+      "Exact compiler patches and target GPU compute architectures; no unrecorded autotuning or kernel cache"
+    ],
+    "compiler": {
+      "proposed_family": "GNU gcc/g++10 as upstream Docker recipe",
+      "exact_patch_packages_hashes": null,
+      "status": "PENDING"
+    },
+    "triton": {
+      "version": "3.5.0",
+      "wheel_declarations": "package_metadata_lock.json",
+      "installed_binary_hash": null
+    },
+    "cutlass": {
+      "version_tag": "v4.2.1",
+      "commit": "f3fde58372d33e9a5650ba7b80fc48b3b49d40c8"
+    },
+    "vllm_flash_attention": {
+      "repository": "vllm-project/flash-attention",
+      "commit": "58e0626a692f09241182582659e3bf8f16472659",
+      "compiled_kernel_hashes": null
+    },
+    "flashinfer": {
+      "version": "0.5.2",
+      "enabled_kernel_inventory": null,
+      "binary_cache_hashes": null,
+      "status": "SOURCE_REQUIREMENT_FROZEN_RUNTIME_DISPATCH_PENDING"
+    },
+    "cmake_ninja_setuptools_wheel_regex_packaging": "Ranges/names from pinned build.txt recorded; exact versions/hashes PENDING",
+    "GPU_compute_arch_list": null,
+    "final_build_recipe_sha256": null,
+    "final_vllm_wheel_sha256": null
+  },
+  "package_lock": {
+    "artifact": "package_metadata_lock.json",
+    "selected_core_metadata_complete": true,
+    "transitive_binary_lock_complete": false
+  },
+  "parser": {
+    "policy_id": "current-repo-v1-draft3",
+    "policy_sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b",
+    "implementation_revision": "current-repo-v1-draft3-implementation-r2",
+    "implementation_revision_sha256": "ccb9484cd342c00a3c8e49a9df5af745e9ab2a29fc24a26234e2fd24cc9d6bbb",
+    "implementation_build_sha256": "2ecd8d12df578abf03668271c39d3f3964d4a08d13e19cc2c8817f9bc0e1737a",
+    "disabled_alias_configuration_sha256": "bd4496ce5688c47b067e372a5db5e8d5d6194dcafbeb141dd8f49f1c77618b1e",
+    "source_manifest_sha256": "19eda22e673034352240b7cca17bf0299cd1eadaad7b533389f8263f370f4b24",
+    "conformance_manifest_sha256": "4716783aac8a461ef1770a30ffcade845c69dd6fdbe1944b1dc7790976992497",
+    "manifest_hash_definition": "SHA256 of canonical compact ensure_ascii sorted-key JSON of UTF-8-path-sorted path/sha256 rows; no terminal LF"
+  },
+  "later_executable_identity_required": [
+    "content-addressed final image digest and SBOM",
+    "exact original checkpoint body hashes",
+    "all installed/build package versions and body hashes",
+    "Python executable/stdlib/extensions/Unicode identity",
+    "CUDA loaded libraries and exact host driver",
+    "GPU model UUID count topology and compute capability",
+    "parser policy/build/config roots",
+    "runner and instrumentation source/binary hashes",
+    "actual selected kernels/cache identities"
+  ],
+  "final_container_image_digest": null,
+  "GPU_topology": null,
+  "runner_build_identity": null,
+  "unresolved": [
+    {
+      "id": "RUNTIME_BUILD",
+      "class": "C",
+      "status": "PENDING",
+      "blocking_before_weights": true,
+      "detail": "No final build recipe with complete exact transitive/build-tool/Linux Python binary hashes or final executable image digest. Stock vLLM Dockerfile CUDA12.9.1/Python3.12 defaults do not satisfy this profile."
+    },
+    {
+      "id": "TARGET_CAPACITY",
+      "class": "C",
+      "status": "PENDING",
+      "blocking_before_weights": true,
+      "detail": "No intended Linux target inventory proving free staging storage >=250GB, >=64GiB plausible host RAM floor (128GiB preferred) and selected TP1 CUDA-capable BF16 device provision. Historical local Windows inventory is insufficient and not refreshed."
+    },
+    {
+      "id": "RUNNER_ATTESTATION",
+      "class": "C",
+      "status": "PENDING",
+      "blocking_before_weights": true,
+      "detail": "No content-addressed implementation/attestation of the specified offline raw-stream runner, isolation boundary and telemetry observer. This step freezes designs and schemas, not executable certification."
+    }
+  ],
+  "no_stack_version_substitution_allowed": true
+}

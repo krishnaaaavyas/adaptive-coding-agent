@@ -1,0 +1,4028 @@
+{
+  "repository": "zai-org/GLM-4.7-Flash",
+  "revision": "7dd20894a642a0aa287e9827cb1a1f7f91386b67",
+  "module_prefix": "model.layers.{0..46}.self_attn",
+  "projection_modules": [
+    {
+      "module": "model.layers.0.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.0.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.0.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.0.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.0.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.1.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.1.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.1.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.1.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.1.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.2.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.2.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.2.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.2.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.2.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.3.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.3.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.3.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.3.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.3.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.4.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.4.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.4.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.4.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.4.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.5.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.5.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.5.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.5.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.5.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.6.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.6.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.6.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.6.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.6.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.7.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.7.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.7.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.7.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.7.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.8.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.8.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.8.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.8.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.8.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.9.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.9.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.9.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.9.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.9.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.10.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.10.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.10.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.10.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.10.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.11.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.11.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.11.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.11.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.11.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.12.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.12.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.12.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.12.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.12.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.13.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.13.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.13.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.13.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.13.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.14.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.14.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.14.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.14.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.14.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.15.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.15.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.15.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.15.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.15.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.16.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.16.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.16.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.16.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.16.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.17.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.17.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.17.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.17.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.17.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.18.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.18.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.18.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.18.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.18.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.19.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.19.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.19.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.19.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.19.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.20.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.20.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.20.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.20.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.20.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.21.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.21.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.21.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.21.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.21.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.22.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.22.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.22.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.22.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.22.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.23.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.23.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.23.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.23.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.23.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.24.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.24.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.24.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.24.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.24.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.25.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.25.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.25.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.25.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.25.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.26.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.26.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.26.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.26.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.26.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.27.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.27.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.27.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.27.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.27.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.28.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.28.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.28.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.28.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.28.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.29.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.29.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.29.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.29.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.29.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.30.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.30.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.30.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.30.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.30.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.31.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.31.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.31.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.31.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.31.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.32.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.32.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.32.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.32.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.32.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.33.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.33.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.33.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.33.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.33.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.34.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.34.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.34.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.34.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.34.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.35.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.35.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.35.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.35.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.35.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.36.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.36.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.36.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.36.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.36.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.37.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.37.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.37.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.37.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.37.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.38.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.38.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.38.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.38.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.38.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.39.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.39.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.39.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.39.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.39.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.40.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.40.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.40.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.40.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.40.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.41.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.41.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.41.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.41.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.41.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.42.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.42.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.42.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.42.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.42.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.43.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.43.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.43.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.43.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.43.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.44.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.44.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.44.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.44.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.44.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.45.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.45.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.45.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.45.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.45.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    },
+    {
+      "module": "model.layers.46.self_attn.q_a_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        768,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        768,
+        16
+      ],
+      "rank16_parameters": 45056
+    },
+    {
+      "module": "model.layers.46.self_attn.q_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        5120,
+        768
+      ],
+      "rank16_A_shape": [
+        16,
+        768
+      ],
+      "rank16_B_shape": [
+        5120,
+        16
+      ],
+      "rank16_parameters": 94208
+    },
+    {
+      "module": "model.layers.46.self_attn.kv_a_proj_with_mqa",
+      "type": "nn.Linear",
+      "weight_shape": [
+        576,
+        2048
+      ],
+      "rank16_A_shape": [
+        16,
+        2048
+      ],
+      "rank16_B_shape": [
+        576,
+        16
+      ],
+      "rank16_parameters": 41984
+    },
+    {
+      "module": "model.layers.46.self_attn.kv_b_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        8960,
+        512
+      ],
+      "rank16_A_shape": [
+        16,
+        512
+      ],
+      "rank16_B_shape": [
+        8960,
+        16
+      ],
+      "rank16_parameters": 151552
+    },
+    {
+      "module": "model.layers.46.self_attn.o_proj",
+      "type": "nn.Linear",
+      "weight_shape": [
+        2048,
+        5120
+      ],
+      "rank16_A_shape": [
+        16,
+        5120
+      ],
+      "rank16_B_shape": [
+        2048,
+        16
+      ],
+      "rank16_parameters": 114688
+    }
+  ],
+  "head_count": 20,
+  "q_low_rank": 768,
+  "kv_low_rank": 512,
+  "qk_nonpositional_head_dim": 192,
+  "qk_rope_head_dim": 64,
+  "qk_total_head_dim": 256,
+  "v_head_dim": 256,
+  "normalizations": {
+    "q_a_layernorm": [
+      768
+    ],
+    "kv_a_layernorm": [
+      512
+    ]
+  },
+  "q_proj": "None because q_lora_rank768; do not target an absent full q_proj",
+  "rope": "Current pinned config default rope_interleave=True, theta1e6, full64-dimensional positional component; record resolved config and parity later",
+  "compressed_cache": "TF source caches512 latent+64 positional values per token per layer, then expands K/V transiently; vLLM native MLA uses custom kernels/weight absorption",
+  "ordinary_training_path": "Five nn.Linear modules plus RMSNorm; standard autograd under pinned eager experts/SDPA attention. No inference-only fused MLA kernel used for training.",
+  "serving_difference": "q_a and kv_a may be fused_qkv_a_proj; kv_b weights fed to MLA custom/absorption path. Class SupportsLoRA alone does not prove every selected projection adapter is applied.",
+  "source_urls": [
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/models/glm4_moe_lite/modeling_glm4_moe_lite.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/glm4_moe_lite.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/deepseek_v2.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/layers/mla.py"
+  ]
+}

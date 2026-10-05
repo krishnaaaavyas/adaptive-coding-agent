@@ -1,0 +1,914 @@
+{
+  "frozen_pre_outcome": true,
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "gates": [
+    {
+      "historical_id": "A",
+      "historical_test": "Exact checkpoint bodies",
+      "historical_stage": "identity",
+      "historical_required_evidence": "All selected shard hashes lengths keys and dtypes match recorded immutable revision; original snapshot read-only",
+      "historical_model_specific": "16 BF16 shards; 61066575656 declared bytes",
+      "mapped_function": "All 16 body byte lengths/SHA256 match frozen upstream declarations",
+      "prerequisites": [],
+      "independent_acceptance": "All 16 body byte lengths/SHA256 match frozen upstream declarations; all index keys/layout/header dtypes BF16 match; original files read-only. Metadata-only hashes do not PASS A.",
+      "evidence_required": [
+        "per_shard_hashes_lengths",
+        "safetensors_header_key_dtype_layout_census",
+        "readonly_mount_receipt"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "B",
+      "historical_test": "Runtime container and parser lock",
+      "historical_stage": "identity",
+      "historical_required_evidence": "Build container wheels driver CUDA kernels topology and training lock; CPython 3.11.9 Unicode 14.0.0",
+      "historical_model_specific": "vLLM 0.11.2 immutable commit resolved against archived hashes; torch 2.9.0; TP1",
+      "mapped_function": "Final content-addressed image, complete hashed package/build lock, Linux CPython 3.11.9 Unicode14.0.0 binary/library identities, CUDA12.8 build/runtime, compatible exact driver and TP1 device/topology identities all present and independently authenticated",
+      "prerequisites": [],
+      "independent_acceptance": "Final content-addressed image, complete hashed package/build lock, Linux CPython 3.11.9 Unicode14.0.0 binary/library identities, CUDA12.8 build/runtime, compatible exact driver and TP1 device/topology identities all present and independently authenticated; no mutable tags/ranges remain.",
+      "evidence_required": [
+        "container_digest_and_layer_SBOM",
+        "package_lock_hashes",
+        "Python_parser_build_identity",
+        "driver_CUDA_kernels_GPU_topology",
+        "source_correspondence_receipts"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "C",
+      "historical_test": "Successful load and real capacity",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Exact dtype and placement; 32768 allocation; near-capacity prefill with full 2048 reserve; overlength rejected unchanged",
+      "historical_model_specific": "One 80GB starting GPU; verify full-attention KV allocation",
+      "mapped_function": "Pristine original BF16 model loads on selected device",
+      "prerequisites": [
+        "A",
+        "B",
+        "L"
+      ],
+      "independent_acceptance": "Pristine original BF16 model loads on selected device; deployed max_model_len exactly32768; direct non-task30720-token prefill-only execute_model probe plus verified KV allocation>=32768 keeps full2048 reserve. Do not invoke sample_tokens; retain forward/allocation receipt and destroy process with deferred state. The30721+2048 probe is rejected before model forward without truncation. No generated completion occurs atC; no task admission bypass.",
+      "evidence_required": [
+        "pristine_load_receipt",
+        "effective_capacity",
+        "30720_30721_token_probe_manifests"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "D",
+      "historical_test": "Exact prompt token parity",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Five invented conditions plus empty H and marker Unicode cases; original P K H bytes hashes and returned prompt IDs match",
+      "historical_model_specific": "Qwen NFC and special-marker behavior recorded; authoritative standalone template",
+      "mapped_function": "All frozen historical token vectors/rendered bytes and literal P/K/H hashes match backend prompt IDs exactly",
+      "prerequisites": [
+        "C"
+      ],
+      "independent_acceptance": "All frozen historical token vectors/rendered bytes and literal P/K/H hashes match backend prompt IDs exactly; five invented forms and empty H retain budgets/BC ownership; new fixture IDs are checked by independent tokenizer/template path against authenticated assets before any completion is observed.",
+      "evidence_required": [
+        "fixture_manifest_hash",
+        "per_fixture_raw_input_bytes_and_token_vectors",
+        "independent_literal_goldens"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "D",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "E",
+      "historical_test": "Effective frozen controls",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Typed requested effective controls; neutral penalties no text stops max2048 n1 no retries clipping shifting or truncation",
+      "historical_model_specific": "Prevent generation_config sampling defaults; prefix reuse and speculation disabled",
+      "mapped_function": "Typed requested/effective controls exactly match independent literal oracle and source mapping",
+      "prerequisites": [
+        "C"
+      ],
+      "independent_acceptance": "Typed requested/effective controls exactly match independent literal oracle and source mapping; inspect instantiated effective engine/sampling and observed invocation counts; no silent generation_config/default controls.",
+      "evidence_required": [
+        "typed_effective_engine_sampling_dump",
+        "literal_oracle_comparison",
+        "single_invocation_audit"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "F",
+      "historical_test": "Native terminal behavior",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Raw final token finish stop and count; observed terminal removal only; one-token reference allowance; native stop at cap precedence",
+      "historical_model_specific": "151645 primary and 151643 secondary; preserve internal special tokens",
+      "mapped_function": "Both native terminal IDs and stop-at-cap precedence verified by literal instrument probes",
+      "prerequisites": [
+        "I",
+        "E"
+      ],
+      "independent_acceptance": "Both native terminal IDs and stop-at-cap precedence verified by literal instrument probes; actual native terminating trace retains terminal,count,finish,stop and one final-token removal; unknown/internal tokens not stripped. No observed native event means PENDING.",
+      "evidence_required": [
+        "native_events_and_removal_receipts",
+        "literal_terminal_probe_results",
+        "real_native_termination_manifest"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "G",
+        "H",
+        "J",
+        "K",
+        "M",
+        "N",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "M",
+        "N",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "G",
+      "historical_test": "Natural termination",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Invented single and multi-target code tasks; natural terminal and complete emitted text passed to frozen parser",
+      "historical_model_specific": "No fence or explanation cleanup; failures retained",
+      "mapped_function": "Each single/multi-target fixture gets one unchanged-control request, natural native terminal within2048, full uncleaned text accepted by frozen complete-replacement parser",
+      "prerequisites": [
+        "F",
+        "D",
+        "L"
+      ],
+      "independent_acceptance": "Each single/multi-target fixture gets one unchanged-control request, natural native terminal within2048, full uncleaned text accepted by frozen complete-replacement parser; parse/compliance failures retained. No scorer or correctness score.",
+      "evidence_required": [
+        "single_multi_run_manifests",
+        "unchanged_parser_results_and_source_hash"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "J",
+        "K",
+        "M",
+        "N",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "G",
+        "J",
+        "K",
+        "M",
+        "N",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "H",
+      "historical_test": "Forced 2048 token limit",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Unchanged-control long-output probe; actual length finish and 2048 total; mocks supplementary only; unobserved cap remains pending",
+      "historical_model_specific": "No ignore_eos min-token forcing retry or continuation",
+      "mapped_function": "One fixed long-output fixture yields actual LENGTH with2048 total generated tokens under unchanged controls",
+      "prerequisites": [
+        "F",
+        "D",
+        "L"
+      ],
+      "independent_acceptance": "One fixed long-output fixture yields actual LENGTH with2048 total generated tokens under unchanged controls; count includes terminals; EOS at2048 is native STOP, never LENGTH. Mock receipt alone cannot PASS; if it naturally stops early, H remains PENDING without alternate prompt/retry.",
+      "evidence_required": [
+        "real2048_vector_and_LENGTH_event",
+        "cap_precedence_receipts"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "J",
+        "K",
+        "M",
+        "N",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "H",
+        "J",
+        "K",
+        "M",
+        "N",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "I",
+      "historical_test": "Raw token and byte retention",
+      "historical_stage": "serving",
+      "historical_required_evidence": "Complete token vectors strict decoded text raw normalized bytes hashes finish count terminal provenance",
+      "historical_model_specific": "No blanket special-token stripping unknown-ID skipping or Unicode replacement decoding",
+      "mapped_function": "Whole generated vector retained",
+      "prerequisites": [
+        "D",
+        "E"
+      ],
+      "independent_acceptance": "Whole generated vector retained; strict byte decoder preserves native IDs including internal special tokens, invalid bytes fail closed, literal U+FFFD preserved; terminal removal only justified final native terminal; raw/normalized hashes and exact counts/event receipt linked. Hand-authored probes plus actual generated traces required.",
+      "evidence_required": [
+        "raw_token_vectors",
+        "strict_raw_byte_blobs_hashes",
+        "normalized_hash_and_terminal_receipt",
+        "decoder_conformance_probes"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "J",
+      "historical_test": "Repeated greedy generation",
+      "historical_stage": "repeat",
+      "historical_required_evidence": "Three identical synthetic requests in frozen order; compare whole vectors hashes; retain differences and determinism limits",
+      "historical_model_specific": "Same hardware runtime kernel and TP; reset sequence each request",
+      "mapped_function": "Three identical invocations per frozen repeat fixture in first process: token vectors, raw bytes and terminal/events exact",
+      "prerequisites": [
+        "G",
+        "H",
+        "I"
+      ],
+      "independent_acceptance": "Three identical invocations per frozen repeat fixture in first process: token vectors, raw bytes and terminal/events exact; missing fields PENDING, any observed mismatch fails equality.",
+      "evidence_required": [
+        "first_process_all3_run_manifests",
+        "exact_comparison_receipts"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "K",
+        "N",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "J",
+        "K",
+        "N",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "K",
+      "historical_test": "Fresh process repeat",
+      "historical_stage": "repeat",
+      "historical_required_evidence": "Same roster in second fresh serving process; compare full vectors hashes and document verified limits",
+      "historical_model_specific": "No warm history KV adapter or prefix state",
+      "mapped_function": "Same frozen order and three invocations each in second fully fresh process",
+      "prerequisites": [
+        "J",
+        "B"
+      ],
+      "independent_acceptance": "Same frozen order and three invocations each in second fully fresh process; all within/between-process vectors,bytes,events exact, same image/driver/GPU/kernel/TP; changed hardware cannot be compared as same lock.",
+      "evidence_required": [
+        "second_fresh_process_all3_run_manifests",
+        "freshness_receipt",
+        "cross_process_comparisons"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "N",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "K",
+        "N",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "L",
+      "historical_test": "No tools reads history retry",
+      "historical_stage": "isolation",
+      "historical_required_evidence": "Worker capabilities mounts and logs; failure injection still exactly one call; no network fetch or feedback",
+      "historical_model_specific": "No product evaluator mounts tools shell callbacks or fallback",
+      "mapped_function": "Before model load, positive scoped writes and all synthetic negative read/network/tool/callback/history/credential probes pass under external OS enforcement",
+      "prerequisites": [
+        "B"
+      ],
+      "independent_acceptance": "Before model load, positive scoped writes and all synthetic negative read/network/tool/callback/history/credential probes pass under external OS enforcement; failure injection is one call; deny-by-construction mounts/capabilities audited. Never probe actual protected content.",
+      "evidence_required": [
+        "OS_mount_network_capability_receipts",
+        "synthetic_negative_probe_results",
+        "no_tool_callback_invocation_logs"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "M",
+      "historical_test": "Peak VRAM RAM and storage",
+      "historical_stage": "resources",
+      "historical_required_evidence": "Per-device and host peaks during load near-capacity generation training optimizer reload export; intended envelope fits",
+      "historical_model_specific": "Resident BF16 base plus full-attention cache; no assumption from active parameters",
+      "mapped_function": "Complete100ms host/device/disk telemetry for every selected lifecycle phase, framework peaks and observer availability",
+      "prerequisites": [
+        "C",
+        "G",
+        "H",
+        "O",
+        "P",
+        "Q",
+        "R"
+      ],
+      "independent_acceptance": "Complete100ms host/device/disk telemetry for every selected lifecycle phase, framework peaks and observer availability; memory fits allocated envelope without OOM/offload/quantization/profile changes; missing samples or counters PENDING, not optimistic zero.",
+      "evidence_required": [
+        "raw100ms_samples",
+        "framework_peak_counters",
+        "observer_coverage",
+        "phase_envelope_report"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "N"
+      ],
+      "rerun_set_on_repair": [
+        "M",
+        "N"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "N",
+      "historical_test": "TTFT throughput and rebuild timing",
+      "historical_stage": "resources",
+      "historical_required_evidence": "Cold warm synchronized timings with prompt output lengths; output and training tokens/s; each lifecycle stage timed",
+      "historical_model_specific": "Engineering measurements only; no benchmark score or inferred cost",
+      "mapped_function": "All fixed repetitions/stages timed with monotonic/synchronized boundaries, TTFT from internal token events (detokenizeFalse), prompt/output lengths, decode and training tokens/s defined",
+      "prerequisites": [
+        "M",
+        "J",
+        "K",
+        "S"
+      ],
+      "independent_acceptance": "All fixed repetitions/stages timed with monotonic/synchronized boundaries, TTFT from internal token events (detokenizeFalse), prompt/output lengths, decode and training tokens/s defined; no discarded cold/slow runs or best-value reporting.",
+      "evidence_required": [
+        "monotonic_event_trace",
+        "synchronized_stage_timing",
+        "all_repetition_statistics"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [],
+      "rerun_set_on_repair": [
+        "N"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "O",
+      "historical_test": "Attention LoRA forward backward",
+      "historical_stage": "adaptation",
+      "historical_required_evidence": "Explicit actual target census finite loss intended gradients and update; frozen base unchanged; tiny then intended-length envelope",
+      "historical_model_specific": "Explicit q k v o projections; add expert or NF4 conversion checks only for selected design",
+      "mapped_function": "Actual192 q/k/v/o target census and384 adapter tensors match explicit names/shapes",
+      "prerequisites": [
+        "C",
+        "D",
+        "E",
+        "I",
+        "L"
+      ],
+      "independent_acceptance": "Actual192 q/k/v/o target census and384 adapter tensors match explicit names/shapes; base frozenBF16, adapterFP32 rank16, finite loss/gradients, nonzeroB gradient and weight update, exact frozen-base hashes unchanged; tiny and fixed intended-length synthetic envelopes both complete.",
+      "evidence_required": [
+        "actual_target_census",
+        "adapter_optimizer_dtypes",
+        "finite_loss_gradient_update",
+        "base_tensor_hashes",
+        "tiny_full_envelope_telemetry"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "P",
+      "historical_test": "Adapter save reload",
+      "historical_stage": "adaptation",
+      "historical_required_evidence": "Destroy process and reload adapter onto original; serialized key shape hash integrity and predeclared logits/output parity",
+      "historical_model_specific": "PEFT pinned stack; no prior optimizer restored",
+      "mapped_function": "Adapter safetensors keys/shapes/dtypes/value hashes survive save/destroy/reload on authenticated original",
+      "prerequisites": [
+        "O",
+        "A"
+      ],
+      "independent_acceptance": "Adapter safetensors keys/shapes/dtypes/value hashes survive save/destroy/reload on authenticated original; no optimizer restore; same-stack teacher-forced logits exact and frozen synthetic output token/byte/event equality after reload.",
+      "evidence_required": [
+        "adapter_artifact_manifest",
+        "fresh_original_reload_receipt",
+        "exact_logits_and_output_comparison"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "M",
+        "N",
+        "Q",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "Q",
+      "historical_test": "Required merge export or direct serve",
+      "historical_stage": "adaptation",
+      "historical_required_evidence": "Selected deployment route verified; fresh BF16 original merge if required; derivative hash template preservation serving parity",
+      "historical_model_specific": "Direct expert compatibility not inferred from SupportsLoRA; quantized export separately certified if selected",
+      "mapped_function": "Only selected BF16 merge/export route: fresh original + reloaded adapter",
+      "prerequisites": [
+        "P",
+        "B",
+        "I"
+      ],
+      "independent_acceptance": "Only selected BF16 merge/export route: fresh original + reloaded adapter; safe merge, new derivative hashes/layout/template/config verified; all frozen teacher-forced logits finite and declared elementwise tolerance satisfied versus unmerged reference, argmax vectors exact; fresh vLLM derivative save/reload generations token/byte/event exact. No switch to alternate route after outcomes.",
+      "evidence_required": [
+        "merge_export_manifest",
+        "derivative_tensor_layout_config_template_hashes",
+        "frozen_tolerance_comparison",
+        "derivative_serving_roundtrip"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "M",
+        "N",
+        "R",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "M",
+        "N",
+        "Q",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "R",
+      "historical_test": "Second fresh original-base rebuild",
+      "historical_stage": "adaptation",
+      "historical_required_evidence": "New base process adapter optimizer RNG; accumulated invented history; original identity initialization and timings",
+      "historical_model_specific": "No first adapter checkpoint or merged derivative used as starting state",
+      "mapped_function": "Second cycle destroys all first-cycle objects, verifies original body/tensor roots again, initializes same seed fresh adapter/optimizer and trains full fixed accumulated invented history",
+      "prerequisites": [
+        "P",
+        "Q",
+        "A",
+        "B",
+        "L"
+      ],
+      "independent_acceptance": "Second cycle destroys all first-cycle objects, verifies original body/tensor roots again, initializes same seed fresh adapter/optimizer and trains full fixed accumulated invented history; parent_original_SHA only, new derivative/adapter identities; base unchanged, optimizerstep0 and initialization hashes exact.",
+      "evidence_required": [
+        "second_original_authentication",
+        "fresh_adapter_optimizer_RNG_hashes",
+        "full_invented_history_fixture_ids",
+        "timings_and_parent_graph"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "M",
+        "N",
+        "S"
+      ],
+      "rerun_set_on_repair": [
+        "M",
+        "N",
+        "R",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "historical_id": "S",
+      "historical_test": "State contamination audit",
+      "historical_stage": "adaptation",
+      "historical_required_evidence": "Pristine-control outputs and base hashes unchanged after first and second cycles; unwanted state absent",
+      "historical_model_specific": "Prior adapter wrappers optimizer RNG KV history and mutable merged base excluded",
+      "mapped_function": "Original control outputs token/byte/event exact before and after both cycles",
+      "prerequisites": [
+        "R",
+        "J",
+        "K",
+        "L"
+      ],
+      "independent_acceptance": "Original control outputs token/byte/event exact before and after both cycles; target request before divergent prior and after reset exact; base roots unchanged, no adapter/optimizer/RNG/KV/prefix/history residues, prior derivative never next parent.",
+      "evidence_required": [
+        "pristine_control_repeat_manifests",
+        "divergent_reset_comparison",
+        "base_root_hashes",
+        "state_destruction_receipts"
+      ],
+      "possible_failure_classes": [
+        "A",
+        "B",
+        "C"
+      ],
+      "classification_rule": "Apply failure_policy predicates; an engineering resource shortfall is not itself fundamental model incompatibility",
+      "dependent_gates_invalidated_on_repair": [
+        "N"
+      ],
+      "rerun_set_on_repair": [
+        "N",
+        "S"
+      ],
+      "execution_status": "NOT_RUN"
+    }
+  ],
+  "historical_matrix": {
+    "path": "experiments/model_preflight/cross_model_audit/infrastructure_test_matrix.csv",
+    "bytes": 9830,
+    "sha256": "d4fac274216c350e3ea5ca9810c6ec70ccd0d5733c7c22d5a39cfaff4b38577f"
+  },
+  "mapping_rule": "All authoritative Qwen30 IDs/names retained verbatim; descriptions make user-requested mapping explicit",
+  "runtime_bootstrap_order": [
+    "B",
+    "L",
+    "A",
+    "C",
+    "D",
+    "E",
+    "I",
+    "F",
+    "G",
+    "H",
+    "J",
+    "K",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "M",
+    "N"
+  ],
+  "before_any_GPU_or_load": "B immutable executed environment and L isolation PASS, monitoring armed and fixed input set hash checked",
+  "resource_monitor_precondition": "Observer readiness and hard-stop enforcement required before every phase; final M aggregates phases afterward, so it is not a cyclic prerequisite of training/load",
+  "global_fail_closed": "No gate may PASS if prerequisites not current PASS; stop unsupported/failing phases, leave blocked descendants NOT_RUN or INVALIDATED",
+  "all_execution_gates": "NOT_RUN"
+}

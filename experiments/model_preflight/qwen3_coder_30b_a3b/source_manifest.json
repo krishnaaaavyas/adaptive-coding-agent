@@ -1,0 +1,80 @@
+[
+  {
+    "file": "vllm_sampling_params.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/vllm/sampling_params.py",
+    "bytes": 27443,
+    "sha256": "4816075ad7ede6eeca33ab6b155df3f015998157522a18e65e4c0bcb4d99c4ed"
+  },
+  {
+    "file": "vllm_processor.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/vllm/v1/engine/processor.py",
+    "bytes": 26056,
+    "sha256": "681092d5ba78c872a3744ac8a263b9d0a46cdb344b8319f9c49ccef805210d85"
+  },
+  {
+    "file": "vllm_output.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/vllm/v1/engine/output_processor.py",
+    "bytes": 24627,
+    "sha256": "26f9de0e157562f993a31cd80f6313ab454688c1275aa6567fff24275bf2b72e"
+  },
+  {
+    "file": "vllm_stop.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/vllm/v1/core/sched/utils.py",
+    "bytes": 2374,
+    "sha256": "d5045434309c3268355566e6d3b898824ad2113c161b2336b929fa8299cc9de6"
+  },
+  {
+    "file": "vllm_requirements_cuda.txt",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/requirements/cuda.txt",
+    "bytes": 626,
+    "sha256": "e424595c46a0a9b1d126911a89a53e99892f7178cabab6a201750905ec335e7a"
+  },
+  {
+    "file": "vllm_requirements_common.txt",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/requirements/common.txt",
+    "bytes": 2548,
+    "sha256": "99d516f95c8e250e86086f5ccdfb3d501a1dae7d147cec90e8a3261cb7536c09"
+  },
+  {
+    "file": "vllm_qwen3_moe.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/vllm/model_executor/models/qwen3_moe.py",
+    "bytes": 29268,
+    "sha256": "3130b50123415364d4d34debbec4907bb2b4c90263b38663dae641587e23b266"
+  },
+  {
+    "file": "vllm_arg_utils.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/v0.11.2/vllm/engine/arg_utils.py",
+    "bytes": 89389,
+    "sha256": "37bcea9be048e694321d00cdbd068b8d2f7df253efceaaa2359b34df12d167f8"
+  },
+  {
+    "file": "transformers_qwen3_moe.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/v4.57.6/src/transformers/models/qwen3_moe/modeling_qwen3_moe.py",
+    "bytes": 32144,
+    "sha256": "3dd2f97c21f20ff86ea245acf6ecdd8fcd6b55a2cac82b5c5de86cdf02447eff"
+  },
+  {
+    "file": "peft_lora.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/v0.18.0/docs/source/developer_guides/lora.md",
+    "bytes": 49151,
+    "sha256": "8bf593073716168db74635d73a28d18f68b16ba98ec8c028909b31fd2002a065"
+  },
+  {
+    "file": "peft_quantization.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/v0.18.0/docs/source/developer_guides/quantization.md",
+    "bytes": 13778,
+    "sha256": "d0b306490c81ec0b284e1a649ff0f7062312de60102cc9f4e1aecd4c6113088a"
+  },
+  {
+    "file": "peft_checkpoint.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/v0.18.0/docs/source/developer_guides/checkpoint.md",
+    "bytes": 13951,
+    "sha256": "9fff92a556da5c5ae28eaa2e3f645a89d7b9382986c1b043a8f6ceacb286d6c2"
+  },
+  {
+    "file": "peft_mapping.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/v0.18.0/src/peft/utils/constants.py",
+    "bytes": 15579,
+    "sha256": "5fb622159e246b5dc87ca2bd5b1f3269965a4a6760e0a95de690ce12866bcba8"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "file": "transformers_src_transformers_models_qwen3_next_modeling_qwen3_next.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/models/qwen3_next/modeling_qwen3_next.py",
+    "bytes": 56301,
+    "sha256": "ce8dd330895e7b589a773e3aa1574f3f6b1749ad052d0b55efc94a0dc8502dd4"
+  },
+  {
+    "file": "transformers_src_transformers_models_qwen3_next_configuration_qwen3_next.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/models/qwen3_next/configuration_qwen3_next.py",
+    "bytes": 14521,
+    "sha256": "c99d264929e627603d1e404f76b02c9a1f37d8e46dae5c242b9a917dde55c471"
+  },
+  {
+    "file": "transformers_src_transformers_integrations_bitsandbytes.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/integrations/bitsandbytes.py",
+    "bytes": 23901,
+    "sha256": "511ec139809c9d80e08b2ae6cd7ccb4391087532bc1f1b4d943b5930da9e547a"
+  },
+  {
+    "file": "peft_docs_source_developer_guides_lora.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/docs/source/developer_guides/lora.md",
+    "bytes": 49151,
+    "sha256": "8bf593073716168db74635d73a28d18f68b16ba98ec8c028909b31fd2002a065"
+  },
+  {
+    "file": "peft_docs_source_developer_guides_quantization.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/docs/source/developer_guides/quantization.md",
+    "bytes": 13778,
+    "sha256": "d0b306490c81ec0b284e1a649ff0f7062312de60102cc9f4e1aecd4c6113088a"
+  },
+  {
+    "file": "peft_docs_source_developer_guides_checkpoint.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/docs/source/developer_guides/checkpoint.md",
+    "bytes": 13951,
+    "sha256": "9fff92a556da5c5ae28eaa2e3f645a89d7b9382986c1b043a8f6ceacb286d6c2"
+  },
+  {
+    "file": "peft_src_peft_utils_constants.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/utils/constants.py",
+    "bytes": 15579,
+    "sha256": "5fb622159e246b5dc87ca2bd5b1f3269965a4a6760e0a95de690ce12866bcba8"
+  },
+  {
+    "file": "peft_src_peft_tuners_lora_model.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/tuners/lora/model.py",
+    "bytes": 40912,
+    "sha256": "cf996a94b265f2b8b70b4d65a00c84be051f03eb10a5617f39d7994cfcfd2eac"
+  },
+  {
+    "file": "peft_src_peft_tuners_lora_layer.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/tuners/lora/layer.py",
+    "bytes": 101608,
+    "sha256": "e8a47a49cf69f92ded68bf7ab286aeaf068f0ac809ab3465ad16f78a8f9f8b63"
+  },
+  {
+    "file": "vllm_vllm_model_executor_models_qwen3_next.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/model_executor/models/qwen3_next.py",
+    "bytes": 51825,
+    "sha256": "f87dfc25b6d76b50395dd7a8d6e652c0a34e55c8c101d8cb6051f3857bb8f06d"
+  },
+  {
+    "file": "vllm_vllm_model_executor_models_registry.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/model_executor/models/registry.py",
+    "bytes": 50427,
+    "sha256": "bb98251226d6f4956495b3cd73d51e2d630e3d444eea19c735750a3f8d309b01"
+  },
+  {
+    "file": "vllm_vllm_sampling_params.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/sampling_params.py",
+    "bytes": 25994,
+    "sha256": "4148f12ae35d1d1301d4f6e8abbac0d13897412c3b05ce16cbb4eaaf02e97486"
+  },
+  {
+    "file": "vllm_vllm_v1_engine_processor.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/v1/engine/processor.py",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "vllm_vllm_v1_engine_output_processor.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/v1/engine/output_processor.py",
+    "bytes": 31660,
+    "sha256": "9f4bfa53b014163e835a94d2e37df47bada8161a360c35af1dedb688b769a7b7"
+  },
+  {
+    "file": "vllm_vllm_engine_arg_utils.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/engine/arg_utils.py",
+    "bytes": 90521,
+    "sha256": "ad1741b54fb63b399a8b4e6352af2c40d95d477a8081a32b75e3cb76656cab0b"
+  },
+  {
+    "file": "vllm_requirements_cuda.txt",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/requirements/cuda.txt",
+    "bytes": 452,
+    "sha256": "1e142a339522b3d6e0d4aaeb2992f4b6e526652477d596636b4920bb01612bec"
+  },
+  {
+    "file": "vllm_requirements_common.txt",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/requirements/common.txt",
+    "bytes": 2788,
+    "sha256": "30c31b9d1ef9e9343573570862f26efeb34fdecda5110d9cbb9b06bef51cabd4"
+  },
+  {
+    "file": "bitsandbytes_README.md",
+    "url": "https://raw.githubusercontent.com/bitsandbytes-foundation/bitsandbytes/d87b7ecaf37d77b65e5ee202e59b0315872bfec7/README.md",
+    "bytes": 7799,
+    "sha256": "21814caea61301f03f278702a1e028c24e52da9c1c06dfffca9b20881907c8b4"
+  },
+  {
+    "file": "vllm_vllm_v1_engine_input_processor.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/v1/engine/input_processor.py",
+    "bytes": 34200,
+    "sha256": "586840becfbb007c8c6c23a231c3303dcbc85804cd46199ad96487a8b2fd516d"
+  },
+  {
+    "file": "vllm_vllm_v1_core_sched_utils.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/v1/core/sched/utils.py",
+    "bytes": 2175,
+    "sha256": "dac9830f5d4c18469d335df11497418b02425ef24a9cac81fd31e73ba7271fba"
+  },
+  {
+    "file": "vllm_vllm_outputs.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/outputs.py",
+    "bytes": 12883,
+    "sha256": "c69f99c00a37efd756411bd522f94443d53fb0e7a85443d834ca581fc612e3b3"
+  },
+  {
+    "file": "vllm_vllm_lora_models.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/lora/models.py",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "vllm_vllm_model_executor_layers_fused_moe_layer.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/model_executor/layers/fused_moe/layer.py",
+    "bytes": 84977,
+    "sha256": "5857347cbabf3e1d16b28106be521e2e53ed4472267ac95d85fffd1949ce896d"
+  },
+  {
+    "file": "peft_src_peft_peft_model.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/peft_model.py",
+    "bytes": 161424,
+    "sha256": "b847795c28bc4b00b3224c0dcea90edbee40ee60384cd104fdafd7056afcb13e"
+  },
+  {
+    "file": "peft_src_peft_utils_save_and_load.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/utils/save_and_load.py",
+    "bytes": 37191,
+    "sha256": "499d7bc36929d172da951b97ae81129834a5c69d6d4c434a1ee4359f256149ca"
+  },
+  {
+    "file": "peft_src_peft_utils_other.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/utils/other.py",
+    "bytes": 71918,
+    "sha256": "b58191fb46e4bc402af55a2302c14ca94341a763a96dd46aedbc401e2ae271fb"
+  },
+  {
+    "file": "peft_src_peft_tuners_lora_bnb.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/tuners/lora/bnb.py",
+    "bytes": 26951,
+    "sha256": "455f0e6ca926b150f77f7ad2a239750312de6cb9ef4c5212b19781575addbb39"
+  }
+]

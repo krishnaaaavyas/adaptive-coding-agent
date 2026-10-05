@@ -1,0 +1,48 @@
+{
+  "status": "REVIEWER_IDENTITY_PENDING",
+  "assigned_independent_reviewer": null,
+  "implementer_role": "Infrastructure author/executor; may run model-free tests and propose evidence/repairs; cannot independently approve own repair",
+  "independent_reviewer_role": "A distinct assigned human or separately designated reviewer with independent verification and authenticated signing identity; no external person invented",
+  "authority": {
+    "repair_policy_sha256": "3320bdc5c33885d97b1de10893518e31a4db76cc151c169bebbdbeab4c7b3769",
+    "DAG_sha256": "f6386835f53e188f0cc93a51699c1ed43da00d4bb7af813961f997ae5d4c1738"
+  },
+  "requires_approval": [
+    "Any future classB implemented repair before a gate rerun",
+    "semantic invariance, root-cause proof, exact before/after hashes and full dependent invalidation",
+    "repair counters2 per rootcause6 total and append-only retained failures/rejected attempts"
+  ],
+  "procedure": [
+    "Assign reviewer identity/public-key fingerprint before first governed repair",
+    "Implementer supplies all frozen required_repair_fields and rootcause evidence",
+    "Reviewer recomputes hashes, validates invariant/DAG/rerun set and counters against frozen policies",
+    "Reviewer signs a hash-bound APPROVE_INVARIANT_PRESERVING / REJECT / PENDING_MORE_EVIDENCE disposition before any rerun",
+    "Executor authenticates reviewer identity/signature and exact bound hashes; mismatch/missing proof blocks rerun",
+    "Emit fresh run IDs only after approval; preserve failures and rejected attempts without retrying model requests"
+  ],
+  "conflict_rule": "Any implementer/reviewer disagreement, identity overlap, invalid signature or divergent evidence remains QUARANTINED/PENDING; escalate to separately assigned independent adjudicator. No majority/self-approval or silent reinterpretation.",
+  "signed_hash_bound_disposition_format": {
+    "schema_version": "qwen30-repair-review-v1",
+    "repair_id": "required",
+    "failure_id": "required",
+    "reviewer_identity": "required distinct assigned identity",
+    "reviewer_public_key_SHA256": "required independently authenticated",
+    "implementer_identity": "required",
+    "evidence_root_SHA256": "required",
+    "before_manifest_SHA256": "required",
+    "after_manifest_SHA256": "required",
+    "frozen_policy_SHA256": "required",
+    "DAG_SHA256": "required",
+    "rerun_set": "required",
+    "attempt_counters": "required",
+    "disposition": "APPROVE_INVARIANT_PRESERVING | REJECT | PENDING_MORE_EVIDENCE",
+    "signed_at_UTC": "required",
+    "payload_SHA256": "SHA256 of canonical sorted-key compact ensure_ascii UTF8 JSON without payload_SHA256/signature fields",
+    "signature_algorithm": "Ed25519 or authenticated equivalent selected/recorded before repair",
+    "signature": "required over canonical payload bytes; verify with assigned public key, not merely presence of text"
+  },
+  "initial_acquisition_blocked_by_reviewer_identity_alone": false,
+  "basis": "Frozen checklist contains no mandatory independent reviewer identity for initial acquisition; frozen repair policy explicitly requires independent approval before first repair rerun.",
+  "current_model_free_test_updates_consume_frozen_repair_budget": false,
+  "reason": "No actual gate run/failure/rerun occurred; these are initial infrastructure implementation tests. Frozen repair_log remains unchanged."
+}

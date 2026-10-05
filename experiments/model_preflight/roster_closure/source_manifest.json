@@ -1,0 +1,379 @@
+{
+  "review_date_local": "2026-10-04",
+  "timezone": "Asia/Calcutta",
+  "frozen_landscape_cutoff": "2026-10-03, Asia/Calcutta",
+  "recorded_at_utc": "2026-10-04T10:46:27.289949+00:00",
+  "scope": "Existing local static evidence only; exact hashes, no source/model refresh or network acquisition",
+  "files": [
+    {
+      "path": "experiments/model_preflight/landscape_closure/REPORT.md",
+      "bytes": 100191,
+      "sha256": "45607662ace76a683ea7b536914ce21c52a9a885360b4f792ae2a66c032c09db"
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/landscape.csv",
+      "bytes": 337305,
+      "sha256": "0f7266ca4718541ea9a54b67e374269307eb3a040bc753cf5e3d8bd7bf211bdd"
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/source_manifest.json",
+      "bytes": 250639,
+      "sha256": "8d361f64e65ffe020b7661388892185eeaa5a035fba8f457722882bf11a26fa7"
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/artifact_manifest.json",
+      "bytes": 53960,
+      "sha256": "b64fac591923ff831dadf1a7877c00b5e97463f7e31a6fc76f8399548ce02d9c"
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/validation.json",
+      "bytes": 3343,
+      "sha256": "cdd0a8faa0fd4730c663d89278256e0713ca014710ecce0c3a614c76130f39b3"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/REPORT.md",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/infrastructure_test_matrix.csv",
+      "bytes": 9830,
+      "sha256": "d4fac274216c350e3ea5ca9810c6ec70ccd0d5733c7c22d5a39cfaff4b38577f"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/source_manifest.json",
+      "bytes": 4413,
+      "sha256": "d1b9bfd2fffb609035edbf4b74cf597318dc3eec54c98a088da2cf19263f349c"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/artifact_manifest.json",
+      "bytes": 2539,
+      "sha256": "dbf6d5b6c32898b82543e74ee61daf5644d391444f64bc7aaa024afb0898c581"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/sources/draft2.txt",
+      "bytes": 43599,
+      "sha256": "e51c19b1acd06723a26b4e2151825ac6b858ef3d1c68271da76a622127aa9536"
+    },
+    {
+      "path": "experiments/model_preflight/cross_model_audit/sources/draft3.txt",
+      "bytes": 47405,
+      "sha256": "f0d5c27a14d7769846f592902288bacbe1b55701232d403150da669ff30d3acc"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/REPORT.md",
+      "bytes": 26436,
+      "sha256": "94112c2641b7c687a783e17f1d355a69c0ecd61a75ec6e44eb6cd6fe205c930e"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/upstream_manifest.json",
+      "bytes": 3091,
+      "sha256": "fa29736a4e09e4d588d8d71e069b159bc1a565f0e171ece3e96214feddb045b3"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/weight_manifest.json",
+      "bytes": 4055,
+      "sha256": "060c8d1eaa1f190a379e16c8deb2a59c33b5ab5f7f7870bef9a1cc83f5ba4023"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/proposed_runtime.json",
+      "bytes": 2297,
+      "sha256": "90ddca935c9d06f0d43cf617834a74d164d8f1b3ffcf412c1d61983021c0f83b"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/source_manifest.json",
+      "bytes": 3361,
+      "sha256": "fbbd139b6d37a46e07a580b6b503ac03b7de61b6d4b78e5ebd4949a00522b473"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/artifact_manifest.json",
+      "bytes": 16059,
+      "sha256": "aeea7f1a60f4d7d37f91ff45295eb7c79b941ec3f4bcc7920bb6adedaa192bea"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/tokenizer_identity.json",
+      "bytes": 7573,
+      "sha256": "2a2f8afc141f776f09e8c3e6b2a15818d1f84c124e8042630607701e92561a45"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/upstream/config.json",
+      "bytes": 963,
+      "sha256": "e2c8d8eea39471785cd93379d8b48241ad7dcda299013155dd02526e34a0de62"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/REPORT.md",
+      "bytes": 25068,
+      "sha256": "88c9c96044567f1445c3c3745a393f3fcc02415ac5863cf4abc920548e9ed8a8"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/upstream_manifest.json",
+      "bytes": 2731,
+      "sha256": "394e27be9b7d38cb5699362fcdfdc998d61f21d96d4cf37005f3ce56073e4ce2"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/weight_manifest.json",
+      "bytes": 13266,
+      "sha256": "273596ec3c64a9e40cfc2dbc0677cacd4888ce8ad626fdc32eaa3c90a8c7fb11"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/proposed_runtime.json",
+      "bytes": 2257,
+      "sha256": "b98ad04bf70406f4df1472485fc7d965e1c8cdc0bd71036149f2bd207663db12"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/source_manifest.json",
+      "bytes": 8261,
+      "sha256": "7382136d65d5c9441edd451d56dabd9eb52cc5e4e77ebe8dc3fb81e3f92d2d9f"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/artifact_manifest.json",
+      "bytes": 19350,
+      "sha256": "9762e55ccfb92eefe245b775900f349bc5446d9fe08d566f3ee95965f7e8d8cf"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/tokenizer_identity.json",
+      "bytes": 7561,
+      "sha256": "d9b5927dd16105b659af2690620de59fa955fd31e49a207a621c29a2e1a3f70b"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/upstream/config.json",
+      "bytes": 1178,
+      "sha256": "a7b8098d3b05777f12bb5677a26bf1240a1bb09def1b06b29e6be86cae2e84f8"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/adapter_parameter_estimates.json",
+      "bytes": 1071,
+      "sha256": "9d3ba8a893503584735662f12081803ee87d69de56594ae49f30fc056b86158c"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/REPORT.md",
+      "bytes": 40956,
+      "sha256": "7cf679b3177f287cf02a2d84f9f815062dc12bdc5f130573262d063af3ebae16"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/upstream_manifest.json",
+      "bytes": 2794,
+      "sha256": "9a4cd5ef7604f30edb9d0ab6d7fe04a58e95ef025abf302e9db2a79277fd353f"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/weight_manifest.json",
+      "bytes": 1933,
+      "sha256": "37c5b5e4e9d4381ff94eb270c007125c0c590a1f01992ec93ab937a2dc041ee4"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/proposed_runtime.json",
+      "bytes": 2154,
+      "sha256": "f1b74b373d9aa836eccc639a44eb4f6c36335f51c25371aaab627b76647f83d8"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/source_manifest.json",
+      "bytes": 19164,
+      "sha256": "6f898efcf021a03a96335f88f9cea565fa2e9900088ab8ca5d5572a4881cd4c5"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/artifact_manifest.json",
+      "bytes": 26434,
+      "sha256": "1bcb808d658f649cff5d7d1901dae33032904bd6701af436599ab48e5c836e08"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/adapter_parameter_estimates.json",
+      "bytes": 760,
+      "sha256": "2fad9633541dceca41bf4df8355edc0de43de7010d2bdf1054c3fcce8cd6efd4"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+      "bytes": 45146,
+      "sha256": "3ccdfc168f3b83a33c81abe274bf1166a8f6b8a7f8f4bf50ee792d245d4df8fc"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/identity.json",
+      "bytes": 7600,
+      "sha256": "9418f6c1c22164b832477ee5437b318782a3eee32d1335190d81dfa841b03816"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/serialization.json",
+      "bytes": 228778,
+      "sha256": "f198c9a0da24a03881853ca6e93729e6120b27fc982eb37a6b9d387eb06e6b49"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/adaptation_targets.json",
+      "bytes": 550767,
+      "sha256": "3bc276b64873af7e2d3e65c43829e80c8b2b5faef71ed5e6970e09c79d260ccc"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/runtime_profile.json",
+      "bytes": 11069,
+      "sha256": "3335e9ef63ff517f1e3f7c2d3c8adb82603dda081b81bfcbd2a9c3836edb122e"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/resource_estimates.json",
+      "bytes": 5437,
+      "sha256": "861174af95848e00db0514820d55820d98b4d6c1f2f4a4e9f27712631b1b2b75"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/original_base_lifecycle.json",
+      "bytes": 5917,
+      "sha256": "4bc9d3c690ba8796796d1bcde9be5cc6e0be02f67f67da00c90db85fe42a8b20"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/reconstruction_analysis.json",
+      "bytes": 6832,
+      "sha256": "5d6694049cbdb089aa040f73317e59b7d040a56c5277e9544cc80c668fa95c8f"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/infrastructure_test_matrix.csv",
+      "bytes": 4964,
+      "sha256": "2a355f3bd9aaa19ffca0cdc606da8ab7eaf2036e133a918d12dfd34a21f017fe"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/source_manifest.json",
+      "bytes": 60595,
+      "sha256": "4c0e4ee8abe701395a397e836fa42edabaa9c9ccf501bf82bf6ba14711be04d3"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/artifact_manifest.json",
+      "bytes": 50560,
+      "sha256": "50402e0909633b7557acc74d49658fe4e3aa75b70c658d8116da85ade915858d"
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/validation.json",
+      "bytes": 2244,
+      "sha256": "b254cfc359a4206ddddba5b425dfebc3aaa903aabe2e018b21d419c65d3052f0"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/REPORT.md",
+      "bytes": 44066,
+      "sha256": "2a14c5edbcbc3bd1a499af4e61b7bab063461d24da89bde8f267d703b166ab19"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/identity.json",
+      "bytes": 20971,
+      "sha256": "8bddaaecebbddd3c39b2a976f2a7df95221513831e556dadd11eaede60df07b0"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/serialization.json",
+      "bytes": 16603,
+      "sha256": "908352f3054a7632b595b9d385ea3855b8781bfa445694045a9040c926932d75"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/adaptation_targets.json",
+      "bytes": 144139,
+      "sha256": "c6f0c451279267f2e364781fc359ee84d9ce61b52652c4e29f86c08c20fc0db8"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/runtime_profile.json",
+      "bytes": 8737,
+      "sha256": "093ccd13524faaafae4ddb57ccb5d64e109e4af8736f174ca419a87ce6e900cc"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/resource_estimates.json",
+      "bytes": 3605,
+      "sha256": "8b27f788fdfc6abfe4d588eb0c359de04058f40adc466096955fb7466b376f1c"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/original_base_lifecycle.json",
+      "bytes": 17360,
+      "sha256": "276413d8ee2d026ddf59ea3ce907bcf646ff8613445ee6240c95b92e9ab4b42a"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/infrastructure_test_matrix.csv",
+      "bytes": 4508,
+      "sha256": "875641c737ac896b7c6c876bfb0e5dd0fd085af50049593adc80142d6e5c73c5"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/source_manifest.json",
+      "bytes": 65439,
+      "sha256": "ffb44e3575a9deac70518959b066bd2b192bd1fca5af58f6eeaa6a25a4b3d9fb"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/artifact_manifest.json",
+      "bytes": 23797,
+      "sha256": "a4be8846f122972695fcb2a2dcd3967365dda910834e0196c55c0b31c317a026"
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/validation.json",
+      "bytes": 2831,
+      "sha256": "86c9644e7f78481a8111c65d96b87b460d336ec7d80d365c7964bfb864886a6d"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/REPORT.md",
+      "bytes": 48841,
+      "sha256": "9c5535f92ce251189947ae0ee8d18b68269b57463c8836b328fb114cee572b53"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/identity.json",
+      "bytes": 12859,
+      "sha256": "0265ffc518ee8559cb6027b410557617c9cd631c8275e3f9c658f48e430fcd67"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/serialization.json",
+      "bytes": 232293,
+      "sha256": "3a4e69976a6986dd1c3d28e86f528a827c442a7298ebd4f980bce855fc4efbb2"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/adaptation_targets.json",
+      "bytes": 54186,
+      "sha256": "da6b4b0f5a350a98f5d6693faad3c18a2251e288467057593e0e8fd27348ef7b"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/runtime_profile.json",
+      "bytes": 9679,
+      "sha256": "0fb7c5f1a08a0759ccc06c2096ac035ad347d05b76f01ef1283bec7887fd5a8d"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/resource_estimates.json",
+      "bytes": 3968,
+      "sha256": "5e726095a2c0c6d86368804ad86feee2ce8e4ceb3058867323d455ec62ff706a"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/original_base_lifecycle.json",
+      "bytes": 19560,
+      "sha256": "9693b81159052fa132c4f69ce87e41367f78d23944b64d37663fd55d80df3967"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/infrastructure_test_matrix.csv",
+      "bytes": 4058,
+      "sha256": "e8720e400e1b93fc03f515a38a4041a435101f343ec572281bf8a2eae5c6f69a"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/source_manifest.json",
+      "bytes": 76375,
+      "sha256": "f92b0142eb77501be0b27152d119792082e1f346d02792d6c9c746ad09e1bb5f"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/artifact_manifest.json",
+      "bytes": 27671,
+      "sha256": "b3c5593b44bc9c3a27dbcf89eda6daec3277f6a212c5a9a3f02d1730d9e1b887"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/validation.json",
+      "bytes": 3011,
+      "sha256": "bee9fda33e61ec22a20955905bc258638b05eedc4c7cfde53f2eaa3339cf6cc5"
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/baseline_integrity.json",
+      "bytes": 243374,
+      "sha256": "ecd7e8ae8987306526afe7c2b67650c0bcaf8915af2d48e27c5bbd388a931c68"
+    },
+    {
+      "path": "benchmark_design/context_policy/current-repo-v1-draft3.json",
+      "bytes": 62269,
+      "sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b"
+    }
+  ],
+  "request": {
+    "original_path": "C:\\Users\\admin\\.codex\\attachments\\472706c1-17e8-4c15-a42d-a8274b4159d7\\Pasted text.txt",
+    "copy": "request_source.txt",
+    "bytes": 11587,
+    "sha256": "142b3c9a678cca2a001b2fcdc1de25a948c2e3c924c4270b9e37a38d7e0bb3d5"
+  },
+  "network_requests": 0,
+  "new_checkpoint_introduced": false,
+  "decision_authority": {
+    "completion_contract": "cross_model_audit/REPORT.md sections 1\u20137 plus Draft2/Draft3",
+    "stop_redundancy_and_order_rule": "landscape_closure/REPORT.md sections 12\u201315 and 22\u201323",
+    "bounded_queue_completion": "D1/G1/N1 REPORT section 1 plus identity/lifecycle/validation artifacts",
+    "failure_policy": "User closure instruction section 10; handoff only, no 1G2A execution"
+  },
+  "historical_supersession": "The earlier gpt-oss uncertainty was explicitly resolved by the later cross-model boundary audit; its path-specific DROP is retained. This is not a new contradiction or reopening."
+}

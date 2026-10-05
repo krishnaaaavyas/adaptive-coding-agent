@@ -1,0 +1,11 @@
+{
+  "source": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\experiments\\model_preflight\\qwen3_coder_next\\verify_synthetic.py",
+  "sha256": "3630ad2a4456bfadfa2a995c3b5384936ea5fc5d93c9e391b4d37e01274276c6",
+  "functions": [
+    "fill_bytes",
+    "make_task",
+    "make_k",
+    "make_view"
+  ],
+  "expected_token_counts_reused": false
+}

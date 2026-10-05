@@ -1,0 +1,25 @@
+id,test,procedure,acceptance,status
+A,Exact bodies/hash/layout,Later authorized14-body hashes/sizes/dtypes/shapes; reconcile Hub/index totals,Authenticated ORIGINAL and discrepancy resolution,NOT_RUN
+B,Exact original load,"Fresh BF16 load/rename/stack;401 main tensors,270 exact unused MTP keys; zero missing main",Pristine tensor root and load-key receipt,NOT_RUN
+C,32768 deployed context,"Main52 layers,32768 target plus full2048 reserve; no context extension/speculation",Effective capacity/load/prefill receipt,NOT_RUN
+D,Prompt/token parity,"All51 native-default synthetic inputs, exact tokenizer/template, no automatic BOS",Matching input/token hashes,NOT_RUN
+E,Entire emitted suffix,Raw reasoning/content/markers all retained; no reasoning/chat/tool output parser,Raw full-suffix receipt,NOT_RUN
+F,Terminal/stop behavior,Observe EOS2 and11; distinguish im_end from internal roles/tools/think; one verified final removal,Native event and removal audit,NOT_RUN
+G,Natural termination,Single synthetic request natural terminal before cap; zero retry,Finish/count/stop evidence,NOT_RUN
+H,Forced2048 cap,Verified LENGTH2048 failure; separately test EOS-at-cap event; no clipping/retry,Capacity failure with full raw retention,NOT_RUN
+I,Raw tokens/bytes,ByteLevel inverse + literal special bytes; strict UTF8 with raw invalid bytes retained,Raw/normalized/removal receipts,NOT_RUN
+J,Frozen controls,All15 controls/types + explicit neutral processors; no inherited sampled card defaults,Independent effective control certificate,NOT_RUN
+K,Same-process greedy repeat,Fixed original/input/settings/hardware; slot reuse reset then compare raw outputs,Determinism or explicit failure boundary,NOT_RUN
+L,Fresh-process greedy repeat,Cold process same authenticated original+runtime; compare raw tokens/bytes,Repeatability certificate,NOT_RUN
+M,Recurrent/cache reset,"Divergent prior synthetic request then fresh token0; verifySSM/conv/KV/slot/counters zero/new, no prefix/replay",State reset traces and sequence independence,NOT_RUN
+N,Isolation/no-read/no-tools,Negative network/files/tool/history/candidate/product mount/cache probes,Independent isolation traces,NOT_RUN
+O,Measured resources,Load/prefill/decode/train/save/reload/export state/activations/pages/allocator peaks,VRAM/RAM/disk table,NOT_RUN
+P,Throughput/timing/reset,Measure cold load/hash/stack/prefill/decode/adapter/save/reload/merge/destroy/reset,"Timings, no quality ranking",NOT_RUN
+Q,Conservative backward,"Exact24 attention targets and1,867,776 rank16 trainables; frozen base, finite meaningful gradients",Scope/name/gradient/base-hash audit,NOT_RUN
+R,Hybrid backward,"Add23 Mamba in_proj,6,648,832 total; reference dispatch verified; no out_proj raw-weight bypass; cacheFalse",Gradient and dispatch/activation audit,NOT_RUN
+S,Expert backward,"46 explicit3D parameters across23 blocks;128 experts each;434,729,984 combined; eager ParamWrapper restrictions",Selected branch gradient/restore/memory audit; zero-init A not all nonzero,NOT_RUN
+T,Adapter save/reload,Save exact scope/config/dtype/hash; destroy; SAME original pristine root before adapter; reload module+parameter keys,Adapter coverage and numerical parity,NOT_RUN
+U,Direct serve or merge/export,Optional direct scope coverage; primary safe BF16 merge/inverse expert+backbone export; config aliases and TFdt-floor0.001 versus vLLM0.0 parity check,Evaluation derivative/provenance/output parity or explicit implementation difference,NOT_RUN
+V,Second fresh ORIGINAL cycle,Repeat original acquisition authentication/pristine load before fresh adapter/optimizer/RNG,Same pristine root/step-zero receipts,NOT_RUN
+W,Contamination/state audit,Prior adapter/optimizer/derivative/history/recurrent/KV unavailable; reject nonoriginal parents,Destruction/reset and fail-closed provenance,NOT_RUN
+X,Immutable runtime lock,"Linux packages/kernel/container/driver hashes, reference train dispatch, serving Triton/FP32/no-rounding; parserCPython3.11.9",Complete runnable lock + official output/control certificate,NOT_RUN

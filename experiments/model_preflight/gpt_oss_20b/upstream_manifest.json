@@ -1,0 +1,61 @@
+{
+  "repository": "openai/gpt-oss-20b",
+  "revision": "6cee5e81ee83917806bbde320786a8fb61efebee",
+  "files": [
+    {
+      "file": "upstream/config.json",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/config.json",
+      "bytes": 1806,
+      "sha256": "3a2a26ded679375b7928ddeca59764df7cea83220c1961035f6d6e232659e9ce"
+    },
+    {
+      "file": "upstream/generation_config.json",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/generation_config.json",
+      "bytes": 177,
+      "sha256": "f9970ada892d2d1f72e3ed0a6535ccebadd11897318794ca671d8c7014c957da"
+    },
+    {
+      "file": "upstream/tokenizer.json",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/tokenizer.json",
+      "bytes": 27868174,
+      "sha256": "0614fe83cadab421296e664e1f48f4261fa8fef6e03e63bb75c20f38e37d07d3"
+    },
+    {
+      "file": "upstream/tokenizer_config.json",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/tokenizer_config.json",
+      "bytes": 4200,
+      "sha256": "9279e942392b742d633c7adbb89ebe002c98399db8926a7af5125c726f404070"
+    },
+    {
+      "file": "upstream/special_tokens_map.json",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/special_tokens_map.json",
+      "bytes": 98,
+      "sha256": "dd5e191d20c12d2fee1da5bae14ca1db0f5f4215300af691f23cdee97120a293"
+    },
+    {
+      "file": "upstream/chat_template.jinja",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/chat_template.jinja",
+      "bytes": 16738,
+      "sha256": "a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146"
+    },
+    {
+      "file": "upstream/model.safetensors.index.json",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/model.safetensors.index.json",
+      "bytes": 36355,
+      "sha256": "0e085b977c4c9942f85938828e8c989ed7d5cdabf852e4da6a67c116cd502cd1"
+    },
+    {
+      "file": "upstream/LICENSE",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/LICENSE",
+      "bytes": 11357,
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "file": "upstream/README.md",
+      "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/README.md",
+      "bytes": 7095,
+      "sha256": "03c2fcf292549176757b85c911e7dcf527aef3e4241d64b6caec94af3ecf3ac2"
+    }
+  ],
+  "weight_bodies_downloaded": false
+}

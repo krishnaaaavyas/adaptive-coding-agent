@@ -1,0 +1,82 @@
+{
+  "status": "SOURCE/ARITHMETIC ESTIMATES; NO MEASURED RESOURCES",
+  "original_disk_bytes": 65827374264,
+  "original_disk_GiB": 61.30652,
+  "full_original_payload_inferred_bytes": 65826538624,
+  "main_resident_payload_bytes": 63155886464,
+  "main_resident_payload_GiB": 58.818503,
+  "unused_MTP_payload_bytes": 2670652160,
+  "residency_rule": "All128 routed experts per23 MoE blocks plus shared/attention/Mamba/vocab/norms count; neverA3B shortcut",
+  "attention_KV_one_sequence_32768": {
+    "formula": "6*32768*2KVheads*128dim*2(K,V)*2BF16bytes",
+    "bytes": 201326592,
+    "GiB": 0.1875
+  },
+  "Mamba_temporal_one_state_slot": {
+    "formula": "23*64heads*64dim*128state*4FP32bytes",
+    "bytes": 48234496,
+    "GiB": 0.044922
+  },
+  "Mamba_conv_one_state_slot": {
+    "formula": "23*6144channels*3history*2BF16bytes",
+    "bytes": 847872,
+    "GiB": 0.00079
+  },
+  "TF_conv_one_sequence": {
+    "formula": "23*6144channels*4kernel*2BF16bytes",
+    "bytes": 1130496,
+    "note": "TF convolution cache uses4 versus native serving minimal history3; runtime pages/slots/padding add cost"
+  },
+  "state_caveat": "SSM/conv fixed-size per slot, not multiplied by32768 unless checkpoint/cache strategy requests more slots. Hybrid cache manager padding/group balancing/allocator can exceed minimum arithmetic.",
+  "serving_main_state_plus_workspace_GiB": [
+    62.051714,
+    69.051714
+  ],
+  "workspace_caveat": "3\u201310GiB planning allowance is not upperbound; prefill activations, fused/packed weights, cache pages/autotune/allocator add unmeasured peaks",
+  "adapters_by_scope": {
+    "conservative_attention": {
+      "rank16_parameters": 1867776,
+      "BF16_bytes": 3735552,
+      "FP32_bytes": 7471104,
+      "working_state_16bytes_each": 29884416,
+      "base_plus_adapter_working_GiB": 58.846335
+    },
+    "hybrid_attention_mamba_in": {
+      "rank16_parameters": 6648832,
+      "BF16_bytes": 13297664,
+      "FP32_bytes": 26595328,
+      "working_state_16bytes_each": 106381312,
+      "base_plus_adapter_working_GiB": 58.917578
+    },
+    "expert_hybrid_plus_routed": {
+      "rank16_parameters": 434729984,
+      "BF16_bytes": 869459968,
+      "FP32_bytes": 1738919936,
+      "working_state_16bytes_each": 6955679744,
+      "base_plus_adapter_working_GiB": 65.296484
+    }
+  },
+  "working_state_formula": "BF16 adapter2+gradient2+master4+Adam8 or FP32 adapter4+gradient4+Adam8; actualoptimizer/dtype may differ",
+  "expert_effective_weights": {
+    "one_layer_BF16_bytes": 2554331136,
+    "all23_BF16_bytes": 58749616128,
+    "all23_GiB": 54.714844,
+    "note": "ParamWrapper baddbmm can materialize full effective3D expert weights; autograd retention additional to rank-only optimizer state"
+  },
+  "training_activation_note": "Reference Mamba scan casts toFP32, expands B/C groups and creates intra-/interchunk matrices/states; cacheFalse does not eliminate autograd intermediates. No sequence/microbatch/recipe selected; checkpointing/sharding/peak measurements required.",
+  "host_RAM_starting_GiB": [
+    128,
+    192
+  ],
+  "host_RAM_basis": "~65.827GB original + ~63.156GB pristine main plus layout/serializer/merge temporaries; streaming lower/full duplicates higher",
+  "merge_storage": {
+    "original_plus_one_main_export_bytes": 128983260728,
+    "original_plus_main_plus_atomic_second_main_bytes": 192139147192,
+    "planning_free_GB_decimal": [
+      210,
+      280
+    ]
+  },
+  "reset_burden": "Authenticate14 bodies and pristine401-tensor root, fresh optimizer/RNG and zero/new recurrent+KV state each independent cycle; no reuse of derivatives",
+  "later_starting_points": "Investigate80GiB-class serving/conservative/hybrid training with separately authorized checkpointing; measured resources can require multi-GPU. Expert scope full materialized stacks warrants sharding/checkpointing investigation. No arbitrary ceiling/device admission or spending."
+}

@@ -1,0 +1,23 @@
+{
+  "frozen_pre_outcome": true,
+  "schema": "run_manifest_schema.json",
+  "enforcement_before_accepting_any_future_run": [
+    "All body hashes/lengths/paths equal expected_checkpoint_bodies.json;16 unique shards; no declaration-only proof",
+    "All identity fields refer to actually authenticated build/driver/device, not proposed text; runtime_lock finalization precedes run",
+    "Prompt fixture ID/hash in frozen manifest; supplied prompt vector length equals exact_prompt_token_count",
+    "Raw vector length equals generated_token_count; all IDs valid; no omitted/replacement-decoded bytes",
+    "Raw byte blob byte-length/hash equals receipt and strict native decoder reconstruction",
+    "terminal_removal removed_count equals removed_token_ids length;0or1;1 only actual last native token + verifiedSTOP receipt; internal tokens remain",
+    "STOP at count2048 cannot satisfy H; actual LENGTH at2048 with no final native terminal is required",
+    "Normalized hash uses only justified final native terminal removal and CRLF/CR->LF; no projection/parser cleanup",
+    "Exact controls and effective argument types match independently typed literal oracle; no request retries",
+    "DAG prerequisites currentPASS for same identities; all repair invalidations respected",
+    "Null/missing evidence or telemetry coverage fails closed to C/PENDING; numeric0 only if measured applicable zero",
+    "Freshness, kernel inventory and source/build hashes match comparison cohort; original parent only",
+    "Artifact paths are relative scoped paths with no traversal, absolute paths or external symlinks",
+    "UTC timestamps valid and event clocks monotonic; timings computed from retained raw events, throughput null only for declaredN<2 case",
+    "Failure IDs and repair links append-only, reviewer approved before governed rerun; no erased original failure"
+  ],
+  "validator_implementation": "Future runner/auditor must implement these cross-field and external-hash predicates; current static validator verifies design/schema, not actual runs",
+  "executed_run_count": 0
+}

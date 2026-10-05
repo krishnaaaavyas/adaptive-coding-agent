@@ -1,0 +1,30 @@
+{
+  "kind": "INVENTED_LIFECYCLE_ONLY_NOT_STUDY3",
+  "records": [
+    {
+      "id": "cycle1.record1",
+      "input_literal": "def infrastructure_probe():\n",
+      "label_literal": "    return 7\n"
+    },
+    {
+      "id": "cycle2.record2",
+      "input_literal": "def second_probe():\n",
+      "label_literal": "    return 11\n"
+    }
+  ],
+  "cycle1_history_ids": [
+    "cycle1.record1"
+  ],
+  "cycle2_full_history_ids": [
+    "cycle1.record1",
+    "cycle2.record2"
+  ],
+  "envelope_input_recipe": {
+    "ordinary_token": 0,
+    "total_tokens": 30720,
+    "supervised_last_tokens": 32,
+    "supervised_token": 0
+  },
+  "history_semantics": "Train cycle2 from original over both records; never continue first adapter/optimizer; envelope is independent capacity stress not project data",
+  "no_chosen_project_training_data": true
+}

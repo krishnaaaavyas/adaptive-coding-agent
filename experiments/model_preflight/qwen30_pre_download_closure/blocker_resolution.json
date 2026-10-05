@@ -1,0 +1,41 @@
+{
+  "verdict": "NOT READY — RUNTIME_BUILD, TARGET_CAPACITY, RUNNER_ATTESTATION",
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "RUNTIME_BUILD": {
+    "previous": "PENDING",
+    "preparation_disposition": "PARTIALLY CLOSED — TARGET BUILD REQUIRED",
+    "frozen_checklist_state": "PENDING",
+    "final_image_digest": "PENDING_TARGET_BUILD",
+    "exact_metadata_closure": true,
+    "specific_unresolved_package_metadata": [],
+    "remaining": [
+      "Runtime wheel/Deb bodies authentication",
+      "Ubuntu signatures and base dpkg ABI compatibility",
+      "Actual Linux CPython/vLLM source build and generated binary hashes",
+      "Explicit target architecture and engine binding",
+      "Final image/self-test/SBOM receipt"
+    ]
+  },
+  "TARGET_CAPACITY": {
+    "previous": "PENDING",
+    "preparation_disposition": "TARGET CONTRACT COMPLETE — ACTUAL HOST ATTESTATION PENDING",
+    "frozen_checklist_state": "PENDING",
+    "actual_compatible_target_attested": false
+  },
+  "RUNNER_ATTESTATION": {
+    "previous": "PENDING",
+    "preparation_disposition": "Implementation hash established;36 model-free tests PASS; PENDING TARGET LINUX ATTESTATION",
+    "frozen_checklist_state": "PENDING",
+    "content_root_sha256": "bab6bf6dc0eff2567f07031ff7c1b52eb34af8db3f359455e8881afe3b022c27",
+    "actual_OS_enforcement_attested": false,
+    "actual_native_gate_pass": false
+  },
+  "model_failure_declared": false,
+  "class": "C",
+  "acquisition_authorized": false,
+  "execution_authorized": false,
+  "stop": true
+}

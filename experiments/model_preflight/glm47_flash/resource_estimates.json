@@ -1,0 +1,67 @@
+{
+  "status": "TRANSPARENT SOURCE/ARITHMETIC ESTIMATES, NOT MEASURED",
+  "original_disk_bytes": 62444175504,
+  "original_disk_GiB": 58.15567,
+  "full_original_payload_from_dtype_metadata_bytes": 62442983168,
+  "main_resident_payload_bytes": 59886793728,
+  "main_resident_payload_GiB": 55.773923,
+  "unused_MTP_payload_bytes": 2556189440,
+  "residency_rule": "All64 routed experts and shared/dense/MLA/vocab main weights count; original storage includes unused MTP. No3B active-param shortcut.",
+  "compressed_KV_32768_one_sequence": {
+    "formula": "47*32768*(512+64)*2",
+    "bytes": 1774190592,
+    "GiB": 1.652344
+  },
+  "expanded_KV_equivalent": {
+    "formula": "47*32768*20*(K256+V256)*2",
+    "bytes": 31541166080,
+    "GiB": 29.375,
+    "note": "potential transient/alternative attention cost, NOT added automatically to compressed persistent cache"
+  },
+  "serving_main_BF16_subtotal_GiB": [
+    60.426267,
+    67.426267
+  ],
+  "serving_subtotal_caution": "3\u201310GiB workspace planning allowance is not measured upper bound; absorb weights, prefill/expanded tensors, expert kernel buffers and allocator reserve may add more",
+  "scopes": {
+    "MLA_attention_only": {
+      "rank16_parameters": 21031936,
+      "BF16_adapter_bytes": 42063872,
+      "FP32_adapter_bytes": 84127744,
+      "optimizer_and_gradient_bytes": 336510976,
+      "formula": "BF16 weight2+grad2+FP32 master4+Adam8, or FP32 weight4+grad4+Adam8 without duplicated master",
+      "base_plus_working_adapter_GiB": 56.087323,
+      "activation_workspace": "Additional; sequence length/training recipe not selected"
+    },
+    "MLA_plus_routed_expert_parameters": {
+      "rank16_parameters": 431025152,
+      "BF16_adapter_bytes": 862050304,
+      "FP32_adapter_bytes": 1724100608,
+      "optimizer_and_gradient_bytes": 6896402432,
+      "formula": "BF16 weight2+grad2+FP32 master4+Adam8, or FP32 weight4+grad4+Adam8 without duplicated master",
+      "base_plus_working_adapter_GiB": 62.196698,
+      "activation_workspace": "Additional; sequence length/training recipe not selected"
+    }
+  },
+  "expert_parametrization": {
+    "one_layer_effective_BF16_gateup_down_bytes": 1207959552,
+    "all46_layers_effective_BF16_stack_bytes": 55566139392,
+    "note": "ParamWrapper baddbmm avoids a separate full delta but materializes effective expert weights; autograd may retain stacks. Whole-layer checkpointing/sharding and actual peak tests essential."
+  },
+  "host_RAM_starting_GiB": [
+    128,
+    192
+  ],
+  "host_RAM_basis": "full original62.443GB payload + main59.887GB state + packing/serializer/merge temporaries; streaming mmap may reduce, full copies may increase",
+  "lossless_packing_one_layer_temporary_bytes": 1207959552,
+  "merge_storage": {
+    "original_plus_one_main_export_bytes": 122330969232,
+    "original_plus_main_export_plus_atomic_second_main_bytes": 182217762960,
+    "planning_free_disk_GB_decimal": [
+      200,
+      260
+    ]
+  },
+  "reset_burden": "Authenticate/read all48 original bodies each fresh cycle, fresh751-entry main manifest and reset state; packing time/hash/load/merge measured later, no reuse of prior adapted/merged base",
+  "later_starting_points": "Serving: investigate one80GiB class device or two80GiB TP if required by measured workspace. Attention-only training:80GiB with separately authorized checkpointed microbatch starting point. Combined expert training: investigate multi-GPU/sharded checkpointing; uncheckpointed effective stacks alone can add51.75GiB. No GPU configuration verified or authorized."
+}

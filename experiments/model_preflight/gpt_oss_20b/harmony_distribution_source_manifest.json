@@ -1,0 +1,32 @@
+[
+  {
+    "archive_member": "openai_harmony-0.0.8/Cargo.toml",
+    "file": "sources/harmony_sdist_openai_harmony-0.0.8_Cargo.toml",
+    "sha256": "23d96ddd5d5aaae555885ac646cc51fccf2c978bc43014f7b6c5a823e0b5bdb5",
+    "bytes": 1600
+  },
+  {
+    "archive_member": "openai_harmony-0.0.8/Cargo.lock",
+    "file": "sources/harmony_sdist_openai_harmony-0.0.8_Cargo.lock",
+    "sha256": "6c5221a3b298b0070ae96e71c92965d19a7eb834ebfbbe7faba4e66d346efeea",
+    "bytes": 74562
+  },
+  {
+    "archive_member": "openai_harmony-0.0.8/python/openai_harmony/__init__.py",
+    "file": "sources/harmony_sdist_openai_harmony-0.0.8_python_openai_harmony___init__.py",
+    "sha256": "e7daf40879af2ebed3cfc77ab2ef1d686a3c8e04a4f84f246643a4e3aeae3d06",
+    "bytes": 24696
+  },
+  {
+    "archive_member": "openai_harmony-0.0.8/src/tiktoken_ext/mod.rs",
+    "file": "sources/harmony_sdist_openai_harmony-0.0.8_src_tiktoken_ext_mod.rs",
+    "sha256": "437f44fdef0b91bc3357697b3b7f9103adb416071ea64aea688e59d6d213ba44",
+    "bytes": 83
+  },
+  {
+    "archive_member": "openai_harmony-0.0.8/src/tiktoken_ext/public_encodings.rs",
+    "file": "sources/harmony_sdist_openai_harmony-0.0.8_src_tiktoken_ext_public_encodings.rs",
+    "sha256": "1e7548900bd234bc87f205e83fd8b48fa7f175b1e7271550656d1ab6e4e48a12",
+    "bytes": 20404
+  }
+]

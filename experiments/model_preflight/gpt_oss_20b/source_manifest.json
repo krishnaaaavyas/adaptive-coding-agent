@@ -1,0 +1,376 @@
+[
+  {
+    "file": "upstream/config.json",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/config.json",
+    "bytes": 1806,
+    "sha256": "3a2a26ded679375b7928ddeca59764df7cea83220c1961035f6d6e232659e9ce"
+  },
+  {
+    "file": "upstream/generation_config.json",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/generation_config.json",
+    "bytes": 177,
+    "sha256": "f9970ada892d2d1f72e3ed0a6535ccebadd11897318794ca671d8c7014c957da"
+  },
+  {
+    "file": "upstream/tokenizer.json",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/tokenizer.json",
+    "bytes": 27868174,
+    "sha256": "0614fe83cadab421296e664e1f48f4261fa8fef6e03e63bb75c20f38e37d07d3"
+  },
+  {
+    "file": "upstream/tokenizer_config.json",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/tokenizer_config.json",
+    "bytes": 4200,
+    "sha256": "9279e942392b742d633c7adbb89ebe002c98399db8926a7af5125c726f404070"
+  },
+  {
+    "file": "upstream/special_tokens_map.json",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/special_tokens_map.json",
+    "bytes": 98,
+    "sha256": "dd5e191d20c12d2fee1da5bae14ca1db0f5f4215300af691f23cdee97120a293"
+  },
+  {
+    "file": "upstream/chat_template.jinja",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/chat_template.jinja",
+    "bytes": 16738,
+    "sha256": "a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146"
+  },
+  {
+    "file": "upstream/model.safetensors.index.json",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/model.safetensors.index.json",
+    "bytes": 36355,
+    "sha256": "0e085b977c4c9942f85938828e8c989ed7d5cdabf852e4da6a67c116cd502cd1"
+  },
+  {
+    "file": "upstream/LICENSE",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/LICENSE",
+    "bytes": 11357,
+    "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+  },
+  {
+    "file": "upstream/README.md",
+    "url": "https://huggingface.co/openai/gpt-oss-20b/resolve/6cee5e81ee83917806bbde320786a8fb61efebee/README.md",
+    "bytes": 7095,
+    "sha256": "03c2fcf292549176757b85c911e7dcf527aef3e4241d64b6caec94af3ecf3ac2"
+  },
+  {
+    "file": "sources/transformers_src_transformers_models_gpt_oss_modeling_gpt_oss.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/models/gpt_oss/modeling_gpt_oss.py",
+    "bytes": 32530,
+    "sha256": "b8bbcefc16a9a04981a67fe7e7ef404f860f4eceb923d9c3741242c669d61dd2"
+  },
+  {
+    "file": "sources/transformers_src_transformers_models_gpt_oss_configuration_gpt_oss.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/models/gpt_oss/configuration_gpt_oss.py",
+    "bytes": 4881,
+    "sha256": "2beae2ce499bec8b55f19fadcd43884fb0d9e3b4ad1a4774a2c8fc5f280a3a19"
+  },
+  {
+    "file": "sources/transformers_src_transformers_integrations_mxfp4.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/integrations/mxfp4.py",
+    "bytes": 18439,
+    "sha256": "1af77052204fb66a6ccf1458e12e86fa0db3bad651daa83a73951a52a4807b55"
+  },
+  {
+    "file": "sources/transformers_src_transformers_quantizers_quantizer_mxfp4.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/quantizers/quantizer_mxfp4.py",
+    "bytes": 19225,
+    "sha256": "97a1daef9a610cf78d8143b807df0c12dc71132e0c02d7cba30c8b9df368fa80"
+  },
+  {
+    "file": "sources/peft_src_peft_tuners_lora_layer.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/tuners/lora/layer.py",
+    "bytes": 101608,
+    "sha256": "e8a47a49cf69f92ded68bf7ab286aeaf068f0ac809ab3465ad16f78a8f9f8b63"
+  },
+  {
+    "file": "sources/peft_src_peft_tuners_lora_model.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/tuners/lora/model.py",
+    "bytes": 40912,
+    "sha256": "cf996a94b265f2b8b70b4d65a00c84be051f03eb10a5617f39d7994cfcfd2eac"
+  },
+  {
+    "file": "sources/peft_src_peft_utils_constants.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/utils/constants.py",
+    "bytes": 15579,
+    "sha256": "5fb622159e246b5dc87ca2bd5b1f3269965a4a6760e0a95de690ce12866bcba8"
+  },
+  {
+    "file": "sources/peft_src_peft_utils_save_and_load.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/utils/save_and_load.py",
+    "bytes": 37191,
+    "sha256": "499d7bc36929d172da951b97ae81129834a5c69d6d4c434a1ee4359f256149ca"
+  },
+  {
+    "file": "sources/peft_src_peft_peft_model.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/peft_model.py",
+    "bytes": 161424,
+    "sha256": "b847795c28bc4b00b3224c0dcea90edbee40ee60384cd104fdafd7056afcb13e"
+  },
+  {
+    "file": "sources/peft_docs_source_developer_guides_lora.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/docs/source/developer_guides/lora.md",
+    "bytes": 49151,
+    "sha256": "8bf593073716168db74635d73a28d18f68b16ba98ec8c028909b31fd2002a065"
+  },
+  {
+    "file": "sources/peft_docs_source_developer_guides_quantization.md",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/docs/source/developer_guides/quantization.md",
+    "bytes": 13778,
+    "sha256": "d0b306490c81ec0b284e1a649ff0f7062312de60102cc9f4e1aecd4c6113088a"
+  },
+  {
+    "file": "sources/vllm_vllm_model_executor_models_gpt_oss.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/model_executor/models/gpt_oss.py",
+    "bytes": 28918,
+    "sha256": "9ebb6de06204ee29d84dbe889c3c3b8c025578ca8ae3787f0080daef310891fb"
+  },
+  {
+    "file": "sources/vllm_vllm_sampling_params.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/sampling_params.py",
+    "bytes": 25994,
+    "sha256": "4148f12ae35d1d1301d4f6e8abbac0d13897412c3b05ce16cbb4eaaf02e97486"
+  },
+  {
+    "file": "sources/vllm_vllm_v1_core_sched_utils.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/v1/core/sched/utils.py",
+    "bytes": 2175,
+    "sha256": "dac9830f5d4c18469d335df11497418b02425ef24a9cac81fd31e73ba7271fba"
+  },
+  {
+    "file": "sources/vllm_vllm_outputs.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/outputs.py",
+    "bytes": 12883,
+    "sha256": "c69f99c00a37efd756411bd522f94443d53fb0e7a85443d834ca581fc612e3b3"
+  },
+  {
+    "file": "sources/vllm_vllm_v1_engine_input_processor.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/v1/engine/input_processor.py",
+    "bytes": 34200,
+    "sha256": "586840becfbb007c8c6c23a231c3303dcbc85804cd46199ad96487a8b2fd516d"
+  },
+  {
+    "file": "sources/vllm_vllm_engine_arg_utils.py",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/vllm/engine/arg_utils.py",
+    "bytes": 90521,
+    "sha256": "ad1741b54fb63b399a8b4e6352af2c40d95d477a8081a32b75e3cb76656cab0b"
+  },
+  {
+    "file": "sources/vllm_requirements_common.txt",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/requirements/common.txt",
+    "bytes": 2788,
+    "sha256": "30c31b9d1ef9e9343573570862f26efeb34fdecda5110d9cbb9b06bef51cabd4"
+  },
+  {
+    "file": "sources/vllm_requirements_cuda.txt",
+    "url": "https://raw.githubusercontent.com/vllm-project/vllm/89a77b10846fd96273cce78d86d2556ea582d26e/requirements/cuda.txt",
+    "bytes": 452,
+    "sha256": "1e142a339522b3d6e0d4aaeb2992f4b6e526652477d596636b4920bb01612bec"
+  },
+  {
+    "file": "sources/harmony_README.md",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/README.md",
+    "bytes": 7462,
+    "sha256": "c38c6a52720adebbdd90e691d2db5fd0711952cb22c7b13246786924375975da"
+  },
+  {
+    "file": "sources/harmony_Cargo.toml",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/Cargo.toml",
+    "bytes": 1579,
+    "sha256": "bcb59f608861378ed70cd072d11e9a9a861e2125032c9bbc0c635127a12a53dc"
+  },
+  {
+    "file": "sources/harmony_pyproject.toml",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/pyproject.toml",
+    "bytes": 776,
+    "sha256": "a655a8b8a4daecffe567b54f8df6e39d2c489e39962a6b8835f4cbfe72da1474"
+  },
+  {
+    "file": "sources/harmony_python_openai_harmony___init__.py",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/python/openai_harmony/__init__.py",
+    "bytes": 24696,
+    "sha256": "e7daf40879af2ebed3cfc77ab2ef1d686a3c8e04a4f84f246643a4e3aeae3d06"
+  },
+  {
+    "file": "sources/harmony_src_lib.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/lib.rs",
+    "bytes": 399,
+    "sha256": "5fcda6d26b397daad6b649e09fa0b2511df01da0fce73344552140d72b394fc6"
+  },
+  {
+    "file": "sources/harmony_src_encoding.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/encoding.rs",
+    "bytes": 66027,
+    "sha256": "788675d601fe782e0c9aa7b1111166498a3ab380ca885b7d164e27f7438184ed"
+  },
+  {
+    "file": "sources/gpt_oss_README.md",
+    "url": "https://raw.githubusercontent.com/openai/gpt-oss/7b583341fe16729127f6d5b94a7b09ccae97e1a1/README.md",
+    "bytes": 24453,
+    "sha256": "578ad0f82c1d823229f9bf2b52b3f1c55ce82772ac57f634f0ca4eb46a6370aa"
+  },
+  {
+    "file": "sources/gpt_oss_gpt_oss_torch_model.py",
+    "url": "https://raw.githubusercontent.com/openai/gpt-oss/7b583341fe16729127f6d5b94a7b09ccae97e1a1/gpt_oss/torch/model.py",
+    "bytes": 16251,
+    "sha256": "319ba3c6e4d827eb3115fe4838942af448376b513c02cea4b6b471bf6c21a346"
+  },
+  {
+    "file": "sources/gpt_oss_gpt_oss_torch_generate.py",
+    "url": "https://raw.githubusercontent.com/openai/gpt-oss/7b583341fe16729127f6d5b94a7b09ccae97e1a1/gpt_oss/torch/generate.py",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "sources/gpt_oss_gpt_oss_tokenizer.py",
+    "url": "https://raw.githubusercontent.com/openai/gpt-oss/7b583341fe16729127f6d5b94a7b09ccae97e1a1/gpt_oss/tokenizer.py",
+    "bytes": 1002,
+    "sha256": "600c6c0b81bce38d8014ebde2c4a9058743b1088c35c03e0828b98894c92ce32"
+  },
+  {
+    "file": "sources/cookbook_articles_openai-harmony.md",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/openai-harmony.md",
+    "bytes": 29299,
+    "sha256": "a348e9824793f6d82f241d44e5a6b1e7b23ba3bc410413766db1c0ae47d71cf7"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_run-transformers.md",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/run-transformers.md",
+    "bytes": 8724,
+    "sha256": "12dba93671b6ccc4c2e973b446e0ae2169909d69122450016724c14d8ce207af"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_fine-tune-transfomers.md",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/fine-tune-transfomers.md",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_handle-raw-cot.md",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/handle-raw-cot.md",
+    "bytes": 5314,
+    "sha256": "fd3c1c839df71d5542e966e732bd75ba8717818f75c9047fff4bf1b3322dd7dd"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_verifying-implementations.md",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/verifying-implementations.md",
+    "bytes": 8159,
+    "sha256": "2739da26588a3705a13ea603baf2293149de0da8cb7e8637d2fe2187fbe0c6f1"
+  },
+  {
+    "file": "sources/harmony_src_tiktoken_ext.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/tiktoken_ext.rs",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "sources/harmony_src_load.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/load.rs",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "sources/harmony_src_chat.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/chat.rs",
+    "bytes": 17376,
+    "sha256": "f265e41650cef6bee887e7f21b52a73f92dbcc34b1e2c4150606fd537a7fdc8a"
+  },
+  {
+    "file": "sources/harmony_Cargo.lock",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/Cargo.lock",
+    "bytes": 74562,
+    "sha256": "6c5221a3b298b0070ae96e71c92965d19a7eb834ebfbbe7faba4e66d346efeea"
+  },
+  {
+    "file": "sources/gpt_oss_gpt_oss_generate.py",
+    "url": "https://raw.githubusercontent.com/openai/gpt-oss/7b583341fe16729127f6d5b94a7b09ccae97e1a1/gpt_oss/generate.py",
+    "bytes": 3081,
+    "sha256": "ddd5e599fea79d3c71b6b4411b4705b36669d0506a7c3049be1f54c9749b16e8"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_fine-tune-korean.ipynb",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/fine-tune-korean.ipynb",
+    "bytes": 45938,
+    "sha256": "41a61d098c8d230b84e597fd97169996726f3a9f4bc217604fc97007f3a42076"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_fine-tune-transfomers.ipynb",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/fine-tune-transfomers.ipynb",
+    "bytes": 28314,
+    "sha256": "97814cbebe3259a3809a95f6f376b3934a6e1443c606394147cca82af9f30567"
+  },
+  {
+    "file": "sources/openai_harmony-0.0.8-cp38-abi3-win_amd64.whl",
+    "url": "https://files.pythonhosted.org/packages/40/1f/c83cf5a206c263ee70448a5ae4264682555f4d0b5bed0d2cc6ca1108103d/openai_harmony-0.0.8-cp38-abi3-win_amd64.whl",
+    "bytes": 2438369,
+    "sha256": "39d44f0d8f466bd56698e7ead708bead3141e27b9b87e3ab7d5a6d0e4a869ee5"
+  },
+  {
+    "file": "sources/openai_harmony-0.0.8.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/3e/92/2d038d096f29179c7c9571b431f9e739f87a487121901725e23fe338dd9d/openai_harmony-0.0.8.tar.gz",
+    "bytes": 284777,
+    "sha256": "6e43f98e6c242fa2de6f8ea12eab24af63fa2ed3e89c06341fb9d92632c5cbdf"
+  },
+  {
+    "file": "sources/harmony_src_tiktoken_ext.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/tiktoken_ext.rs",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "sources/harmony_src_load.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/load.rs",
+    "error": "HTTP Error 404: Not Found"
+  },
+  {
+    "file": "sources/harmony_src_chat.rs",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/src/chat.rs",
+    "bytes": 17376,
+    "sha256": "f265e41650cef6bee887e7f21b52a73f92dbcc34b1e2c4150606fd537a7fdc8a"
+  },
+  {
+    "file": "sources/harmony_Cargo.lock",
+    "url": "https://raw.githubusercontent.com/openai/harmony/abd677f7ac962629c808197caa1feb9e3e95d2b0/Cargo.lock",
+    "bytes": 74562,
+    "sha256": "6c5221a3b298b0070ae96e71c92965d19a7eb834ebfbbe7faba4e66d346efeea"
+  },
+  {
+    "file": "sources/gpt_oss_gpt_oss_generate.py",
+    "url": "https://raw.githubusercontent.com/openai/gpt-oss/7b583341fe16729127f6d5b94a7b09ccae97e1a1/gpt_oss/generate.py",
+    "bytes": 3081,
+    "sha256": "ddd5e599fea79d3c71b6b4411b4705b36669d0506a7c3049be1f54c9749b16e8"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_fine-tune-korean.ipynb",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/fine-tune-korean.ipynb",
+    "bytes": 45938,
+    "sha256": "41a61d098c8d230b84e597fd97169996726f3a9f4bc217604fc97007f3a42076"
+  },
+  {
+    "file": "sources/cookbook_articles_gpt-oss_fine-tune-transfomers.ipynb",
+    "url": "https://raw.githubusercontent.com/openai/openai-cookbook/0eac1447d4e24d06e47c459ca5e98f248b9413cf/articles/gpt-oss/fine-tune-transfomers.ipynb",
+    "bytes": 28314,
+    "sha256": "97814cbebe3259a3809a95f6f376b3934a6e1443c606394147cca82af9f30567"
+  },
+  {
+    "file": "sources/openai_harmony-0.0.8-cp38-abi3-win_amd64.whl",
+    "url": "https://files.pythonhosted.org/packages/40/1f/c83cf5a206c263ee70448a5ae4264682555f4d0b5bed0d2cc6ca1108103d/openai_harmony-0.0.8-cp38-abi3-win_amd64.whl",
+    "bytes": 2438369,
+    "sha256": "39d44f0d8f466bd56698e7ead708bead3141e27b9b87e3ab7d5a6d0e4a869ee5"
+  },
+  {
+    "file": "sources/openai_harmony-0.0.8.tar.gz",
+    "url": "https://files.pythonhosted.org/packages/3e/92/2d038d096f29179c7c9571b431f9e739f87a487121901725e23fe338dd9d/openai_harmony-0.0.8.tar.gz",
+    "bytes": 284777,
+    "sha256": "6e43f98e6c242fa2de6f8ea12eab24af63fa2ed3e89c06341fb9d92632c5cbdf"
+  },
+  {
+    "file": "sources/transformers_src_transformers_integrations_bitsandbytes.py",
+    "url": "https://raw.githubusercontent.com/huggingface/transformers/753d61104116eefc8ffc977327b441ee0c8d599f/src/transformers/integrations/bitsandbytes.py",
+    "sha256": "511ec139809c9d80e08b2ae6cd7ccb4391087532bc1f1b4d943b5930da9e547a",
+    "bytes": 23901,
+    "acquisition": "copied unchanged from prior pinned source acquisition; no prior results used"
+  },
+  {
+    "file": "sources/peft_src_peft_tuners_lora_bnb.py",
+    "url": "https://raw.githubusercontent.com/huggingface/peft/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749/src/peft/tuners/lora/bnb.py",
+    "sha256": "455f0e6ca926b150f77f7ad2a239750312de6cb9ef4c5212b19781575addbb39",
+    "bytes": 26951,
+    "acquisition": "copied unchanged from prior pinned source acquisition; no prior results used"
+  }
+]

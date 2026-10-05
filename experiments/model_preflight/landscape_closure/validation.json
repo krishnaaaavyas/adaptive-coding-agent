@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "static artifact/source/repository integrity only",
+  "landscape_rows": 36,
+  "required_sections": 23,
+  "retrieved_sources_checked": 266,
+  "maximum_source_bytes": 687185,
+  "unavailable_sources": [
+    {
+      "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/92f3b1597a195b523d8d9e5700e57e4fbb8f20d3/config.json",
+      "status": "unavailable"
+    },
+    {
+      "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/92f3b1597a195b523d8d9e5700e57e4fbb8f20d3/generation_config.json",
+      "status": "unavailable"
+    },
+    {
+      "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/92f3b1597a195b523d8d9e5700e57e4fbb8f20d3/tokenizer_config.json",
+      "status": "unavailable"
+    },
+    {
+      "url": "https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct/resolve/92f3b1597a195b523d8d9e5700e57e4fbb8f20d3/chat_template.jinja",
+      "status": "unavailable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/docs/source/developer_guides/lora.md",
+      "status": "unavailable"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/huggingface/peft/532a05dd505c28993119b7715ee286f4234bf51b/docs/source/developer_guides/lora.mdx",
+      "status": "unavailable"
+    },
+    {
+      "url": "https://docs.nvidia.com/nemo/automodel/latest/model-coverage/llm.html",
+      "status": "unavailable"
+    }
+  ],
+  "all_pinned_revisions_at_or_before_requested_calendar_cutoff": true,
+  "no_weight_body_extension_present": true,
+  "declared_weight_package_selection_excludes_alternative_Mistral_consolidated_files": true,
+  "separate_I_A_P_and_five_eligibility_subgates": true,
+  "benchmark_score_fields_present": false,
+  "historical_Qwen_states_and_Harmony_drop_retained": true,
+  "minimum_new_static_work_items": 3,
+  "tracked_files_unchanged": true,
+  "staged_files_unchanged": true,
+  "head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "git_status": "?? experiments/model_preflight/",
+  "preserved_input_hashes": [
+    {
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\1db9acc3-d10e-495e-b964-2f0a7229eb12\\Pasted text.txt",
+      "archived_path": "sources\\project_inputs\\1_Pasted text.txt",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7",
+      "role": "historical audit evidence"
+    },
+    {
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\711734e4-d418-48ac-a289-2c72e140878c\\Pasted text.txt",
+      "archived_path": "sources\\project_inputs\\2_Pasted text.txt",
+      "bytes": 15185,
+      "sha256": "ff1d4f93494801af30b7b089696130428a9d077216712b077f9b2896dd58ba8c",
+      "role": "supplied request"
+    },
+    {
+      "original_path": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\experiments\\model_preflight\\cross_model_audit\\REPORT.md",
+      "archived_path": "sources\\project_inputs\\3_REPORT.md",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7",
+      "role": "historical audit evidence"
+    }
+  ],
+  "empirical_model_validation_performed": false,
+  "project_tests_or_evaluators_run": false
+}

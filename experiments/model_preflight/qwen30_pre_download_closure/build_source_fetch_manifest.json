@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://flashinfer.ai/whl/cu128/flashinfer-jit-cache/",
+    "path": "sources/flashinfer-jit-cache-index.html",
+    "bytes": 34505,
+    "sha256": "9182ee5a4565244d4f6e8bf4edef57dd6fc57f803a796aeb01981c0ed9692be7",
+    "status": "retrieved"
+  },
+  {
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy/InRelease",
+    "path": "sources/apt/jammy-InRelease",
+    "bytes": 270087,
+    "sha256": "c14060cd8c6d625874dfcb9523a35a395bf4865c28b6b6a82569ef326fe92dc6",
+    "status": "retrieved"
+  },
+  {
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy-updates/InRelease",
+    "path": "sources/apt/jammy-updates-InRelease",
+    "bytes": 128049,
+    "sha256": "7fa7761e77c8a428cdd13c9fdc38644facbabc06dc81865da6a339c256d00847",
+    "status": "retrieved"
+  },
+  {
+    "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy-security/InRelease",
+    "path": "sources/apt/jammy-security-InRelease",
+    "bytes": 128927,
+    "sha256": "aecbe17b57fa2ef52190c504ab2608c236119d730549a023e3d00d78ac2f9fa2",
+    "status": "retrieved"
+  }
+]

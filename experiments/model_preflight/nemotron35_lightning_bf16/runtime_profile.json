@@ -1,0 +1,231 @@
+{
+  "status": "STATIC PROPOSAL, NOT AUTHENTICATED RUN PROFILE",
+  "selected_profile": "NATIVE_DEFAULT_THINKING_FULL_SUFFIX_RAW_TOKEN_IDS",
+  "stack": {
+    "vllm": {
+      "version": "0.30.0",
+      "commit": "ced6857afa0ea7b2e3f0846a62e1394e90f15607"
+    },
+    "python": "3.11.9",
+    "torch": "2.13.0",
+    "transformers": {
+      "version": "5.19.0.dev0",
+      "commit": "02d8fb9784e8f14a1251e4c992cd82a5762417c6"
+    },
+    "peft": {
+      "version": "0.21.3.dev0",
+      "commit": "532a05dd505c28993119b7715ee286f4234bf51b"
+    },
+    "tokenizers": "0.23.2",
+    "jinja2": "3.1.6",
+    "markupsafe": "3.0.4",
+    "packaging": "26.3",
+    "CUDA": "13.0.3 pinned Dockerfile assumption, Linuxx86_64; compatible driver/container/wheels not locked",
+    "Python_Docker_note": "Dockerfile default Python3.12 is not the proposed CPython3.11.9 parser/runtime lock. Custom build override or separate parser process requires later verification; no Docker image execution.",
+    "serving_kernel_dependencies": {
+      "Triton": "Bundled vLLM Mamba conv/chunk-scan/selective-state kernels; exact Triton distribution/driver hashes NOT_ESTABLISHED",
+      "flashinfer_python": "0.6.18.post1 requirement",
+      "flashinfer_cubin": "0.6.18.post1 requirement; main selected SSU backendTriton",
+      "apache_tvm_ffi": "0.1.11 requirement"
+    },
+    "training_kernel_profile": "Separate environment: no mamba_ssm/causal_conv1d package, no Hub kernel replacement; bundled source torch Mamba fallback and eager MoE. No speculative patch."
+  },
+  "installation_success": false,
+  "complete_transitive_lock": "NOT_ESTABLISHED; source pin is not runnable dependency/container certificate",
+  "engine_args": {
+    "max_model_len": 32768,
+    "dtype": "bfloat16",
+    "quantization": null,
+    "tensor_parallel_size": 1,
+    "max_num_seqs": 1,
+    "seed": 0,
+    "enforce_eager": true,
+    "enable_prefix_caching": false,
+    "generation_config": "vllm",
+    "skip_tokenizer_init": true,
+    "trust_remote_code": false,
+    "speculative_config": null,
+    "enable_chunked_prefill": false,
+    "max_num_batched_tokens": 32768,
+    "mamba_backend": "triton",
+    "mamba_cache_dtype": "bfloat16",
+    "mamba_ssm_cache_dtype": "float32",
+    "mamba_cache_mode": "none",
+    "enable_mamba_cache_stochastic_rounding": false,
+    "mamba_cache_philox_rounds": 0,
+    "use_replayssm": false,
+    "enable_mamba_fine_grained_prefix_cache": false,
+    "enable_flashinfer_autotune": false
+  },
+  "sampling_params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repetition_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "seed": 0,
+    "n": 1,
+    "max_tokens": 2048,
+    "min_tokens": 0,
+    "stop": [],
+    "stop_token_ids": [
+      2,
+      11
+    ],
+    "ignore_eos": false,
+    "detokenize": false,
+    "skip_special_tokens": false,
+    "truncate_prompt_tokens": null,
+    "logit_bias": null,
+    "allowed_token_ids": null,
+    "bad_words": null,
+    "structured_outputs": null,
+    "repetition_detection": null
+  },
+  "frozen_control_map": {
+    "decoding": {
+      "requested": "greedy",
+      "runtime_parameter": "temperature",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "temperature": {
+      "requested": 0,
+      "runtime_parameter": "temperature",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "top_p": {
+      "requested": 1,
+      "runtime_parameter": "top_p",
+      "runtime_value": 1.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "top_k": {
+      "requested": "disabled",
+      "runtime_parameter": "top_k",
+      "runtime_value": 0,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "repetition_penalty": {
+      "requested": 1,
+      "runtime_parameter": "repetition_penalty",
+      "runtime_value": 1.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "frequency_penalty": {
+      "requested": 0,
+      "runtime_parameter": "frequency_penalty",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "presence_penalty": {
+      "requested": 0,
+      "runtime_parameter": "presence_penalty",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "seed": {
+      "requested": 0,
+      "runtime_parameter": "seed",
+      "runtime_value": 0,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "text_stops": {
+      "requested": [],
+      "runtime_parameter": "stop",
+      "runtime_value": [],
+      "runtime_argument_type": "array",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "max_generation": {
+      "requested": 2048,
+      "runtime_parameter": "max_tokens",
+      "runtime_value": 2048,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "completions": {
+      "requested": 1,
+      "runtime_parameter": "n",
+      "runtime_value": 1,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "retries": {
+      "requested": 0,
+      "runtime_parameter": "orchestrator retry count",
+      "runtime_value": 0,
+      "runtime_argument_type": "integer",
+      "source_status": "STATIC TRANSPORT DESIGN",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "clipping": {
+      "requested": false,
+      "runtime_parameter": "lossless raw capture; no clipping",
+      "runtime_value": false,
+      "runtime_argument_type": "boolean",
+      "source_status": "STATIC TRANSPORT DESIGN",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "context_shifting": {
+      "requested": false,
+      "runtime_parameter": "one fixed sequence; no shift",
+      "runtime_value": false,
+      "runtime_argument_type": "boolean",
+      "source_status": "STATIC TRANSPORT DESIGN",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    },
+    "truncation": {
+      "requested": false,
+      "runtime_parameter": "truncate_prompt_tokens=None; overflow rejection",
+      "runtime_value": false,
+      "runtime_argument_type": "boolean",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED"
+    }
+  },
+  "input": "Exact default thinking two-message template + backend encode(add_special_tokens=False); raw prompt_token_ids, no BOS/history/tools/parsers",
+  "output": "Every raw generated ID and lossless ByteLevel/literal-special bytes; no reasoning split/content projection",
+  "native_terminal_ids": [
+    2,
+    11
+  ],
+  "terminal_allowance": 1,
+  "cap_accounting": "All emitted IDs inclthinking/roles/tools/terminal count toward2048; verified LENGTH -> capacity failure. EOS at count2048 requires actual native event.",
+  "state_policy": "No prefix cache/replay/speculation; fresh token0 state, explicit BF16 conv/FP32 temporal cache; reset exact arrays and slot/counters, verify same-process and fresh-process; no reset certification",
+  "stochastic_rounding_note": "Card throughput profile enablesFP16 SSM cache stochastic rounding. Not adopted: source supportsFP32 temporal cache with explicitFalse; greedy still does not prove deterministic kernels/reductions.",
+  "kernel_warmup_note": "MambaMixer2 source warmup allocates random diagnostic tensors/autotunes kernels. Later separatewarmup then reset/reseed/runtime receipts required; no model warmup executed here.",
+  "LoRA": "Class SupportsLoRA/QKV mapping/MTP skip declared. Direct full scope and ParamWrapper coverage unresolved; safe merge/export primary.",
+  "source_urls": [
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/nemotron_h.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/layers/mamba/mamba_mixer2.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/config/mamba.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/config/cache.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/engine/arg_utils.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/requirements/cuda.txt",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/docker/Dockerfile"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "policy_id": "qwen30-infrastructure-failure-v1",
+  "frozen_pre_outcome": true,
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "classes": {
+    "A": {
+      "name": "PROTOCOL / MODEL INCOMPATIBILITY",
+      "action": "STOP_CONFIGURATION_TRACK",
+      "predicate": "Positive reproducible evidence that the selected native model/runtime cannot implement an unchanged mandatory contract, after distinguishing correctable wiring and missing evidence",
+      "examples": [
+        "entire completion fundamentally unavailable",
+        "frozen control fundamentally unavailable",
+        "actual context/output contract fundamentally unsupported"
+      ],
+      "normative_repairs_allowed": false
+    },
+    "B": {
+      "name": "INFRASTRUCTURE / CONFIGURATION DEFECT",
+      "action": "QUARANTINE_BOUNDED_REPAIR_INVALIDATE_RERUN",
+      "predicate": "Observed defect with root-cause evidence and a proposed correction preserving every invariant",
+      "examples": [
+        "wrong flag",
+        "broken mounts",
+        "logging defect",
+        "dependency packaging error",
+        "insufficient provisioned resources with unchanged native profile"
+      ],
+      "original_failure_retained": true
+    },
+    "C": {
+      "name": "MEASUREMENT / VERIFICATION INCOMPLETE",
+      "action": "PENDING",
+      "predicate": "Required evidence missing, ambiguous or not capable of distinguishing PASS/FAIL",
+      "examples": [
+        "missing telemetry",
+        "unresolved determinism cause",
+        "incomplete raw trace",
+        "cap not observed",
+        "unbuilt executable identity"
+      ],
+      "missing_evidence_is_never_pass": true
+    }
+  },
+  "result_vocabulary": [
+    "NOT_RUN",
+    "PASS",
+    "FAIL",
+    "PENDING",
+    "QUARANTINED",
+    "STOPPED",
+    "INVALIDATED"
+  ],
+  "classification_sequence": [
+    "retain original symptom and evidence",
+    "if evidence incomplete assign C/PENDING",
+    "if supported invariant-preserving defect assign B/QUARANTINED",
+    "only demonstrated fundamental incompatibility permits A/STOPPED"
+  ],
+  "observed_repeat_mismatch": "Equality predicate FAIL; classify B only with defect evidence, otherwise C/PENDING for root cause; never accept the mismatching gate",
+  "track_scope": "Qwen30 selected configuration only; no automatic roster removal, replacement or inherited PASS",
+  "invariants": [
+    "checkpoint repository/revision/bodies",
+    "native BF16 profile; TP1",
+    "P/K/H bytes, budgets and serialization",
+    "BC lane ownership",
+    "32768 deployed context",
+    "2048 generated-token cap and admission reserve",
+    "full replacement semantics",
+    "entire completion retention and terminal accounting",
+    "task population",
+    "all generation controls including seed",
+    "zero retries",
+    "output parser semantics",
+    "candidate admission",
+    "adaptation condition definitions",
+    "no tools/retrieval/network/reasoning projection",
+    "frozen fixture set, repetitions and acceptance predicates"
+  ],
+  "executed_failures": [],
+  "all_gates_execution_status": "NOT_RUN"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "name": "system_user",
+    "rendered_bytes": 112,
+    "normalized_bytes": 112,
+    "render_sha256": "cc3984fc39d510034f4e02f569cf6e9493e4c32af5b94cec3d8c044ca0331963",
+    "input_tokens": 21,
+    "token_ids_sha256": "a5e65f6bd45ff263b7f1a09d217383e267085f7f77eb1ac5c5a16413e13f1b0e",
+    "repeat_encodings": 4,
+    "deterministic": true
+  },
+  {
+    "name": "system_user_assistant",
+    "rendered_bytes": 165,
+    "normalized_bytes": 165,
+    "render_sha256": "70940569de490d3b28cc0c22a035a7786487b32a32a685428758dcbd9905b4b8",
+    "input_tokens": 30,
+    "token_ids_sha256": "bd40110850c950193d6a99e07713b5ce0a1b66b9e654e4760628342d714cd164",
+    "repeat_encodings": 4,
+    "deterministic": true
+  },
+  {
+    "name": "multiline_code",
+    "rendered_bytes": 127,
+    "normalized_bytes": 127,
+    "render_sha256": "ad264a2ac33c928f38f94a2443815a462bbfe9da86b1def8aae58e9e262e7821",
+    "input_tokens": 25,
+    "token_ids_sha256": "26671c194e356a925c44aae6c846e032c943f6c7e1de09abe2604ac0c2157920",
+    "repeat_encodings": 4,
+    "deterministic": true
+  },
+  {
+    "name": "unicode",
+    "rendered_bytes": 134,
+    "normalized_bytes": 133,
+    "render_sha256": "20201fd4b37966e1f9e0d386b4bcf047b9cf7d53686b8e10df350cb137af2bec",
+    "input_tokens": 30,
+    "token_ids_sha256": "b15fe0b9c2b51583659955f33e6d76d4d60295e8e93bcd9bb44e0b077d82e87c",
+    "repeat_encodings": 4,
+    "deterministic": true
+  },
+  {
+    "name": "protocol_delimiters",
+    "rendered_bytes": 821,
+    "normalized_bytes": 821,
+    "render_sha256": "92e41d2577bd65071d72d8517fe2c736976caa920ba16cdc42cfab65249cef2e",
+    "input_tokens": 171,
+    "token_ids_sha256": "480724880211fb4999da07d6492ea88fd8ff9a80961fc2e983c2b24415b18953",
+    "repeat_encodings": 4,
+    "deterministic": true
+  },
+  {
+    "name": "empty_h",
+    "rendered_bytes": 1047,
+    "normalized_bytes": 1047,
+    "render_sha256": "20a9b6a3b847b79492b9b770467b1f6ca34efdde6425ef542fbd6b48d42da07a",
+    "input_tokens": 206,
+    "token_ids_sha256": "e521a6c62548a0168d7ea6afaaadf3813b0e1fba36e73e9f701d6adc71271b3c",
+    "repeat_encodings": 4,
+    "deterministic": true
+  }
+]

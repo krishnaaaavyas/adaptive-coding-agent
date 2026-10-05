@@ -1,0 +1,1 @@
+{"messages": [{"role": "system", "content": "Synthetic system."}, {"role": "user", "content": "def synthetic():\n    return 1\n"}], "rendered": "<s>[SYSTEM_PROMPT]Synthetic system.[/SYSTEM_PROMPT][INST]def synthetic():\n    return 1\n[/INST]", "token_ids": [1, 17, 1083, 53460, 2663, 1046, 18, 3, 3149, 27059, 13487, 1293, 1850, 1032, 1049, 1010, 4]}

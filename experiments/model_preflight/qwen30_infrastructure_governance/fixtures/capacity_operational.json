@@ -1,0 +1,24 @@
+{
+  "kind": "NON_TASK_DIRECT_TOKEN_ALLOCATION_DESIGN",
+  "token": 0,
+  "token0_expectation": "Ordinary ! token verified against authenticated tokenizer vocabulary in validation",
+  "cases": [
+    {
+      "id": "capacity.admit30720",
+      "repeat": 30720,
+      "reserve": 2048,
+      "capacity": 32768,
+      "expected": "Fits exact deployed allocation without shifting/truncation"
+    },
+    {
+      "id": "capacity.reject30721",
+      "repeat": 30721,
+      "reserve": 2048,
+      "capacity": 32768,
+      "expected": "Reject before generation unchanged"
+    }
+  ],
+  "execution": "Native GPUModelRunner.execute_model only with frozen token0 input and verified cache allocation>=32768; never invoke sample_tokens. Retain logits/allocation facts, then destroy entire process with pending ExecuteModelState; next D/E worker is freshly authenticated original. Overlength recipe rejected before forward.",
+  "not_public_task_or_admission_certificate": true,
+  "no_relaxation_of_P_K_H_budgets": true
+}

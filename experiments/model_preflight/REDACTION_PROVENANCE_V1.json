@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "kind": "historical-artifact-publication-redaction",
+  "recorded_at_utc": "2026-10-05T17:11:27.751161+00:00",
+  "historical_unredacted_commit": "7f842b9af204d39338ad05571c2a40957652744f",
+  "preserved_development_subject_commit": "2a698e7c398f38c732b24a36aeb013d0a210286b",
+  "detection": {
+    "provider_label": "Mistral AI API Key",
+    "reported_path": "experiments/model_preflight/landscape_closure/landscape.csv",
+    "reported_line": 7,
+    "field": "architecture",
+    "classification": "C_FALSE_POSITIVE_NON_SECRET",
+    "basis": "The scanner-matching value is a transformer architecture class identifier, also used as architecture metadata and report text. It is not used as an authentication credential.",
+    "detected_value_sha256": "ad2f9a539070f892223f20563ca959fa5fc1c0ffbb57fa56303a0bee2740e4d8",
+    "original_value_recorded": false
+  },
+  "replacement": "REDACTED_SECRET",
+  "scope": "Three exact string substitutions; no research conclusions, dispositions, scientific methodology, protected tasks, product code, or frozen Development Subject contents changed.",
+  "artifacts": [
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+      "original_sha256": "3ccdfc168f3b83a33c81abe274bf1166a8f6b8a7f8f4bf50ee792d245d4df8fc",
+      "original_bytes": 45146,
+      "published_sha256": "9a3236625f4b51372f97c4ce56a0542d9736272b9fc6079cfa0e51c9726f9839",
+      "published_bytes": 45129,
+      "replacement_count": 1
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/identity.json",
+      "original_sha256": "9418f6c1c22164b832477ee5437b318782a3eee32d1335190d81dfa841b03816",
+      "original_bytes": 7600,
+      "published_sha256": "c5cf8a82ab9cc93161ed0bef3da76badad1e4455b0c9ccf762224c1184ae8c66",
+      "published_bytes": 7583,
+      "replacement_count": 1
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/landscape.csv",
+      "original_sha256": "0f7266ca4718541ea9a54b67e374269307eb3a040bc753cf5e3d8bd7bf211bdd",
+      "original_bytes": 337305,
+      "published_sha256": "f1caba49821d14746aba4a5c8ef04fc49acf283292edcde3ca87aca9162c6f59",
+      "published_bytes": 337288,
+      "replacement_count": 1
+    }
+  ],
+  "historical_integrity_references": [
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/artifact_manifest.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/files/0/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/files/11/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/baseline_integrity.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/preserved_files/171/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/devstral_small2_2512/source_manifest.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/local_project_inputs/1/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/baseline_integrity.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/preserved_files/33/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        },
+        {
+          "pointer": "/preserved_files/37/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/preserved_files/449/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/glm47_flash/source_manifest.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/local_project_inputs/1/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/landscape_closure/artifact_manifest.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/files/4/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/baseline_integrity.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/preserved_files/33/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        },
+        {
+          "pointer": "/preserved_files/37/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/preserved_files/449/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/nemotron35_lightning_bf16/source_manifest.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/local_project_inputs/1/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        },
+        {
+          "pointer": "/local_project_inputs/12/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/qwen30_infrastructure_governance/baseline_integrity.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/preserved_files/22/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/preserved_files/34/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        },
+        {
+          "pointer": "/preserved_files/580/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/qwen30_pre_download_closure/baseline_integrity.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/preserved_files/22/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/preserved_files/34/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        },
+        {
+          "pointer": "/preserved_files/580/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/roster_closure/baseline_integrity.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/preserved_files/33/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        },
+        {
+          "pointer": "/preserved_files/37/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/preserved_files/449/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        }
+      ]
+    },
+    {
+      "path": "experiments/model_preflight/roster_closure/source_manifest.json",
+      "historical_hash_sources": [
+        "experiments/model_preflight/devstral_small2_2512/REPORT.md",
+        "experiments/model_preflight/devstral_small2_2512/identity.json",
+        "experiments/model_preflight/landscape_closure/landscape.csv"
+      ],
+      "json_pointers": [
+        {
+          "pointer": "/files/1/sha256",
+          "original_artifact": "experiments/model_preflight/landscape_closure/landscape.csv"
+        },
+        {
+          "pointer": "/files/35/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/REPORT.md"
+        },
+        {
+          "pointer": "/files/36/sha256",
+          "original_artifact": "experiments/model_preflight/devstral_small2_2512/identity.json"
+        }
+      ]
+    }
+  ],
+  "integrity_treatment": {
+    "historical_manifests_and_receipts": "Preserved byte-for-byte. Existing SHA256 and size receipts continue to describe the original unredacted artifacts.",
+    "published_variants": "The artifacts section supplies actual SHA256 and byte lengths for the redacted Git-published copies. These are publication variants, not regenerated original evidence.",
+    "validation": "Historical receipt checks against the three redacted copies are expected to differ. This supplemental receipt explains and authenticates only those publication substitutions; it does not make historical validation PASS or certify new scientific results."
+  },
+  "portability_limitation": "The committed historical subset remains non-self-contained for offline reconstruction; omitted local payloads and historical paths remain unchanged."
+}

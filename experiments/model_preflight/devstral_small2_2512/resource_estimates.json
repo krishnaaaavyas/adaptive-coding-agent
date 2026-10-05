@@ -1,0 +1,125 @@
+{
+  "status": "ARITHMETIC AND PLANNING ESTIMATES / NOT MEASURED",
+  "resident_parameters": 24011361280,
+  "active_vs_resident": "dense: all full artifact resident unless explicitly staged/offloaded; no active-parameter discount",
+  "original_disk": {
+    "bytes": 25793059408,
+    "GiB": 24.021658,
+    "basis": "declared six LFS bodies only, no duplicated consolidated shards"
+  },
+  "reconstructed_dense_disk": {
+    "payload_bytes": 48022722560,
+    "GiB": 44.724646,
+    "headers_and_metadata_extra": true
+  },
+  "original_plus_reconstructed_bytes": 73815781968,
+  "reconstruction_expansion_ratio": 1.861847,
+  "kv_cache_32768_one_sequence": {
+    "formula": "40 layers * 2(K,V) * 8 KV heads * 128 head_dim * 2 BF16 bytes * 32768 tokens",
+    "bytes": 5368709120,
+    "GiB": 5.0
+  },
+  "serving_vram_BF16": {
+    "base_GiB": 44.724646,
+    "KV_GiB": 5,
+    "workspace_planning_GiB": [
+      2,
+      8
+    ],
+    "subtotal_range_GiB": [
+      51.724646,
+      57.724646
+    ],
+    "additional": "allocator reserve, temporary prefill/logits and vision initialization require measurement; subtotal is not a hard upper bound"
+  },
+  "native_fp8_serving_reference_only": {
+    "weight_GiB": 24.021658,
+    "KV_GiB": 5,
+    "workspace_GiB": [
+      2,
+      8
+    ],
+    "excluded_from_primary_same_representation_comparison": true
+  },
+  "training_rank16": {
+    "attention_only": {
+      "trainable_parameters": 19660800,
+      "BF16_adapter_bytes": 39321600,
+      "FP32_adapter_bytes": 78643200,
+      "gradient_optimizer_master_formula": "16 bytes/parameter: BF16 weight2+gradient2+FP32 master4+Adam moments8; or FP32 adapter4+gradient4+moments8 without separate master",
+      "adapter_plus_gradient_optimizer_bytes": 314572800,
+      "base_plus_adapter_optimizer_GiB": 45.017614,
+      "activation_and_workspace": "add sequence/backend-dependent activations/logits/workspace and allocator reserve; no empirical or hard peak claim",
+      "PEFT_adapter_autocast": "defaults may promote adapters to FP32; manifest actual dtype, no guaranteed BF16 adapter file size"
+    },
+    "attention_plus_mlp": {
+      "trainable_parameters": 92405760,
+      "BF16_adapter_bytes": 184811520,
+      "FP32_adapter_bytes": 369623040,
+      "gradient_optimizer_master_formula": "16 bytes/parameter: BF16 weight2+gradient2+FP32 master4+Adam moments8; or FP32 adapter4+gradient4+moments8 without separate master",
+      "adapter_plus_gradient_optimizer_bytes": 1478492160,
+      "base_plus_adapter_optimizer_GiB": 46.101599,
+      "activation_and_workspace": "add sequence/backend-dependent activations/logits/workspace and allocator reserve; no empirical or hard peak claim",
+      "PEFT_adapter_autocast": "defaults may promote adapters to FP32; manifest actual dtype, no guaranteed BF16 adapter file size"
+    }
+  },
+  "training_activation_sensitivity": [
+    {
+      "sequence_length": 2048,
+      "one_saved_BF16_hidden_tensor_per_layer_GiB": 0.78125,
+      "one_BF16_intermediate_MLP_GiB": 0.125,
+      "full_BF16_logits_GiB": 0.5,
+      "full_FP32_logits_GiB": 1.0
+    },
+    {
+      "sequence_length": 8192,
+      "one_saved_BF16_hidden_tensor_per_layer_GiB": 3.125,
+      "one_BF16_intermediate_MLP_GiB": 0.5,
+      "full_BF16_logits_GiB": 2.0,
+      "full_FP32_logits_GiB": 4.0
+    },
+    {
+      "sequence_length": 32768,
+      "one_saved_BF16_hidden_tensor_per_layer_GiB": 12.5,
+      "one_BF16_intermediate_MLP_GiB": 2.0,
+      "full_BF16_logits_GiB": 8.0,
+      "full_FP32_logits_GiB": 16.0
+    }
+  ],
+  "activation_caution": "Sensitivity components only: checkpointing recomputes activations; kernels/loss/logits may retain multiple copies. No training sequence length or recipe selected. SDPA/FlashAttention avoids full attention score matrices; must certify actual backend.",
+  "host_RAM": {
+    "streaming_conversion_start_GiB": [
+      96,
+      128
+    ],
+    "load_merge_start_GiB": [
+      128,
+      192
+    ],
+    "basis": "44.725 GiB BF16 + up to 24.022 GiB original mapped pages + largest conversion intermediates/metadata; loader retaining full copies can exceed estimates"
+  },
+  "largest_matrix_conversion": {
+    "elements": 167772160,
+    "FP32_cast_bytes": 671088640,
+    "FP32_product_bytes": 671088640,
+    "BF16_destination_bytes": 335544320,
+    "total_intermediate_planning_bytes": 1677721600,
+    "GiB": 1.5625
+  },
+  "temporary_conversion_disk": "Atomic fresh export adds up to one dense payload beyond original+canonical dense if both retained",
+  "merge_export_disk": {
+    "original_plus_pristine_plus_one_merged_payload_bytes": 121838504528,
+    "with_second_dense_atomic_temporary_bytes": 169861227088,
+    "planning_free_storage_GB_decimal": [
+      180,
+      220
+    ]
+  },
+  "fresh_reset_cost": {
+    "minimum_original_read_bytes": 25793059408,
+    "fresh_dense_write_bytes": 48022722560,
+    "plus_eval_reconstruction": "Repeat if training state destroyed before evaluation; cost charged separately",
+    "seconds": "NOT_MEASURED; storage bandwidth, scalar conversion and hash throughput required"
+  },
+  "later_starting_points": "BF16 serving: one 80 GiB class GPU, TP=1. Training: start one 80 GiB class GPU with authorized checkpointed small-microbatch recipe; investigate two 80 GiB GPUs with authenticated sharding only if needed. None verified or spending-authorized."
+}

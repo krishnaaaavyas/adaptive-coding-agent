@@ -1,0 +1,32 @@
+{
+  "kind": "HAND_AUTHORED_BYTE_TEST_VECTORS",
+  "vectors": [
+    {
+      "id": "bytes.invalid_utf8",
+      "raw_hex": "fffe",
+      "expected": "FAIL_CLOSED; no Unicode replacement decoding"
+    },
+    {
+      "id": "bytes.literal_replacement",
+      "raw_hex": "efbfbd",
+      "normalized_hex": "efbfbd"
+    },
+    {
+      "id": "bytes.line_endings",
+      "raw_hex": "610d0a620d630a",
+      "normalized_hex": "610a620a630a"
+    },
+    {
+      "id": "bytes.code_delimiters",
+      "raw_hex": "606060707974686f6e0a5b41444150544154494f4e5d0a3d3d3d2046494c453a20782e7079203d3d3d0a6060600a",
+      "expected": "Retain all bytes; no fence/projection/strip"
+    },
+    {
+      "id": "bytes.incomplete_piece",
+      "raw_hex": "c3",
+      "next_piece_hex": "a9",
+      "whole_stream_hex": "c3a9",
+      "expected": "Combine full byte stream before strict UTF8; never replacement-decode partial fragments"
+    }
+  ]
+}

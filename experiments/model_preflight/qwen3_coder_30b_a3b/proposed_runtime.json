@@ -1,0 +1,79 @@
+{
+  "status": "PROPOSED_ONLY_NOT_FROZEN_NOT_CERTIFIED_NOT_EXECUTED",
+  "runtime": "offline vLLM V1",
+  "version": "0.11.2",
+  "torch": "2.9.0",
+  "cuda_build": "12.8",
+  "transformers": "4.57.6",
+  "tokenizers": "0.22.2",
+  "jinja2": "3.1.6",
+  "model": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+  "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120",
+  "tokenizer_revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120",
+  "engine": {
+    "dtype": "bfloat16",
+    "quantization": null,
+    "trust_remote_code": false,
+    "generation_config": "vllm",
+    "max_model_len": 32768,
+    "tensor_parallel_size": 1,
+    "max_num_seqs": 1,
+    "seed": 0,
+    "enforce_eager": true,
+    "enable_prefix_caching": false
+  },
+  "environment": {
+    "VLLM_ENABLE_V1_MULTIPROCESSING": "0"
+  },
+  "sampling": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repetition_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "seed": 0,
+    "stop": [],
+    "stop_token_ids": [
+      151643
+    ],
+    "ignore_eos": false,
+    "max_tokens": 2048,
+    "min_tokens": 0,
+    "n": 1,
+    "best_of": null,
+    "truncate_prompt_tokens": null,
+    "detokenize": false,
+    "logits_processors": null,
+    "allowed_token_ids": null,
+    "bad_words": null,
+    "structured_outputs": null,
+    "logit_bias": null
+  },
+  "primary_eos_token_id": 151645,
+  "native_terminal_ids": [
+    151645,
+    151643
+  ],
+  "wrapper_requirements": [
+    "prepared exact prompt_token_ids only",
+    "fresh sequence per request",
+    "one call, no retries or fallback",
+    "no product mounts/tools or reads during generation",
+    "pre-admit all five forms with full 2048 reserve",
+    "retain raw token IDs and completion facts",
+    "decode without special-token stripping; account only final observed native terminal",
+    "no clipping, shifting, truncation, reserve reduction or server auto defaults"
+  ],
+  "pending": [
+    "complete binary/image/driver lock",
+    "exact checkpoint load",
+    "effective controls audit",
+    "generation/termination smoke test",
+    "raw terminal token retention",
+    "repeatability measurement",
+    "certified wrapper",
+    "adapter roundtrip and refresh cost"
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "version": "qwen30-runner-attestation-v1",
+  "hash_definition": "SHA256 of canonical compact sorted-key ensure_ascii JSON path/sha256 rows in UTF8-path order, no terminal LF",
+  "content_root_sha256": "bab6bf6dc0eff2567f07031ff7c1b52eb34af8db3f359455e8881afe3b022c27",
+  "files": [
+    {
+      "path": "Dockerfile",
+      "bytes": 2319,
+      "sha256": "a5c6d7f953852b0e6322625d0972a416ba6ef8cb05f9d85b6d2b0f4a5022b313"
+    },
+    {
+      "path": "build/README.md",
+      "bytes": 2748,
+      "sha256": "cd08a80595443debcfe5408e6cd0255574af8450645228d03f499594c29e561a"
+    },
+    {
+      "path": "build/apt-packages.lock",
+      "bytes": 3421,
+      "sha256": "cdc5f2cb1ea91bf84c5a037408f45dfe39b1d20e96107ffc686dd51206007732"
+    },
+    {
+      "path": "build/build_image.py",
+      "bytes": 2844,
+      "sha256": "dd0ff932e2600907fb07c75a97d9c17f4e5400a3554f4c2bd1932b3e0808be93"
+    },
+    {
+      "path": "build/collect_inputs.py",
+      "bytes": 4838,
+      "sha256": "2bd01d97d00cd3cc0a7da95fc3ff39e5b0196f3668830cd631ba512cf4114dfa"
+    },
+    {
+      "path": "build/install_apt.sh",
+      "bytes": 1229,
+      "sha256": "874a1303a144faff4f5349518660a5bf38aa1220f7a976bcb59e613c36ce72bc"
+    },
+    {
+      "path": "build/prepare_sources.py",
+      "bytes": 1299,
+      "sha256": "2a892020357113d48b5717784d2461902fe2177ae8fabcb01d554652fc14a998"
+    },
+    {
+      "path": "build/runtime_self_test.py",
+      "bytes": 4323,
+      "sha256": "25c456d019508b098979cead5660c2a620b6969571eb7634f3135a5fcbbebc02"
+    },
+    {
+      "path": "build/sbom.py",
+      "bytes": 1972,
+      "sha256": "358de081eb08e1f9993ecf417fdc9d8793badf9ea54e316edb5c9beb494bf375"
+    },
+    {
+      "path": "build/verify_build.py",
+      "bytes": 1606,
+      "sha256": "d5da6150951280eda3aa4e5d04a03126823df8662ae8247dcef372a7d08cb197"
+    },
+    {
+      "path": "frozen/adaptation_lifecycle_plan.json",
+      "bytes": 22189,
+      "sha256": "d188d64f489d740bbd5d94e23357117dfd2a9aafb6c0545d051daf095bfbea52"
+    },
+    {
+      "path": "frozen/execution_profile.json",
+      "bytes": 3783,
+      "sha256": "cc6023fd48050e03777d4fd448ba34a6d09cd0157b4c58f17ea558e35a9ea4b7"
+    },
+    {
+      "path": "frozen/execution_schedule.json",
+      "bytes": 3988,
+      "sha256": "e11fa9a09dd32d4e0a9e52239c60948e3ca213167e434d620b295b9636411d54"
+    },
+    {
+      "path": "frozen/expected_checkpoint_bodies.json",
+      "bytes": 7340,
+      "sha256": "7dda3a489109b7f39ded28b7d083b723ea37208f08fe92b0e3b67b26d4bfa918"
+    },
+    {
+      "path": "frozen/failure_policy.json",
+      "bytes": 3236,
+      "sha256": "a3c3863d5169ca47af5174f30687228a8d4c9286cfecf0dc572f420708e59a5b"
+    },
+    {
+      "path": "frozen/fixture_manifest.json",
+      "bytes": 47211,
+      "sha256": "ceadfac31774158662e2ea592f057021eaafb76975fc38616f88488ce1c4cb00"
+    },
+    {
+      "path": "frozen/gate_dependency_graph.json",
+      "bytes": 33731,
+      "sha256": "f6386835f53e188f0cc93a51699c1ed43da00d4bb7af813961f997ae5d4c1738"
+    },
+    {
+      "path": "frozen/generation_profile.json",
+      "bytes": 7549,
+      "sha256": "3bb225ce684eec4dcaee433628c4cffb636ddab5ca1f29ddfa277dacd420cba7"
+    },
+    {
+      "path": "frozen/hardware_requirements.json",
+      "bytes": 2798,
+      "sha256": "d75a03667c710b8eb595afd3db1c60d4ee5bad4eefeff1e4028df13b37dd6117"
+    },
+    {
+      "path": "frozen/pre_download_checklist.json",
+      "bytes": 5443,
+      "sha256": "40f7df0cd8735462ac7ca25ce30d0a7bf0dd71812d385fc3e7dbf741e21a6007"
+    },
+    {
+      "path": "frozen/repair_policy.json",
+      "bytes": 2991,
+      "sha256": "3320bdc5c33885d97b1de10893518e31a4db76cc151c169bebbdbeab4c7b3769"
+    },
+    {
+      "path": "frozen/repeatability_policy.json",
+      "bytes": 2004,
+      "sha256": "6e86a144fbb18c78b8822df037f01ee65949b80220c46ac0af03897cd26e335f"
+    },
+    {
+      "path": "frozen/resource_measurement_policy.json",
+      "bytes": 2869,
+      "sha256": "cca843541f6028ecc2e47a9fab4f9b7cfc9ea00e62ddb873d74f1954d5baf10d"
+    },
+    {
+      "path": "frozen/run_manifest_schema.json",
+      "bytes": 22718,
+      "sha256": "a7e7537b9b7cc0d0c32cb38a8733e3e1c560725a5cce6e8f773f8179f7ee9b07"
+    },
+    {
+      "path": "frozen/runtime_lock.json",
+      "bytes": 12101,
+      "sha256": "948afd0f684171608bb301e14d943616358ae537e577e17b909cf02c9707bcac"
+    },
+    {
+      "path": "frozen/semantic_receipt_rules.json",
+      "bytes": 2101,
+      "sha256": "50bc5445848302aaab8d1f339205ab63c1cd51732521ed9532cb6e42ed1afe7c"
+    },
+    {
+      "path": "isolation/apparmor.profile",
+      "bytes": 916,
+      "sha256": "8959c3dc967e64ed3c14cf1bd82fdcac21a8494ab6dc466d6325844f45140d24"
+    },
+    {
+      "path": "isolation/seccomp.json",
+      "bytes": 4249,
+      "sha256": "bf27635666c1a8fe4b3453e8279b2fd1ab1cdd16f7a29f90048271b3b3443979"
+    },
+    {
+      "path": "requirements-linux-cp311.lock",
+      "bytes": 18017,
+      "sha256": "11dfca893b5dcf703bd37a9fde4204a8be774d0d057732d42ba6f9393122efb3"
+    },
+    {
+      "path": "runner/__init__.py",
+      "bytes": 82,
+      "sha256": "58dbf51471c5c8de70392b1a0864675f2d78252bfbc27d8b40760fe8b785fc56"
+    },
+    {
+      "path": "runner/interface.py",
+      "bytes": 1465,
+      "sha256": "c7abfeb9e7f45b5f9b0758236fea426f4352819cde62cf2d726b0ed5a62da21e"
+    },
+    {
+      "path": "runner/isolation.py",
+      "bytes": 3410,
+      "sha256": "9b7dda7d60e8fe3ecd3b2803ff280a42c8864eb5d99e0bf810d4688ee96fdcee"
+    },
+    {
+      "path": "runner/isolation_probe.py",
+      "bytes": 2885,
+      "sha256": "979a04cf318626352144b9caee7a6ba655122eb2f4c4c05352b5ae2579a0d95b"
+    },
+    {
+      "path": "runner/native_receipt.py",
+      "bytes": 5976,
+      "sha256": "f04ed13930a7c0742d43184e5c72cf202b4db81a863b37c9673780cbbc018ef0"
+    },
+    {
+      "path": "runner/native_supervisor.py",
+      "bytes": 5786,
+      "sha256": "f0f6cedafa82db0b32d47a135566e6cf29b60119404e4f6ca65c4d008cb74898"
+    },
+    {
+      "path": "runner/native_worker.py",
+      "bytes": 5762,
+      "sha256": "0f4488cd7a4da00c0e1bc05516a3b14a412c801b66a8255e5b9d5de76cffcd1a"
+    },
+    {
+      "path": "runner/observer.py",
+      "bytes": 5045,
+      "sha256": "a73287e8aa60ed2e32a5e1cdd3f925159d9b1333696ddc0241ca685b73aed52f"
+    },
+    {
+      "path": "runner/schema_validator.py",
+      "bytes": 533,
+      "sha256": "614e2854df4cf517be83fcd8042ab3c6ac2bebefa424cbda16b087a24d3ec552"
+    },
+    {
+      "path": "runner/semantic_validator.py",
+      "bytes": 4719,
+      "sha256": "813e1f585fd5669e1dd7dcafa78ef23d93ed4d3578b454f147a88c579cded2b0"
+    },
+    {
+      "path": "runner/supervisor.py",
+      "bytes": 9574,
+      "sha256": "5b84a82e81f1aadad79d0569e6111b6d5cc31640c738050e316da3c4a36ec2f8"
+    },
+    {
+      "path": "runner/synthetic_worker.py",
+      "bytes": 2951,
+      "sha256": "d6c20711d15d2b81b6419831b7e403bcdf8dde0c4533f128332a0a70041d2c4f"
+    },
+    {
+      "path": "target_attestation_schema.json",
+      "bytes": 7624,
+      "sha256": "7388c0c50ea9b74ee0b083aa6e562f442597664d7301a329b9669fadfee0cc8c"
+    },
+    {
+      "path": "target_attestation_validator.py",
+      "bytes": 3819,
+      "sha256": "cca18f7693fbbfa70142c94c45dcc06ac131ff6572e3a48cd0d6d2e822831f97"
+    },
+    {
+      "path": "target_capacity_policy.json",
+      "bytes": 1241,
+      "sha256": "dfcd02c48ca8e721a2e18948af52a814e982e45af9e9408db7670ea98167b846"
+    },
+    {
+      "path": "target_probe.py",
+      "bytes": 3916,
+      "sha256": "e0a25cafc2dcf91defb4ca9b162f64cc0b0d7ecc676b2e30d9ecfc31f0b205ec"
+    },
+    {
+      "path": "target_probe.sh",
+      "bytes": 158,
+      "sha256": "b51e3c63e0bb1d3d2e0ad76410f4c9e4b32de37d2a83c49c07c488175cea4ed7"
+    },
+    {
+      "path": "tests/oracle.py",
+      "bytes": 2412,
+      "sha256": "4be5dae7bf47bba17df0698174553b43fc855381ddb36ba05464189557e8d1e7"
+    },
+    {
+      "path": "tests/test_model_free.py",
+      "bytes": 9748,
+      "sha256": "328067e26b19bc6ec78b22ee1511b3f5b929a1f48cf7530bb0fece43f7e2935d"
+    },
+    {
+      "path": "tests/test_preparation.py",
+      "bytes": 5751,
+      "sha256": "d19046cb75d754ab81beb47b5a5f58b5d43fb93eb11b87c4e5ff3901e983857e"
+    }
+  ],
+  "includes": [
+    "supervisor",
+    "worker_interface",
+    "native_worker_prepared_not_executed",
+    "native_receipt",
+    "isolation_command/probe",
+    "seccomp",
+    "AppArmor",
+    "observer",
+    "semantic/schema validators",
+    "invented synthetic fixtures/oracle/tests",
+    "build scripts",
+    "copied frozen policies"
+  ],
+  "excludes": [
+    "runtime package bodies not yet collected",
+    "test execution artifacts (separately sealed in artifact_manifest)",
+    "generated target binaries not yet built"
+  ]
+}

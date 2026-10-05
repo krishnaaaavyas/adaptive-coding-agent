@@ -1,0 +1,52 @@
+{
+  "probes": [
+    {
+      "id": "isolation.scoped_write",
+      "action": "Write invented receipt in scoped output",
+      "expected": "ALLOW"
+    },
+    {
+      "id": "isolation.denied_repo_canary",
+      "action": "Read synthetic canary outside allowlisted mounts",
+      "expected": "DENY"
+    },
+    {
+      "id": "isolation.denied_history_canary",
+      "action": "Read synthetic prior-run canary outside current mount",
+      "expected": "DENY"
+    },
+    {
+      "id": "isolation.network",
+      "action": "Attempt connection to local synthetic listener across denied network boundary",
+      "expected": "DENY"
+    },
+    {
+      "id": "isolation.credential_environment",
+      "action": "Inspect allowlisted environment names for synthetic acquisition sentinel",
+      "expected": "ABSENT"
+    },
+    {
+      "id": "isolation.socket",
+      "action": "Attempt access to synthetic host-control socket path",
+      "expected": "DENY"
+    },
+    {
+      "id": "isolation.tool_text",
+      "action": "Submit literal would-be tool-call text to output sink",
+      "expected": "TEXT_ONLY_ZERO_CALLBACKS"
+    },
+    {
+      "id": "isolation.injected_request_failure",
+      "action": "Inject one synthetic wrapper exception",
+      "expected": "ONE_INVOCATION_ZERO_RETRIES"
+    },
+    {
+      "id": "isolation.mount_inventory",
+      "action": "Compare OS mount/capability inventory with explicit allowlist",
+      "expected": "EXACT_ALLOWLIST"
+    }
+  ],
+  "synthetic_canary_only": true,
+  "never_touch_actual_protected_paths": true,
+  "probe_runner_location": "External supervisor; model-output worker has no tool interface"
+}

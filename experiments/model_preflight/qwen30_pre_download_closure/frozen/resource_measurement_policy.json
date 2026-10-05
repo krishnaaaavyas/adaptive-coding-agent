@@ -1,0 +1,58 @@
+{
+  "frozen_pre_outcome": true,
+  "units": {
+    "memory": "bytes and GiB=2^30",
+    "disk": "bytes and GB=10^9",
+    "time": "seconds"
+  },
+  "phases": [
+    "original_disk_authentication",
+    "cold_model_load",
+    "steady_inference",
+    "30720_token_prefill_full_reserve",
+    "actual_generation",
+    "tiny_adapter_forward_backward_optimizer_step",
+    "30720_token_training_envelope",
+    "adapter_save_destroy_reload",
+    "BF16_merge_export",
+    "derivative_load_generation",
+    "destroy_reset",
+    "second_original_rebuild"
+  ],
+  "sampling": {
+    "interval_ms": 100,
+    "start": "Before phase begins",
+    "end": "After synchronized phase and observer flush",
+    "observer": "External allowlisted supervisor pinned in runtime image or observer image by hash",
+    "host_RAM": "Process tree RSS/PSS via /proc + cgroupv2 memory.current/memory.peak; retain scoped process membership",
+    "GPU_VRAM": "Per-device NVML/nvidia-smi used/free bytes plus torch.cuda.max_memory_allocated/max_memory_reserved where training framework exposes them",
+    "disk": "statvfs available bytes + exact file byte inventories and allocated blocks before/after each phase",
+    "peak_rule": "Maximum raw sampled/cgroup/framework peak;100ms polling alone cannot prove unsampled transient peak",
+    "missing_counter_or_gap": "C/PENDING for required peak; never use zero or interpolate as measured maximum",
+    "max_contiguous_gap_ms": 200,
+    "sampling_schedule_may_not_be_tuned_after_results": true
+  },
+  "timing": {
+    "clock": "monotonic_ns",
+    "device_boundaries": "Synchronize before/after GPU stages and record cost; TTFT uses internal scheduler/token event, no text stream needed",
+    "TTFT": "first emitted generated token timestamp minus admitted invocation start",
+    "decode_tokens_per_second": "(N-1)/(last_token_time-first_token_time); null if N<2 or nonpositive span",
+    "training_tokens_per_second": "supervised and total processed tokens separately / synchronized forward+backward+step time",
+    "load_seconds": "constructor start through fully ready synchronized worker",
+    "destroy_reset_seconds": "begin destruction through process exit, mount/scratch cleanup and no-live-state receipt",
+    "second_original_rebuild_seconds": "new original authentication/load+adapter initialization+full invented history cycle; component timings retained",
+    "cold_warm": "Record first vs subsequent fixed repeat index; never discard cold run or report only best"
+  },
+  "hard_stops": [
+    "OOM",
+    "disk reserve exhausted",
+    "unexpected network/read/tool capability",
+    "invariant drift",
+    "observer unavailable"
+  ],
+  "engineering_only": true,
+  "quality_selection_use": false,
+  "profile_changes_to_fit": false,
+  "expected_cost_prices": null,
+  "measured_values_this_step": null
+}

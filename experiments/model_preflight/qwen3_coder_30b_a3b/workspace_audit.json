@@ -1,0 +1,15 @@
+{
+  "head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "tracked_worktree_diff_empty": true,
+  "staged_diff_empty": true,
+  "policy_hash_unchanged": true,
+  "all_new_artifacts_under": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\experiments\\model_preflight\\qwen3_coder_30b_a3b",
+  "policy_exclusion": "experiments",
+  "candidate_artifacts_inspected": false,
+  "benchmark_tasks_inspected": false,
+  "benchmark_execution": false,
+  "generation_performed": false,
+  "training_performed": false,
+  "commit_created": false,
+  "model_frozen": false
+}

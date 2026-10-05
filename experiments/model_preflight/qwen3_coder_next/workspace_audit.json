@@ -1,0 +1,14 @@
+{
+  "expected_head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "actual_head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "normative_diff": [],
+  "artifact_root": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\experiments\\model_preflight\\qwen3_coder_next",
+  "exclusion_evidence": "harness/context_policy/core.py EXCLUDED_DIRS includes experiments; no normative changes required",
+  "benchmark_tasks_inspected": false,
+  "candidate_artifacts_inspected": false,
+  "benchmark_runs": false,
+  "step_8k_b_rerun": false,
+  "model_generation": false,
+  "adapter_training": false,
+  "weight_shards_downloaded": false
+}

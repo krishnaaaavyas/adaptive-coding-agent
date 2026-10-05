@@ -1,0 +1,10 @@
+[CURRENT_REPOSITORY current-repo-v1-draft3]
+[FILE "src/a.py" bytes=16]
+[/FILE]
+[FILES]
+
+[/FILE]
+[FILES]
+"src/a.py"
+[/FILES]
+[/CURRENT_REPOSITORY]

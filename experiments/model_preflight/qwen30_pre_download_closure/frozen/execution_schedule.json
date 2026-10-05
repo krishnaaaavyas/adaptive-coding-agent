@@ -1,0 +1,85 @@
+{
+  "frozen_pre_outcome": true,
+  "all_stages": "NOT_RUN",
+  "first_actual_completion": {
+    "owning_gate": "I",
+    "fixture": "invented.natural_single",
+    "invocations": 1,
+    "prerequisites": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "L"
+    ],
+    "bootstrap": "Before call, run literal byte/terminal instrumentation probes without a model. I records whole trace; F and G consume that same trace, preventing a cycle between event verification and natural-stop acceptance."
+  },
+  "smoke_request_inventory": [
+    {
+      "fixture": "invented.natural_single",
+      "invocations": 1,
+      "consumed_by": [
+        "I",
+        "F",
+        "G"
+      ]
+    },
+    {
+      "fixture": "invented.natural_multi",
+      "invocations": 1,
+      "consumed_by": [
+        "G"
+      ]
+    },
+    {
+      "fixture": "invented.forced_2048",
+      "invocations": 1,
+      "consumed_by": [
+        "H"
+      ]
+    }
+  ],
+  "repetition_requests": "24 fixed requests in repeatability_policy.json, separate from3 smoke calls; no extra cap prompts if H stops early",
+  "capacity_probes": {
+    "successful_prefill": "One exact30720 direct-token native execute_model forward with>=32768 verified KV token slots and2048 reserve; no sample_tokens call",
+    "overlength": "One30721+2048 pre-admission rejection before any model forward; preserve exact30721 count in rejection receipt",
+    "after_successful_prefill": "Destroy process with deferred ExecuteModelState, never discard sampled tokens because none were sampled; create fresh authenticated original for D/E/I",
+    "source_basis": {
+      "gpu_model_runner": {
+        "path": "experiments/model_preflight/qwen30_infrastructure_governance/sources/vllm-project__vllm/vllm/v1/worker/gpu_model_runner.py",
+        "bytes": 223702,
+        "sha256": "bb00863cbc7688e0e65c8a9f50eba9d2804ca4b75597ac342a622e49e46c2229"
+      },
+      "gpu_worker": {
+        "path": "experiments/model_preflight/qwen30_infrastructure_governance/sources/vllm-project__vllm/vllm/v1/worker/gpu_worker.py",
+        "bytes": 36743,
+        "sha256": "02433f942bf5051b7fdeaf2e9466a61f5c8da866a7c0a97ae1cd7ae1e537e7ea"
+      }
+    },
+    "source_observation": "Pinned GPUModelRunner.execute_model computes logits and stores ExecuteModelState then returnsNone; sample_tokens is a separate call. No continuing execute_model with pending state; full process destruction required.",
+    "implementation_and_real_allocation_evidence": "PENDING runner attestation; no use of a dummy forward alone as proof of actualKV capacity"
+  },
+  "roundtrip_generation_inventory": {
+    "fixtures": [
+      "invented.natural_single",
+      "invented.natural_multi"
+    ],
+    "P": "Each once before adapter save and once after fresh original+adapter reload:4 requests",
+    "Q": "Each once on merged derivative and once after derivative export/destroy/reload:4 requests",
+    "no_direct_adapter_runtime_branch": true
+  },
+  "teacher_forced_logit_oracles": {
+    "fixtures": [
+      "invented.natural_single",
+      "invented.natural_multi"
+    ],
+    "labels": "Exact hand-authored bytes/hash and mask in fixtures/teacher_forced_labels.json; no generated text as oracle",
+    "P": "One deterministic eval forward per fixture before/after adapter reload; exact values",
+    "Q": "One deterministic eval forward per fixture unmerged/merged; frozen tolerance and argmax equality"
+  },
+  "lifecycle": "Fixed cycle1 one step, second-original two steps on both invented records, separate30720-token one-step envelope. No Study3 optimization.",
+  "S": "Three target requests in fixed divergent schedule plus pristine natural_single once after each of two destroyed adaptation cycles; compare frozen pristine reference exactly",
+  "governed_reruns": "Only within repair bounds with newrunIDs, original failure retained; no automatic model call retry",
+  "not_permission_to_execute": true
+}

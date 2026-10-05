@@ -1,0 +1,51 @@
+{
+  "frozen_pre_outcome": true,
+  "fixture_order": [
+    "invented.natural_single",
+    "invented.natural_multi",
+    "historical.unicode",
+    "historical.protocol_delimiters"
+  ],
+  "same_process_repetitions": 3,
+  "total_fresh_processes": 2,
+  "second_process_repetitions_per_fixture": 3,
+  "total_requests": 24,
+  "invocation_order": "Process1: each fixture three consecutive times in listed order; destroy. Process2: same exact schedule",
+  "TOKEN_EXACT": [
+    "raw_generated_token_ids",
+    "generated_token_count",
+    "exact_prompt_token_ids"
+  ],
+  "BYTE_EXACT": [
+    "raw_generated_bytes_sha256",
+    "raw_byte_length",
+    "normalized_completion_sha256"
+  ],
+  "TERMINAL_EVENT_EXACT": [
+    "finish_reason",
+    "stop_reason",
+    "terminal_token",
+    "terminal_removal_receipt",
+    "invocation_count"
+  ],
+  "excluded_from_equality": [
+    "run_id",
+    "timestamp",
+    "wall_time",
+    "TTFT",
+    "throughput",
+    "resource_samples",
+    "process_id"
+  ],
+  "resources": "Retain all24 traces; report per-phase min/max/median/range and observer gaps. Variability descriptive, never a reason to choose a favorable run.",
+  "mismatch": "Observed vector/byte/event mismatch FAIL equality; B only with demonstrated configuration cause, otherwise C/PENDING root cause. No weakened equality/tolerance or increased repetitions.",
+  "missing_trace": "C/PENDING; not equal by default",
+  "contamination_schedule": [
+    "Fresh original process: target natural_single reference once",
+    "One divergent_prior request",
+    "Reset sequence/KV/history/RNG to declared seed; target natural_single once",
+    "Destroy and start fresh original process; target natural_single once"
+  ],
+  "contamination_acceptance": "All three target token/byte/event records exact; divergent request receipt retained; no automatic extra requests",
+  "repairs": "Only governed repair creates new bounded run set; counts remain fixed and old differences retained"
+}

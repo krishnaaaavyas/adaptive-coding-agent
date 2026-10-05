@@ -1,0 +1,286 @@
+STEP 8K-B.1G1D — CROSS-MODEL FEASIBILITY AND
+HARMONY COMPLETION-BOUNDARY AUDIT
+
+PURPOSE
+
+Independently determine:
+
+1. whether the existing frozen-intent current-repo-v1-draft3 semantics
+   already define a transport/model boundary that can accommodate
+   gpt-oss Harmony final-channel extraction WITHOUT changing the protocol;
+
+2. which of the three statically preflighted models should proceed to
+   expensive infrastructure verification;
+
+3. what exact candidate-blind infrastructure tests are required before
+   model-shortlist freeze.
+
+THIS IS NOT A MODEL QUALITY RANKING.
+THIS IS NOT A BENCHMARK.
+THIS IS NOT AN ADAPTATION EXPERIMENT.
+
+==================================================
+INPUTS
+==================================================
+
+Read:
+
+A. normative current-repo-v1-draft2 specification
+B. current-repo-v1-draft3 replacement/addition specification
+C. Qwen3-Coder-30B-A3B preflight report
+D. Qwen3-Coder-Next preflight report
+E. gpt-oss-20b preflight report
+
+Treat draft2 as normative except where draft3 explicitly replaces/adds text.
+
+Do not inspect:
+- Step 8K candidate inventory
+- candidate dispositions
+- benchmark task instances
+- model benchmark outcomes
+- adaptation outcomes
+- protected discovery artifacts
+
+Do not run model inference.
+
+==================================================
+PART 1 — RECONSTRUCT THE EXISTING OUTPUT CONTRACT
+==================================================
+
+Using ONLY the normative specifications and implementation contract:
+
+Determine precisely what these terms mean:
+
+- completion
+- raw completion
+- normalized completion
+- model output
+- terminal token
+- output artifact
+- complete replacement
+- single-target output
+- multi-target output
+- transport framing
+- model-native serialization
+
+Trace each conclusion to exact normative text.
+
+Do NOT infer an exception merely because gpt-oss needs one.
+
+==================================================
+PART 2 — HARMONY BOUNDARY QUESTION
+==================================================
+
+Evaluate the following competing interpretations:
+
+INTERPRETATION A:
+"Completion" means every model-generated token/text after the generation
+prefix, excluding only explicitly authorized terminal/framing normalization.
+
+Under this interpretation, substantive Harmony analysis is part of the
+completion and cannot be silently discarded.
+
+INTERPRETATION B:
+The existing protocol already distinguishes model-native transport framing
+from the semantic completion artifact, so a typed Harmony parser may project
+the final assistant message before the frozen completion parser receives it.
+
+Determine whether A, B, another interpretation, or genuine ambiguity is
+supported by the PRE-EXISTING normative text.
+
+Do not choose based on convenience or model inclusion.
+
+Answer one:
+
+A — ENTIRE GENERATED STREAM REQUIRED
+B — FINAL-MESSAGE TRANSPORT PROJECTION ALREADY AUTHORIZED
+AMBIGUOUS — SPEC DOES NOT SETTLE THIS
+
+Provide exact citations/sections from draft2/draft3.
+
+==================================================
+PART 3 — NO RETROACTIVE ACCOMMODATION
+==================================================
+
+Determine whether allowing final-only Harmony extraction would constitute:
+
+- existing implementation detail,
+- previously authorized model-specific serialization,
+- clarification with no semantic change,
+or
+- protocol amendment.
+
+If amendment is required:
+
+DO NOT MAKE IT.
+
+Record gpt-oss as incompatible with current-repo-v1-draft3 for Study 1
+unless an independent future protocol version is intentionally created
+before candidate exposure.
+
+Do not recommend changing draft3 merely to retain the model.
+
+==================================================
+PART 4 — THREE-MODEL STATIC SYNTHESIS
+==================================================
+
+For:
+
+- Qwen3-Coder-30B-A3B
+- Qwen3-Coder-Next
+- gpt-oss-20b
+
+Build a factual comparison covering:
+
+- exact pinned identity
+- license evidence
+- serialization
+- tokenizer/template/Harmony
+- native context
+- protocol-capacity result
+- proposed deployed capacity
+- checkpoint storage
+- proposed runtime
+- unresolved runtime controls
+- termination/output issues
+- inference infrastructure
+- adaptation mechanism support
+- attention-only LoRA scale
+- broader expert LoRA scale
+- quantized training status
+- fresh-original-base rebuild feasibility
+- methodological asymmetries
+
+Do NOT compare coding quality.
+Do NOT use public benchmark scores.
+Do NOT rank models by performance.
+
+==================================================
+PART 5 — INFRASTRUCTURE-VALIDATION ADMISSION
+==================================================
+
+For each model classify:
+
+PROCEED TO INFRASTRUCTURE VERIFICATION
+HOLD — RESOLVE NON-HARDWARE BLOCKER FIRST
+DROP — CURRENT PROTOCOL INCOMPATIBLE
+DROP — CLEARLY IMPRACTICAL FOR PROJECT
+
+This classification is about whether spending infrastructure resources is
+justified, NOT model quality.
+
+Use pre-outcome facts only.
+
+Do not force a fixed number of survivors.
+
+==================================================
+PART 6 — PRODUCT FEASIBILITY CHECK
+==================================================
+
+Our product hypothesis requires repeated fresh adaptation from ORIGINAL BASE.
+
+Assess whether each model's proposed adaptation path is sufficiently
+plausible to justify infrastructure testing.
+
+Consider:
+
+- resident base size
+- adapter size
+- MoE expert coverage
+- quantized-training limitations
+- fresh-base reload/rebuild
+- likely infrastructure class
+- operational complexity
+
+Do not infer throughput or cost without evidence.
+
+Do not reject solely because cloud hardware is required.
+
+==================================================
+PART 7 — DEFINE THE MINIMUM HARDWARE TEST MATRIX
+==================================================
+
+For every model admitted to infrastructure verification, define the MINIMUM
+candidate-blind tests needed.
+
+At minimum consider:
+
+A. exact checkpoint-body verification
+B. exact runtime/container identity
+C. successful model load
+D. exact prompt-token parity
+E. effective frozen controls
+F. native terminal behavior
+G. natural termination
+H. forced 2048-token termination
+I. raw token/byte retention
+J. repeated greedy generation
+K. fresh-process repeat
+L. no tools/read/history/retry
+M. peak VRAM/RAM
+N. TTFT/output throughput
+O. attention-only LoRA forward/backward
+P. adapter save/reload
+Q. merge/export if required
+R. second fresh adapter rebuild from ORIGINAL BASE
+S. state contamination check
+
+Do not use benchmark/project candidates.
+
+Use synthetic code tasks only.
+
+==================================================
+PART 8 — COST-CONSCIOUS ORDER
+==================================================
+
+Determine the order in which admitted models should undergo infrastructure
+verification so that failure is detected before unnecessary expensive work.
+
+This is an engineering-resource ordering, not a quality ranking.
+
+For example:
+static blocker resolution
+→ cheapest load/generation validation
+→ adapter smoke test
+→ larger model validation
+
+Do not assume that example is correct; derive the order from evidence.
+
+==================================================
+PART 9 — FREEZE READINESS
+==================================================
+
+State exactly what remains before:
+
+MODEL SHORTLIST FREEZE
+
+and before:
+
+current-repo-v1 FINAL EXTERNAL FREEZE.
+
+Do not perform either freeze.
+
+==================================================
+OUTPUT
+==================================================
+
+STEP 8K-B.1G1D — CROSS-MODEL FEASIBILITY AND
+HARMONY COMPLETION-BOUNDARY AUDIT
+
+1. Verdict
+2. Normative sources inspected
+3. Existing completion contract
+4. Harmony boundary determination
+5. Amendment required? YES/NO
+6. Three-model factual comparison
+7. Infrastructure-admission decision per model
+8. Product adaptation-feasibility analysis
+9. Minimum infrastructure test matrix
+10. Cost-conscious verification order
+11. Remaining model-shortlist blockers
+12. Remaining current-repo-v1 freeze blockers
+13. Candidate artifacts inspected? NO
+14. Model inference performed? NO
+15. Protocol modified? NO
+16. Files modified
+17. Final recommendation

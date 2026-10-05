@@ -1,0 +1,328 @@
+{
+  "status": "PARTIALLY CLOSED — TARGET BUILD REQUIRED",
+  "frozen_source_lock_sha256": "948afd0f684171608bb301e14d943616358ae537e577e17b909cf02c9707bcac",
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "platform": {
+    "os": "Linux",
+    "architecture": "amd64",
+    "base_image": "nvidia/cuda@sha256:6617a625f4090c76c545a0e7d63f2e441718ef9af7f4efe7dd1242a29e289fd7",
+    "layers_verified": false,
+    "actual_base_dpkg_compatibility": "PENDING_TARGET_BUILD"
+  },
+  "python": {
+    "implementation": "CPython",
+    "version": "3.11.9",
+    "unicode_version": "14.0.0",
+    "source_commit": "de54cf5be371a6f5e2e9f208c38def5f81d3ef02",
+    "linux_binary_sha256": null,
+    "stdlib_extension_library_hashes": null,
+    "status": "SOURCE_PIN_RESOLVED_BINARY_BUILD_PENDING",
+    "historical_windows_executable_hash_is_not_linux_identity": true,
+    "route": "Build exact archived commit with gcc-10, prefix /opt/python3.11.9, no ensurepip, pip25.0.1 bootstrap from hash-locked wheel"
+  },
+  "source_inputs": [
+    {
+      "name": "cpython",
+      "repository": "python/cpython",
+      "commit": "de54cf5be371a6f5e2e9f208c38def5f81d3ef02",
+      "url": "https://codeload.github.com/python/cpython/tar.gz/de54cf5be371a6f5e2e9f208c38def5f81d3ef02",
+      "path": "sources/archives/cpython.tar.gz",
+      "filename": "cpython.tar.gz",
+      "bytes": 26994259,
+      "sha256": "070e0f5339803675935e85e7ecdbbfb1faf0a9a1465b7c08bbfe0d18668ce513",
+      "body_downloaded": true,
+      "body_hash_verified": true,
+      "kind": "Public runtime source code archive, not a model checkpoint",
+      "build_declarations": []
+    },
+    {
+      "name": "vllm",
+      "repository": "vllm-project/vllm",
+      "commit": "275de34170654274616082721348b7edd9741d32",
+      "url": "https://codeload.github.com/vllm-project/vllm/tar.gz/275de34170654274616082721348b7edd9741d32",
+      "path": "sources/archives/vllm.tar.gz",
+      "filename": "vllm.tar.gz",
+      "bytes": 17209108,
+      "sha256": "8dcfe01cc7280a2f4072668f2734b2245d834c246390f0f4d259c6b26b71ca0c",
+      "body_downloaded": true,
+      "body_hash_verified": true,
+      "kind": "Public runtime source code archive, not a model checkpoint",
+      "build_declarations": [
+        {
+          "file": "pyproject.toml",
+          "text": "[build-system]\n# Should be mirrored in requirements/build.txt\nrequires = [\n    \"cmake>=3.26.1\",\n    \"ninja\",\n    \"packaging>=24.2\",\n    \"setuptools>=77.0.3,<81.0.0\",\n    \"setuptools-scm>=8.0\",\n    \"torch == 2.9.0\",\n    \"wheel\",\n    \"jinja2\",\n]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"vllm\"\nauthors = [{name = \"vLLM Team\"}]\nlicense = \"Apache-2.0\"\nlicense-files = [\"LICENSE\"]\nreadme = \"README.md\"\ndescription = \"A high-throughput and memory-efficient inference and serving engine for LLMs\"\nclassifiers = [\n    \"Programming Language :: Python :: 3.10\",\n    \"Programming Language :: Python :: 3.11\",\n    \"Programming Language :: Python :: 3.12\",\n    \"Programming Language :: Python :: 3.13\",\n    \"Intended Audience :: Developers\",\n    \"Intended Audience :: Information Technology\",\n    \"Intended Audience :: Science/Research\",\n    \"Topic :: Scientific/Engineering :: Artificial Intelligence\",\n    \"Topic :: Scientific/Engineering :: Information Analysis\",\n]\nrequires-python = \">=3.10,<3.14\"\ndynamic = [ \"version\", \"dependencies\", \"optional-dependencies\"]\n\n[project.urls]\nHomepage=\"https://github.com/vllm-project/vllm\"\nDocumentation=\"https://docs.vllm.ai/en/latest/\"\nSlack=\"https://slack.vllm.ai/\"\n\n[project.scripts]\nvllm = \"vllm.entrypoints.cli.main:main\"\n\n[project.entry-points.\"vllm.general_plugins\"]\nlora_filesystem_resolver = \"vllm.plugins.lora_resolvers.filesystem_resolver:register_filesystem_resolver\"\n\n[tool.setuptools_scm]\n# no extra settings needed, presence enables setuptools-scm\n\n[tool.setuptools.packages.find]\nwhere = [\".\"]\ninclude = [\"vllm*\"]\n\n[tool.ruff.lint.per-file-ignores]\n\"vllm/third_party/**\" = [\"ALL\"]\n\"vllm/version.py\" = [\"F401\"]\n\"vllm/_version.py\" = [\"ALL\"]\n\n[tool.ruff.lint]\nselect = [\n    # pycodestyle\n    \"E\",\n    # Pyflakes\n    \"F\",\n    # pyupgrade\n    \"UP\",\n    # flake8-bugbear\n    \"B\",\n    # flake8-simplify\n    \"SIM\",\n    # isort\n    \"I\",\n    # flake8-logging-format\n    \"G\",\n]\nignore = [\n    # star imports\n    \"F405\", \"F403\",\n    # lambda expression assignment\n    \"E731\",\n    # zip without `strict=`\n    \"B905\",\n    # Loop control variable not used within loop body\n    \"B007\",\n    # f-string format\n    \"UP032\",\n]\n\n[tool.ruff.format]\ndocstring-code-format = true\n\n[tool.mypy]\nplugins = ['pydantic.mypy']\nignore_missing_imports = true\ncheck_untyped_defs = true\nfollow_imports = \"silent\"\n\n[tool.pytest.ini_options]\nmarkers = [\n    \"slow_test\",\n    \"skip_global_cleanup\",\n    \"core_model: enable this model test in each PR instead of only nightly\",\n    \"hybrid_model: models that contain mamba layers (including pure SSM and hybrid architectures)\",\n    \"cpu_model: enable this model test in CPU tests\",\n    \"cpu_test: mark test as CPU-only test\",\n    \"split: run this test as part of a split\",\n    \"distributed: run this test only in distributed GPU tests\",\n    \"skip_v1: do not run this test with v1\",\n    \"optional: optional tests that are automatically skipped, include --optional to run them\",\n]\n\n[tool.ty.src]\nroot = \"./vllm\"\nrespect-ignore-files = true\n\n[tool.ty.environment]\npython = \"./.venv\"\n\n[tool.typos.files]\n# these files may be written in non english words\nextend-exclude = [\"tests/models/fixtures/*\", \"tests/prompts/*\",\n    \"benchmarks/sonnet.txt\", \"tests/lora/data/*\", \"build/*\",\n    \"vllm/third_party/*\"]\nignore-hidden = true\nignore-files = true\nignore-dot = true\nignore-vcs = true\nignore-global = true\nignore-parent = true\n\n[tool.typos.default]\nbinary = false\ncheck-filename = false\ncheck-file = true\nunicode = true\nignore-hex = true\nidentifier-leading-digits = false\nlocale = \"en\"\nextend-ignore-identifiers-re = [\"NVML_*\", \".*Unc.*\", \".*_thw\",\n    \".*UE8M0.*\", \".*[UE4M3|ue4m3].*\", \".*eles.*\",\n     \".*[Tt]h[rR].*\"]\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.default.extend-identifiers]\nbbc5b7ede = \"bbc5b7ede\"\nwomens_doubles = \"womens_doubles\"\nv_2nd = \"v_2nd\"\n# splitted_input = \"splitted_input\"\nNOOPs = \"NOOPs\"\ntyp = \"typ\"\nnin_shortcut = \"nin_shortcut\"\nUperNetDecoder = \"UperNetDecoder\"\nsubtile = \"subtile\"\ncudaDevAttrMaxSharedMemoryPerBlockOptin = \"cudaDevAttrMaxSharedMemoryPerBlockOptin\"\nSFOuput = \"SFOuput\"\n# huggingface transformers repo uses these words\ndepthwise_seperable_out_channel = \"depthwise_seperable_out_channel\"\nDepthWiseSeperableConv1d = \"DepthWiseSeperableConv1d\"\ndepthwise_seperable_CNN = \"depthwise_seperable_CNN\"\n\n[tool.typos.default.extend-words]\niy = \"iy\"\ntendencias = \"tendencias\"\n# intel cpu features\ntme = \"tme\"\ndout = \"dout\"\nPn = \"Pn\"\narange = \"arange\"\n\n[tool.typos.type.py]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.py.extend-identifiers]\narange = \"arange\"\nNDArray = \"NDArray\"\nEOFError = \"EOFError\"\nfo = \"fo\"\nba = \"ba\"\n\n[tool.typos.type.py.extend-words]\nba = \"ba\"\nnd = \"nd\"\n\n[tool.typos.type.cpp]\nextend-glob = [\"*.cu\"]\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.cpp.extend-identifiers]\ncountr_one = \"countr_one\"\nk_ot = \"k_ot\"\not = \"ot\"\n\n[tool.typos.type.cpp.extend-words]\n\n[tool.typos.type.rust]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.rust.extend-identifiers]\nflate2 = \"flate2\"\n\n[tool.typos.type.rust.extend-words]\nser = \"ser\"\n\n[tool.typos.type.lock]\nextend-glob = []\ncheck-file = false\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.lock.extend-identifiers]\n\n[tool.typos.type.lock.extend-words]\n\n[tool.typos.type.jl]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.jl.extend-identifiers]\n\n[tool.typos.type.jl.extend-words]\nmodul = \"modul\"\negals = \"egals\"\nusig = \"usig\"\negal = \"egal\"\n\n[tool.typos.type.go]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.go.extend-identifiers]\nflate = \"flate\"\n\n[tool.typos.type.go.extend-words]\n\n[tool.typos.type.css]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.css.extend-identifiers]\nnd = \"nd\"\n\n[tool.typos.type.css.extend-words]\n\n[tool.typos.type.man]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.man.extend-identifiers]\nNd = \"Nd\"\n\n[tool.typos.type.man.extend-words]\n\n[tool.typos.type.cert]\nextend-glob = []\ncheck-file = false\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.cert.extend-identifiers]\n\n[tool.typos.type.cert.extend-words]\n\n[tool.typos.type.sh]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.sh.extend-identifiers]\not = \"ot\"\n\n[tool.typos.type.sh.extend-words]\n\n[tool.typos.type.vimscript]\nextend-glob = []\nextend-ignore-identifiers-re = []\nextend-ignore-words-re = []\nextend-ignore-re = []\n\n[tool.typos.type.vimscript.extend-identifiers]\nwindo = \"windo\"\n\n[tool.typos.type.vimscript.extend-words]\n\n[tool.uv]\nno-build-isolation-package = [\"torch\"]\n",
+          "sha256": "df27bf84c0641618107b8beb4d6a97c1dca77ee13027a8b1f9def946786c5b04"
+        }
+      ]
+    },
+    {
+      "name": "transformers",
+      "repository": "huggingface/transformers",
+      "commit": "753d61104116eefc8ffc977327b441ee0c8d599f",
+      "url": "https://codeload.github.com/huggingface/transformers/tar.gz/753d61104116eefc8ffc977327b441ee0c8d599f",
+      "path": "sources/archives/transformers.tar.gz",
+      "filename": "transformers.tar.gz",
+      "bytes": 19424989,
+      "sha256": "d9ccbf4e297c6d1e547a60c1b331490bdd3e77dd4b3f164e743edd662818ef9d",
+      "body_downloaded": true,
+      "body_hash_verified": true,
+      "kind": "Public runtime source code archive, not a model checkpoint",
+      "build_declarations": [
+        {
+          "file": "pyproject.toml",
+          "text": "[tool.coverage.run]\nsource = [\"transformers\"]\nomit = [\n    \"*/convert_*\",\n    \"*/__main__.py\"\n]\n\n[tool.coverage.report]\nexclude_lines = [\n    \"pragma: no cover\",\n    \"raise\",\n    \"except\",\n    \"register_parameter\"\n]\n\n[tool.ruff]\ntarget-version = \"py310\"\nline-length = 119\n\n[tool.ruff.lint]\n# Never enforce `E501` (line length violations).\n# SIM300: Yoda condition detected\n# SIM212: Checks for if expressions that check against a negated condition.\n# SIM905: Consider using a list literal instead of `str.split`\n# UP009: UTF-8 encoding declaration is unnecessary\n# UP015: Unnecessary mode argument\n# UP031: Use format specifiers instead of percent format\n# UP004: Class `XXX` inherits from `object`\n# UP028: Checks for for loops that can be replaced with yield from expressions\n# UP045: Use `X | None` for type annotations\n# UP007: Use `X | Y` for type annotations\n# UP035: temporarily disabled to minimize upgrade changes\nignore = [\"C901\", \"E501\", \"E741\", \"F402\", \"F823\", \"SIM1\", \"SIM300\", \"SIM212\", \"SIM905\", \"UP009\", \"UP015\", \"UP031\", \"UP028\", \"UP004\", \"UP045\", \"UP007\", \"UP035\"]\n# RUF013: Checks for the use of implicit Optional\n#  in type annotations when the default parameter value is None.\nselect = [\"C\", \"E\", \"F\", \"I\", \"W\", \"RUF013\", \"PERF102\", \"PLC1802\", \"PLC0208\", \"SIM\", \"UP\"]\nextend-safe-fixes = [\"UP006\"]\n\n# Ignore import violations in all `__init__.py` files.\n[tool.ruff.lint.per-file-ignores]\n\"__init__.py\" = [\"E402\", \"F401\", \"F403\", \"F811\"]\n\"src/transformers/file_utils.py\" = [\"F401\"]\n\"src/transformers/utils/dummy_*.py\" = [\"F401\"]\n\"examples/legacy/**/*.py\" = [\"UP\"]\n\n[tool.ruff.lint.isort]\nlines-after-imports = 2\nknown-first-party = [\"transformers\"]\n\n[tool.ruff.format]\n# Like Black, use double quotes for strings.\nquote-style = \"double\"\n\n# Like Black, indent with spaces, rather than tabs.\nindent-style = \"space\"\n\n# Like Black, respect magic trailing commas.\nskip-magic-trailing-comma = false\n\n# Like Black, automatically detect the appropriate line ending.\nline-ending = \"auto\"\n\n[tool.pytest.ini_options]\naddopts = \"--doctest-glob='**/*.md'\"\ndoctest_optionflags=\"NUMBER NORMALIZE_WHITESPACE ELLIPSIS\"\nmarkers = [\n    \"flash_attn_3_test: marks tests related to flash attention 3 (deselect with '-m \\\"not flash_attn_3_test\\\"')\",\n    \"flash_attn_test: marks tests related to flash attention (deselect with '-m \\\"not flash_attn_test\\\"')\",\n    \"bitsandbytes: select (or deselect with `not`) bitsandbytes integration tests\",\n    \"generate: marks tests that use the GenerationTesterMixin\"\n]\nlog_cli = 1\nlog_cli_level = \"WARNING\"\nasyncio_default_fixture_loop_scope = \"function\"\n",
+          "sha256": "f4aaf3d6c05f5178776d8af8c098d7f3b9eea9c25e13884ed890bca38697345a"
+        }
+      ]
+    },
+    {
+      "name": "peft",
+      "repository": "huggingface/peft",
+      "commit": "77daa8d3b7decf2b40238ab47e2c1bd0f26c7749",
+      "url": "https://codeload.github.com/huggingface/peft/tar.gz/77daa8d3b7decf2b40238ab47e2c1bd0f26c7749",
+      "path": "sources/archives/peft.tar.gz",
+      "filename": "peft.tar.gz",
+      "bytes": 9928874,
+      "sha256": "bedf87d4367796eaf76c40499cd23d581bc1dab69ed5956de0938ce6cc43b2c1",
+      "body_downloaded": true,
+      "body_hash_verified": true,
+      "kind": "Public runtime source code archive, not a model checkpoint",
+      "build_declarations": [
+        {
+          "file": "pyproject.toml",
+          "text": "[tool.black]\n# Only used by `hf-doc-builder´.\nline-length = 119\ntarget-version = ['py38']\n\n[tool.ruff]\ntarget-version = \"py39\"\nline-length = 119\nextend-exclude = [\"*.ipynb\"]\n\n[tool.ruff.lint]\npreview = true\nexplicit-preview-rules = true\nextend-select = [\n    \"C\", # Complexity\n    \"E\", # PEP8 errors\n    \"F\", # PEP8 formatting\n    \"I\", # Import sorting\n    \"UP\", # Pyupgrade upgrades\n    \"W\", # PEP8 warnings\n    \"PT009\", # Pytest assertions\n    \"RUF022\", # Sorting of __all__\n]\nignore = [\n    \"C901\", # Function too complex\n    \"E501\", # Line length (handled by ruff-format)\n    \"F841\", # unused variable\n    \"UP007\", # X | Y style Unions\n    \"C420\", # dict.fromkeys\n    \"UP045\", # don't force replacing Optional[X] with X | None\n]\n\n[tool.ruff.lint.isort]\nlines-after-imports = 2\nknown-first-party = [\"peft\"]\n\n[tool.pytest]\ndoctest_optionflags = [\n    \"NORMALIZE_WHITESPACE\",\n    \"ELLIPSIS\",\n    \"NUMBER\",\n]\n\naddopts = [\"--cov=src/peft\", \"--cov-report=term-missing\", \"--durations=10\"]\n\nmarkers = [\n    \"single_gpu_tests: tests that run on a single GPU\",\n    \"multi_gpu_tests: tests that run on multiple GPUs\",\n    \"regression: whether to run regression suite test\",\n    \"bitsandbytes: select bitsandbytes integration tests\",\n]\n\nfilterwarnings = [\n    \"error::DeprecationWarning:transformers\",\n    \"error::FutureWarning:transformers\",\n]\n",
+          "sha256": "e8a815a90de1f41616c0584295daa6d56b811042117d3fd2f23e317f1696796f"
+        }
+      ]
+    },
+    {
+      "name": "cutlass",
+      "repository": "NVIDIA/cutlass",
+      "commit": "f3fde58372d33e9a5650ba7b80fc48b3b49d40c8",
+      "url": "https://codeload.github.com/NVIDIA/cutlass/tar.gz/f3fde58372d33e9a5650ba7b80fc48b3b49d40c8",
+      "path": "sources/archives/cutlass.tar.gz",
+      "filename": "cutlass.tar.gz",
+      "bytes": 33354210,
+      "sha256": "2e5890306557bd87136e1d6914e4ee42536050b9116433848175520fd15991f2",
+      "body_downloaded": true,
+      "body_hash_verified": true,
+      "kind": "Public runtime source code archive, not a model checkpoint",
+      "build_declarations": [
+        {
+          "file": ".gitmodules",
+          "text": "",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "file": "pyproject.toml",
+          "text": "[build-system]\nrequires = [\"setuptools\"]\nbuild-backend = \"setuptools.build_meta\"\n\n[project]\nname = \"nvidia-cutlass\"\nversion = \"4.2.1.0\"\ndescription = \"CUTLASS\"\nreadme = \"README.md\"\nrequires-python = \">=3.8\"\nlicense = {text = \"BSD-3-Clause\"}\nclassifiers = [\n    \"Programming Language :: Python :: 3\",\n    \"License :: OSI Approved :: BSD License\",\n    \"Operating System :: OS Independent\",\n]\ndependencies = [\n  \"cuda-python>=11.8.0\",\n  \"networkx\",\n  \"numpy\",\n  \"pydot\",\n  \"scipy\",\n  \"treelib\"\n]\n\n[project.urls]\n\"Homepage\" = \"https://github.com/nvidia/cutlass\"\n\"Bug Tracker\" = \"https://github.com/nvidia/cutlass/issues\"\n",
+          "sha256": "ccd747163b6aadeddd34f2607de98f60eae84ab5dfba2500cdc07c46cf58623d"
+        }
+      ]
+    },
+    {
+      "name": "vllm-flash-attention",
+      "repository": "vllm-project/flash-attention",
+      "commit": "58e0626a692f09241182582659e3bf8f16472659",
+      "url": "https://codeload.github.com/vllm-project/flash-attention/tar.gz/58e0626a692f09241182582659e3bf8f16472659",
+      "path": "sources/archives/vllm-flash-attention.tar.gz",
+      "filename": "vllm-flash-attention.tar.gz",
+      "bytes": 5893555,
+      "sha256": "93656e7c90eca528024b87ef4510eeab5192cbfc83db3975a9473a89e903e360",
+      "body_downloaded": true,
+      "body_hash_verified": true,
+      "kind": "Public runtime source code archive, not a model checkpoint",
+      "build_declarations": [
+        {
+          "file": ".gitmodules",
+          "text": "[submodule \"csrc/cutlass\"]\n\tpath = csrc/cutlass\n\turl = https://github.com/NVIDIA/cutlass.git\n[submodule \"csrc/composable_kernel\"]\n\tpath = csrc/composable_kernel\n\turl = https://github.com/ROCm/composable_kernel.git\n",
+          "sha256": "11bb3a4b6b1ddee5f4a1bcc25c5da1110490d68acadd5c536f25bd875ff3510d"
+        },
+        {
+          "file": "pyproject.toml",
+          "text": "[build-system]\n# Should be mirrored in requirements-build.txt\nrequires = [\n    \"cmake>=3.26\",\n    \"ninja\",\n    \"packaging\",\n    \"setuptools >= 49.4.0\",\n    \"torch == 2.4.0\",\n    \"wheel\",\n    \"jinja2\",\n]\nbuild-backend = \"setuptools.build_meta\"\n",
+          "sha256": "c683544c4f2bb743a11dce28716fe80818696383d832213c24b410fa6f57bd1f"
+        }
+      ]
+    }
+  ],
+  "attention_gitlinks": [
+    {
+      "path": "csrc/composable_kernel",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "888317e698e9803c62bd38568abc9e05d7709f33",
+      "selected": false,
+      "reason": "ROCm composable_kernel not used by frozen CUDA build"
+    },
+    {
+      "path": "sources/archives/flash-attention-cutlass.tar.gz",
+      "mode": "160000",
+      "type": "commit",
+      "sha": "62750a2b75c802660e4894434dc55e839f322277",
+      "selected": true,
+      "url": "https://codeload.github.com/NVIDIA/cutlass/tar.gz/62750a2b75c802660e4894434dc55e839f322277",
+      "bytes": 31379102,
+      "sha256": "78816d6c6d97793b5b59ef2a702174cb85b78dfcefc8fe2489964de2e42f17d2"
+    }
+  ],
+  "apt": {
+    "snapshot": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/",
+    "lock": "apt_dependency_lock.json",
+    "packages": 114,
+    "compiler_and_core_pins": [
+      {
+        "name": "binutils",
+        "version": "2.38-4ubuntu2.12",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/binutils_2.38-4ubuntu2.12_amd64.deb",
+        "filename": "binutils_2.38-4ubuntu2.12_amd64.deb",
+        "bytes": 3184,
+        "sha256": "7da8d527d9a4ba9b6fea5fe6126a98f81f538db3a4aaa4ced32d2a26761a4707",
+        "depends": "binutils-common (= 2.38-4ubuntu2.12), libbinutils (= 2.38-4ubuntu2.12), binutils-x86-64-linux-gnu (= 2.38-4ubuntu2.12)",
+        "pre_depends": "",
+        "suite": "jammy-updates",
+        "body_downloaded": false
+      },
+      {
+        "name": "cpp-10",
+        "version": "10.5.0-1ubuntu1~22.04.3",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/cpp-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+        "filename": "cpp-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+        "bytes": 9395766,
+        "sha256": "66f18a37d84ca30c542052f7cdc08f7a3b3d36561a0d677f0f8304c6bf4de161",
+        "depends": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+        "pre_depends": "",
+        "suite": "jammy-updates",
+        "body_downloaded": false
+      },
+      {
+        "name": "g++-10",
+        "version": "10.5.0-1ubuntu1~22.04.3",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/g++-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+        "filename": "g++-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+        "bytes": 10650974,
+        "sha256": "ff48018bea4a9c8c5d9b20919458d0d887d603dc693bebbb765a2d3decb7620b",
+        "depends": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), gcc-10 (= 10.5.0-1ubuntu1~22.04.3), libstdc++-10-dev (= 10.5.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+        "pre_depends": "",
+        "suite": "jammy-updates",
+        "body_downloaded": false
+      },
+      {
+        "name": "gcc-10",
+        "version": "10.5.0-1ubuntu1~22.04.3",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/gcc-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+        "filename": "gcc-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+        "bytes": 19070728,
+        "sha256": "263ae04e5076c946df4e082058076b0b4183374f6053b860a24515ff8b0e0aab",
+        "depends": "cpp-10 (= 10.5.0-1ubuntu1~22.04.3), gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), libcc1-0 (>= 10.5.0-1ubuntu1~22.04.3), binutils (>= 2.38), libgcc-10-dev (= 10.5.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgmp10 (>= 2:6.2.1+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libstdc++6 (>= 5), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+        "pre_depends": "",
+        "suite": "jammy-updates",
+        "body_downloaded": false
+      },
+      {
+        "name": "libc6",
+        "version": "2.35-0ubuntu3.15",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/glibc/libc6_2.35-0ubuntu3.15_amd64.deb",
+        "filename": "libc6_2.35-0ubuntu3.15_amd64.deb",
+        "bytes": 3234380,
+        "sha256": "79e35256227e16a607c154cdeb8d76ff12d20e31de286ea7fd9ad3b96fe0452d",
+        "depends": "libgcc-s1, libcrypt1 (>= 1:4.4.10-10ubuntu4)",
+        "pre_depends": "",
+        "suite": "jammy-updates",
+        "body_downloaded": false
+      },
+      {
+        "name": "libstdc++6",
+        "version": "12.3.0-1ubuntu1~22.04.3",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libstdc++6_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+        "filename": "libstdc++6_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+        "bytes": 698608,
+        "sha256": "29ef3d289b272704b75141906c8f683db0f2bdb0942061366691333bfb289bdc",
+        "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1 (>= 4.2)",
+        "pre_depends": "",
+        "suite": "jammy-updates",
+        "body_downloaded": false
+      },
+      {
+        "name": "make",
+        "version": "4.3-4.1build1",
+        "architecture": "amd64",
+        "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/m/make-dfsg/make_4.3-4.1build1_amd64.deb",
+        "filename": "make_4.3-4.1build1_amd64.deb",
+        "bytes": 179742,
+        "sha256": "080b79a1a1623a2e6c6eead37d62b15fdf2c3dbfeafe8ecf5e31c54eb09eadcc",
+        "depends": "libc6 (>= 2.34)",
+        "pre_depends": "",
+        "suite": "jammy",
+        "body_downloaded": false
+      }
+    ],
+    "trust": "Dated snapshot + InRelease SHA/package SHA chain captured. Actual Ubuntu-keyring GPGV signature validation mandatory during target offline build; not yet PASS."
+  },
+  "python_packages": {
+    "lock": "python_dependency_lock.json",
+    "requirements": "requirements-linux-cp311.lock",
+    "metadata_resolved_count": 179,
+    "extra_binary_cache": {
+      "name": "flashinfer-jit-cache",
+      "version": "0.5.2+cu128",
+      "filename": "flashinfer_jit_cache-0.5.2+cu128-cp39-abi3-manylinux_2_28_x86_64.whl",
+      "url": "https://github.com/flashinfer-ai/flashinfer/releases/download/v0.5.2/flashinfer_jit_cache-0.5.2%2Bcu128-cp39-abi3-manylinux_2_28_x86_64.whl",
+      "bytes": 1074967261,
+      "sha256": "8e8afa03ca179581ff13cd0d59db1048fc3610103962d9bf13f628acfe026c35",
+      "body_downloaded": false,
+      "body_hash_verified": false,
+      "metadata_requires_dist": [],
+      "metadata_path": "sources/flashinfer-jit-cache-METADATA.txt",
+      "metadata_sha256": "5088cc16cb1163c4510d6a0127b23be1ce743315178bdd41d97f758eddae3473",
+      "metadata_authentication": "RANGE_READ_ONLY; full pinned wheel digest verification still required",
+      "range_metadata_read": true
+    },
+    "source_built": [
+      "vllm==0.11.2",
+      "transformers==4.57.6",
+      "peft==0.18.0"
+    ],
+    "body_verification": "PENDING_INPUT_COLLECTION; collector verifies full hashes and actual METADATA before build"
+  },
+  "build_flags": {
+    "TORCH_CUDA_ARCH_LIST": "MANDATORY_TARGET_ATTESTED_PARAMETER_NO_DEFAULT",
+    "VLLM_TARGET_DEVICE": "cuda",
+    "VLLM_VERSION_OVERRIDE": "0.11.2",
+    "VLLM_USE_PRECOMPILED": "0",
+    "CC": "gcc-10",
+    "CXX": "g++-10",
+    "CMAKE_BUILD_TYPE": "Release",
+    "MAX_JOBS": 2,
+    "NVCC_THREADS": 1,
+    "SOURCE_DATE_EPOCH": 1712707200,
+    "network": "none",
+    "GPU_devices_exposed": 0,
+    "CUDA_toolkit": "12.8.1",
+    "NVCC": "12.8.90",
+    "NVRTC": "12.8.93",
+    "Triton": "3.5.0",
+    "NCCL": "2.27.5",
+    "FlashInfer": "0.5.2",
+    "CUTLASS": {
+      "version_tag": "v4.2.1",
+      "commit": "f3fde58372d33e9a5650ba7b80fc48b3b49d40c8"
+    },
+    "flash_attention_commit": "58e0626a692f09241182582659e3bf8f16472659"
+  },
+  "build_engine_identity": "PENDING_TARGET_BUILD; capture engine/frontend/kernel/input/architecture identities, do not assert bit-identical reproduction without evidence",
+  "final_image_digest": "PENDING_TARGET_BUILD",
+  "generated_wheel_and_CPython_binary_hashes": null,
+  "no_mutable_runtime_solver": true,
+  "no_version_substitution": true,
+  "all_frozen_identities_retained": true
+}

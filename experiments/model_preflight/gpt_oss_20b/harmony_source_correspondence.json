@@ -1,0 +1,7 @@
+{
+  "installed_python_sha256": "b62d6095c896b76f4c55d1666652a4fb52ef05a4af8bd59effd9577aac14c6ca",
+  "pinned_github_python_sha256": "e7daf40879af2ebed3cfc77ab2ef1d686a3c8e04a4f84f246643a4e3aeae3d06",
+  "equal": false,
+  "equal_after_crlf_to_lf": true,
+  "note": "Installed Python source equals pinned GitHub/sdist after Windows CRLF to LF. Wheel and sdist independently pinned by PyPI SHA256; compiled extension hashed separately; not a reproducible binary-build attestation."
+}

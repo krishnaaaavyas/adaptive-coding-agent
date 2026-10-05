@@ -1,0 +1,363 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:qwen30:target-attestation:v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "kind",
+    "os",
+    "architecture",
+    "kernel",
+    "selected_GPU_UUID",
+    "staging_path",
+    "scratch_path",
+    "OS_isolation_receipt_sha256",
+    "observed_utc_ns",
+    "physical_GPU_count",
+    "tensor_parallel_size",
+    "host_RAM_total_bytes",
+    "host_RAM_available_bytes",
+    "storage_total_bytes",
+    "storage_free_bytes",
+    "scratch_writable",
+    "cgroup_v2",
+    "cgroup_memory_peak_support",
+    "proc_smaps_rollup_support",
+    "provider_selected",
+    "model_acquired",
+    "model_allocated",
+    "GPU_workload_executed",
+    "topology",
+    "filesystem",
+    "driver_CUDA_report",
+    "container_runtime",
+    "raw_GPU_query",
+    "devices",
+    "clock",
+    "OS_isolation_receipt",
+    "OS_isolation_receipt_raw_utf8"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "qwen30-target-attestation-v1"
+    },
+    "kind": {
+      "enum": [
+        "ACTUAL_TARGET_INVENTORY",
+        "INVENTED_CONTRACT_TEST"
+      ]
+    },
+    "os": {
+      "type": "string",
+      "minLength": 1
+    },
+    "architecture": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kernel": {
+      "type": "string",
+      "minLength": 1
+    },
+    "selected_GPU_UUID": {
+      "type": "string",
+      "minLength": 1
+    },
+    "staging_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scratch_path": {
+      "type": "string",
+      "minLength": 1
+    },
+    "OS_isolation_receipt_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "observed_utc_ns": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "physical_GPU_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "tensor_parallel_size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "host_RAM_total_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "host_RAM_available_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "storage_total_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "storage_free_bytes": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "scratch_writable": {
+      "type": "boolean"
+    },
+    "cgroup_v2": {
+      "type": "boolean"
+    },
+    "cgroup_memory_peak_support": {
+      "type": "boolean"
+    },
+    "proc_smaps_rollup_support": {
+      "type": "boolean"
+    },
+    "provider_selected": {
+      "type": "boolean"
+    },
+    "model_acquired": {
+      "type": "boolean"
+    },
+    "model_allocated": {
+      "type": "boolean"
+    },
+    "GPU_workload_executed": {
+      "type": "boolean"
+    },
+    "topology": {
+      "type": "object",
+      "required": [
+        "argv",
+        "stdout",
+        "error"
+      ],
+      "properties": {
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stdout": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "filesystem": {
+      "type": "object",
+      "required": [
+        "argv",
+        "stdout",
+        "error"
+      ],
+      "properties": {
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stdout": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "driver_CUDA_report": {
+      "type": "object",
+      "required": [
+        "argv",
+        "stdout",
+        "error"
+      ],
+      "properties": {
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stdout": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "container_runtime": {
+      "type": "object",
+      "required": [
+        "argv",
+        "stdout",
+        "error"
+      ],
+      "properties": {
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stdout": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_GPU_query": {
+      "type": "object",
+      "required": [
+        "argv",
+        "stdout",
+        "error"
+      ],
+      "properties": {
+        "argv": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stdout": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "devices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "uuid",
+          "model",
+          "compute_capability",
+          "total_VRAM_bytes",
+          "free_VRAM_bytes",
+          "ECC",
+          "MIG",
+          "driver_version"
+        ],
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          },
+          "compute_capability": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+$"
+          },
+          "ECC": {
+            "type": "string",
+            "minLength": 1
+          },
+          "MIG": {
+            "type": "string",
+            "minLength": 1
+          },
+          "driver_version": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+          },
+          "total_VRAM_bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "free_VRAM_bytes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "clock": {
+      "type": "object",
+      "required": [
+        "source",
+        "resolution_seconds",
+        "monotonic"
+      ],
+      "properties": {
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resolution_seconds": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "monotonic": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "OS_isolation_receipt": {
+      "type": "object",
+      "required": [
+        "kind",
+        "probes",
+        "all_pass",
+        "mountinfo"
+      ]
+    },
+    "OS_isolation_receipt_raw_utf8": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

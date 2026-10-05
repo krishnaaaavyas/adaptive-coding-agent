@@ -1,0 +1,30 @@
+{
+  "status": "ESTIMATED algebra from pinned module shapes; no adapter instantiated",
+  "formula": "each bias-free LoRA Linear: rank*(in_features+out_features); training state heuristic 16 bytes/parameter",
+  "examples": [
+    {
+      "rank": 8,
+      "full_attention": 2064384,
+      "linear_attention": 6506496,
+      "all_attention": 8570880,
+      "routed_experts": 1509949440,
+      "shared_experts": 2949120,
+      "router_and_shared_gate": 1769856,
+      "all_attention_and_shared": 11520000,
+      "routed_experts_adapter_bf16_bytes": 3019898880,
+      "routed_experts_training_state_bytes_estimate": 24159191040
+    },
+    {
+      "rank": 16,
+      "full_attention": 4128768,
+      "linear_attention": 13012992,
+      "all_attention": 17141760,
+      "routed_experts": 3019898880,
+      "shared_experts": 5898240,
+      "router_and_shared_gate": 3539712,
+      "all_attention_and_shared": 23040000,
+      "routed_experts_adapter_bf16_bytes": 6039797760,
+      "routed_experts_training_state_bytes_estimate": 48318382080
+    }
+  ]
+}

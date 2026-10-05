@@ -1,0 +1,1056 @@
+# STEP 8K-B.1C2 — FINAL BOUNDED SPECIFICATION REPAIR
+
+## 1. Policy identifier
+
+**`current-repo-v1-draft3`**
+
+This is a proposed specification, not an implemented, verified, or frozen policy.
+
+Draft3 incorporates the supplied Step 8K-B.1C specification. The normative replacements and additions below take precedence wherever they overlap draft2. All other requirements remain unchanged.
+
+Replace `current-repo-v1-draft2` with `current-repo-v1-draft3` in policy identity, K’s outer opening, configuration, and provenance.
+
+## 2. Scope compliance
+
+This revision resolves F1–F6 and adds the requested common generation controls, machine-handling clarification, engineering rationale, and seven conformance-fixture families.
+
+No repository or benchmark inspection was needed. No budgets, selection caps, expansion depth, packing strategy, generation-access policy, or claim ladder were changed.
+
+The full-access sensitivity analysis remains preserved.
+
+## 3. F1 repair — lexical ordering
+
+### 3.1 Common ordering notation
+
+Let:
+
+- `U(p)` be the UTF-8 bytes of canonical path `p`.
+- Instruction field location be `(0, offset)`.
+- Target field location be `(1, target_index, offset)`.
+- Offsets count Unicode code points in the normalized, decoded field.
+- Target indices refer to canonical P target order.
+
+Compare tuples lexicographically. Field tag `0` precedes field tag `1`, so instruction occurrences precede target occurrences at the same rank.
+
+Phase A retains ranks 0–4. Its file ordering key remains:
+
+`(rank, field_location, U(path))`
+
+A structured target’s Phase A location is `(1, target_index, 0)`.
+
+### 3.2 Quoted and bare occurrence offsets
+
+For a quoted span, the occurrence offset is the first character **inside** the opening delimiter. The delimiter’s offset is retained separately as provenance.
+
+For a bare span, the occurrence offset is its first matched character.
+
+Consequently, quoted and bare extraction of the same enclosed path can have the same ordering location. Preserve both extraction reasons; emit the file once.
+
+Terminal-period retry retains the original occurrence offset.
+
+### 3.3 Phase B source fields and extraction
+
+Phase B runs only when Phase A produces zero eligible file matches, as in draft2.
+
+Process independently:
+
+1. Normalized decoded `instructions`.
+2. Each canonical target string, in target order.
+
+Within each field, extract occurrences of:
+
+`[A-Za-z_][A-Za-z0-9_]*`
+
+Apply the existing component-splitting rules, ASCII lowercasing, four-letter minimum, and unchanged stoplist.
+
+For each retained component, record:
+
+- Field identity.
+- Identifier occurrence offset.
+- Component offset within that identifier.
+- Absolute field offset: identifier offset plus component offset.
+- Original component text and normalized component.
+- Matching physical files and source-index reasons.
+
+Components produced by one identifier are ordered by their component offsets. Repeated occurrences remain distinct provenance events.
+
+### 3.4 Lexical source index
+
+Index components from:
+
+- Canonical paths of structurally indexed Python files defined in section 5.
+- Each AST declaration’s physical `name`.
+
+Apply the same ASCII extraction and splitting rules to those strings.
+
+Synthetic module aliases, root aliases, and registry metadata do not add lexical components. Enclosing declaration names are independently present through their own AST declarations.
+
+Each source occurrence maps to its physical file. Preserve all matching path/declaration reasons.
+
+### 3.5 Lexical rank and file key
+
+Lexical fallback has **rank 5**.
+
+Each matching component occurrence contributes:
+
+`(5, field_location_at_component_start, U(file_path))`
+
+Thus:
+
+- Multiple components from one identifier are ordered by their absolute component offsets.
+- Repeated components contribute independent reasons.
+- One component matching several files orders those files by canonical UTF-8 path bytes.
+- Each file retains its minimum contributed key.
+- All duplicate occurrence and source-index provenance is retained.
+- Section 8’s four-inferred-seed cap applies after file deduplication and ordering.
+
+There is no frequency score, relevance score, semantic tie-breaker, or backfill.
+
+### 3.6 Path interpretation
+
+For each prose candidate, perform the original as-written attempt and, if it produces no eligible match and ends in `.`, one attempt with exactly that final period removed.
+
+For each path interpretation:
+
+1. Replace `\` with `/`.
+2. Remove exactly one leading `./`.
+3. Normalize to NFC using Unicode 14.0.0.
+4. Apply the retained canonical-path validation rules.
+5. Match case-sensitively against captured canonical paths.
+
+Reject empty components, including trailing separators. Do not collapse repeated separators or resolve dot components.
+
+Prohibited `..` means a component **exactly equal to `..`**. Two adjacent dots inside another component are permitted if the remaining path rules allow them.
+
+An invalid **prose path interpretation** is discarded. It does not invalidate P and does not create a basename match by extracting its final component. Other interpretations must independently satisfy their existing grammars. Its text can still contribute to Phase B if fallback is otherwise permitted.
+
+Structured targets use section 6 instead. An invalid structured target produces `task_invalid`.
+
+A separator-free prose candidate retains filename/module/declaration interpretation. It does not become a root-directory anchor merely because a directory has that name. Use a valid path form such as `./src` to anchor that directory.
+
+### 3.7 Normative examples
+
+| Input | Required behavior |
+|---|---|
+| `edit src/a.py.` | Retry once without the final period; protect existing eligible `src/a.py`. |
+| ``edit `src/a.py` `` | Quoted and bare path occurrences begin at code-point offset 6; preserve both reasons and emit once. |
+| `src/worker..old.py` | Internal adjacent dots do not invalidate the path. |
+| `src/../worker.py` | Discard the prose path interpretation; do not resolve or extract `worker.py` as a basename from it. |
+| Structured target `src/../worker.py` | `task_invalid: invalid_target_path`. |
+| `src//worker.py` | Discard the prose path interpretation; do not collapse separators. |
+| `src` | No directory interpretation; existing filename/module/declaration rules apply. |
+| `./src` | Eligible immediate files can resolve through the directory anchor. |
+
+For instructions `CustomerRecord customerAccount`, component starts are:
+
+- `customer`: 0.
+- `record`: 8.
+- Repeated `customer`: 15.
+- `account`: 23.
+
+If only `pkg/customer.py`, `pkg/record.py`, and `pkg/account.py` match, their inferred order is customer, record, account. The repeated customer occurrence adds provenance without changing its minimum key.
+
+## 4. F2 repair — fixture provenance
+
+### 4.1 Nomination precedes global deduplication
+
+Complete each original seed’s candidate nomination, including per-seed associated-test caps, before globally deduplicating candidates.
+
+For each nominated ordinary test, preserve every original-seed reason that nominated it.
+
+Fixture nomination applies to:
+
+- An ordinary test that is itself an original seed.
+- A capped associated test.
+- An ordinary test reached through another permitted expansion rule, including a direct dependency.
+
+It does not initiate traversal from those tests.
+
+### 4.2 Applicable ancestors
+
+For each such test, inspect its containing directory and successive ancestors through the product root.
+
+Nominate an eligible file named exactly `conftest.py` in each directory where one exists in the verified product snapshot.
+
+Use only captured product metadata and bytes. Do not inspect fixture names, plugins, helpers, or live files.
+
+### 4.3 Origin and key
+
+For a test that is itself an original seed, use that test’s original-seed index.
+
+For an expansion-nominated test, use the index of each original seed whose permitted expansion nominated it.
+
+Each fixture nomination contributes:
+
+`(4, original_seed_index, 0, U(conftest_path))`
+
+Preserve:
+
+- Original-seed index and path.
+- Test path.
+- Test-nomination reason.
+- Fixture path and supporting ancestor directory.
+
+Ancestor distance does not change priority or subrank.
+
+### 4.4 Deduplication and budget behavior
+
+Globally deduplicate fixture candidates using the minimum candidate key while retaining every provenance reason.
+
+Therefore:
+
+- A test associated with several seeds contributes fixture reasons for each.
+- A fixture supporting several tests retains all those reasons.
+- Several applicable ancestors are all nominated.
+- A test’s later `optional_budget_skip` does not remove its fixture nominations.
+- No per-seed test slot is backfilled after global deduplication.
+- Fixture inclusion remains optional and follows ordinary whole-block packing.
+
+A fixture nominated as support initiates no further expansion. If explicitly selected as an original seed, its original-seed status still governs its permitted one-hop expansion.
+
+`conftest.py` is fixture support, not an ordinary associated test, regardless of its directory.
+
+## 5. F3 repair — resolver ownership
+
+### 5.1 Structural Python-file classification
+
+Structural Python indexing recognizes only exact lowercase suffixes:
+
+- `.py`
+- `.pyi`
+
+The broader eligible-format filter remains ASCII case-insensitive. Thus `a.PY` can remain eligible textual content for explicit selection and inventory, but receives no Python AST, module, import, declaration, lexical-Python-path, or ordinary-test indexing.
+
+This preserves a small explicit structural filename convention without changing the broader content whitelist.
+
+Special structural names are also case-sensitive:
+
+- `__init__.py`
+- `__init__.pyi`
+- `conftest.py`
+- Existing `test`/`tests` directory components and test-basename patterns.
+
+### 5.2 Physical declaration ownership
+
+Every successfully parsed physical Python file retains declarations independently of whether it wins module-provider selection.
+
+Every declaration receives:
+
+1. Its unqualified name.
+2. Its owner-qualified name.
+3. Module-qualified aliases for that physical file’s owned base module name and enabled root-prefixed aliases.
+
+Shadowed `.py`, `.pyi`, module, and initializer providers retain **all three forms**.
+
+Deduplicate alias-to-file mappings by physical path while retaining alias provenance. Alias matches can therefore select several declaration-owning files.
+
+Syntax-error files retain eligible content but have no declaration/import entries, as before.
+
+### 5.3 Import-provider ownership
+
+For each ordinary base module name, choose the first eligible provider under the unchanged precedence:
+
+1. Package `__init__.py`.
+2. Module `.py`.
+3. Package `__init__.pyi`.
+4. Module `.pyi`.
+
+Only that provider participates in ordinary import and module-anchor resolution for that base name.
+
+Declaration ownership does not override provider selection.
+
+### 5.4 Root-alias configuration
+
+Freeze these public configuration fields:
+
+- `root_alias_mode`: `"enabled"` or `"disabled"`.
+- `root_alias_basename`: a string.
+
+For `"disabled"`, require an empty basename and create no root aliases.
+
+For `"enabled"`:
+
+- Require an eligible root `__init__.py` or `__init__.pyi`.
+- Require the supplied basename to match `[A-Za-z_][A-Za-z0-9_]*`.
+- Choose the root initializer with `.py` before `.pyi`.
+- Retain ordinary unprefixed names.
+- Add the configured root prefix.
+
+The basename comes **only from frozen configuration**. Never derive it from the checkout directory, host path, working directory, or installed package.
+
+Missing, inconsistent, or invalid root-alias configuration is `infrastructure_invalid: invalid_root_alias_configuration`. Do not silently disable aliases.
+
+When enabled, root files and initializers use the configured root package for relative-import calculations. When disabled, root-level files have no relative-import package.
+
+### 5.5 Alias collisions
+
+Select ordinary base providers first, then add their root aliases.
+
+If an alias collides with another ordinary or root alias, retain the union of resolved physical providers, sorted by canonical UTF-8 path bytes. Do not run another provider-preference contest between those already selected providers.
+
+Preserve each resolution route:
+
+- Owned base module.
+- Ordinary or root-prefixed alias.
+- Physical provider.
+
+Initializer support is computed for each route using its ordinary physical package ancestry and selected initializer providers. A root-prefixed route additionally includes the selected root initializer. An ordinary route does not acquire the root initializer merely because its spelling collides with a root alias.
+
+Deduplicate resulting edges while retaining route and edge-type provenance. Initializer imports are not traversed unless that initializer is an original seed.
+
+### 5.6 Golden expectations
+
+With four providers of `x`, module anchor `x` selects `x/__init__.py`. If all four declare `run`, declaration anchor `x.run` selects all four physical owners.
+
+With root alias `pkg`, `foo.py` and `pkg/foo.py` can both resolve through `pkg.foo`; retain both.
+
+With eligible `a.py` and `b.PY`, only `a.py` receives structural Python indexing. `b.PY` remains eligible textual content.
+
+## 6. F4 repair — target existence/admission
+
+### 6.1 Captured existence index
+
+Snapshot acquisition must produce an authenticated **captured existence index**, separate from model-facing K.
+
+The index records canonical entry identities and types for the captured repository namespace. Directory metadata acquisition does not authorize reading private file contents.
+
+Internal entries contain:
+
+- Canonical path.
+- Entry type: regular file, directory, symlink, other reparse entry, gitlink, or other.
+- Product-manifest membership.
+- Deny-manifest membership.
+- Eligibility classification under the frozen filters.
+- Directory-enumeration completeness where applicable.
+
+Links, reparse entries, and gitlinks are identified without traversing them. Their descendants cannot receive an absence certificate.
+
+Index classifications distinguish:
+
+- Existing eligible product file.
+- Existing product directory.
+- Existing excluded/unsupported file.
+- Existing private/evaluator entry.
+- Existing unmanifested entry.
+- Existing link/reparse/gitlink.
+- Proven absent path.
+- Blocked or unverified ancestry.
+
+### 6.2 Authentication and identity
+
+Canonicalize the index with J and hash its exact bytes.
+
+An acquisition receipt binds:
+
+- Policy/configuration identity.
+- Product-manifest hash.
+- Deny-manifest hash.
+- Existence-index hash.
+- Product snapshot-bundle hash.
+- Acquisition identity.
+
+The receipt must be authenticated by an authorized acquisition certifier using a frozen verification-key/algorithm profile. Missing authentication, incomplete required enumeration, contradictory metadata, or acquisition drift is `infrastructure_invalid`.
+
+The index and receipt become immutable inputs. Admission performs no live filesystem lookup.
+
+### 6.3 Private metadata separation
+
+The complete existence index is restricted to acquisition and admission machinery.
+
+The selector receives only:
+
+- Certified P.
+- Verified product snapshot.
+- Public selector configuration.
+- A task-admission success result.
+
+The model receives no existence-index listing.
+
+For each supplied target, admission may return only:
+
+- That already-public target string.
+- Admission status and fixed reason code.
+- Whether it is an eligible existing file or proven new.
+- Its verified product-content reference when eligible and existing.
+
+Do not return private ancestor names, neighboring entries, private contents, or private path listings. Private index identity and certification status may appear in restricted audit provenance.
+
+### 6.4 Absence proof
+
+A target is genuinely absent only when the captured hierarchy proves:
+
+- Its entry is missing from a completely enumerated existing directory; or
+- A required ancestor is absent from such a directory, establishing that descendants are absent.
+
+A link, gitlink, opaque/unverified directory, or inaccessible enumeration cannot establish absence.
+
+Absence never overrides deny-subtree or exclusion rules.
+
+### 6.5 Target canonicalization
+
+For structured target strings:
+
+1. Reject invalid Unicode.
+2. Normalize to Unicode 14.0.0 NFC.
+3. Require root-relative `/` syntax and all retained section 11 path restrictions.
+4. Do not convert backslashes, remove `./`, trim periods, or collapse separators.
+5. Remove exact duplicates after canonicalization.
+6. Sort by canonical UTF-8 path bytes.
+
+Distinct remaining paths colliding under Unicode 14.0.0 casefolding are invalid.
+
+A requested target or ancestor that differs only by casefold identity from an existing captured entry is invalid; it is not new.
+
+Captured namespace collisions, including NFC collisions, invalidate acquisition.
+
+### 6.6 Admission rules
+
+| Target situation | Admission |
+|---|---|
+| Existing eligible product regular file | Admit and protect its complete content. |
+| Proven absent path with allowed output format and permitted ancestry | Admit as new; select no nonexistent content. |
+| Existing unmanifested file | `task_invalid: existing_target_not_product`. |
+| Directory target | `task_invalid: target_not_regular_file`. |
+| Denied, excluded, or secret-pattern target | `task_invalid: prohibited_target_path`. |
+| Unsupported output extension/basename | `task_invalid: unsupported_target_format`. |
+| Absent parent directory | Permit creation of required ordinary directories if all path components and boundaries are valid. |
+| Existing parent regular file | `task_invalid: target_parent_not_directory`. |
+| Existing unmanifested ancestor directory | `task_invalid: target_ancestry_not_product`. |
+| Link/reparse/gitlink target or ancestry | `task_invalid: prohibited_target_ancestry`. |
+| One target is a component-wise ancestor of another | `task_invalid: conflicting_targets`. |
+| Exact canonical duplicate | Deduplicate before admission; do not fail solely for duplication. |
+| Distinct casefold-colliding targets | `task_invalid: target_path_collision`. |
+| Required existence metadata incomplete or unauthenticated | `infrastructure_invalid: existence_unverified`. |
+
+Existing ancestor directories must be certified product directories. Newly required directories are output locations, not retroactively added current-repository inputs.
+
+Apply the unchanged eligible-format, excluded-directory, secret-basename, and deny-subtree rules to new targets too. Existing current-file size/content eligibility remains governed by draft2. This adds no new generated-file size ceiling.
+
+## 7. F5 repair — output/preflight/failures
+
+### 7.1 Raw completion and normalization
+
+Obtain the runtime’s emitted textual completion after native terminal-control tokens are removed by the serving interface.
+
+Record separately:
+
+- Exact returned text encoded as UTF-8 and its SHA-256.
+- Finish reason.
+- Runtime output-token count.
+- Any terminal-token accounting supplied by the runtime.
+
+Reject invalid Unicode or NUL as `output_format_failure`.
+
+Normalize CRLF and CR to LF. Record normalized UTF-8 bytes and SHA-256.
+
+Do not strip BOMs, whitespace, Markdown, headers, explanatory text, or terminal newlines. Do not append a terminal newline.
+
+A leading U+FEFF remains content.
+
+### 7.2 Single target
+
+The entire normalized completion is the replacement content, including an empty completion.
+
+There is no wrapper-removal heuristic. Header-looking lines and Markdown fences are treated as literal content, because they can legitimately occur in supported textual files.
+
+The common prompt still instructs the model to return only file contents. Content incorrectly included by the model is evaluated as emitted; it is not repaired or silently removed.
+
+### 7.3 Multi-target header recognition
+
+Normalize the completion before parsing.
+
+A header-shaped line has exactly:
+
+`=== FILE: ` + nonempty captured text + ` ===`
+
+The delimiters and spaces are exact ASCII strings. Leading/trailing whitespace variation is not accepted as a header.
+
+Every exact header-shaped line is reserved, whether its captured path is expected, unlisted, or invalid.
+
+For a valid output:
+
+- The captured path must already be canonical, without normalization or alias conversion.
+- Each header must be followed by LF, including an empty final section.
+- The first header begins at completion offset zero.
+- The recognized header-path vector must equal canonical P target order exactly.
+- Each expected header occurs once.
+- No other header-shaped line occurs.
+
+A header-looking line inside a string literal, comment, or documentation body is still a header. No source-language parsing changes recognition.
+
+Nonmatching whitespace variants remain ordinary text. If they replace a required header, the expected-header check fails.
+
+Content begins immediately after its header LF and ends at the next recognized header’s start, or completion end. Preserve all content whitespace and newlines.
+
+### 7.4 Reserved-header preflight
+
+For multi-target tasks only, scan the **current normalized complete contents of existing targets**.
+
+Reject if any logical line has the exact header-shaped grammar above, including a final line without LF. The captured text need not be an expected target or valid path.
+
+Do not scan unrelated repository files. New targets contribute no current content.
+
+Failure is:
+
+`task_invalid: reserved_output_header`
+
+Generated collisions are `output_format_failure`, not retrospective admission failures.
+
+### 7.5 Reference artifact
+
+Use canonical P target order.
+
+Let `c_i` be:
+
+- Existing target: its current complete content normalized by the retained repository-file normalization.
+- Proven new target: the empty string.
+
+For one target, the reference artifact is exactly `c_0`.
+
+For multiple targets, concatenate each exact expected header plus LF and `c_i`. Between sections, add one framing LF **only when** the preceding `c_i` is nonempty and does not end in LF.
+
+Add no final LF beyond existing content or required header LF.
+
+This conditional LF ensures the next header starts on its own line. It is protocol framing included in the reference measurement. It supplies no expected solution text.
+
+For example, existing `a.py` containing normalized `x=1` and new `b.py` produce:
+
+```text
+=== FILE: a.py ===\nx=1\n=== FILE: b.py ===\n
+```
+
+Here `\n` denotes LF.
+
+### 7.6 Reference tokenization
+
+Use the verified model tokenizer’s authoritative raw-text encoding:
+
+- Exact reference-artifact string.
+- No chat template.
+- No generation prompt.
+- No automatic BOS/EOS insertion.
+- No truncation.
+- Frozen tokenizer options and special-token handling recorded in the run profile.
+
+The terminal allowance remains **one token**.
+
+Official profiles must verify that their native terminal event can be represented by this allowance. An unsupported or unverified encoding/terminal contract is `infrastructure_invalid`; do not silently substitute another measurement.
+
+Require:
+
+`reference_artifact_tokens + 1 <= 2,048`
+
+Otherwise:
+
+`context_ineligible: output_reference_overflow`
+
+The serving-template input fit check remains separate and uses the actual complete condition messages.
+
+### 7.7 Failure precedence
+
+Use the ordered pre-generation phases in section 13.
+
+After generation:
+
+1. Runtime integrity failure: `infrastructure_invalid`.
+2. Verified token-limit termination: `output_capacity_failure`.
+3. Invalid text or malformed sections: `output_format_failure`.
+4. Otherwise apply the artifact and perform ordinary evaluation.
+
+A token-limit completion retains its capacity classification even if its partial text also has missing or malformed headers. Record secondary format diagnostics without changing the primary category.
+
+No retries, repairs, feedback, or post-treatment task removal are permitted.
+
+## 8. F6 repair — H evidence-construction contract
+
+### 8.1 Contract identity and purpose
+
+Freeze a generic contract identified as:
+
+**`study1-curated-evidence-v1`**
+
+Hash its exact normative text and certification configuration with the policy.
+
+These records are externally curated repository information. They are not evidence that the model autonomously learned, induced, retrieved, or accumulated the state.
+
+### 8.2 Chronology and cutoff
+
+Use an authenticated append-only event ledger containing:
+
+- Nonnegative integer event sequence.
+- UTC timestamp.
+- Event type and source identity.
+- Previous-event hash.
+- Authorized actor/certifier identity.
+
+Sequence is authoritative for ordering; timestamps are retained for audit.
+
+Each target has a frozen cutoff sequence `T`. The cutoff is no later than the first release of the current public task to a record constructor or construction tool.
+
+An eligible record must have:
+
+- All supporting source-availability events strictly before `T`.
+- Actual completed-body construction before `T`.
+- Certification and registry availability strictly before `T`.
+- For rules, confirmation strictly before `T`.
+
+Availability sequence is the registry-release event after those prerequisites. It cannot be backdated to the source episode’s date.
+
+Construction must therefore also precede generation. Retrospectively authored records cannot be represented as historically available before their actual construction.
+
+### 8.3 Authorized historical provenance
+
+Permitted sources are authenticated prior public repository/developer material:
+
+- Prior public task or developer request.
+- Historical product snapshots.
+- Prior edits or attempts authorized for that episode.
+- Ordinary public-test observations.
+- Public developer feedback and accepted repository changes.
+- Prior public documentation or developer guidance.
+
+Authorization certifies both historical origin and permission to expose that material to the generation model.
+
+Prohibited sources include:
+
+- Current-target solutions or private evaluators.
+- Future repository/task outcomes.
+- Benchmark candidate inventories, IDs, dispositions, or selection judgments.
+- Current-target-aware hints added during construction.
+- Unauthorized/private communications or repository material.
+- Claims unsupported by the certified sources.
+
+A source’s lineage must identify its authenticated artifact hash and relevant spans or structured fields.
+
+### 8.4 Episodic record
+
+One episode is one prior public task/request, its associated attempt/change sequence, and its authorized closing feedback.
+
+An episodic body may contain source-faithful excerpts or faithful descriptive assembly of:
+
+- The prior request.
+- Relevant prior code/change.
+- Observations and public test results.
+- Developer feedback.
+- Historical repository paths and episode-local chronology.
+
+It must not add inferred rules, unstated causal explanations, current-target advice, or future outcomes.
+
+One episode has one active episodic record revision at a cutoff. Separate prior episodes remain separate records; no semantic consolidation is performed by the packer.
+
+Registry-only fields include episode identity, source hashes/spans, availability, construction and certification events, lineage, and revision history.
+
+### 8.5 Descriptive record
+
+A descriptive record may be derived from one or more eligible historical sources.
+
+Its body states supported propositions about observed repository/developer behavior descriptively. It must not present curator recommendations as requirements or commands.
+
+It may report that a historical developer requested or required something, provided that fact is supported and clearly attributed historically.
+
+It must preserve the source-supported:
+
+- Applicability scope.
+- Exceptions and qualifications.
+- Temporal/source facts needed for interpretation.
+
+It cannot add facts absent from certified evidence. Construction, certification, and release occur before the cutoff and target run.
+
+Registry metadata maps each proposition to source evidence and records its scope. Representation matching remains separately certified; descriptive construction alone does not establish equivalence to a rule.
+
+### 8.6 Confirmed rule
+
+A rule is a proposed normative statement grounded in eligible prior repository/developer evidence.
+
+Confirmation requires an authorized human to approve the **exact normalized rule body**, scope, exceptions, and evidence lineage before cutoff.
+
+Permitted confirmation routes are:
+
+- Explicit approval by an authorized developer.
+- Human curator/oracle-assisted confirmation that the exact rule and scope are supported by certified prior public evidence.
+
+Record which route was used. Curator/oracle confirmation has access only to eligible prior evidence; it cannot use current-target solutions or private evaluator knowledge.
+
+Model suggestion, repeated occurrence, or public-test success alone does not constitute confirmation.
+
+The registry records the confirmer, confirmation event, source lineage, and applicability scope. The body contains the supported rule and necessary scope/qualifications without current-target advice.
+
+### 8.7 Eligibility certification
+
+A designated eligibility certifier, distinct from the body constructor, verifies:
+
+- Source authorization.
+- Chronology.
+- Source-to-body fidelity.
+- Prohibited-information absence.
+- Record kind and scope.
+- Required rule confirmation.
+- Revision/supersession status.
+
+The certifier approves exact normalized body bytes and hashes.
+
+Certification is a human governance prerequisite, not an automated semantic claim. It must not be replaced by a model-generated “eligible” label.
+
+### 8.8 Registry identity and updates
+
+Freeze the registry before the target run. Its authenticated identity covers:
+
+- Contract identity.
+- Ledger root.
+- Record metadata.
+- Normalized body bytes/hashes.
+- Lineage.
+- Certifications.
+- Revision and withdrawal events.
+
+Updates never mutate existing records. A correction creates a new immutable revision, with new construction/certification/availability events and an explicit predecessor reference.
+
+At cutoff:
+
+- A later eligible revision explicitly supersedes its predecessor.
+- An eligible withdrawal removes the active revision.
+- Post-cutoff revisions or withdrawals do not change that task’s frozen H.
+- Invalid revision chains or conflicting active revisions are `infrastructure_invalid`.
+
+Supersession is explicit metadata, not semantic deduplication. Freeze the task’s resulting active eligible registry view and hash before packing.
+
+### 8.9 Duplicate and packing behavior
+
+Within each lane, retain draft2 ordering:
+
+1. Descending availability sequence.
+2. Ascending body SHA-256.
+3. Ascending UTF-8 opaque record key.
+
+After resolving explicit revisions, exact normalized-body duplicates retain the first ordered record and all duplicate provenance.
+
+No semantic deduplication occurs. Cross-lane duplicates and K/H overlap remain.
+
+Only body text is serialized. Registry identifiers, certification labels, and audit metadata do not create model-facing authority wrappers.
+
+H budgets, whole-record skip-and-continue, B/M/C framing, and BC lane ownership remain unchanged.
+
+## 9. Common run profile
+
+Freeze an authenticated model-specific profile before admission.
+
+The proposed common generation controls are:
+
+| Control | Required profile value/behavior |
+|---|---|
+| Decoding | Greedy selection where supported and verified |
+| Temperature | `0` |
+| Top-p | `1`, inactive under greedy decoding |
+| Top-k | Disabled, inactive under greedy decoding |
+| Repetition penalty | Neutral value `1` |
+| Frequency penalty | Neutral value `0` |
+| Presence penalty | Neutral value `0` |
+| Seed | Requested value `0` where supported; otherwise explicitly unsupported |
+| Text stop sequences | None |
+| Native terminal behavior | Verified EOS/native terminal identifiers |
+| Maximum generation tokens | **2,048** |
+| Completions per attempt | **1** |
+| Retry/continuation attempts | None |
+| Context shifting/clipping/truncation | Disabled |
+| Generation prompt | Exact serving-template behavior frozen and hashed |
+
+Serialize noninteger numeric configuration values as canonical decimal **strings** in J-based profile records; record runtime argument types separately.
+
+For every setting, record support status, requested value, and verified effective behavior. An unsupported setting is explicitly marked `"unsupported"`; no substitute is silently applied.
+
+Unsupported neutral controls can be accepted only when the profile documents the runtime’s actual fixed behavior. Missing authoritative behavior, inability to enforce the reserve/no-clipping contract, or unverified decoding is `infrastructure_invalid`.
+
+All controls and request-isolation behavior are identical across A/B/M/C/BC for a given model. Each attempt starts without conversational state from another condition.
+
+Greedy decoding is not a claim of cross-device bitwise determinism. Record runtime determinism limitations. Any replicate roster and execution-order plan must be frozen before outcomes and must not depend on condition results.
+
+## 10. Machine-handling clarification
+
+**K/H textual delimiters are model-facing presentation only.**
+
+Machine bookkeeping uses:
+
+- Structured selector/registry objects.
+- Explicit content lengths.
+- Exact serialized bytes.
+- Hashes.
+- Provenance.
+
+Do not reconstruct K or H by searching textual closing markers.
+
+Embedded `[/FILE]`, `[FILES]`, `[RECORD]`, or similar strings remain repository/evidence content. They do not terminate machine records.
+
+If K is independently decoded for verification, use its declared byte lengths and validated framing—not delimiter searching inside content. H verification uses structured registry/packing objects and exact expected serialization.
+
+This does not claim that textual framing prevents model prompt injection.
+
+## 11. Candidate-blind engineering rationale
+
+These are frozen engineering constraints defining the Study-1 regime, not optimal values.
+
+| Constraint | Rationale |
+|---|---|
+| P: 4,096 bytes | Bounds public-task material while retaining a compact explicit schema; rejects overlength tasks rather than silently truncating requirements. |
+| K: 12,288 bytes | Defines a limited current-repository view containing whole files and deterministic structural support. |
+| H: 4,096 bytes | Bounds externally curated adaptation state under one common ceiling. |
+| Generation: 2,048 tokens | Defines one bounded complete-replacement attempt; reference preflight screens baseline capacity, not solution length. |
+| Four inferred seeds | Bounds ambiguity-driven breadth while exempting explicit protected files. |
+| Two reverse importers | Supplies limited usage context without allowing fan-out to dominate K. |
+| Two associated tests | Supplies bounded behavioral examples without unrestricted test expansion. |
+| 1 MiB raw source limit | Bounds acquisition/indexing resource use and excludes unusually large source artifacts. It does not guarantee K fit. |
+| Broad excluded-directory set | Conservatively excludes harness/state/environment/generated material and reduces accidental boundary exposure. It can also exclude legitimate product content with those names. |
+
+The unchanged inventory allowance and BC split remain part of these constraints.
+
+Runtime fit establishes operability, not optimality, realism, or equal information doses. No constraint was chosen or revised using candidate survival.
+
+## 12. Added conformance fixtures
+
+Add only the following seven families to draft2’s plan.
+
+Each fixture must supply literal synthetic inputs and independently authored expectations for status, reasons, ordered paths, exact serialized bytes, and SHA-256. Expected bytes/hashes must not be generated by the implementation under test.
+
+### 12.1 Lexical ordering
+
+Use `CustomerRecord customerAccount`, no Phase A matches, and the files from section 3.
+
+Expected inferred order:
+
+`pkg/customer.py`, `pkg/record.py`, `pkg/account.py`
+
+Add a new target `reports/customer_summary.py` and eligible `pkg/summary.py`; summary follows the instruction matches.
+
+Add a second customer-matching file to verify canonical path tie-breaking and the four-file cap. Verify repeated occurrences retain provenance.
+
+Include quoted/bare equal offsets, supplementary Unicode before a span, internal `..`, invalid prose paths, and invalid structured paths.
+
+### 12.2 Support provenance
+
+Original seeds `src/a.py` and `src/b.py`; one nominated test imports both. Applicable fixtures:
+
+- `conftest.py`
+- `tests/conftest.py`
+- `tests/unit/conftest.py`
+
+Expected fixture keys all use the minimum contributing original-seed index and retain both seed reasons. Canonical path order resolves same-index ties.
+
+Repeat with:
+
+- The test also an original seed.
+- Its block exceeding K while fixture blocks fit.
+- Duplicate capped tests across seeds.
+
+Verify support remains nominated and no test-slot backfill occurs.
+
+### 12.3 Resolver ownership/case/root aliases
+
+Golden assertions:
+
+- Module `x` selects `x/__init__.py` from all four provider forms.
+- Declaration `x.run` selects all four physical owners in canonical order.
+- `b.PY` is eligible text but structurally unindexed.
+- Enabled root alias `pkg` makes `pkg.foo` resolve to both `foo.py` and `pkg/foo.py` when their ordinary providers exist.
+- Relative imports use enabled root package components.
+- Disabled aliases create no root-prefixed names.
+- Invalid enabled configuration produces infrastructure failure.
+- Alias-collision initializer support preserves route-specific provenance.
+
+### 12.4 Target existence/admission
+
+Provide captured metadata for each row of section 6.6.
+
+Verify, in particular:
+
+- An unmanifested existing file is never treated as new.
+- Missing parents can support a valid new target.
+- A file parent, directory target, denied absent path, and link ancestry fail.
+- Incomplete enumeration produces infrastructure failure.
+- Canonical duplicates deduplicate.
+- NFC canonicalization precedes duplicate removal.
+- Distinct casefold collisions fail.
+- Admission results expose no private path listings.
+
+### 12.5 Embedded serialization markers
+
+With one protected file `src/a.py` whose normalized content is:
+
+`[/FILE]\n[FILES]\n`
+
+its content byte length is **16**.
+
+Expected K is exactly:
+
+```text
+[CURRENT_REPOSITORY current-repo-v1-draft3]\n[FILE "src/a.py" bytes=16]\n[/FILE]\n[FILES]\n\n[/FILE]\n[FILES]\n"src/a.py"\n[/FILES]\n[/CURRENT_REPOSITORY]\n
+```
+
+With one admitted H body `[RECORD]\n[/FILE]\n`, expected single-lane H is:
+
+```text
+[ADAPTATION]\n[LANE]\n[RECORD]\n[RECORD]\n[/FILE]\n\n[/RECORD]\n[/LANE]\n[/ADAPTATION]\n
+```
+
+Here every `\n` denotes LF. Embedded markers create no additional structured records.
+
+### 12.6 K invariance across conditions
+
+For one fixed P, snapshot, and configuration, vary all permitted H payloads, including empty H and embedded markers.
+
+Expected K bytes/hash, selection reasons, and seed order are identical across A/B/M/C/BC and across model profiles.
+
+### 12.7 Output edge cases
+
+Include:
+
+- Single-target CRLF/CR normalization, preserved BOM, and preserved terminal-newline state.
+- Literal Markdown/header content in single-target output.
+- The mixed existing/new reference artifact from section 7.5.
+- Valid multi-target output with an empty section.
+- Missing, duplicate, wrong-order, unlisted, invalid-path, and EOF-without-LF headers.
+- Header-shaped text inside generated source.
+- Reserved-header preflight limited to current targets.
+- Reference overflow.
+- Truncation plus malformed headers, classified primarily as capacity failure.
+
+## 13. Updated failure taxonomy
+
+### 13.1 Pre-generation phase order
+
+Execute these phases in order. Do not proceed after a failure.
+
+1. **Infrastructure validation:** frozen configuration, authenticated acquisition/registry inputs, model/profile identity, authoritative tokenizer/template/capacity.
+2. **Task validation:** P schema/size/public certification, target canonicalization, existence and ancestry admission.
+3. **K admission:** protected-block reservation and deterministic K construction.
+4. **Output preflight:** reserved-header scan, then reference-output measurement.
+5. **Treatment/runtime admission:** H packing, all-condition rendered input fit, then cross-model common-population construction.
+
+Registry records failing ordinary chronological eligibility are excluded before packing; they are not automatically infrastructure failures. Broken authentication, lineage, revision structure, or required certification is infrastructure-invalid.
+
+Within a phase, retain all detected diagnostics. Choose the primary reason by fixed reason-code ASCII order. Across phases, the first failing phase determines the primary category.
+
+### 13.2 Category mapping
+
+| Event | Primary category |
+|---|---|
+| Invalid P or target request | `task_invalid` |
+| Existing unmanifested/non-file/prohibited target | `task_invalid` |
+| Reserved current-target header ambiguity | `task_invalid: reserved_output_header` |
+| Snapshot/index/hash/authentication validation failure | `infrastructure_invalid` |
+| Invalid resolver/root-alias configuration | `infrastructure_invalid` |
+| Missing authoritative runtime/tokenizer/profile behavior | `infrastructure_invalid` |
+| Invalid required historical certification/registry structure | `infrastructure_invalid` |
+| Protected K overflow | `context_ineligible: protected_files_overflow` |
+| Reference output exceeds reserve | `context_ineligible: output_reference_overflow` |
+| Any condition’s input exceeds capacity with reserve | `context_ineligible: runtime_overflow` |
+| Verified generation token-limit termination | `output_capacity_failure` |
+| Invalid textual completion or malformed multi-target format | `output_format_failure` |
+| Duplicate/missing/unlisted/wrong-order generated headers | `output_format_failure` |
+| Validly parsed artifact fails ordinary evaluation | Model/test/convention outcome under the frozen evaluator |
+
+Optional K/H skips are packing diagnostics, not task failures.
+
+Capacity failures remain unsuccessful outcomes in overall budgeted-performance reporting and are separately reported. Eligibility is never selectively revised after outcomes.
+
+## 14. Remaining disclosed limitations
+
+- Literal task wording affects selection.
+- Static topology, aliases, and naming affect context.
+- Uppercase Python extensions remain structurally unindexed.
+- Whole-file and output-reference admission favor smaller artifacts.
+- Inventory prefixes and capped lists depend on filenames.
+- Broad exclusions can suppress legitimate product material.
+- Equal byte ceilings do not equalize propositions or tokens.
+- Current context can make history redundant.
+- New files and required additions can exceed output capacity despite preflight.
+- Multi-target output reserves header-shaped lines.
+- BC uses reduced component allocations.
+- Information matching cannot eliminate every linguistic implication.
+- Human/oracle-assisted curation is part of the treatment.
+- No-read results do not establish autonomous-agent performance.
+- Greedy settings do not guarantee universal bitwise determinism.
+
+These limitations permit no candidate-dependent exceptions.
+
+## 15. Remaining external verification
+
+Before official freeze or inference:
+
+1. Independently certify product/deny manifests and existence acquisition.
+2. Review acquisition and registry authentication profiles.
+3. Certify historical provenance, chronology, confirmation, and active registry views.
+4. Author and independently review literal golden expectations.
+5. Implement and pass conformance checks.
+6. Verify actual model, tokenizer, serving template, decoding controls, terminal behavior, and per-sequence capacity.
+7. Perform candidate-blind no-generation input/reference checks.
+8. Freeze the common admitted population before inference.
+9. Certify emitted-bundle information matching before representation claims.
+
+This specification does not claim those checks have occurred.
+
+## 16. Behavior changes from draft2
+
+Draft3:
+
+- Completes lexical ordering and occurrence provenance.
+- Defines prose-path rejection versus structured-target failure.
+- Fixes fixture origin and nomination timing.
+- Preserves shadowed physical declaration aliases explicitly.
+- Defines lowercase-only structural Python indexing.
+- Makes root aliases explicit frozen configuration with route-preserving collisions.
+- Adds authoritative existing/new target admission.
+- Defines output normalization, reserved grammar, and reference construction.
+- Completes failure mappings and precedence.
+- Supplies the generic curated-evidence construction contract.
+- Adds frozen common generation controls.
+- Prohibits delimiter-search reconstruction of K/H.
+- Changes the serialized policy identifier.
+
+These are behavior-defining repairs. Draft2 and draft3 are not interchangeable protocol versions.
+
+## 17. What remained unchanged
+
+All Step 8K-B.1D section 24 invariants remain:
+
+- K independent of condition, H, and outcomes.
+- Exact K byte/hash reuse.
+- Public/evaluator isolation and immutable product bytes.
+- Complete protected files with collective-overflow rejection.
+- Existing P/K/H/inventory/generation ceilings.
+- Four inferred seeds and two importer/test caps.
+- One-hop expansion, no siblings, no manual K override.
+- Whole-file and whole-record skip-and-continue packing.
+- No semantic H retrieval or overlap deletion.
+- Pre-generation common admission and no clipping.
+- Context-sufficient classification.
+- BC’s fixed-total descriptive interpretation.
+- Complete-replacement output and no-read generation.
+- Separate failure reporting and Level 1 claim limits.
+- Candidate blindness and preserved full-access sensitivity analysis.
+
+## 18. Any unresolved specification blockers
+
+**None identified within the authorized bounded repair scope.**
+
+Authentication artifacts, certified registries/manifests, golden expectations, implementation conformance, and runtime verification remain external prerequisites. They do not authorize alternative behavior.
+
+## 19. Files modified
+
+**NONE.**
+
+## 20. Model experiments
+
+**NO.**
+
+## 21. Candidate artifacts inspected
+
+**NO.**
+
+## 22. Step 8K-B rerun
+
+**NO.**
+
+## 23. Final recommendation
+
+**READY FOR IMPLEMENTATION/CONFORMANCE**
+
+`current-repo-v1-draft3` resolves the six specified blockers. It remains proposed and unfrozen until independent conformance, boundary, historical-evidence, and runtime verification are complete.

@@ -1,0 +1,58 @@
+{
+  "files": [
+    {
+      "rfilename": "model-00000-of-00002.safetensors",
+      "blobId": "9fd3b4997a862e8554a21820eeee256ec2c06299",
+      "size": 4792272488,
+      "lfs": {
+        "sha256": "16d0f997dcfc4462089d536bffe51b4bcea2f872f5c430be09ef8ed392312427",
+        "size": 4792272488,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00001-of-00002.safetensors",
+      "blobId": "6925c5875f9ff955704ed5900214211d4ac4b910",
+      "size": 4798702184,
+      "lfs": {
+        "sha256": "4fbe328ab445455d6f58dc73852b85873bd626986310abd91cd4d2ce3245eaea",
+        "size": 4798702184,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "model-00002-of-00002.safetensors",
+      "blobId": "fc29009d625182d064ca05401b0494af2b382198",
+      "size": 4170342232,
+      "lfs": {
+        "sha256": "a18106b209e9ab35c3406db4f6f12a927364a058b21e9d1373d682e20674b303",
+        "size": 4170342232,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "original/model.safetensors",
+      "blobId": "4db145511b9dd7ccff3ea2b90f7f049882043c7b",
+      "size": 13761300984,
+      "lfs": {
+        "sha256": "3340a61d1a0391e8c5b5d3463d18d4c48129a84bbc04a554c762c99020aa06ed",
+        "size": 13761300984,
+        "pointerSize": 136
+      }
+    }
+  ],
+  "all_weight_bytes": 27522617888,
+  "safetensors_bytes": 27522617888,
+  "downloaded": false,
+  "selected_package": "root HF indexed shards",
+  "selected_files": [
+    "model-00000-of-00002.safetensors",
+    "model-00001-of-00002.safetensors",
+    "model-00002-of-00002.safetensors"
+  ],
+  "selected_checkpoint_bytes": 13761316904,
+  "index_tensor_payload_bytes": 13761264768,
+  "alternative_original_bytes": 13761300984,
+  "warning": "all_weight_bytes includes both alternate packages; use selected_checkpoint_bytes for the proposed runtime",
+  "local_weight_body_verification": false
+}

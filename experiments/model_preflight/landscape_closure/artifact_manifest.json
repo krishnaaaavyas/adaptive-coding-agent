@@ -1,0 +1,1398 @@
+{
+  "schema": "landscape-artifact-manifest-v1",
+  "root": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\experiments\\model_preflight\\landscape_closure",
+  "self_excluded": true,
+  "model_weight_bodies_downloaded": false,
+  "files": [
+    {
+      "path": "build_artifacts.py",
+      "bytes": 52070,
+      "sha256": "dbae42a725d5c011b7366c61e7793c3f98d35f6407b4e2522d16bd5ed1d14e64"
+    },
+    {
+      "path": "collect_sources.py",
+      "bytes": 4175,
+      "sha256": "2bd20e776148c93a73e63246192c391b044f9398582ba4e9d3458aefa5d81c78"
+    },
+    {
+      "path": "collect_support.py",
+      "bytes": 3218,
+      "sha256": "82fe833471d3b2682faa7f9f8b74e2f90cbeb330f52c9fb2cbf193aa182f8f45"
+    },
+    {
+      "path": "decisions.json",
+      "bytes": 33474,
+      "sha256": "34ab43a5e9a4e373e3075650ecfeb4c5ede652eec20a06b2e26cda671dc87368"
+    },
+    {
+      "path": "landscape.csv",
+      "bytes": 337305,
+      "sha256": "0f7266ca4718541ea9a54b67e374269307eb3a040bc753cf5e3d8bd7bf211bdd"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 100191,
+      "sha256": "45607662ace76a683ea7b536914ce21c52a9a885360b4f792ae2a66c032c09db"
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 250639,
+      "sha256": "8d361f64e65ffe020b7661388892185eeaa5a035fba8f457722882bf11a26fa7"
+    },
+    {
+      "path": "sources/allenai__Olmo-3-32B-Think/chat_template.jinja",
+      "bytes": 1434,
+      "sha256": "eba6e269f669706e5c788e370160dad953137f3fa7014fa69d03c7b3ad9f0e72"
+    },
+    {
+      "path": "sources/allenai__Olmo-3-32B-Think/config.json",
+      "bytes": 2396,
+      "sha256": "d47a120cb2669cd46482d5c2da9488903b67759ca167cd85c1127b2e05755f95"
+    },
+    {
+      "path": "sources/allenai__Olmo-3-32B-Think/generation_config.json",
+      "bytes": 186,
+      "sha256": "b361ffdb1f9c74672dcf3a30e99fb681f2dbb8b51b69884d26a001199f80a19a"
+    },
+    {
+      "path": "sources/allenai__Olmo-3-32B-Think/hub_metadata.json",
+      "bytes": 7704,
+      "sha256": "f215196d4add7277d8e41e83e291e86cf7cbe91bbe7f6ef48b430523a6fd0a74"
+    },
+    {
+      "path": "sources/allenai__Olmo-3-32B-Think/README.md",
+      "bytes": 11918,
+      "sha256": "8c8175ff2e29f3287647e06cbcaf5e6eee81a0eeeb3c1419a9a4b9c828cd3435"
+    },
+    {
+      "path": "sources/allenai__Olmo-3-32B-Think/tokenizer_config.json",
+      "bytes": 4319,
+      "sha256": "e7ea56bef75ad5257b13dc09bfe3033e8cd742eb42233e9b57726d53be9f7ead"
+    },
+    {
+      "path": "sources/allenai__Olmo-3.1-32B-Instruct/chat_template.jinja",
+      "bytes": 2748,
+      "sha256": "49a944c9814e130bd3cc80a2420c55ff22e24a4e4ba97009aa60000909b5eac3"
+    },
+    {
+      "path": "sources/allenai__Olmo-3.1-32B-Instruct/config.json",
+      "bytes": 2396,
+      "sha256": "d47a120cb2669cd46482d5c2da9488903b67759ca167cd85c1127b2e05755f95"
+    },
+    {
+      "path": "sources/allenai__Olmo-3.1-32B-Instruct/generation_config.json",
+      "bytes": 207,
+      "sha256": "9ca20766a58daf4a6e1bf5f6552d27dbe57733dba2c3af507dd9f4b12aacc0b0"
+    },
+    {
+      "path": "sources/allenai__Olmo-3.1-32B-Instruct/hub_metadata.json",
+      "bytes": 11953,
+      "sha256": "6c6b5ba6230b3f690fb3c1ef97069553a7f2a43def42f67728b7c2ebfe53d2fa"
+    },
+    {
+      "path": "sources/allenai__Olmo-3.1-32B-Instruct/README.md",
+      "bytes": 11267,
+      "sha256": "937c83504fc8c2d422922913af601feb6ec7b21415061d86d9e793c52359525b"
+    },
+    {
+      "path": "sources/allenai__Olmo-3.1-32B-Instruct/tokenizer_config.json",
+      "bytes": 7103,
+      "sha256": "80fbc2a161419760bb8a84ed1d3b9550a2d68b7abd07a72706b8f5977e044b8d"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-Coder-V2-Lite-Instruct/config.json",
+      "bytes": 1522,
+      "sha256": "5f2f880516f5cb5d17bbb0b0b78623dee45d84855de9c5a0e637eaf828267d2b"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-Coder-V2-Lite-Instruct/generation_config.json",
+      "bytes": 181,
+      "sha256": "63ec07f6cb36bd8359b44f671123518dd6fbf55007e0c74aa96c296a75def8b5"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-Coder-V2-Lite-Instruct/hub_metadata.json",
+      "bytes": 7232,
+      "sha256": "9bf9810a2e4c5d9921ab4fd4a6a35924aab66b5c3bea35dae2aa21e04d1c96cc"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-Coder-V2-Lite-Instruct/README.md",
+      "bytes": 11320,
+      "sha256": "4ebcf2e32bb7d1343d49d2b25b6910bfee18e02998e33d1fcf68ed206255b8fd"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-Coder-V2-Lite-Instruct/tokenizer_config.json",
+      "bytes": 1279,
+      "sha256": "31181eaf79394ea26728d95ecb54fe7c8413e6f56085dbabc8b0818134380ec8"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V3.2/config.json",
+      "bytes": 1552,
+      "sha256": "c7fa8b191e9936d8e6a57d864baab82b792fae16a116416cdd3a75ba76bc5af1"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V3.2/generation_config.json",
+      "bytes": 171,
+      "sha256": "c9ce7f8d4a66c6cedd053650db3596328f241f00a7e49e67b89e5c9e336e7205"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V3.2/hub_metadata.json",
+      "bytes": 47322,
+      "sha256": "56024951b0c6bb884cec1a2c8ce8c64b52a71c7e2afe9ef499b3320c7593dab4"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V3.2/LICENSE",
+      "bytes": 1084,
+      "sha256": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V3.2/README.md",
+      "bytes": 7361,
+      "sha256": "22b9f57e1ece2df27f9de0e71377e19481f7a6892eca8bc23e73fcdffe1d845c"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V3.2/tokenizer_config.json",
+      "bytes": 795,
+      "sha256": "b5de6cc1c6758d02c0d3cec0efa062f1161654475458003f6f293f6ef28acdaa"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4-Flash-0731/config.json",
+      "bytes": 1888,
+      "sha256": "6c8f3d2d3b48707541b88f32f22ef3f0f8a6b57d8523281e2b8d3cdb0ae9a023"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4-Flash-0731/generation_config.json",
+      "bytes": 170,
+      "sha256": "5fccff80f55a4d455bbe516bdd552edf3e9623df95e99fbf2a3c3389fdf91af0"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4-Flash-0731/hub_metadata.json",
+      "bytes": 17858,
+      "sha256": "7121d5df1bb49a59588908fe72e7d1c0137b28f55b25d0cc21c710d2d71c5aac"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4-Flash-0731/LICENSE",
+      "bytes": 1084,
+      "sha256": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4-Flash-0731/README.md",
+      "bytes": 7238,
+      "sha256": "252acafdc9204d0dba3fde1b0a93d71cd1664a4ceadfe222b60117ed0ccc56ff"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4-Flash-0731/tokenizer_config.json",
+      "bytes": 801,
+      "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4.1-Flash/chat_template.jinja",
+      "bytes": 15348,
+      "sha256": "d959d804d5101b79a49b6ff1bf3c54cd5affa9a5a78c503d925f3090040b31c3"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4.1-Flash/config.json",
+      "bytes": 3311,
+      "sha256": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4.1-Flash/hub_metadata.json",
+      "bytes": 35467,
+      "sha256": "a2436538df767a46355790c28c3cac13bc5287f506dafa855cf6293379a0614c"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4.1-Flash/LICENSE",
+      "bytes": 1084,
+      "sha256": "f2c6c602815669d292889e5be8c802f2ed950653b77999b1584e8e6aed25d040"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4.1-Flash/README.md",
+      "bytes": 13110,
+      "sha256": "347c9db4e5506acb531cbc3b724407ab88e9af8781679152f0823d7bac16d251"
+    },
+    {
+      "path": "sources/deepseek-ai__DeepSeek-V4.1-Flash/tokenizer_config.json",
+      "bytes": 801,
+      "sha256": "6ac8c8dc065ed118161d02dd532749ae3f52c243deac27872134fae2f50d8547"
+    },
+    {
+      "path": "sources/github__deepseek-ai__DeepSeek-Coder-V2/commit.json",
+      "bytes": 5930,
+      "sha256": "3b8569f3486b3aeed09e26433cdf05d7531fc5bbf37bd1ce2198f679e9ec1a45"
+    },
+    {
+      "path": "sources/github__deepseek-ai__DeepSeek-Coder-V2/LICENSE-MODEL",
+      "bytes": 13760,
+      "sha256": "a3a0e9449cb691a12f4de1d03725fd41326614fdeaf5d80b28c51187da0bed0e"
+    },
+    {
+      "path": "sources/github__deepseek-ai__DeepSeek-Coder-V2/README.md",
+      "bytes": 20235,
+      "sha256": "124f5891e640d0c28ba3e744143703c1753ebba13b1b6ac872179b431f8b2116"
+    },
+    {
+      "path": "sources/github__hiyouga__LlamaFactory/commit.json",
+      "bytes": 21292,
+      "sha256": "1e76585f2ee1b1f39318f57e911fd745c54b4b7416f70f039c6b95f1bc66e449"
+    },
+    {
+      "path": "sources/github__hiyouga__LlamaFactory/README.md",
+      "bytes": 70465,
+      "sha256": "2d61d3ee9a0b7a099800b17b0be7a8ef034ed9b08f43cb32bdac17642cc823dd"
+    },
+    {
+      "path": "sources/github__huggingface__peft/commit.json",
+      "bytes": 30595,
+      "sha256": "edf599589c7a206c9f5b688291ea205ea8b4856191c8fa4f807fb77212457193"
+    },
+    {
+      "path": "sources/github__huggingface__peft/src/peft/peft_model.py",
+      "bytes": 175366,
+      "sha256": "a1dd6b97b703bce297daa25d690056f220518a6b05100e268d10b4129f8feb26"
+    },
+    {
+      "path": "sources/github__huggingface__peft/src/peft/tuners/lora/config.py",
+      "bytes": 77062,
+      "sha256": "3515982706a6d902db4ca289b09c620869d6a2f4737ff142a818c10e2fc37e36"
+    },
+    {
+      "path": "sources/github__huggingface__peft/src/peft/tuners/lora/model.py",
+      "bytes": 66668,
+      "sha256": "9da48b2bbcf029a59aa3033e78af9a21cecc4c17252df355a47bc74d96e6f7a8"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/commit.json",
+      "bytes": 6916,
+      "sha256": "cb373a91bada9f475f772e22e7a426b9c3518ab47f008318b4c8c5b9fc668c87"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/models/gemma4/modeling_gemma4.py",
+      "bytes": 124844,
+      "sha256": "2bc35a1a971683b08a50e41ceb6a6c07c230cbd7743475e67790d4842e954fb0"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/models/glm4_moe_lite/modeling_glm4_moe_lite.py",
+      "bytes": 32958,
+      "sha256": "b2f8a8b1ebef9e7c5ba5da96fd23f30d4913078cabd5d25c7b1ce6a735bd9e78"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/models/ministral3/modeling_ministral3.py",
+      "bytes": 21410,
+      "sha256": "0b1c9d376712c819ed0d161fc6d7eb81c928c7c1d693fa71f79f1b05dcff0535"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/models/mistral3/modeling_mistral3.py",
+      "bytes": 19474,
+      "sha256": "b1233c08906075c2cca8e87e125bbd218ce358afb9aa6ea886471f48451f069c"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/models/nemotron_h/modeling_nemotron_h.py",
+      "bytes": 51990,
+      "sha256": "687d09eb47b904a2634a138f7b87cc8900a0893ab4550abde0bb15743ed44d88"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/models/qwen3_5/modeling_qwen3_5.py",
+      "bytes": 88320,
+      "sha256": "f3fecce29dee6cea1ac951c947a538fdcf01abfc21f8f0e33a78b535fe6837c3"
+    },
+    {
+      "path": "sources/github__huggingface__transformers/src/transformers/quantizers/quantizer_finegrained_fp8.py",
+      "bytes": 14899,
+      "sha256": "bdc826c0287d05823e5f3fee2b3a54203ecd598d47b90ffb4b4f6de34b0bda1c"
+    },
+    {
+      "path": "sources/github__MoonshotAI__Kimi-Dev/commit.json",
+      "bytes": 6724,
+      "sha256": "3ba8eb8159073ce4e34286fe28611f636030fa928e48ce3a40a708da4e51fe86"
+    },
+    {
+      "path": "sources/github__MoonshotAI__Kimi-Dev/LICENSE.md",
+      "bytes": 289,
+      "sha256": "a55fc0b0ea88f08c0d4f5c91ca4ece3717bf64fa38b1097a3a06cb5150a495f7"
+    },
+    {
+      "path": "sources/github__MoonshotAI__Kimi-Dev/README.md",
+      "bytes": 4872,
+      "sha256": "4f7f9adbc0bb5526c71e71220326072570abdb0fbdef64c18ddbbe9cdc129d05"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Megatron-Bridge/commit.json",
+      "bytes": 17675,
+      "sha256": "05a4be45193a5a0e76c10a6860c389e4bd97119b138e2e7e75cef593b64cd6ea"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Megatron-Bridge/docs/models/nemotron/nemotron3.5-lightning.md",
+      "bytes": 57966,
+      "sha256": "255be1bde771aa2648646504ab3f0d768152c0dc1994ad1ea4c05412b9365896"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Megatron-Bridge/README.md",
+      "bytes": 30688,
+      "sha256": "e24f5a1aa9fea183ecee0c253d3b58192ab3ba9d02b3f1ba7a7d0f0995dc9a95"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Nemotron/commit.json",
+      "bytes": 6475,
+      "sha256": "093e745bd04c9ab58094adc5f004b4f8d3628b4cd8f8f0888e16125419660da4"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Nemotron/docs/nemotron/lightning35/README.md",
+      "bytes": 19300,
+      "sha256": "1154a3c4dfef1b32153f7125880d5fe43ab7c8c1c5be98ea79153a7e964d3e1b"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Nemotron/docs/nemotron/super3/sft.md",
+      "bytes": 17747,
+      "sha256": "16df5baa8245e29ddc21d7199355671a17761cfee179e20c171a072a4691bb68"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Nemotron/README.md",
+      "bytes": 42400,
+      "sha256": "78498606809ad92f35b6686e1733ed858d011b5cbd89d06f98308ca54f9d91b8"
+    },
+    {
+      "path": "sources/github__NVIDIA-NeMo__Nemotron/usage-cookbook/Nemotron-3.5-Lightning/dgx-station-recipes/lora.md",
+      "bytes": 18031,
+      "sha256": "6c78dfede27193c30c1a82b6b70cd4c4564562113b9de5fcb6c508b185ee8dfa"
+    },
+    {
+      "path": "sources/github__vllm-project__recipes/commit.json",
+      "bytes": 7038,
+      "sha256": "adabda58e2e6f1ab4243a04eae6bb7504754cd49a0726fafb6a08fff058123c9"
+    },
+    {
+      "path": "sources/github__vllm-project__recipes/models/Qwen/Qwen3.8-Flash-Next.yaml",
+      "bytes": 15331,
+      "sha256": "05b00840b91da98776b09287d526e04f72d5a8c1deaceac1e551e28a81c6800b"
+    },
+    {
+      "path": "sources/github__vllm-project__vllm/commit.json",
+      "bytes": 7989,
+      "sha256": "6946ef7516378e335c7f662a865c78441a7c4078de98da9ef983d941f0997588"
+    },
+    {
+      "path": "sources/github__vllm-project__vllm/docs/features/lora.md",
+      "bytes": 20683,
+      "sha256": "36cb93157c2414eb9703a857aded4bedf797d276af5d8803ca35d18fb56e4aa5"
+    },
+    {
+      "path": "sources/github__vllm-project__vllm/docs/models/supported_models.md",
+      "bytes": 61410,
+      "sha256": "5731718917fca662e79ac644bb11578087ad24327538e6dc51a67146a9f7293b"
+    },
+    {
+      "path": "sources/github__vllm-project__vllm/vllm/model_executor/models/glm4_moe_lite.py",
+      "bytes": 25072,
+      "sha256": "54c0aa46b234a4297b9f37513b1478cfe715acbae65efb2068afc2c6e4643f05"
+    },
+    {
+      "path": "sources/google__gemma-4-26B-A4B-it/chat_template.jinja",
+      "bytes": 18683,
+      "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+    },
+    {
+      "path": "sources/google__gemma-4-26B-A4B-it/config.json",
+      "bytes": 3815,
+      "sha256": "ed0c1eb3633de771906e9ba004a44cc5635bcc06ee2062077c3d2e88a50707d3"
+    },
+    {
+      "path": "sources/google__gemma-4-26B-A4B-it/generation_config.json",
+      "bytes": 208,
+      "sha256": "d4226bbe3117d2d253ba4609720ba82c6c4ce4627a9a6ae05387c78983ac03de"
+    },
+    {
+      "path": "sources/google__gemma-4-26B-A4B-it/hub_metadata.json",
+      "bytes": 25444,
+      "sha256": "dac0ace41d084d2040aa64499e04206f076d229ffb4ac946addbd0683536cc15"
+    },
+    {
+      "path": "sources/google__gemma-4-26B-A4B-it/README.md",
+      "bytes": 27979,
+      "sha256": "4f463225c4fe49ec120115b0f9bb6713ff1556293a909903ffdae3df7bf974da"
+    },
+    {
+      "path": "sources/google__gemma-4-26B-A4B-it/tokenizer_config.json",
+      "bytes": 3082,
+      "sha256": "9f4fec4b1dc6ecddf8f4a92e9caea5971c0e67d81309f3f9066a2bee8c362633"
+    },
+    {
+      "path": "sources/google__gemma-4-31B-it/chat_template.jinja",
+      "bytes": 18683,
+      "sha256": "ae53464bf3be25802b3a5b37def7fd89667067d7577049b3b2d74c4d8de4c6d4"
+    },
+    {
+      "path": "sources/google__gemma-4-31B-it/config.json",
+      "bytes": 4621,
+      "sha256": "e967dd38bc5cfd38bd09a995a7bf4a754075df2b46aba68f7fbb5a791e6d8dd1"
+    },
+    {
+      "path": "sources/google__gemma-4-31B-it/generation_config.json",
+      "bytes": 208,
+      "sha256": "d4226bbe3117d2d253ba4609720ba82c6c4ce4627a9a6ae05387c78983ac03de"
+    },
+    {
+      "path": "sources/google__gemma-4-31B-it/hub_metadata.json",
+      "bytes": 25397,
+      "sha256": "e950770b858630ad8940e5f3427e26550b39eb4857e81e74d7864aee31337e77"
+    },
+    {
+      "path": "sources/google__gemma-4-31B-it/README.md",
+      "bytes": 27963,
+      "sha256": "e209f5c435b1e66055bd6d7c29185103ae8d2027a03a96b359335154f206b82b"
+    },
+    {
+      "path": "sources/google__gemma-4-31B-it/tokenizer_config.json",
+      "bytes": 3082,
+      "sha256": "9f4fec4b1dc6ecddf8f4a92e9caea5971c0e67d81309f3f9066a2bee8c362633"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.1-30b/chat_template.jinja",
+      "bytes": 6099,
+      "sha256": "fed2756d2d24e127b951dcf139d0b03ab7db8ef23a456128ebc9c2db4901d476"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.1-30b/config.json",
+      "bytes": 828,
+      "sha256": "384f1935366f0b0f9c3b4296ef7cd64a08288e15cfe16c40d13101a98ab713f4"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.1-30b/generation_config.json",
+      "bytes": 147,
+      "sha256": "9117fb03fed79dbb459373edeef9a3eec966bce52a1842e03a6716e83117f0d1"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.1-30b/hub_metadata.json",
+      "bytes": 11797,
+      "sha256": "076508fbd4eceeb8895396b882511381f95549daa26c3f74f5417b942e74598d"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.1-30b/README.md",
+      "bytes": 32319,
+      "sha256": "49d5fa960f45492d7eb1d63e31dfc1d7b2579e71e83c8cefc79389e93388e310"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.1-30b/tokenizer_config.json",
+      "bytes": 17659,
+      "sha256": "a5ec5daab12ba090a90f3dd169c8f9c275557013a87b9c1258dc7cb497a35c86"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.2-8b/chat_template.jinja",
+      "bytes": 9013,
+      "sha256": "f0ba43f79b3cabca5e5a7584c77aec92f49feae45cdf7779c87d9fc54cd90258"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.2-8b/config.json",
+      "bytes": 907,
+      "sha256": "85611f4e34633d4e148e6a5f64bc2d3a23ebbc2b014bc87fbda764eecf261cd9"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.2-8b/generation_config.json",
+      "bytes": 207,
+      "sha256": "1b9baf0a7959d31d7fb58ff6b506c27d09a73d395cadccc7e6dd1d4b7e43fd9d"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.2-8b/hub_metadata.json",
+      "bytes": 13486,
+      "sha256": "55467dcaa3f22447dee29bfbaab08f5abdb1cb0960adfcc7bbec2ca94b7e1157"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.2-8b/README.md",
+      "bytes": 38624,
+      "sha256": "01396b1a8596586986fea22cfaa86d0255d19113d71fe09e0b69cc2bfa4307da"
+    },
+    {
+      "path": "sources/ibm-granite__granite-4.2-8b/tokenizer_config.json",
+      "bytes": 17677,
+      "sha256": "2007f26df166ed10a2d6fa881c1c8f3cdd151e451469f59b274897f14449835f"
+    },
+    {
+      "path": "sources/meta-llama__Llama-4-Scout-17B-16E-Instruct/hub_metadata.json",
+      "bytes": 34662,
+      "sha256": "8d0446dd64fca579a9cd1c3d7f8a3a82884d7f326c36c361ab0e26b3304e0808"
+    },
+    {
+      "path": "sources/meta-llama__Llama-4-Scout-17B-16E-Instruct/LICENSE",
+      "bytes": 7815,
+      "sha256": "f95172ae8c823aebb14f73810fc71ce026e27555a17134d4720233caf8c2b2f0"
+    },
+    {
+      "path": "sources/meta-llama__Llama-4-Scout-17B-16E-Instruct/README.md",
+      "bytes": 32586,
+      "sha256": "19659e477d9e582b5cdd9a2bac1658d5e5e7a2722b2efdd4248c06398c87882f"
+    },
+    {
+      "path": "sources/microsoft__phi-4/config.json",
+      "bytes": 802,
+      "sha256": "07eedad2c48798b6e3728e4a1b75e0e092019a375ba725a40e40c78d13664045"
+    },
+    {
+      "path": "sources/microsoft__phi-4/generation_config.json",
+      "bytes": 184,
+      "sha256": "6acf48d95f0a1deb97acf54d946636243e299bf315b068efd719708ceea5741d"
+    },
+    {
+      "path": "sources/microsoft__phi-4/hub_metadata.json",
+      "bytes": 7691,
+      "sha256": "851fb68a50590fd6f677b5135a3446c68b6087d37c3cd130ca3dd862bcc57df5"
+    },
+    {
+      "path": "sources/microsoft__phi-4/LICENSE",
+      "bytes": 1105,
+      "sha256": "c49419617a6070bcb197cfe272f7007fdec3e790dbb529cb995473bd69c0bd51"
+    },
+    {
+      "path": "sources/microsoft__phi-4/README.md",
+      "bytes": 13763,
+      "sha256": "4cc56faa6a5bcbde6227789b2ef9aedfde481ca660c8a4b686703aae19b00011"
+    },
+    {
+      "path": "sources/microsoft__phi-4/tokenizer_config.json",
+      "bytes": 17737,
+      "sha256": "2b707658c7c2b41580155a45503d7d3b42dc2f530bef678f67a39bf5d10b0510"
+    },
+    {
+      "path": "sources/microsoft__Phi-4-reasoning-plus/config.json",
+      "bytes": 796,
+      "sha256": "0a13d8a96ac97a77871e10739669fd75cb1d7e2e403d5cd6ee0819233a30eff8"
+    },
+    {
+      "path": "sources/microsoft__Phi-4-reasoning-plus/generation_config.json",
+      "bytes": 222,
+      "sha256": "3c0aeb1af3855927b0cc6238651fb56b7727e2fa580528ab28ae31289da12fd6"
+    },
+    {
+      "path": "sources/microsoft__Phi-4-reasoning-plus/hub_metadata.json",
+      "bytes": 6669,
+      "sha256": "e5e61064de99e1fcf814f4cea8453c0009dea3104b9e5e2f54594df1f96beff1"
+    },
+    {
+      "path": "sources/microsoft__Phi-4-reasoning-plus/LICENSE",
+      "bytes": 1105,
+      "sha256": "c49419617a6070bcb197cfe272f7007fdec3e790dbb529cb995473bd69c0bd51"
+    },
+    {
+      "path": "sources/microsoft__Phi-4-reasoning-plus/README.md",
+      "bytes": 20928,
+      "sha256": "f69218261cb11d0afd25720537eeea4082efe9b80be0c23eb6919aed38ca4016"
+    },
+    {
+      "path": "sources/microsoft__Phi-4-reasoning-plus/tokenizer_config.json",
+      "bytes": 18985,
+      "sha256": "6d3efcfa6a8a438e089633132f3bb4ba3d192a5a912f5e908fcce56b1de9d4ce"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/chat_template.jinja",
+      "bytes": 6524,
+      "sha256": "f83cec52bb3a7e5a3cb4d6fd1dfdd6f4fe13b06c5aaa39a1115e70a417fc75f5"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/config.json",
+      "bytes": 1652,
+      "sha256": "3372a31ecbdba614b309cfa5b3dfec33ceea3c580cb9612ff35345d92ced8618"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/generation_config.json",
+      "bytes": 166,
+      "sha256": "2c24fe5507e260bb081727e2a14693d9a982942e721b28720c184d201bffb9dd"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/hub_metadata.json",
+      "bytes": 46262,
+      "sha256": "29c025ed30c6b50c77c4ae7ad2a676826433c9fe7924ad7e5b0bd0ba81db4a8d"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/LICENSE-MODEL",
+      "bytes": 7515,
+      "sha256": "278b29a14cf6b0cc60519617909af61fa4a6aca4ee928d6178cb9799785c5cc0"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/README.md",
+      "bytes": 28775,
+      "sha256": "a661f661d669b03aee6ce087866307b7f66627ae31b4a0365115a2018bead5e2"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.5/tokenizer_config.json",
+      "bytes": 10893,
+      "sha256": "60e392fea8d47660584deb3c6a716aab7b9f11fed24bc494baf5eb7ba809e882"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/chat_template.jinja",
+      "bytes": 6524,
+      "sha256": "893d908f7b5cc65fdde270dcae5ea1a99647c6a7ce572ae874a57b7160069566"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/config.json",
+      "bytes": 1675,
+      "sha256": "697c30492781d55ac516011f937b5cdec045710b5b0c9ca39a6ea277785df9aa"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/generation_config.json",
+      "bytes": 166,
+      "sha256": "2c24fe5507e260bb081727e2a14693d9a982942e721b28720c184d201bffb9dd"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/hub_metadata.json",
+      "bytes": 44133,
+      "sha256": "b77374dc6070f5e41f1266bc02a72fd0a99edffccd78f03c2c8869b3f2a60505"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/LICENSE",
+      "bytes": 3709,
+      "sha256": "6373a886779a26e56af8070699ebaa8f90104cadcc7bbf6897037f72017bedfe"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/README.md",
+      "bytes": 14902,
+      "sha256": "2e871f2f502616c7168e4db41427c0d58c3906ba7357e73064a4564c93c33c62"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M2.7/tokenizer_config.json",
+      "bytes": 10893,
+      "sha256": "60e392fea8d47660584deb3c6a716aab7b9f11fed24bc494baf5eb7ba809e882"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/chat_template.jinja",
+      "bytes": 11756,
+      "sha256": "11421244f67553498e5c8112dae02802025bcc4305ec45ad380af95c96f9fe64"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/config.json",
+      "bytes": 5254,
+      "sha256": "c9c97ce1e4eece60012d5a10ea87717458bfb1f19c2c7a615a3dbff83d090c6b"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/generation_config.json",
+      "bytes": 150,
+      "sha256": "272d19efac5060ff8c9f76c7ed67909a5da1be466284ee4f1f1bd2a810c6fad2"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/hub_metadata.json",
+      "bytes": 32191,
+      "sha256": "c0b8b477779385b577f7d83560f61ff58849120ceee5c4f5e73ed58574d124aa"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/LICENSE",
+      "bytes": 3339,
+      "sha256": "b53f2fdda3049b0e9013207be51efc2d372cda1fcfdd8bb4bb8b22658ca5db9c"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/README.md",
+      "bytes": 5122,
+      "sha256": "6148856dbf8be26dcf3f9b913be0252c38454e852108fdab01212fe965f3e327"
+    },
+    {
+      "path": "sources/MiniMaxAI__MiniMax-M3/tokenizer_config.json",
+      "bytes": 11288,
+      "sha256": "15caca9f74fbce9b86dc014e9324cbefa56703d81ccd6d56020faa1c41d2eae5"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/chat_template.jinja",
+      "bytes": 10590,
+      "sha256": "28cac7f6cb901a70a216cc4e1d13dd7e6f105ccfe031fd7cbfbdfe907d91dc32"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/config.json",
+      "bytes": 1176,
+      "sha256": "d40a3780cfd0477ddbd34c6dbc21505f039727c683f1f888be121dca2fa19a4b"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/generation_config.json",
+      "bytes": 175,
+      "sha256": "1256c96a85a946ee4995fbbd661c6fc0cfb3b1173e0d145cbe65ddafb983d353"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/hub_metadata.json",
+      "bytes": 27701,
+      "sha256": "35d270add7f3808f24430c8da531f53833e28bc49a7d1fa730d0f2774faff1f9"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/LICENSE",
+      "bytes": 1695,
+      "sha256": "867daee3b68e4e9392c9767fec4f099096fa6ad67adfc9c24020494e97766778"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/README.md",
+      "bytes": 59385,
+      "sha256": "360b600b7d9aeaa3509590d0473e7cdcc7d0490ced278535e6639b87003fb54b"
+    },
+    {
+      "path": "sources/mistralai__Devstral-2-123B-Instruct-2512/tokenizer_config.json",
+      "bytes": 21136,
+      "sha256": "82477e40961601e9fe2a4d3092ce9b84e7961667e3547b0e74f5648a7d07b235"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2-24B-Instruct-2512/chat_template.jinja",
+      "bytes": 11362,
+      "sha256": "a0c0ed8a45c2c75c85fd756316a10419b90eb4f3dbe64d00f5c0b8ad4de5209a"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2-24B-Instruct-2512/config.json",
+      "bytes": 1822,
+      "sha256": "8d570ae877badd9ff5442afdc726385aba07f5757ba875a7491bde9549457e72"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2-24B-Instruct-2512/generation_config.json",
+      "bytes": 175,
+      "sha256": "c5ee59a086c5504838db2a66cafdf04d10aac11cb021dd4e92a15946645c2dda"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2-24B-Instruct-2512/hub_metadata.json",
+      "bytes": 17287,
+      "sha256": "61fcce50e4f03f76ffa6eda270b06b0d0d2df7b1076e53d04e3f813905e0a0f8"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2-24B-Instruct-2512/README.md",
+      "bytes": 61545,
+      "sha256": "e1aa7a24bc4845a11cf8defacd723a67fe5cc551ca9311e0276933d9176f55d7"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2-24B-Instruct-2512/tokenizer_config.json",
+      "bytes": 21177,
+      "sha256": "4a05af595aa11c3436d3b68a616219ae99b303426f708a12b31bc9ce32530728"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2507/config.json",
+      "bytes": 641,
+      "sha256": "868bdb4e07afca5d86dc0a874f11ede7ff586b1aaa6e3edfc2e82ec3ad771a1b"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2507/generation_config.json",
+      "bytes": 132,
+      "sha256": "86acf1e8f5d32e7c25ce501b6d9b6152f4eaf8659e5cea9907ad58d50ba4cc47"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2507/hub_metadata.json",
+      "bytes": 8104,
+      "sha256": "fad5c3fc65edb0b86132188cd5075de5dc0768bd00349c70a40b56a077c46b56"
+    },
+    {
+      "path": "sources/mistralai__Devstral-Small-2507/README.md",
+      "bytes": 18756,
+      "sha256": "ea9729a563e07cb391603e646f36e0d76db33c3e24dff5b9448493454cf010de"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Dev-72B/config.json",
+      "bytes": 663,
+      "sha256": "9c114c3da81d4db6027c0caab398b59fe800024df5a0ed27d341501575cecaf9"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Dev-72B/hub_metadata.json",
+      "bytes": 25813,
+      "sha256": "d397b5389d6b70c6fb9b317fba03ec8de5f497c333d1bb6b7a91b13aec7809b7"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Dev-72B/LICENSE.md",
+      "bytes": 288,
+      "sha256": "90ea60983c7da1b06860cd23475bd06fef3d951f8f76ac698fa609445c4bbf11"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Dev-72B/README.md",
+      "bytes": 2896,
+      "sha256": "91cc7034a24a788f842590f71019941a8489ddd6791e0a9c349a5be18b7f38c2"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Dev-72B/tokenizer_config.json",
+      "bytes": 7305,
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/chat_template.jinja",
+      "bytes": 2385,
+      "sha256": "8d21200dff7e85beaf51c8b110952e039ffd0779f615d64d63293d74773360f9"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/config.json",
+      "bytes": 5420,
+      "sha256": "ffbb57bff844e024f6c112640b63da80af228ceb8fb3e2e21908a21febbcdffb"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/generation_config.json",
+      "bytes": 91,
+      "sha256": "b784cc6a9ecb551196b81cb6b1d2dcb18467b92adaab6992ae4cc455ad44d2ce"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/hub_metadata.json",
+      "bytes": 23998,
+      "sha256": "1dee06a4d8941119ac41e68cc6a4366ef8b53200bbd2374a14b93163e4acc3f6"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/LICENSE",
+      "bytes": 1470,
+      "sha256": "9cb73476cecdfabac7775bf7c225bd5f6017d5d678372917e4456964c0454f7a"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/README.md",
+      "bytes": 15061,
+      "sha256": "c78bbe5af19636b180eda956abf1f30a79027ec04d6642ebddc44edbc4470879"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K2.7-Code/tokenizer_config.json",
+      "bytes": 4832,
+      "sha256": "6dfafeacca3d44748fc4a2fcc6725be5ea616ecc5b95f5a8b4277077c06e7d9f"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K3/config.json",
+      "bytes": 7006,
+      "sha256": "9710e121a58d03ac92c8d6da287a19541994319afbbe6d6202af001ffd379213"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K3/generation_config.json",
+      "bytes": 53,
+      "sha256": "c6648c25e9705af7fba8847e243840d21b5cc63ddeb6297f750a7ddbb6a02836"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K3/hub_metadata.json",
+      "bytes": 29777,
+      "sha256": "a2e18b93b05e8196adbf4958019b7b14439b306deb9efd2ed51bf8f51cd81a91"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K3/LICENSE",
+      "bytes": 3065,
+      "sha256": "20c797ce19af0c17de52c6afb144644768a591c521655f5ebf5712c9850f2887"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K3/README.md",
+      "bytes": 45261,
+      "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-K3/tokenizer_config.json",
+      "bytes": 3478,
+      "sha256": "5d0803c94db9cd78763499e0956c95fd5a225c14a727e5a6cf5db3f96f010a6e"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Linear-48B-A3B-Instruct/chat_template.jinja",
+      "bytes": 1850,
+      "sha256": "75e3cd76bd26b77c02507eb35073b66c8ffd0c88eab185ebc6f8c6e425161809"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Linear-48B-A3B-Instruct/config.json",
+      "bytes": 1751,
+      "sha256": "a6ac3c2c4b5aa72370f9727f49ffa4432715d20061889acdb37c688be853096e"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Linear-48B-A3B-Instruct/generation_config.json",
+      "bytes": 147,
+      "sha256": "5d7571b3479fd7263e52c4b2e829c2ae64143abcb0d8d9813258fc4b7994cffe"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Linear-48B-A3B-Instruct/hub_metadata.json",
+      "bytes": 10514,
+      "sha256": "9e442197e16b5b2559cfa8acd8afc7c2668eaa7dfaa564a5add3b4f1d3c8ac3b"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Linear-48B-A3B-Instruct/README.md",
+      "bytes": 6540,
+      "sha256": "d2332c5f1c7318737c2d42c6ec09ff7f26223d1b595fd5d0e1a189ba53064dd9"
+    },
+    {
+      "path": "sources/moonshotai__Kimi-Linear-48B-A3B-Instruct/tokenizer_config.json",
+      "bytes": 3695,
+      "sha256": "5ba77d5822137ac3cb9337d2b84561d10425562cf8b8f2c74c91a832516a778d"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Super-120B-A12B-BF16/chat_template.jinja",
+      "bytes": 10771,
+      "sha256": "575fb74f54ed264df9047d0ecce3c98938aae953fb4f50356675706264cbb68a"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Super-120B-A12B-BF16/config.json",
+      "bytes": 1924,
+      "sha256": "699f34f0fc645d29ebffa5767fb59e6ae6ec98e3a4605485eb9913256d0df7e6"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Super-120B-A12B-BF16/generation_config.json",
+      "bytes": 210,
+      "sha256": "27d520b2df55efe6b978d06fbfe8213ae93288d063d462f40b4ed94637c019bf"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Super-120B-A12B-BF16/hub_metadata.json",
+      "bytes": 28199,
+      "sha256": "810b23638ae325f17d4ba8baba7ab8da592c646fcb7497fe0267857681fa1c08"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Super-120B-A12B-BF16/README.md",
+      "bytes": 82606,
+      "sha256": "cade76c064eda90d4f53e12614f45816ae6cfe43dacc8a9410abcc2fc7a17e59"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Super-120B-A12B-BF16/tokenizer_config.json",
+      "bytes": 177209,
+      "sha256": "10f93eabcb9b1602fbb991d6308e787ce1df28ee9cd7a1c6d1e8c3f338b957bc"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/chat_template.jinja",
+      "bytes": 10152,
+      "sha256": "82753bef5cedc4932c1ed509b5c9a12be680fd86d1adb65bc3f7398d11c8eebc"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/config.json",
+      "bytes": 3031,
+      "sha256": "8f92735a43afae0d94b73fb9e658910ed548818a188eb2fc51513e88c9e689cd"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/generation_config.json",
+      "bytes": 210,
+      "sha256": "617305c284f0e7ce330c8f21b4fadeb996c784e316a8aebe6ca7ef72beb27f00"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/hub_metadata.json",
+      "bytes": 68167,
+      "sha256": "44722f8d3a43058aa269587b55a188907d63769832dac2041dcb65503f2356ee"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/README.md",
+      "bytes": 88130,
+      "sha256": "8ac2780e2662ac579b68f2a228f566839f8b1608ac39ee6bde29f2580a08dcec"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/tokenizer_config.json",
+      "bytes": 177209,
+      "sha256": "10f93eabcb9b1602fbb991d6308e787ce1df28ee9cd7a1c6d1e8c3f338b957bc"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/chat_template.jinja",
+      "bytes": 9867,
+      "sha256": "58933db77d3099b4f78c55a38347a72e1ea05b97d6bd8f38775303dc0194e0a9"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/config.json",
+      "bytes": 2352,
+      "sha256": "a3827a0f5e311547b40943dc081e3ff2f8a277466e8c1a3df2291e8db8a7617c"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/generation_config.json",
+      "bytes": 210,
+      "sha256": "0ed94823ae737b507aef6af01e837041b7aa2fb0306793a310cd201d89a31ff4"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/hub_metadata.json",
+      "bytes": 17443,
+      "sha256": "7fda0bc9039cff856194f22ef22e22afd7ec9978b0186a5aabecd1f42eb75a1c"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/LICENSE",
+      "bytes": 2693,
+      "sha256": "d7c8a9e5d1896d0a9588319cc7b1433e64645ad6d9e55632c30b78d8c038c23b"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/README.md",
+      "bytes": 85345,
+      "sha256": "5d9d96d2f2b154d72625d39628a011e39e0477ffb99e45967eefe4cfd269b928"
+    },
+    {
+      "path": "sources/nvidia__NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/tokenizer_config.json",
+      "bytes": 177209,
+      "sha256": "10f93eabcb9b1602fbb991d6308e787ce1df28ee9cd7a1c6d1e8c3f338b957bc"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/chat_template.jinja",
+      "bytes": 16738,
+      "sha256": "a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/config.json",
+      "bytes": 2089,
+      "sha256": "933aeb666a3fd851133ddd7686414f369bc564c4185fb5704416550879f10566"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/generation_config.json",
+      "bytes": 177,
+      "sha256": "f9970ada892d2d1f72e3ed0a6535ccebadd11897318794ca671d8c7014c957da"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/hub_metadata.json",
+      "bytes": 29028,
+      "sha256": "c87c9057849e93df95909526ec4bcbce666bc13b76b57170f22fdf7597fee83f"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/LICENSE",
+      "bytes": 11357,
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/README.md",
+      "bytes": 7111,
+      "sha256": "92b0408cf5dce04e4c5e4e5f2be0361da710d3650baefd7d7519badd1c687919"
+    },
+    {
+      "path": "sources/openai__gpt-oss-120b/tokenizer_config.json",
+      "bytes": 4200,
+      "sha256": "9279e942392b742d633c7adbb89ebe002c98399db8926a7af5125c726f404070"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/chat_template.jinja",
+      "bytes": 16738,
+      "sha256": "a4c9919cbbd4acdd51ccffe22da049264b1b73e59055fa58811a99efbd7c8146"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/config.json",
+      "bytes": 1806,
+      "sha256": "3a2a26ded679375b7928ddeca59764df7cea83220c1961035f6d6e232659e9ce"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/generation_config.json",
+      "bytes": 177,
+      "sha256": "f9970ada892d2d1f72e3ed0a6535ccebadd11897318794ca671d8c7014c957da"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/hub_metadata.json",
+      "bytes": 24551,
+      "sha256": "d659ae622be3cdd2c2461e7eb817584d9c0770c3392abbec6ee481d86f347d06"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/LICENSE",
+      "bytes": 11357,
+      "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/README.md",
+      "bytes": 7095,
+      "sha256": "03c2fcf292549176757b85c911e7dcf527aef3e4241d64b6caec94af3ecf3ac2"
+    },
+    {
+      "path": "sources/openai__gpt-oss-20b/tokenizer_config.json",
+      "bytes": 4200,
+      "sha256": "9279e942392b742d633c7adbb89ebe002c98399db8926a7af5125c726f404070"
+    },
+    {
+      "path": "sources/project_inputs/1_Pasted text.txt",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7"
+    },
+    {
+      "path": "sources/project_inputs/2_Pasted text.txt",
+      "bytes": 15185,
+      "sha256": "ff1d4f93494801af30b7b089696130428a9d077216712b077f9b2896dd58ba8c"
+    },
+    {
+      "path": "sources/project_inputs/3_REPORT.md",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/chat_template.jinja",
+      "bytes": 6211,
+      "sha256": "5a38bfa05833266240066aedc497decc9b00cc0d3e3b8cceea98cf530196ab06"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/config.json",
+      "bytes": 963,
+      "sha256": "e2c8d8eea39471785cd93379d8b48241ad7dcda299013155dd02526e34a0de62"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/generation_config.json",
+      "bytes": 180,
+      "sha256": "c99723ab3ba28630d26ae23def77603b540a46924895af5cf234740d3b27b51d"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/hub_metadata.json",
+      "bytes": 22590,
+      "sha256": "9f29d0f261dd1c88a380aca1f7ff5f548d201e4ada99f823191841ed3b51388e"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/README.md",
+      "bytes": 5425,
+      "sha256": "98e8f0e00f2d6c7f1743fc4ef2b6297dcc57bec73d71f36588aed984370ac3f3"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-30B-A3B-Instruct/tokenizer_config.json",
+      "bytes": 13055,
+      "sha256": "60f6e8cb15c98dd07300a3cc465ea662de245d2095e4245616af21b2324db3fc"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/chat_template.jinja",
+      "bytes": 6211,
+      "sha256": "5a38bfa05833266240066aedc497decc9b00cc0d3e3b8cceea98cf530196ab06"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/config.json",
+      "bytes": 994,
+      "sha256": "653230e2dd1c41bd1125d046f00259ed98d6294c75c63969f8890c6e139af7de"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/generation_config.json",
+      "bytes": 180,
+      "sha256": "c99723ab3ba28630d26ae23def77603b540a46924895af5cf234740d3b27b51d"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/hub_metadata.json",
+      "bytes": 76592,
+      "sha256": "37bc07532ee2bbc5e8ae81b2b4e1ad591d34a026ec0ced404b6fa9d8bf7b9caf"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/README.md",
+      "bytes": 5500,
+      "sha256": "435afee9137a46ceb1e510fb8d2cef921d69ca1f5f7d5a1d9252ba22ebe21149"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-480B-A35B-Instruct/tokenizer_config.json",
+      "bytes": 13055,
+      "sha256": "60f6e8cb15c98dd07300a3cc465ea662de245d2095e4245616af21b2324db3fc"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-Next/chat_template.jinja",
+      "bytes": 6068,
+      "sha256": "c79a833039a43602150cce0902403d6e376c50930c1b2a139b2964e1f0c322a0"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-Next/config.json",
+      "bytes": 1178,
+      "sha256": "a7b8098d3b05777f12bb5677a26bf1240a1bb09def1b06b29e6be86cae2e84f8"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-Next/generation_config.json",
+      "bytes": 214,
+      "sha256": "37a3c1ef63516ca489c575f0db1c0405ddc0c3dbaca9ed987344c966c37aeef5"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-Next/hub_metadata.json",
+      "bytes": 27577,
+      "sha256": "53e0c470ea5fd3531309cfe9d2a55fd2f3200ae8ff7ec1561200460793529c8c"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-Next/README.md",
+      "bytes": 7600,
+      "sha256": "548db6d595e3bd88d7f6e7f4eae8e66ce8e6f980fd5ce52d7daf222e38559af6"
+    },
+    {
+      "path": "sources/Qwen__Qwen3-Coder-Next/tokenizer_config.json",
+      "bytes": 11681,
+      "sha256": "fc76878832c668e3f0f8be66e6239a475b9093d2fe5cef97c242369779e6c6e6"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/chat_template.jinja",
+      "bytes": 8952,
+      "sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/config.json",
+      "bytes": 4312,
+      "sha256": "191e0af232104ed8b65258cf3fb2b842e288008baca7633c11b82a1ac7203aab"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/generation_config.json",
+      "bytes": 202,
+      "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/hub_metadata.json",
+      "bytes": 28523,
+      "sha256": "19e4bc2771d021a353410052ecd79108606388cebd4316e580d14bd42f5aed30"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/LICENSE",
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/README.md",
+      "bytes": 65012,
+      "sha256": "57e4bdb258ee1a7d2635c5174ebd4e56abe392505cdb5f8bbb356b0dc4293641"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-27B/tokenizer_config.json",
+      "bytes": 17928,
+      "sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/chat_template.jinja",
+      "bytes": 8952,
+      "sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/config.json",
+      "bytes": 4745,
+      "sha256": "889658f2508e8c61d409b02e70e0d78d8d4452ec65aaafbe129805d213d2e74b"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/generation_config.json",
+      "bytes": 202,
+      "sha256": "e70c136c1b78ddc1fb0905bac8e733a4dc448d4f852a5dd75143fffc70be550e"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/hub_metadata.json",
+      "bytes": 53074,
+      "sha256": "2025c675e4f8a5e06f5d8bc2046a39de6ac26fcf28f7cbda0b3544927e4c956f"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/LICENSE",
+      "bytes": 3235,
+      "sha256": "a0dc422560841fd68e06d974907f8b4c709bca44a67daad2b528437bdf676c08"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/README.md",
+      "bytes": 65155,
+      "sha256": "35ca37ccc366f1ba478dab33841a2c0c18ce53fd62f291ca05341f7728b225b2"
+    },
+    {
+      "path": "sources/Qwen__Qwen3.8-Flash-Next/tokenizer_config.json",
+      "bytes": 17928,
+      "sha256": "b11349aafa7cdc6a320767cf7ceb29ed82f7eda5d65e8e0819e76f0ce947bf27"
+    },
+    {
+      "path": "sources/web/3175b131ccd5bfff.html",
+      "bytes": 262961,
+      "sha256": "5d3e901caa7adb98c5bac7d6d93a3cd45151b9a23e0d1943a709b867932ed1e0"
+    },
+    {
+      "path": "sources/web/63a0d80738ea0494.html",
+      "bytes": 259129,
+      "sha256": "04f7c7c66ea1b0a078f714eb1e933711d2c672358d2e18d1beea04ffe153186d"
+    },
+    {
+      "path": "sources/web/845aa92a82ef7a64.html",
+      "bytes": 512460,
+      "sha256": "d3839b9cc97e70fdfdf747f5b20a857a5ed09ef7abd610f90522b9e99f7d0e33"
+    },
+    {
+      "path": "sources/web/a2cbcc4231c81757.txt",
+      "bytes": 300132,
+      "sha256": "1113d959fbe1e67ff3c59c56ebb8032144c54c154fb9085a2267cc9562ea4e8a"
+    },
+    {
+      "path": "sources/web/a64b46bad059bd7a.html",
+      "bytes": 107004,
+      "sha256": "14e07aceb188253f2cacb81a8e27337e83cc9b177088e05755560d59d108fc4c"
+    },
+    {
+      "path": "sources/web/a8b6468994e96147.html",
+      "bytes": 687185,
+      "sha256": "a102370ce1a1641bb4e53b3850662a8649bed3b1d173721f8858e4ca784f0e72"
+    },
+    {
+      "path": "sources/web/aa8a076d1d54a2ec.html",
+      "bytes": 354120,
+      "sha256": "733a3ac3c8f62c1ee438aaad54384bf538bd8ada8eba294a8995a71f9507f67d"
+    },
+    {
+      "path": "sources/web/ca70820c9673a674.txt",
+      "bytes": 2619,
+      "sha256": "2ab44b68365473c112f5092211a38f231cb23e50de68b75a13369adbd76a74df"
+    },
+    {
+      "path": "sources/web/d28c55f87ccb5fab.html",
+      "bytes": 33545,
+      "sha256": "d16469cd39812dbd7d2d8a3e5126968e7a559246ad91f35e870581fe188b4e37"
+    },
+    {
+      "path": "sources/zai-org__GLM-4.7-Flash/chat_template.jinja",
+      "bytes": 3120,
+      "sha256": "d63ad536c3c81880043e22ec7fd08db42b4d8fb7c89c7138bc562bfa25281375"
+    },
+    {
+      "path": "sources/zai-org__GLM-4.7-Flash/config.json",
+      "bytes": 1070,
+      "sha256": "dc9b97c7c9bed726a2e6939da4234d5c43abb3edec8812068c9a1af1dbc13acb"
+    },
+    {
+      "path": "sources/zai-org__GLM-4.7-Flash/generation_config.json",
+      "bytes": 181,
+      "sha256": "e19f4eb8be12cdb62a3737b52a332c7c142cbf5ee24a5de7d806f6132b782425"
+    },
+    {
+      "path": "sources/zai-org__GLM-4.7-Flash/hub_metadata.json",
+      "bytes": 19767,
+      "sha256": "7366b9255d3e8a62fc33bb1aa7b878326282de112c2594a2f37ca4e2e154034f"
+    },
+    {
+      "path": "sources/zai-org__GLM-4.7-Flash/README.md",
+      "bytes": 8174,
+      "sha256": "7bfcbced42741ceb3fff8809f8d6c84ada9696850e257c4e53e6c2fe9ef4f9bf"
+    },
+    {
+      "path": "sources/zai-org__GLM-4.7-Flash/tokenizer_config.json",
+      "bytes": 7226,
+      "sha256": "31a173e2797ddc8b72ac996803513e627fc28d7aad02cfcce321a431d865c86d"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/chat_template.jinja",
+      "bytes": 10734,
+      "sha256": "3740abcea51c45830cb3ca562084ad5fb2ef53589376f73332e9886f93ade41c"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/config.json",
+      "bytes": 29464,
+      "sha256": "3ac72612095574542f7fff847ada8e59d9199dd8af44bdf625d7e02615572e69"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/generation_config.json",
+      "bytes": 194,
+      "sha256": "ac76b43d8683d3b930126870fc8be73d8679308fe752fa1f381096d8354f6a55"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/hub_metadata.json",
+      "bytes": 70183,
+      "sha256": "44d1876c99e621e083e8b13db75990c16985e292c70bea68b41ac8257bb9cd74"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/LICENSE",
+      "bytes": 4263,
+      "sha256": "96e1622099fc9d6b70c9760f007d99e66d7497eec636b63c60fe208401e9170c"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/README.md",
+      "bytes": 14209,
+      "sha256": "ed1c0a4563c437a32f8953d637a1db9bd831de1b24bd3062a5ace9e04340b1cf"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3/tokenizer_config.json",
+      "bytes": 761,
+      "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/chat_template.jinja",
+      "bytes": 10950,
+      "sha256": "0c4099f3382d6c92700dfb99725025360966fd73032f0ecf32377c0d9e6309c5"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/config.json",
+      "bytes": 69416,
+      "sha256": "bb8f01c42cb92a52ca72e65afb4d5bd8d11aef083cd210e8de25dfb904f23e9f"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/generation_config.json",
+      "bytes": 194,
+      "sha256": "230c30609ecbbb9e6583bedde8e7bdda0c6eb8fe5fad0eaeb3d1b293d751cb4f"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/hub_metadata.json",
+      "bytes": 82503,
+      "sha256": "d7790c8c843f233f0b2f1072f0f820c048d6e805b5a0c9533639c789de7d45c4"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/LICENSE",
+      "bytes": 1070,
+      "sha256": "30b85b6b9659f2e78aa259f8faf5d920a68dee7c9ced3fa6dba1f19f2bc4fca1"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/README.md",
+      "bytes": 8027,
+      "sha256": "e6c5d41400e28f5a89418a0d15b09b9c113314a7553d40d7d4a8a72fcdb87d02"
+    },
+    {
+      "path": "sources/zai-org__GLM-5.3-Flash/tokenizer_config.json",
+      "bytes": 761,
+      "sha256": "98b1271574f41abf89427ae2dda030d94dc9478f0edc5a8bd240db213c6fd5fc"
+    },
+    {
+      "path": "validate_artifacts.py",
+      "bytes": 5988,
+      "sha256": "ab63d80f9865451d8650f4d3a8d6317149a3b25d8e9efa041a696dd4caed573c"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 3343,
+      "sha256": "cdd0a8faa0fd4730c663d89278256e0713ca014710ecce0c3a614c76130f39b3"
+    }
+  ]
+}

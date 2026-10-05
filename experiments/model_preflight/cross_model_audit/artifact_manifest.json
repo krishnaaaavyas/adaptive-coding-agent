@@ -1,0 +1,82 @@
+{
+  "scope": "new cross_model_audit files only",
+  "self_excluded": true,
+  "signed": false,
+  "files": [
+    {
+      "path": "boundary_checks.json",
+      "bytes": 6438,
+      "sha256": "2859a4bd53f13202e232c695022598c6ef0508df1295685b06f3ee4646a199b7"
+    },
+    {
+      "path": "infrastructure_test_matrix.csv",
+      "bytes": 9830,
+      "sha256": "d4fac274216c350e3ea5ca9810c6ec70ccd0d5733c7c22d5a39cfaff4b38577f"
+    },
+    {
+      "path": "REPORT.md",
+      "bytes": 44190,
+      "sha256": "1ca79937e8361fbc4b1ded86d59c0d2d7770a3751723608a0365facb94f9fea7"
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 4413,
+      "sha256": "d1b9bfd2fffb609035edbf4b74cf597318dc3eec54c98a088da2cf19263f349c"
+    },
+    {
+      "path": "sources/artifact.py",
+      "bytes": 7673,
+      "sha256": "53ec09f8ca524d14b31b22cd9a2c4f3e5a33b26ae01ffc721a6d5b9c4bf7c523"
+    },
+    {
+      "path": "sources/core.py",
+      "bytes": 8267,
+      "sha256": "db38809c2e027e059d182d7768d05d6cab263b7648761286870fbd92551bcbba"
+    },
+    {
+      "path": "sources/draft2.txt",
+      "bytes": 43599,
+      "sha256": "e51c19b1acd06723a26b4e2151825ac6b858ef3d1c68271da76a622127aa9536"
+    },
+    {
+      "path": "sources/draft3.txt",
+      "bytes": 47405,
+      "sha256": "f0d5c27a14d7769846f592902288bacbe1b55701232d403150da669ff30d3acc"
+    },
+    {
+      "path": "sources/implementation_README.md",
+      "bytes": 6271,
+      "sha256": "5da790277a49d85171e9f26c6015aa20e9c482364d3949f4e1aa9b6cd00b5868"
+    },
+    {
+      "path": "sources/preflight_30b.txt",
+      "bytes": 26436,
+      "sha256": "94112c2641b7c687a783e17f1d355a69c0ecd61a75ec6e44eb6cd6fe205c930e"
+    },
+    {
+      "path": "sources/preflight_gpt_oss.txt",
+      "bytes": 40956,
+      "sha256": "7cf679b3177f287cf02a2d84f9f815062dc12bdc5f130573262d063af3ebae16"
+    },
+    {
+      "path": "sources/preflight_next.txt",
+      "bytes": 24904,
+      "sha256": "0f072060a129452240eca2c21fabc87f99132563a769599dbbcd054b417696b5"
+    },
+    {
+      "path": "sources/protocol.py",
+      "bytes": 12307,
+      "sha256": "1c775d8bc0a1187e92a3c15e596b91747672796dd93f80e098dbc37c14fc9a45"
+    },
+    {
+      "path": "sources/request.txt",
+      "bytes": 8388,
+      "sha256": "522148d364f679c3c28f369f3b668bfc941cae1691fc6474eeb561d037e28dcf"
+    },
+    {
+      "path": "verify_audit.py",
+      "bytes": 6984,
+      "sha256": "6a1d5489e902bbeb1658799d5dbb41bb4e5cff9813efac17e41d845ee5acb6d0"
+    }
+  ]
+}

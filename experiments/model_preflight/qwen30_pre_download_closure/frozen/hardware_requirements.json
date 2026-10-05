@@ -1,0 +1,53 @@
+{
+  "status": "PLANNING_ESTIMATES_NOT_MEASURED",
+  "subject": {
+    "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120"
+  },
+  "selected_profile": "One CUDA BF16 device, TP1 native base; no quantization/offload/sharding fallback",
+  "base_file_bytes": 61066575656,
+  "parameter_payload_bytes": 61064245248,
+  "KV_bytes_per_token": 98304,
+  "KV_at32768_bytes": 3221225472,
+  "formula": "2(K,V)*48layers*4KVheads*128head_dim*2BF16bytes*32768tokens",
+  "base_plus_KV_GiB": 59.87051010131836,
+  "minimum_plausible_inference_resident_GiB": 65,
+  "estimated_inference_range_GiB": [
+    65,
+    75
+  ],
+  "initial_planning_free_device_GiB": 70,
+  "preferred_free_device_GiB": 80,
+  "device_class": "80GB-class GPU is a plausible starting point; choose actual usable/free bytes, not label or active-parameter count",
+  "BF16_and_compute_capability": "Native BF16 CUDA device, compute capability>=8.0; exact architecture and kernel support must be locked at B",
+  "host_RAM_GiB": {
+    "minimum_plausible_sharded_load": 64,
+    "preferred": 128
+  },
+  "host_pre_acquisition_minimum_plausible_GiB": 64,
+  "host_pre_acquisition_preferred_GiB": 128,
+  "free_storage_required_before_acquisition_bytes": 250000000000,
+  "storage_plan_bytes": {
+    "original": 61066575656,
+    "derivative": 61066575656,
+    "atomic_derivative_staging": 61066575656,
+    "runtime_and_build_inputs_allowance": 30000000000,
+    "receipts_scratch_allowance": 20000000000
+  },
+  "storage_rule": ">=250GB free staging before weights; retained source/runtime artifacts and any additional scratch require explicit extra available bytes; monitor actual free space",
+  "adaptation": "One80GB-class device may support conservative attention BF16 with checkpointing;30720-token backward is unverified and may exceed envelope. Abort/provision more compatible single-device memory, do not change protocol/profile to fit.",
+  "multiple_GPUs": "Not selected. TP2/two48GB is historical alternative requiring separate configuration and full repeat/lifecycle certification; cannot silently substitute this track.",
+  "CUDA_driver": "CUDA12.8.1 expectations, Linux>=570.124.06 conservative driver floor; record actual driver and loaded runtime",
+  "target_inventory": null,
+  "target_inventory_status": "PENDING",
+  "historical_local_inventory": {
+    "path": "experiments/model_preflight/qwen3_coder_30b_a3b/hardware.json",
+    "bytes": 301,
+    "sha256": "3d2cb4e8d4cd4f60459af38c93533522ee6c417f366d012b9da4e8675eccca86"
+  },
+  "historical_local_inventory_is_not_current_measurement": true,
+  "provider_selected": false,
+  "GPU_rented": false,
+  "price_optimization": false,
+  "actual_OOM_fit_latency_throughput_refresh_cost": null
+}

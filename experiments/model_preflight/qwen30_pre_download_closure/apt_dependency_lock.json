@@ -1,0 +1,2136 @@
+{
+  "snapshot": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/",
+  "architecture": "amd64",
+  "roots": [
+    "gcc-10",
+    "g++-10",
+    "make",
+    "binutils",
+    "git",
+    "ca-certificates",
+    "pkg-config",
+    "patch",
+    "tar",
+    "xz-utils",
+    "zlib1g-dev",
+    "libssl-dev",
+    "libffi-dev",
+    "libbz2-dev",
+    "liblzma-dev",
+    "libreadline-dev",
+    "libsqlite3-dev",
+    "libncurses-dev",
+    "uuid-dev"
+  ],
+  "status": "METADATA_PACKAGE_CLOSURE_RESOLVED_TARGET_DPKG_REVIEW_REQUIRED",
+  "failure": null,
+  "indexes": [
+    {
+      "path": "sources/apt/jammy-main-Packages.xz",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy/main/binary-amd64/Packages.xz",
+      "bytes": 1394768,
+      "sha256": "37cb57f1554cbfa71c5a29ee9ffee18a9a8c1782bb0568e0874b7ff4ce8f9c11",
+      "suite": "jammy",
+      "component": "main"
+    },
+    {
+      "path": "sources/apt/jammy-universe-Packages.xz",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy/universe/binary-amd64/Packages.xz",
+      "bytes": 14090084,
+      "sha256": "d29cb24c93fec5f43255706bce7eb46d4779952039d8c68ac1bb14a6f3655ce2",
+      "suite": "jammy",
+      "component": "universe"
+    },
+    {
+      "path": "sources/apt/jammy-updates-main-Packages.xz",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy-updates/main/binary-amd64/Packages.xz",
+      "bytes": 3899348,
+      "sha256": "302c0826a466f9d7dade87551e855671199f7546bc052d59a8d367d684099367",
+      "suite": "jammy-updates",
+      "component": "main"
+    },
+    {
+      "path": "sources/apt/jammy-updates-universe-Packages.xz",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy-updates/universe/binary-amd64/Packages.xz",
+      "bytes": 1284928,
+      "sha256": "30c09984743d0e61cd6d29602e35a4b330eebb4c150aa4c3ede61ff92c0870f8",
+      "suite": "jammy-updates",
+      "component": "universe"
+    },
+    {
+      "path": "sources/apt/jammy-security-main-Packages.xz",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy-security/main/binary-amd64/Packages.xz",
+      "bytes": 3597892,
+      "sha256": "6d10d58c382c3f95be2eadecb85652550e3c0c02dd3719e283957cb8e0478056",
+      "suite": "jammy-security",
+      "component": "main"
+    },
+    {
+      "path": "sources/apt/jammy-security-universe-Packages.xz",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/dists/jammy-security/universe/binary-amd64/Packages.xz",
+      "bytes": 1051752,
+      "sha256": "7c995f9bdfb720f4bff864dcbc7b24936d195ee0080eb404e5cba1130080f177",
+      "suite": "jammy-security",
+      "component": "universe"
+    }
+  ],
+  "packages": [
+    {
+      "name": "binutils",
+      "version": "2.38-4ubuntu2.12",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/binutils_2.38-4ubuntu2.12_amd64.deb",
+      "filename": "binutils_2.38-4ubuntu2.12_amd64.deb",
+      "bytes": 3184,
+      "sha256": "7da8d527d9a4ba9b6fea5fe6126a98f81f538db3a4aaa4ced32d2a26761a4707",
+      "depends": "binutils-common (= 2.38-4ubuntu2.12), libbinutils (= 2.38-4ubuntu2.12), binutils-x86-64-linux-gnu (= 2.38-4ubuntu2.12)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "binutils-common",
+      "version": "2.38-4ubuntu2.12",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/binutils-common_2.38-4ubuntu2.12_amd64.deb",
+      "filename": "binutils-common_2.38-4ubuntu2.12_amd64.deb",
+      "bytes": 222756,
+      "sha256": "53df914b289b688a0f75cbb6c26c5982f31f7ed951785fff2010ad8450249175",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "binutils-x86-64-linux-gnu",
+      "version": "2.38-4ubuntu2.12",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/binutils-x86-64-linux-gnu_2.38-4ubuntu2.12_amd64.deb",
+      "filename": "binutils-x86-64-linux-gnu_2.38-4ubuntu2.12_amd64.deb",
+      "bytes": 2323634,
+      "sha256": "6752566855c79448f8173e61eacde2ef582299480f1abcf4c2ba7ce84718ef32",
+      "depends": "binutils-common (= 2.38-4ubuntu2.12), libbinutils (= 2.38-4ubuntu2.12), libc6 (>= 2.34), libctf-nobfd0 (>= 2.36), libctf0 (>= 2.36), libgcc-s1 (>= 4.2), zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "ca-certificates",
+      "version": "20260601~22.04.1",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/c/ca-certificates/ca-certificates_20260601~22.04.1_all.deb",
+      "filename": "ca-certificates_20260601~22.04.1_all.deb",
+      "bytes": 140666,
+      "sha256": "6e8cdcc8c86103acd4fc14649eac62ff2037108389074a7b167567af33c32245",
+      "depends": "openssl (>= 1.1.1), debconf (>= 0.5) | debconf-2.0",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "cpp-10",
+      "version": "10.5.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/cpp-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "cpp-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 9395766,
+      "sha256": "66f18a37d84ca30c542052f7cdc08f7a3b3d36561a0d677f0f8304c6bf4de161",
+      "depends": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "debconf",
+      "version": "1.5.79ubuntu1",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/d/debconf/debconf_1.5.79ubuntu1_all.deb",
+      "filename": "debconf_1.5.79ubuntu1_all.deb",
+      "bytes": 126202,
+      "sha256": "395a65b3a9539304391456d4d0e5531f4249f297b6e67eb0fcaf2ff77ddc3dc3",
+      "depends": "",
+      "pre_depends": "perl-base (>= 5.20.1-3~)",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "dpkg",
+      "version": "1.21.1ubuntu2.6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/d/dpkg/dpkg_1.21.1ubuntu2.6_amd64.deb",
+      "filename": "dpkg_1.21.1ubuntu2.6_amd64.deb",
+      "bytes": 1238552,
+      "sha256": "8759f60fc173cb4ab85599dd66a633dce9473b9c7655128863a214325f52a7bd",
+      "depends": "tar (>= 1.28-1)",
+      "pre_depends": "libbz2-1.0, libc6 (>= 2.34), liblzma5 (>= 5.2.2), libselinux1 (>= 3.1~), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "g++-10",
+      "version": "10.5.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/g++-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "g++-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 10650974,
+      "sha256": "ff48018bea4a9c8c5d9b20919458d0d887d603dc693bebbb765a2d3decb7620b",
+      "depends": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), gcc-10 (= 10.5.0-1ubuntu1~22.04.3), libstdc++-10-dev (= 10.5.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "gcc-10",
+      "version": "10.5.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/gcc-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "gcc-10_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 19070728,
+      "sha256": "263ae04e5076c946df4e082058076b0b4183374f6053b860a24515ff8b0e0aab",
+      "depends": "cpp-10 (= 10.5.0-1ubuntu1~22.04.3), gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), libcc1-0 (>= 10.5.0-1ubuntu1~22.04.3), binutils (>= 2.38), libgcc-10-dev (= 10.5.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1 (>= 3.0), libgmp10 (>= 2:6.2.1+dfsg), libisl23 (>= 0.15), libmpc3 (>= 1.1.0), libmpfr6 (>= 3.1.3), libstdc++6 (>= 5), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "gcc-10-base",
+      "version": "10.5.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/gcc-10-base_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "gcc-10-base_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 212984,
+      "sha256": "b0958b61982af7fd2913dd225efec982efb4512ae1691398d70c38d1fc0c8642",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "gcc-11-base",
+      "version": "11.4.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-11/gcc-11-base_11.4.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "gcc-11-base_11.4.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 215826,
+      "sha256": "a0445a3889fd4441cc3b3a125d6d1589de3d2628ca4e92a352170ed0fea4d18b",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "gcc-12-base",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/gcc-12-base_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "gcc-12-base_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 215782,
+      "sha256": "7f9253b7e0976f0526fc21346c73ee006e185a7b2f2f865048ea78a2af55bc8d",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "git",
+      "version": "1:2.34.1-1ubuntu1.17",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/git/git_2.34.1-1ubuntu1.17_amd64.deb",
+      "filename": "git_2.34.1-1ubuntu1.17_amd64.deb",
+      "bytes": 3173622,
+      "sha256": "8794fcf2c4606c445df0db3dc963c8fb852772208bfb12727a12717c03767af7",
+      "depends": "libc6 (>= 2.34), libcurl3-gnutls (>= 7.56.1), libexpat1 (>= 2.0.1), libpcre2-8-0 (>= 10.34), zlib1g (>= 1:1.2.0), perl, liberror-perl, git-man (>> 1:2.34.1), git-man (<< 1:2.34.1-.)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "git-man",
+      "version": "1:2.34.1-1ubuntu1.17",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/git/git-man_2.34.1-1ubuntu1.17_all.deb",
+      "filename": "git-man_2.34.1-1ubuntu1.17_all.deb",
+      "bytes": 953934,
+      "sha256": "8129d7b87facd50e32f806ad9905dd99435e7b0bb2566d6a33e5b5371c5c36e5",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libacl1",
+      "version": "2.3.1-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/a/acl/libacl1_2.3.1-1_amd64.deb",
+      "filename": "libacl1_2.3.1-1_amd64.deb",
+      "bytes": 16218,
+      "sha256": "4db2c64ec74f673ed022e92cce7b83d0cbe0b779e02ca60a56ba59ae07754e05",
+      "depends": "libc6 (>= 2.33)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libasan6",
+      "version": "11.4.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-11/libasan6_11.4.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libasan6_11.4.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 2283168,
+      "sha256": "eb98f62bf6c7234132beab59113c249db40acfbd1c9965308ee612de1a6e819e",
+      "depends": "gcc-11-base (= 11.4.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libatomic1",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libatomic1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libatomic1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 10470,
+      "sha256": "56573c81b5dd84817882400cfea49fe671f5e6cfdd0f88b5d3a894c08b150462",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libbinutils",
+      "version": "2.38-4ubuntu2.12",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/libbinutils_2.38-4ubuntu2.12_amd64.deb",
+      "filename": "libbinutils_2.38-4ubuntu2.12_amd64.deb",
+      "bytes": 662922,
+      "sha256": "c5a7c354cf986126edc80ec615c0041c19e5b554433857cc66858803d4552296",
+      "depends": "libc6 (>= 2.34), zlib1g (>= 1:1.2.0), binutils-common (= 2.38-4ubuntu2.12)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libblkid1",
+      "version": "2.37.2-4ubuntu3.6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/u/util-linux/libblkid1_2.37.2-4ubuntu3.6_amd64.deb",
+      "filename": "libblkid1_2.37.2-4ubuntu3.6_amd64.deb",
+      "bytes": 103456,
+      "sha256": "bf9ab18457e0a10879951b01c87156bdf503bdeb0f87ae0f0f81ec62cb000279",
+      "depends": "libc6 (>= 2.33)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libbrotli1",
+      "version": "1.0.9-2build6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/brotli/libbrotli1_1.0.9-2build6_amd64.deb",
+      "filename": "libbrotli1_1.0.9-2build6_amd64.deb",
+      "bytes": 315164,
+      "sha256": "8e6aa2dfd44df287b9fb227862f3b6062ec074dd39a247874edfe12e1dcc3841",
+      "depends": "libc6 (>= 2.29)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libbz2-1.0",
+      "version": "1.0.8-5ubuntu0.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/bzip2/libbz2-1.0_1.0.8-5ubuntu0.1_amd64.deb",
+      "filename": "libbz2-1.0_1.0.8-5ubuntu0.1_amd64.deb",
+      "bytes": 34524,
+      "sha256": "2fd35bb1ac601fa1bf35da2fa08dba3541766ca791927342b5efcb18ef17aecb",
+      "depends": "libc6 (>= 2.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libbz2-dev",
+      "version": "1.0.8-5ubuntu0.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/bzip2/libbz2-dev_1.0.8-5ubuntu0.1_amd64.deb",
+      "filename": "libbz2-dev_1.0.8-5ubuntu0.1_amd64.deb",
+      "bytes": 32484,
+      "sha256": "7a6d810e55b250945d2dbb5f45d59551b2d50aa7ce140b6eda0928dd76ac9320",
+      "depends": "libbz2-1.0 (= 1.0.8-5ubuntu0.1), libc6-dev | libc-dev",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libc-dev-bin",
+      "version": "2.35-0ubuntu3.15",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/glibc/libc-dev-bin_2.35-0ubuntu3.15_amd64.deb",
+      "filename": "libc-dev-bin_2.35-0ubuntu3.15_amd64.deb",
+      "bytes": 20282,
+      "sha256": "cd3e9a91ac20fbd978fa40be4e93716736c29a4619dcc1398343c2c1d1f67e10",
+      "depends": "libc6 (>> 2.35), libc6 (<< 2.36)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libc6",
+      "version": "2.35-0ubuntu3.15",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/glibc/libc6_2.35-0ubuntu3.15_amd64.deb",
+      "filename": "libc6_2.35-0ubuntu3.15_amd64.deb",
+      "bytes": 3234380,
+      "sha256": "79e35256227e16a607c154cdeb8d76ff12d20e31de286ea7fd9ad3b96fe0452d",
+      "depends": "libgcc-s1, libcrypt1 (>= 1:4.4.10-10ubuntu4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libc6-dev",
+      "version": "2.35-0ubuntu3.15",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/glibc/libc6-dev_2.35-0ubuntu3.15_amd64.deb",
+      "filename": "libc6-dev_2.35-0ubuntu3.15_amd64.deb",
+      "bytes": 2100232,
+      "sha256": "ce51ae233a9f800a040de2d0cd5983ef86f558c623b342c80942301d7f453f48",
+      "depends": "libc6 (= 2.35-0ubuntu3.15), libc-dev-bin (= 2.35-0ubuntu3.15), linux-libc-dev, libcrypt-dev, rpcsvc-proto, libtirpc-dev, libnsl-dev",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libcc1-0",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libcc1-0_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libcc1-0_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 48290,
+      "sha256": "749e0fd1732df5d79af17c472dfa8f91a36fcc8d6dd5baff3f999192f7aa4357",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.15), libgcc-s1 (>= 3.0), libstdc++6 (>= 5.2)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libcom-err2",
+      "version": "1.46.5-2ubuntu1.2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/e/e2fsprogs/libcom-err2_1.46.5-2ubuntu1.2_amd64.deb",
+      "filename": "libcom-err2_1.46.5-2ubuntu1.2_amd64.deb",
+      "bytes": 9304,
+      "sha256": "552bc8169451cfdcf174a8da845b13ced0a55777149af5cf47491193161ed791",
+      "depends": "libc6 (>= 2.17)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libcrypt-dev",
+      "version": "1:4.4.27-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libx/libxcrypt/libcrypt-dev_4.4.27-1_amd64.deb",
+      "filename": "libcrypt-dev_4.4.27-1_amd64.deb",
+      "bytes": 111682,
+      "sha256": "a79be2f6e45823dcc09e04d5e98c88ec88d07d5b8895d05b875a8ade8b345efa",
+      "depends": "libcrypt1 (= 1:4.4.27-1)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libcrypt1",
+      "version": "1:4.4.27-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libx/libxcrypt/libcrypt1_4.4.27-1_amd64.deb",
+      "filename": "libcrypt1_4.4.27-1_amd64.deb",
+      "bytes": 82004,
+      "sha256": "3fa566e9f861a08736cbc5a97562d9d6e4f0c00450fbeafcb6d7583423b04a98",
+      "depends": "libc6 (>= 2.25)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libctf-nobfd0",
+      "version": "2.38-4ubuntu2.12",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/libctf-nobfd0_2.38-4ubuntu2.12_amd64.deb",
+      "filename": "libctf-nobfd0_2.38-4ubuntu2.12_amd64.deb",
+      "bytes": 108424,
+      "sha256": "3e4ce8f782bb8dc6f53f7fb6100d1278d5f68949a47cd62455399e576e35dae8",
+      "depends": "libc6 (>= 2.14), zlib1g (>= 1:1.2.0)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libctf0",
+      "version": "2.38-4ubuntu2.12",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/b/binutils/libctf0_2.38-4ubuntu2.12_amd64.deb",
+      "filename": "libctf0_2.38-4ubuntu2.12_amd64.deb",
+      "bytes": 102954,
+      "sha256": "fc893da8cdbbb5770eb382a0e63fde1e7aafdc948addefe80f285fb213307c5c",
+      "depends": "libbinutils (= 2.38-4ubuntu2.12), libc6 (>= 2.33), zlib1g (>= 1:1.2.0)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libcurl3-gnutls",
+      "version": "7.81.0-1ubuntu1.29",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/c/curl/libcurl3-gnutls_7.81.0-1ubuntu1.29_amd64.deb",
+      "filename": "libcurl3-gnutls_7.81.0-1ubuntu1.29_amd64.deb",
+      "bytes": 285994,
+      "sha256": "1082b16f576a6a5d2769a79913b982677345fc3d4bab54e607cea2874d817f58",
+      "depends": "libbrotli1 (>= 0.6.0), libc6 (>= 2.34), libgnutls30 (>= 3.7.2), libgssapi-krb5-2 (>= 1.17), libidn2-0 (>= 0.6), libldap-2.5-0 (>= 2.5.4), libnettle8, libnghttp2-14 (>= 1.12.0), libpsl5 (>= 0.16.0), librtmp1 (>= 2.4+20131018.git79459a2-3~), libssh-4 (>= 0.9.0), libzstd1 (>= 1.4.0), zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libdb5.3",
+      "version": "5.3.28+dfsg1-0.8ubuntu3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/d/db5.3/libdb5.3_5.3.28+dfsg1-0.8ubuntu3_amd64.deb",
+      "filename": "libdb5.3_5.3.28+dfsg1-0.8ubuntu3_amd64.deb",
+      "bytes": 721906,
+      "sha256": "ce60e446c9cb0e94bb4b4d0fe4f969e772edec250deb186bacf955e4d196548b",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libdpkg-perl",
+      "version": "1.21.1ubuntu2.6",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/d/dpkg/libdpkg-perl_1.21.1ubuntu2.6_all.deb",
+      "filename": "libdpkg-perl_1.21.1ubuntu2.6_all.deb",
+      "bytes": 236718,
+      "sha256": "5cea0fc1b24772bbda3cdcf9acfd6caefb2d03d1136616f3d5b4cd8caf71eb19",
+      "depends": "perl:any, dpkg (>= 1.18.11)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "liberror-perl",
+      "version": "0.17029-1",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libe/liberror-perl/liberror-perl_0.17029-1_all.deb",
+      "filename": "liberror-perl_0.17029-1_all.deb",
+      "bytes": 26460,
+      "sha256": "13c044def376282cd2a6a4b21e5ec829a6ac8aecd745183df22570e320cec08e",
+      "depends": "perl:any",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libexpat1",
+      "version": "2.4.7-1ubuntu0.9",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/e/expat/libexpat1_2.4.7-1ubuntu0.9_amd64.deb",
+      "filename": "libexpat1_2.4.7-1ubuntu0.9_amd64.deb",
+      "bytes": 96926,
+      "sha256": "0ee31596316d2275ab351d11290c63e7547fff0ecd7f431e56855cb7c5f18588",
+      "depends": "libc6 (>= 2.25)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libffi-dev",
+      "version": "3.4.2-4",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libf/libffi/libffi-dev_3.4.2-4_amd64.deb",
+      "filename": "libffi-dev_3.4.2-4_amd64.deb",
+      "bytes": 63712,
+      "sha256": "41995a2341a425d2bf74be3ade3a73e66922be181f7b60ae29d6762c37493fc2",
+      "depends": "libffi8 (= 3.4.2-4)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libffi8",
+      "version": "3.4.2-4",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libf/libffi/libffi8_3.4.2-4_amd64.deb",
+      "filename": "libffi8_3.4.2-4_amd64.deb",
+      "bytes": 22326,
+      "sha256": "b4f88c91fa6f4c942097be6abfc365fb133c5e147640168cbb7704fd855eac10",
+      "depends": "libc6 (>= 2.27)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgcc-10-dev",
+      "version": "10.5.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/libgcc-10-dev_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libgcc-10-dev_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 2493230,
+      "sha256": "2d74f1b61399985de75f340edb91f8bdc5984f99d1deaff11e730cab6a379bd2",
+      "depends": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), libgcc-s1 (>= 10.5.0-1ubuntu1~22.04.3), libgomp1 (>= 10.5.0-1ubuntu1~22.04.3), libitm1 (>= 10.5.0-1ubuntu1~22.04.3), libatomic1 (>= 10.5.0-1ubuntu1~22.04.3), libasan6 (>= 10.5.0-1ubuntu1~22.04.3), liblsan0 (>= 10.5.0-1ubuntu1~22.04.3), libtsan0 (>= 10.5.0-1ubuntu1~22.04.3), libubsan1 (>= 10.5.0-1ubuntu1~22.04.3), libquadmath0 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgcc-s1",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libgcc-s1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libgcc-s1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 53896,
+      "sha256": "d383e642d83263147f7b4b69fb92cf1036e5246c6be3accf10b77f986684589a",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.35)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgdbm-compat4",
+      "version": "1.23-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gdbm/libgdbm-compat4_1.23-1_amd64.deb",
+      "filename": "libgdbm-compat4_1.23-1_amd64.deb",
+      "bytes": 6606,
+      "sha256": "58636e2ad6bab216b70f83a114f4e37d1f733fd6eb69e220cb9a4d53c2b5868d",
+      "depends": "libc6 (>= 2.33), libgdbm6 (>= 1.16)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgdbm6",
+      "version": "1.23-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gdbm/libgdbm6_1.23-1_amd64.deb",
+      "filename": "libgdbm6_1.23-1_amd64.deb",
+      "bytes": 33906,
+      "sha256": "acf9e905a3ecbd4d919938e1cfd4bcd9d861bc794648046a9af1fbbefd0cc495",
+      "depends": "libc6 (>= 2.33)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libglib2.0-0",
+      "version": "2.72.4-0ubuntu2.10",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/glib2.0/libglib2.0-0_2.72.4-0ubuntu2.10_amd64.deb",
+      "filename": "libglib2.0-0_2.72.4-0ubuntu2.10_amd64.deb",
+      "bytes": 1468764,
+      "sha256": "b82973c5d9698e48297000e74d2dc7431e726db8f0f948ea56be7f9e4c9e66fb",
+      "depends": "libc6 (>= 2.34), libffi8 (>= 3.4), libmount1 (>= 2.35.2-7~), libpcre3, libselinux1 (>= 3.1~), zlib1g (>= 1:1.2.2)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgmp10",
+      "version": "2:6.2.1+dfsg-3ubuntu1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gmp/libgmp10_6.2.1+dfsg-3ubuntu1_amd64.deb",
+      "filename": "libgmp10_6.2.1+dfsg-3ubuntu1_amd64.deb",
+      "bytes": 250148,
+      "sha256": "d199a77e11701d4d620dd4f62e05740e3072dce893856ea3bbaa6ae9fa19fef1",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gnutls28/libgnutls30_3.7.3-4ubuntu1.9_amd64.deb",
+      "filename": "libgnutls30_3.7.3-4ubuntu1.9_amd64.deb",
+      "bytes": 971454,
+      "sha256": "65e08f0b5d1e620cc5cc9478cd1035f83ea752a6fae23141afd2d111a8f6c555",
+      "depends": "libc6 (>= 2.34), libgmp10 (>= 2:6.2.1+dfsg), libhogweed6 (>= 3.6), libidn2-0 (>= 2.0.0), libnettle8 (>= 3.7~), libp11-kit0 (>= 0.23.18.1), libtasn1-6 (>= 4.14), libunistring2 (>= 0.9.7)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgomp1",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libgomp1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libgomp1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 126570,
+      "sha256": "870c27299185a5dd4accad3b15bf82a7409fd7073cccaa8025875307da4d0ce2",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libgssapi-krb5-2",
+      "version": "1.19.2-2ubuntu0.10",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/k/krb5/libgssapi-krb5-2_1.19.2-2ubuntu0.10_amd64.deb",
+      "filename": "libgssapi-krb5-2_1.19.2-2ubuntu0.10_amd64.deb",
+      "bytes": 144666,
+      "sha256": "08e98a3dc74361cdb13c0d68bc73e0352552490546c1ad3ce5bff5426f6a2dfe",
+      "depends": "libc6 (>= 2.33), libcom-err2 (>= 1.43.9), libk5crypto3 (>= 1.16), libkrb5-3 (= 1.19.2-2ubuntu0.10), libkrb5support0 (>= 1.15~beta1)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libhogweed6",
+      "version": "3.7.3-1build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/nettle/libhogweed6_3.7.3-1build2_amd64.deb",
+      "filename": "libhogweed6_3.7.3-1build2_amd64.deb",
+      "bytes": 199324,
+      "sha256": "2402ac51ebc760799b01f3fd4933126c5eb446e5b043832601fb589f5e50c363",
+      "depends": "libc6 (>= 2.14), libgmp10 (>= 2:6.2.1+dfsg), libnettle8",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libidn2-0",
+      "version": "2.3.2-2build1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libi/libidn2/libidn2-0_2.3.2-2build1_amd64.deb",
+      "filename": "libidn2-0_2.3.2-2build1_amd64.deb",
+      "bytes": 66396,
+      "sha256": "bc935e1871aa4a75d3f4ff549af32b7316aecfbea2200d85055878767b8398c8",
+      "depends": "libc6 (>= 2.14), libunistring2 (>= 0.9.7)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libisl23",
+      "version": "0.24-2build1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/i/isl/libisl23_0.24-2build1_amd64.deb",
+      "filename": "libisl23_0.24-2build1_amd64.deb",
+      "bytes": 726854,
+      "sha256": "4cb0faab32c896165cf4ebe3c3ebce3176bf869453636d7fe8be89dccc2ae5af",
+      "depends": "libc6 (>= 2.14), libgmp10 (>= 2:6.2.1+dfsg)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libitm1",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libitm1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libitm1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 30160,
+      "sha256": "80f42953fa98d3ef9d49c2fd8c580bea40e1ace953eb8850bc961eef59f211c2",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libk5crypto3",
+      "version": "1.19.2-2ubuntu0.10",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/k/krb5/libk5crypto3_1.19.2-2ubuntu0.10_amd64.deb",
+      "filename": "libk5crypto3_1.19.2-2ubuntu0.10_amd64.deb",
+      "bytes": 86496,
+      "sha256": "40429c0099678fbc35045f0c63a10bc3490251d80cf1006095eaa0272c8d5e27",
+      "depends": "libc6 (>= 2.33), libkrb5support0 (>= 1.16)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libkeyutils1",
+      "version": "1.6.1-2ubuntu3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/k/keyutils/libkeyutils1_1.6.1-2ubuntu3_amd64.deb",
+      "filename": "libkeyutils1_1.6.1-2ubuntu3_amd64.deb",
+      "bytes": 10376,
+      "sha256": "940daf78ee0229549b4eabc92ffd79dd038ed96a44e2e912305a23540cf22a0a",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libkrb5-3",
+      "version": "1.19.2-2ubuntu0.10",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/k/krb5/libkrb5-3_1.19.2-2ubuntu0.10_amd64.deb",
+      "filename": "libkrb5-3_1.19.2-2ubuntu0.10_amd64.deb",
+      "bytes": 355538,
+      "sha256": "0da3e0df7d6314615160a42f65ff345986783be02cd65a6ce797cfbacc7bcb0d",
+      "depends": "libc6 (>= 2.34), libcom-err2 (>= 1.43.9), libk5crypto3 (>= 1.18.2), libkeyutils1 (>= 1.5.9), libkrb5support0 (= 1.19.2-2ubuntu0.10), libssl3 (>= 3.0.0~~alpha1)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libkrb5support0",
+      "version": "1.19.2-2ubuntu0.10",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/k/krb5/libkrb5support0_1.19.2-2ubuntu0.10_amd64.deb",
+      "filename": "libkrb5support0_1.19.2-2ubuntu0.10_amd64.deb",
+      "bytes": 32708,
+      "sha256": "0406052ac2d267f05088ada6d36df61aaa338cbe8d5e13fb1d7f79da560817ed",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libldap-2.5-0",
+      "version": "2.5.20+dfsg-0ubuntu0.22.04.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/o/openldap/libldap-2.5-0_2.5.20+dfsg-0ubuntu0.22.04.1_amd64.deb",
+      "filename": "libldap-2.5-0_2.5.20+dfsg-0ubuntu0.22.04.1_amd64.deb",
+      "bytes": 183948,
+      "sha256": "a3ee4ac116a2c50c9ddfe9de91c0781a50704244771474334340cdce02f5cd4f",
+      "depends": "libc6 (>= 2.34), libgnutls30 (>= 3.7.2), libsasl2-2 (>= 2.1.27+dfsg2)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "liblsan0",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/liblsan0_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "liblsan0_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 1068998,
+      "sha256": "c308b0e39678a00b3ad3a9653119af4a29156e2c385111bdbd4890c96d376fa4",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1 (>= 3.3)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "liblzma-dev",
+      "version": "5.2.5-2ubuntu1.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/x/xz-utils/liblzma-dev_5.2.5-2ubuntu1.1_amd64.deb",
+      "filename": "liblzma-dev_5.2.5-2ubuntu1.1_amd64.deb",
+      "bytes": 158710,
+      "sha256": "ef7690d90ee4397fa911addc15d72347feb07ccd75c8e18b5a6aa41c33189833",
+      "depends": "liblzma5 (= 5.2.5-2ubuntu1.1)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "liblzma5",
+      "version": "5.2.5-2ubuntu1.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/x/xz-utils/liblzma5_5.2.5-2ubuntu1.1_amd64.deb",
+      "filename": "liblzma5_5.2.5-2ubuntu1.1_amd64.deb",
+      "bytes": 99630,
+      "sha256": "af77f099e7fa95a31267023535832804382fa66572a6b38002187be6e15116cb",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libmount1",
+      "version": "2.37.2-4ubuntu3.6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/u/util-linux/libmount1_2.37.2-4ubuntu3.6_amd64.deb",
+      "filename": "libmount1_2.37.2-4ubuntu3.6_amd64.deb",
+      "bytes": 122186,
+      "sha256": "9f69b37420731477105d94c6bf2139437be04bef7c46ba7ffcaf3741e301bdba",
+      "depends": "libblkid1 (>= 2.17.2), libc6 (>= 2.34), libselinux1 (>= 3.1~)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libmpc3",
+      "version": "1.2.1-2build1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/m/mpclib3/libmpc3_1.2.1-2build1_amd64.deb",
+      "filename": "libmpc3_1.2.1-2build1_amd64.deb",
+      "bytes": 46868,
+      "sha256": "6cd43b60ac14890737a3402a35350d6696bc1521de8731cdecc9e7ef10041446",
+      "depends": "libc6 (>= 2.4), libgmp10 (>= 2:6.2.1+dfsg), libmpfr6 (>= 4.0.0)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libmpfr6",
+      "version": "4.1.0-3build3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/m/mpfr4/libmpfr6_4.1.0-3build3_amd64.deb",
+      "filename": "libmpfr6_4.1.0-3build3_amd64.deb",
+      "bytes": 1424734,
+      "sha256": "ffdc36247e5fc96ba3fca5a9448856c9327e93631ce5646acd9fffd286d10de3",
+      "depends": "libc6 (>= 2.14), libgmp10 (>= 2:6.2.1+dfsg)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libncurses-dev",
+      "version": "6.3-2ubuntu0.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/ncurses/libncurses-dev_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libncurses-dev_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 380538,
+      "sha256": "e51d55c365b957b442a1cef83256e4c3f71a66a743e5ba972a902f2da6b1123e",
+      "depends": "libtinfo6 (= 6.3-2ubuntu0.3), libncurses6 (= 6.3-2ubuntu0.3), libncursesw6 (= 6.3-2ubuntu0.3), libc6-dev | libc-dev, ncurses-bin (>= 6.0+20151017)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libncurses6",
+      "version": "6.3-2ubuntu0.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/ncurses/libncurses6_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libncurses6_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 111258,
+      "sha256": "38f97a45931ab6f296be017344afc45e5ccbf83f24896f79625318691a9bebf8",
+      "depends": "libtinfo6 (= 6.3-2ubuntu0.3), libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libncursesw6",
+      "version": "6.3-2ubuntu0.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/ncurses/libncursesw6_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libncursesw6_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 147472,
+      "sha256": "734107c126c2685508e4186f6be65f4edc0d393f1bc1cb4c307a76d1beb09496",
+      "depends": "libtinfo6 (= 6.3-2ubuntu0.3), libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libnettle8",
+      "version": "3.7.3-1build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/nettle/libnettle8_3.7.3-1build2_amd64.deb",
+      "filename": "libnettle8_3.7.3-1build2_amd64.deb",
+      "bytes": 158864,
+      "sha256": "6da09e685e5587f8873f662b007de45f75424fb33d2c4a51837380e683d33c7e",
+      "depends": "libc6 (>= 2.17)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libnghttp2-14",
+      "version": "1.43.0-1ubuntu0.4",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/nghttp2/libnghttp2-14_1.43.0-1ubuntu0.4_amd64.deb",
+      "filename": "libnghttp2-14_1.43.0-1ubuntu0.4_amd64.deb",
+      "bytes": 76932,
+      "sha256": "6e968d1ed7abb3635a3b0707ebfa20cd368ce784f83cc567b11c0723217a6de4",
+      "depends": "libc6 (>= 2.17)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libnsl-dev",
+      "version": "1.3.0-2build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libn/libnsl/libnsl-dev_1.3.0-2build2_amd64.deb",
+      "filename": "libnsl-dev_1.3.0-2build2_amd64.deb",
+      "bytes": 71286,
+      "sha256": "e93aa448fe708a4bbfcc40b2a8cab6f5f88896174a301caab2719f734e08a621",
+      "depends": "libnsl2 (= 1.3.0-2build2), libtirpc-dev",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libnsl2",
+      "version": "1.3.0-2build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libn/libnsl/libnsl2_1.3.0-2build2_amd64.deb",
+      "filename": "libnsl2_1.3.0-2build2_amd64.deb",
+      "bytes": 42340,
+      "sha256": "cfeef478f96ace59617f4f93c2497776b98a33c99bf3602af46844ccf9cba9d3",
+      "depends": "libc6 (>= 2.33), libtirpc3 (>= 1.0.2)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libp11-kit0",
+      "version": "0.24.0-6ubuntu0.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/p11-kit/libp11-kit0_0.24.0-6ubuntu0.1_amd64.deb",
+      "filename": "libp11-kit0_0.24.0-6ubuntu0.1_amd64.deb",
+      "bytes": 252086,
+      "sha256": "9d949950970a062a81051a78ec4075b8dba608f063afaa5c8752a612d139a9b5",
+      "depends": "libc6 (>= 2.34), libffi8 (>= 3.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/pcre2/libpcre2-8-0_10.39-3ubuntu0.1_amd64.deb",
+      "filename": "libpcre2-8-0_10.39-3ubuntu0.1_amd64.deb",
+      "bytes": 220512,
+      "sha256": "01a5a74f3d305cad32fffffdc200c2a92fd8e5a01bff97de76ac598fb444d53e",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libpcre3",
+      "version": "2:8.39-13ubuntu0.22.04.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/pcre3/libpcre3_8.39-13ubuntu0.22.04.1_amd64.deb",
+      "filename": "libpcre3_8.39-13ubuntu0.22.04.1_amd64.deb",
+      "bytes": 245530,
+      "sha256": "0d1eb051047eb0c637c893f618f45e1d419863bfa3bc821897ee05ad418ba22e",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libperl5.34",
+      "version": "5.34.0-3ubuntu1.9",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/perl/libperl5.34_5.34.0-3ubuntu1.9_amd64.deb",
+      "filename": "libperl5.34_5.34.0-3ubuntu1.9_amd64.deb",
+      "bytes": 4796012,
+      "sha256": "d942dfda30abea6d621cdd25df1d4bd0a800dcc61718bd4e4fbbd5f30b39e93b",
+      "depends": "libbz2-1.0, libc6 (>= 2.35), libcrypt1 (>= 1:4.1.0), libdb5.3, libgdbm-compat4 (>= 1.18-3), libgdbm6 (>= 1.18-3), zlib1g (>= 1:1.2.2.3), perl-modules-5.34 (>= 5.34.0-3ubuntu1.9)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libpsl5",
+      "version": "0.21.0-1.2build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libp/libpsl/libpsl5_0.21.0-1.2build2_amd64.deb",
+      "filename": "libpsl5_0.21.0-1.2build2_amd64.deb",
+      "bytes": 58388,
+      "sha256": "cd29dee0eac2bdf3f944f47b3926993827dc6b3710251df76006fab2fd09f7e1",
+      "depends": "libidn2-0 (>= 0.16), libc6 (>= 2.33), libunistring2 (>= 0.9.7)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libquadmath0",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libquadmath0_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libquadmath0_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 153976,
+      "sha256": "c4c59e67e76674c8c494ce5e0415b71d770a759b48893c0d3cbabddceeb690b2",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.23)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libreadline-dev",
+      "version": "8.1.2-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/r/readline/libreadline-dev_8.1.2-1_amd64.deb",
+      "filename": "libreadline-dev_8.1.2-1_amd64.deb",
+      "bytes": 166034,
+      "sha256": "c30b3af432e58094d33fdd852c13f3c96460b8d778dd1f8f155aa9fca5758b86",
+      "depends": "libreadline8 (= 8.1.2-1), libncurses-dev, dpkg (>= 1.15.4) | install-info",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libreadline8",
+      "version": "8.1.2-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/r/readline/libreadline8_8.1.2-1_amd64.deb",
+      "filename": "libreadline8_8.1.2-1_amd64.deb",
+      "bytes": 153210,
+      "sha256": "51fd16f608efa710c987e4b071ffba0bec63a9ac8e55eddd5770f5e5252edc09",
+      "depends": "readline-common, libc6 (>= 2.33), libtinfo6 (>= 6)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "librtmp1",
+      "version": "2.4+20151223.gitfa8646d.1-2build4",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/r/rtmpdump/librtmp1_2.4+20151223.gitfa8646d.1-2build4_amd64.deb",
+      "filename": "librtmp1_2.4+20151223.gitfa8646d.1-2build4_amd64.deb",
+      "bytes": 58190,
+      "sha256": "c8bdaa1e777d08888914e922f8f76441c26ee36438d3aa59161ecccc2421f77e",
+      "depends": "libc6 (>= 2.14), libgmp10 (>= 2:6.2.1+dfsg), libgnutls30 (>= 3.7.2), libhogweed6, libnettle8, zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libsasl2-2",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/c/cyrus-sasl2/libsasl2-2_2.1.27+dfsg2-3ubuntu1.2_amd64.deb",
+      "filename": "libsasl2-2_2.1.27+dfsg2-3ubuntu1.2_amd64.deb",
+      "bytes": 53832,
+      "sha256": "391cb48d7e601d5bb590da8d426750acf6c987241ba280a36227873b94f20cee",
+      "depends": "libsasl2-modules-db (>= 2.1.27+dfsg2-3ubuntu1.2), libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libsasl2-modules-db",
+      "version": "2.1.27+dfsg2-3ubuntu1.2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/c/cyrus-sasl2/libsasl2-modules-db_2.1.27+dfsg2-3ubuntu1.2_amd64.deb",
+      "filename": "libsasl2-modules-db_2.1.27+dfsg2-3ubuntu1.2_amd64.deb",
+      "bytes": 20476,
+      "sha256": "0e222c26d70c2cfd132c8de035bcf9673067b6cbfea0a7421dced7b6256ae774",
+      "depends": "libc6 (>= 2.14), libdb5.3",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libselinux1",
+      "version": "3.3-1build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libs/libselinux/libselinux1_3.3-1build2_amd64.deb",
+      "filename": "libselinux1_3.3-1build2_amd64.deb",
+      "bytes": 74578,
+      "sha256": "b96c6b40ee2388bd51341cb11c0f1d5bcca29b9180b6e3a77a06b881f2913f7e",
+      "depends": "libc6 (>= 2.34), libpcre2-8-0 (>= 10.22)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libsqlite3-0",
+      "version": "3.37.2-2ubuntu0.8",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/s/sqlite3/libsqlite3-0_3.37.2-2ubuntu0.8_amd64.deb",
+      "filename": "libsqlite3-0_3.37.2-2ubuntu0.8_amd64.deb",
+      "bytes": 641792,
+      "sha256": "6e22b1e8d375fed6a1d52cad5887e762b6cdeaba137595e726c95486968dfab5",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libsqlite3-dev",
+      "version": "3.37.2-2ubuntu0.8",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/s/sqlite3/libsqlite3-dev_3.37.2-2ubuntu0.8_amd64.deb",
+      "filename": "libsqlite3-dev_3.37.2-2ubuntu0.8_amd64.deb",
+      "bytes": 846526,
+      "sha256": "e62e38614a2cdba0e13aea306d99b7fdab855bd81eaaff14a5a7aae4d174fd04",
+      "depends": "libsqlite3-0 (= 3.37.2-2ubuntu0.8), libc6-dev",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libssh-4",
+      "version": "0.9.6-2ubuntu0.22.04.8",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libs/libssh/libssh-4_0.9.6-2ubuntu0.22.04.8_amd64.deb",
+      "filename": "libssh-4_0.9.6-2ubuntu0.22.04.8_amd64.deb",
+      "bytes": 188616,
+      "sha256": "ebeff6b7c3777c5ae0a2fd4200c3a946f3e866d102d7c56d46c997af8ebc2138",
+      "depends": "libc6 (>= 2.33), libgssapi-krb5-2 (>= 1.17), libssl3 (>= 3.0.0~~alpha1), zlib1g (>= 1:1.1.4)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libssl-dev",
+      "version": "3.0.2-0ubuntu1.30",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/o/openssl/libssl-dev_3.0.2-0ubuntu1.30_amd64.deb",
+      "filename": "libssl-dev_3.0.2-0ubuntu1.30_amd64.deb",
+      "bytes": 2377254,
+      "sha256": "8a47dfa7f9bd4d54ac9dc9a1db14891a9133841bf44f12c3db086f2d4321bac6",
+      "depends": "libssl3 (= 3.0.2-0ubuntu1.30)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libssl3",
+      "version": "3.0.2-0ubuntu1.30",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/o/openssl/libssl3_3.0.2-0ubuntu1.30_amd64.deb",
+      "filename": "libssl3_3.0.2-0ubuntu1.30_amd64.deb",
+      "bytes": 1907006,
+      "sha256": "d1b4636e32ac6d3b95d583ac05ac548b1aa248414bae1c51b14f54be0f8fd7bc",
+      "depends": "libc6 (>= 2.34), debconf (>= 0.5) | debconf-2.0",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libstdc++-10-dev",
+      "version": "10.5.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/universe/g/gcc-10/libstdc++-10-dev_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libstdc++-10-dev_10.5.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 1868432,
+      "sha256": "c7516465bd00d474e0aa6978a5c87eee4cb503d09f8d3fd70cdc253081f1d3a9",
+      "depends": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3), libgcc-10-dev (= 10.5.0-1ubuntu1~22.04.3), libstdc++6 (>= 10.5.0-1ubuntu1~22.04.3), libc6-dev (>= 2.13-0ubuntu6)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libstdc++6",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libstdc++6_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libstdc++6_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 698608,
+      "sha256": "29ef3d289b272704b75141906c8f683db0f2bdb0942061366691333bfb289bdc",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1 (>= 4.2)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libtasn1-6",
+      "version": "4.18.0-4ubuntu0.2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libt/libtasn1-6/libtasn1-6_4.18.0-4ubuntu0.2_amd64.deb",
+      "filename": "libtasn1-6_4.18.0-4ubuntu0.2_amd64.deb",
+      "bytes": 43618,
+      "sha256": "a0903b4fae3ac2548a22d8822382e6d23586e42196d83ff67e82df36cd39fc6c",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libtinfo6",
+      "version": "6.3-2ubuntu0.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/ncurses/libtinfo6_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "libtinfo6_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 104576,
+      "sha256": "3b8dff43a31168f5020928f2ab9a97324c5b47ae708311781f6bd01306c96214",
+      "depends": "libc6 (>= 2.33)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libtirpc-common",
+      "version": "1.3.2-2ubuntu0.1",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libt/libtirpc/libtirpc-common_1.3.2-2ubuntu0.1_all.deb",
+      "filename": "libtirpc-common_1.3.2-2ubuntu0.1_all.deb",
+      "bytes": 7766,
+      "sha256": "cd7b220447999402e87d75f7cedcfad159a2e5d4236927a414d77f2932219bee",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libtirpc-dev",
+      "version": "1.3.2-2ubuntu0.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libt/libtirpc/libtirpc-dev_1.3.2-2ubuntu0.1_amd64.deb",
+      "filename": "libtirpc-dev_1.3.2-2ubuntu0.1_amd64.deb",
+      "bytes": 192156,
+      "sha256": "f4254aff5a32ef3c9fca06d3f4f2eff71c93b9393cc1ecc718f7478a5d6a83da",
+      "depends": "libtirpc3 (= 1.3.2-2ubuntu0.1)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libtirpc3",
+      "version": "1.3.2-2ubuntu0.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libt/libtirpc/libtirpc3_1.3.2-2ubuntu0.1_amd64.deb",
+      "filename": "libtirpc3_1.3.2-2ubuntu0.1_amd64.deb",
+      "bytes": 82288,
+      "sha256": "f2f07d1ab8ae8a8a6e893975df0bca8683caec516e7a30e8dadbb87d33aa52c4",
+      "depends": "libc6 (>= 2.34), libgssapi-krb5-2 (>= 1.17), libtirpc-common (>= 1.3.2-2ubuntu0.1)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libtsan0",
+      "version": "11.4.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-11/libtsan0_11.4.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libtsan0_11.4.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 2259536,
+      "sha256": "2fc0cb78e86d4635c8ed17f4a2816762050c48cb928df739bbe145dfb472957a",
+      "depends": "gcc-11-base (= 11.4.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libubsan1",
+      "version": "12.3.0-1ubuntu1~22.04.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/g/gcc-12/libubsan1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "filename": "libubsan1_12.3.0-1ubuntu1~22.04.3_amd64.deb",
+      "bytes": 976076,
+      "sha256": "9e2669c014d5df3c486bf29cd18a6ec3cbed68355c366e32757fdc98d290f593",
+      "depends": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3), libc6 (>= 2.34), libgcc-s1 (>= 3.3), libstdc++6 (>= 4.1.1)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libunistring2",
+      "version": "1.0-1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libu/libunistring/libunistring2_1.0-1_amd64.deb",
+      "filename": "libunistring2_1.0-1_amd64.deb",
+      "bytes": 553602,
+      "sha256": "988fb59de6a0a313844277e8a6e45d3dc16f5ea75a603a46b16b936426f0ac65",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "libuuid1",
+      "version": "2.37.2-4ubuntu3.6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/u/util-linux/libuuid1_2.37.2-4ubuntu3.6_amd64.deb",
+      "filename": "libuuid1_2.37.2-4ubuntu3.6_amd64.deb",
+      "bytes": 23978,
+      "sha256": "97eaa1090c2e7ddaad55d58f9d0d7907d64b70f89228405d68a7ce7d56a89d67",
+      "depends": "libc6 (>= 2.25)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "libzstd1",
+      "version": "1.4.8+dfsg-3build1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/libz/libzstd/libzstd1_1.4.8+dfsg-3build1_amd64.deb",
+      "filename": "libzstd1_1.4.8+dfsg-3build1_amd64.deb",
+      "bytes": 324024,
+      "sha256": "ae7db00ce8b093e50c994518b90203544e063b4bc574836a048bb142b950b2c9",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "linux-libc-dev",
+      "version": "5.15.0-198.208",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/l/linux/linux-libc-dev_5.15.0-198.208_amd64.deb",
+      "filename": "linux-libc-dev_5.15.0-198.208_amd64.deb",
+      "bytes": 1390974,
+      "sha256": "d7ba314f1e0e79745f104eaeeb662723fb72b1d4ab45c923d93db32867dd11e7",
+      "depends": "",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "make",
+      "version": "4.3-4.1build1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/m/make-dfsg/make_4.3-4.1build1_amd64.deb",
+      "filename": "make_4.3-4.1build1_amd64.deb",
+      "bytes": 179742,
+      "sha256": "080b79a1a1623a2e6c6eead37d62b15fdf2c3dbfeafe8ecf5e31c54eb09eadcc",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "ncurses-bin",
+      "version": "6.3-2ubuntu0.3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/n/ncurses/ncurses-bin_6.3-2ubuntu0.3_amd64.deb",
+      "filename": "ncurses-bin_6.3-2ubuntu0.3_amd64.deb",
+      "bytes": 184334,
+      "sha256": "6fb3e1f43d374058638f7336fbfe9dc5ad3c5f43c6fa147dec00cba436cd37c4",
+      "depends": "",
+      "pre_depends": "libc6 (>= 2.34), libtinfo6 (>= 6.3)",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "openssl",
+      "version": "3.0.2-0ubuntu1.30",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/o/openssl/openssl_3.0.2-0ubuntu1.30_amd64.deb",
+      "filename": "openssl_3.0.2-0ubuntu1.30_amd64.deb",
+      "bytes": 1185522,
+      "sha256": "a5b9484a287aba47096fa9ea9821c5c98cf95b8dd726786e7c3a3311fb8eb3b4",
+      "depends": "libc6 (>= 2.34), libssl3 (>= 3.0.2-0ubuntu1.2)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "patch",
+      "version": "2.7.6-7build2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/patch/patch_2.7.6-7build2_amd64.deb",
+      "filename": "patch_2.7.6-7build2_amd64.deb",
+      "bytes": 108562,
+      "sha256": "e39822d3f8633220093c0353e9aa92caba541e282aef9214fa85e2f107a4b397",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "perl",
+      "version": "5.34.0-3ubuntu1.9",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/perl/perl_5.34.0-3ubuntu1.9_amd64.deb",
+      "filename": "perl_5.34.0-3ubuntu1.9_amd64.deb",
+      "bytes": 231682,
+      "sha256": "61e0413ec4f1f934b8bed40ffdd8c361beae9b9ab7f6e669559e8b493cc8c423",
+      "depends": "perl-base (= 5.34.0-3ubuntu1.9), perl-modules-5.34 (>= 5.34.0-3ubuntu1.9), libperl5.34 (= 5.34.0-3ubuntu1.9)",
+      "pre_depends": "dpkg (>= 1.17.17)",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "perl-base",
+      "version": "5.34.0-3ubuntu1.9",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/perl/perl-base_5.34.0-3ubuntu1.9_amd64.deb",
+      "filename": "perl-base_5.34.0-3ubuntu1.9_amd64.deb",
+      "bytes": 1762088,
+      "sha256": "966bbdd49966b37912496526de94cb5d197c6d1ce457b6c330204ef36c9b3a6e",
+      "depends": "",
+      "pre_depends": "libc6 (>= 2.35), libcrypt1 (>= 1:4.1.0), dpkg (>= 1.17.17)",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "perl-modules-5.34",
+      "version": "5.34.0-3ubuntu1.9",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/perl/perl-modules-5.34_5.34.0-3ubuntu1.9_all.deb",
+      "filename": "perl-modules-5.34_5.34.0-3ubuntu1.9_all.deb",
+      "bytes": 2976512,
+      "sha256": "2a8600951e595a55f8b7517fe1124ca117ef85f3e4e864593bb25c698248e6fc",
+      "depends": "perl-base (>= 5.34.0-1)",
+      "pre_depends": "dpkg (>= 1.17.17)",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "pkg-config",
+      "version": "0.29.2-1ubuntu3",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/p/pkg-config/pkg-config_0.29.2-1ubuntu3_amd64.deb",
+      "filename": "pkg-config_0.29.2-1ubuntu3_amd64.deb",
+      "bytes": 48218,
+      "sha256": "69da4190d948d0bf7444ead040791b7924bd1a08a10ec13cd7f0bb9baab09c53",
+      "depends": "libc6 (>= 2.34), libglib2.0-0 (>= 2.16.0), libdpkg-perl",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "readline-common",
+      "version": "8.1.2-1",
+      "architecture": "all",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/r/readline/readline-common_8.1.2-1_all.deb",
+      "filename": "readline-common_8.1.2-1_all.deb",
+      "bytes": 53544,
+      "sha256": "a78d02935f6107a12d3d349c25ce4f92fcdcbf6b65e37f1f5a13a9054b5b9e94",
+      "depends": "dpkg (>= 1.15.4) | install-info",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "rpcsvc-proto",
+      "version": "1.4.2-0ubuntu6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/r/rpcsvc-proto/rpcsvc-proto_1.4.2-0ubuntu6_amd64.deb",
+      "filename": "rpcsvc-proto_1.4.2-0ubuntu6_amd64.deb",
+      "bytes": 68494,
+      "sha256": "447c6d8f7624a3d728a12232440d3f10e6e53bbf60cc202b7beb8a3bc9f7acc9",
+      "depends": "libc6 (>= 2.34)",
+      "pre_depends": "",
+      "suite": "jammy",
+      "body_downloaded": false
+    },
+    {
+      "name": "tar",
+      "version": "1.34+dfsg-1ubuntu0.1.22.04.6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/t/tar/tar_1.34+dfsg-1ubuntu0.1.22.04.6_amd64.deb",
+      "filename": "tar_1.34+dfsg-1ubuntu0.1.22.04.6_amd64.deb",
+      "bytes": 298302,
+      "sha256": "9e7a93d96b2c3ed82aa5959933bec3e5082c264b0ae45e86ab450f83886faace",
+      "depends": "",
+      "pre_depends": "libacl1 (>= 2.2.23), libc6 (>= 2.34), libselinux1 (>= 3.1~)",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "uuid-dev",
+      "version": "2.37.2-4ubuntu3.6",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/u/util-linux/uuid-dev_2.37.2-4ubuntu3.6_amd64.deb",
+      "filename": "uuid-dev_2.37.2-4ubuntu3.6_amd64.deb",
+      "bytes": 33094,
+      "sha256": "bca1cd5ca6b3be8b5d6498fe80b2cb7e2b63040adda7ff40b9ca26eecb825f58",
+      "depends": "libc6-dev | libc-dev, libuuid1 (= 2.37.2-4ubuntu3.6)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "xz-utils",
+      "version": "5.2.5-2ubuntu1.1",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/x/xz-utils/xz-utils_5.2.5-2ubuntu1.1_amd64.deb",
+      "filename": "xz-utils_5.2.5-2ubuntu1.1_amd64.deb",
+      "bytes": 84826,
+      "sha256": "012652d4f76a08bfc6badf6a37c6da4c4e4a9f78b8c1560951750a74d700405c",
+      "depends": "libc6 (>= 2.34), liblzma5 (>= 5.2.2)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "zlib1g",
+      "version": "1:1.2.11.dfsg-2ubuntu9.2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/z/zlib/zlib1g_1.2.11.dfsg-2ubuntu9.2_amd64.deb",
+      "filename": "zlib1g_1.2.11.dfsg-2ubuntu9.2_amd64.deb",
+      "bytes": 58406,
+      "sha256": "9dc17e51a1be2d9ed63b7b84ef0e4e29c5abe6f1bc62cb03e7181483cce8a2f2",
+      "depends": "libc6 (>= 2.14)",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    },
+    {
+      "name": "zlib1g-dev",
+      "version": "1:1.2.11.dfsg-2ubuntu9.2",
+      "architecture": "amd64",
+      "url": "https://snapshot.ubuntu.com/ubuntu/20261003T000000Z/pool/main/z/zlib/zlib1g-dev_1.2.11.dfsg-2ubuntu9.2_amd64.deb",
+      "filename": "zlib1g-dev_1.2.11.dfsg-2ubuntu9.2_amd64.deb",
+      "bytes": 164060,
+      "sha256": "679f94589586a433c31fa9f705a6fd2e3bfa2407542ba06227ce14f821647764",
+      "depends": "zlib1g (= 1:1.2.11.dfsg-2ubuntu9.2), libc6-dev | libc-dev",
+      "pre_depends": "",
+      "suite": "jammy-updates",
+      "body_downloaded": false
+    }
+  ],
+  "alternative_decisions": [
+    {
+      "dependency": "gcc-10",
+      "chosen": "gcc-10",
+      "version": "10.5.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "g++-10",
+      "chosen": "g++-10",
+      "version": "10.5.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "make",
+      "chosen": "make",
+      "version": "4.3-4.1build1"
+    },
+    {
+      "dependency": "binutils",
+      "chosen": "binutils",
+      "version": "2.38-4ubuntu2.12"
+    },
+    {
+      "dependency": "git",
+      "chosen": "git",
+      "version": "1:2.34.1-1ubuntu1.17"
+    },
+    {
+      "dependency": "ca-certificates",
+      "chosen": "ca-certificates",
+      "version": "20260601~22.04.1"
+    },
+    {
+      "dependency": "pkg-config",
+      "chosen": "pkg-config",
+      "version": "0.29.2-1ubuntu3"
+    },
+    {
+      "dependency": "patch",
+      "chosen": "patch",
+      "version": "2.7.6-7build2"
+    },
+    {
+      "dependency": "tar",
+      "chosen": "tar",
+      "version": "1.34+dfsg-1ubuntu0.1.22.04.6"
+    },
+    {
+      "dependency": "xz-utils",
+      "chosen": "xz-utils",
+      "version": "5.2.5-2ubuntu1.1"
+    },
+    {
+      "dependency": "zlib1g-dev",
+      "chosen": "zlib1g-dev",
+      "version": "1:1.2.11.dfsg-2ubuntu9.2"
+    },
+    {
+      "dependency": "libssl-dev",
+      "chosen": "libssl-dev",
+      "version": "3.0.2-0ubuntu1.30"
+    },
+    {
+      "dependency": "libffi-dev",
+      "chosen": "libffi-dev",
+      "version": "3.4.2-4"
+    },
+    {
+      "dependency": "libbz2-dev",
+      "chosen": "libbz2-dev",
+      "version": "1.0.8-5ubuntu0.1"
+    },
+    {
+      "dependency": "liblzma-dev",
+      "chosen": "liblzma-dev",
+      "version": "5.2.5-2ubuntu1.1"
+    },
+    {
+      "dependency": "libreadline-dev",
+      "chosen": "libreadline-dev",
+      "version": "8.1.2-1"
+    },
+    {
+      "dependency": "libsqlite3-dev",
+      "chosen": "libsqlite3-dev",
+      "version": "3.37.2-2ubuntu0.8"
+    },
+    {
+      "dependency": "libncurses-dev",
+      "chosen": "libncurses-dev",
+      "version": "6.3-2ubuntu0.3"
+    },
+    {
+      "dependency": "uuid-dev",
+      "chosen": "uuid-dev",
+      "version": "2.37.2-4ubuntu3.6"
+    },
+    {
+      "dependency": "cpp-10 (= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "cpp-10",
+      "version": "10.5.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "gcc-10-base (= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "gcc-10-base",
+      "version": "10.5.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libcc1-0 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libcc1-0",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libgcc-10-dev (= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libgcc-10-dev",
+      "version": "10.5.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libc6 (>= 2.34)",
+      "chosen": "libc6",
+      "version": "2.35-0ubuntu3.15"
+    },
+    {
+      "dependency": "libgcc-s1 (>= 3.0)",
+      "chosen": "libgcc-s1",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libgmp10 (>= 2:6.2.1+dfsg)",
+      "chosen": "libgmp10",
+      "version": "2:6.2.1+dfsg-3ubuntu1"
+    },
+    {
+      "dependency": "libisl23 (>= 0.15)",
+      "chosen": "libisl23",
+      "version": "0.24-2build1"
+    },
+    {
+      "dependency": "libmpc3 (>= 1.1.0)",
+      "chosen": "libmpc3",
+      "version": "1.2.1-2build1"
+    },
+    {
+      "dependency": "libmpfr6 (>= 3.1.3)",
+      "chosen": "libmpfr6",
+      "version": "4.1.0-3build3"
+    },
+    {
+      "dependency": "libstdc++6 (>= 5)",
+      "chosen": "libstdc++6",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libzstd1 (>= 1.4.0)",
+      "chosen": "libzstd1",
+      "version": "1.4.8+dfsg-3build1"
+    },
+    {
+      "dependency": "zlib1g (>= 1:1.1.4)",
+      "chosen": "zlib1g",
+      "version": "1:1.2.11.dfsg-2ubuntu9.2"
+    },
+    {
+      "dependency": "libstdc++-10-dev (= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libstdc++-10-dev",
+      "version": "10.5.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "binutils-common (= 2.38-4ubuntu2.12)",
+      "chosen": "binutils-common",
+      "version": "2.38-4ubuntu2.12"
+    },
+    {
+      "dependency": "libbinutils (= 2.38-4ubuntu2.12)",
+      "chosen": "libbinutils",
+      "version": "2.38-4ubuntu2.12"
+    },
+    {
+      "dependency": "binutils-x86-64-linux-gnu (= 2.38-4ubuntu2.12)",
+      "chosen": "binutils-x86-64-linux-gnu",
+      "version": "2.38-4ubuntu2.12"
+    },
+    {
+      "dependency": "libcurl3-gnutls (>= 7.56.1)",
+      "chosen": "libcurl3-gnutls",
+      "version": "7.81.0-1ubuntu1.29"
+    },
+    {
+      "dependency": "libexpat1 (>= 2.0.1)",
+      "chosen": "libexpat1",
+      "version": "2.4.7-1ubuntu0.9"
+    },
+    {
+      "dependency": "libpcre2-8-0 (>= 10.34)",
+      "chosen": "libpcre2-8-0",
+      "version": "10.39-3ubuntu0.1"
+    },
+    {
+      "dependency": "perl",
+      "chosen": "perl",
+      "version": "5.34.0-3ubuntu1.9"
+    },
+    {
+      "dependency": "liberror-perl",
+      "chosen": "liberror-perl",
+      "version": "0.17029-1"
+    },
+    {
+      "dependency": "git-man (>> 1:2.34.1)",
+      "chosen": "git-man",
+      "version": "1:2.34.1-1ubuntu1.17"
+    },
+    {
+      "dependency": "openssl (>= 1.1.1)",
+      "chosen": "openssl",
+      "version": "3.0.2-0ubuntu1.30"
+    },
+    {
+      "dependency": "debconf (>= 0.5) | debconf-2.0",
+      "chosen": "debconf",
+      "version": "1.5.79ubuntu1"
+    },
+    {
+      "dependency": "libglib2.0-0 (>= 2.16.0)",
+      "chosen": "libglib2.0-0",
+      "version": "2.72.4-0ubuntu2.10"
+    },
+    {
+      "dependency": "libdpkg-perl",
+      "chosen": "libdpkg-perl",
+      "version": "1.21.1ubuntu2.6"
+    },
+    {
+      "dependency": "libacl1 (>= 2.2.23)",
+      "chosen": "libacl1",
+      "version": "2.3.1-1"
+    },
+    {
+      "dependency": "libselinux1 (>= 3.1~)",
+      "chosen": "libselinux1",
+      "version": "3.3-1build2"
+    },
+    {
+      "dependency": "liblzma5 (>= 5.2.2)",
+      "chosen": "liblzma5",
+      "version": "5.2.5-2ubuntu1.1"
+    },
+    {
+      "dependency": "libc6-dev | libc-dev",
+      "chosen": "libc6-dev",
+      "version": "2.35-0ubuntu3.15"
+    },
+    {
+      "dependency": "libssl3 (= 3.0.2-0ubuntu1.30)",
+      "chosen": "libssl3",
+      "version": "3.0.2-0ubuntu1.30"
+    },
+    {
+      "dependency": "libffi8 (= 3.4.2-4)",
+      "chosen": "libffi8",
+      "version": "3.4.2-4"
+    },
+    {
+      "dependency": "libbz2-1.0 (= 1.0.8-5ubuntu0.1)",
+      "chosen": "libbz2-1.0",
+      "version": "1.0.8-5ubuntu0.1"
+    },
+    {
+      "dependency": "libreadline8 (= 8.1.2-1)",
+      "chosen": "libreadline8",
+      "version": "8.1.2-1"
+    },
+    {
+      "dependency": "dpkg (>= 1.15.4) | install-info",
+      "chosen": "dpkg",
+      "version": "1.21.1ubuntu2.6"
+    },
+    {
+      "dependency": "libsqlite3-0 (= 3.37.2-2ubuntu0.8)",
+      "chosen": "libsqlite3-0",
+      "version": "3.37.2-2ubuntu0.8"
+    },
+    {
+      "dependency": "libtinfo6 (= 6.3-2ubuntu0.3)",
+      "chosen": "libtinfo6",
+      "version": "6.3-2ubuntu0.3"
+    },
+    {
+      "dependency": "libncurses6 (= 6.3-2ubuntu0.3)",
+      "chosen": "libncurses6",
+      "version": "6.3-2ubuntu0.3"
+    },
+    {
+      "dependency": "libncursesw6 (= 6.3-2ubuntu0.3)",
+      "chosen": "libncursesw6",
+      "version": "6.3-2ubuntu0.3"
+    },
+    {
+      "dependency": "ncurses-bin (>= 6.0+20151017)",
+      "chosen": "ncurses-bin",
+      "version": "6.3-2ubuntu0.3"
+    },
+    {
+      "dependency": "libuuid1 (= 2.37.2-4ubuntu3.6)",
+      "chosen": "libuuid1",
+      "version": "2.37.2-4ubuntu3.6"
+    },
+    {
+      "dependency": "gcc-12-base (= 12.3.0-1ubuntu1~22.04.3)",
+      "chosen": "gcc-12-base",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libgomp1 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libgomp1",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libitm1 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libitm1",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libatomic1 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libatomic1",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libasan6 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libasan6",
+      "version": "11.4.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "liblsan0 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "liblsan0",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libtsan0 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libtsan0",
+      "version": "11.4.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libubsan1 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libubsan1",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libquadmath0 (>= 10.5.0-1ubuntu1~22.04.3)",
+      "chosen": "libquadmath0",
+      "version": "12.3.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libcrypt1 (>= 1:4.4.10-10ubuntu4)",
+      "chosen": "libcrypt1",
+      "version": "1:4.4.27-1"
+    },
+    {
+      "dependency": "libctf-nobfd0 (>= 2.36)",
+      "chosen": "libctf-nobfd0",
+      "version": "2.38-4ubuntu2.12"
+    },
+    {
+      "dependency": "libctf0 (>= 2.36)",
+      "chosen": "libctf0",
+      "version": "2.38-4ubuntu2.12"
+    },
+    {
+      "dependency": "libbrotli1 (>= 0.6.0)",
+      "chosen": "libbrotli1",
+      "version": "1.0.9-2build6"
+    },
+    {
+      "dependency": "libgnutls30 (>= 3.7.2)",
+      "chosen": "libgnutls30",
+      "version": "3.7.3-4ubuntu1.9"
+    },
+    {
+      "dependency": "libgssapi-krb5-2 (>= 1.17)",
+      "chosen": "libgssapi-krb5-2",
+      "version": "1.19.2-2ubuntu0.10"
+    },
+    {
+      "dependency": "libidn2-0 (>= 0.6)",
+      "chosen": "libidn2-0",
+      "version": "2.3.2-2build1"
+    },
+    {
+      "dependency": "libldap-2.5-0 (>= 2.5.4)",
+      "chosen": "libldap-2.5-0",
+      "version": "2.5.20+dfsg-0ubuntu0.22.04.1"
+    },
+    {
+      "dependency": "libnettle8",
+      "chosen": "libnettle8",
+      "version": "3.7.3-1build2"
+    },
+    {
+      "dependency": "libnghttp2-14 (>= 1.12.0)",
+      "chosen": "libnghttp2-14",
+      "version": "1.43.0-1ubuntu0.4"
+    },
+    {
+      "dependency": "libpsl5 (>= 0.16.0)",
+      "chosen": "libpsl5",
+      "version": "0.21.0-1.2build2"
+    },
+    {
+      "dependency": "librtmp1 (>= 2.4+20131018.git79459a2-3~)",
+      "chosen": "librtmp1",
+      "version": "2.4+20151223.gitfa8646d.1-2build4"
+    },
+    {
+      "dependency": "libssh-4 (>= 0.9.0)",
+      "chosen": "libssh-4",
+      "version": "0.9.6-2ubuntu0.22.04.8"
+    },
+    {
+      "dependency": "perl-base (= 5.34.0-3ubuntu1.9)",
+      "chosen": "perl-base",
+      "version": "5.34.0-3ubuntu1.9"
+    },
+    {
+      "dependency": "perl-modules-5.34 (>= 5.34.0-3ubuntu1.9)",
+      "chosen": "perl-modules-5.34",
+      "version": "5.34.0-3ubuntu1.9"
+    },
+    {
+      "dependency": "libperl5.34 (= 5.34.0-3ubuntu1.9)",
+      "chosen": "libperl5.34",
+      "version": "5.34.0-3ubuntu1.9"
+    },
+    {
+      "dependency": "libmount1 (>= 2.35.2-7~)",
+      "chosen": "libmount1",
+      "version": "2.37.2-4ubuntu3.6"
+    },
+    {
+      "dependency": "libpcre3",
+      "chosen": "libpcre3",
+      "version": "2:8.39-13ubuntu0.22.04.1"
+    },
+    {
+      "dependency": "libc-dev-bin (= 2.35-0ubuntu3.15)",
+      "chosen": "libc-dev-bin",
+      "version": "2.35-0ubuntu3.15"
+    },
+    {
+      "dependency": "linux-libc-dev",
+      "chosen": "linux-libc-dev",
+      "version": "5.15.0-198.208"
+    },
+    {
+      "dependency": "libcrypt-dev",
+      "chosen": "libcrypt-dev",
+      "version": "1:4.4.27-1"
+    },
+    {
+      "dependency": "rpcsvc-proto",
+      "chosen": "rpcsvc-proto",
+      "version": "1.4.2-0ubuntu6"
+    },
+    {
+      "dependency": "libtirpc-dev",
+      "chosen": "libtirpc-dev",
+      "version": "1.3.2-2ubuntu0.1"
+    },
+    {
+      "dependency": "libnsl-dev",
+      "chosen": "libnsl-dev",
+      "version": "1.3.0-2build2"
+    },
+    {
+      "dependency": "readline-common",
+      "chosen": "readline-common",
+      "version": "8.1.2-1"
+    },
+    {
+      "dependency": "gcc-11-base (= 11.4.0-1ubuntu1~22.04.3)",
+      "chosen": "gcc-11-base",
+      "version": "11.4.0-1ubuntu1~22.04.3"
+    },
+    {
+      "dependency": "libhogweed6 (>= 3.6)",
+      "chosen": "libhogweed6",
+      "version": "3.7.3-1build2"
+    },
+    {
+      "dependency": "libp11-kit0 (>= 0.23.18.1)",
+      "chosen": "libp11-kit0",
+      "version": "0.24.0-6ubuntu0.1"
+    },
+    {
+      "dependency": "libtasn1-6 (>= 4.14)",
+      "chosen": "libtasn1-6",
+      "version": "4.18.0-4ubuntu0.2"
+    },
+    {
+      "dependency": "libunistring2 (>= 0.9.7)",
+      "chosen": "libunistring2",
+      "version": "1.0-1"
+    },
+    {
+      "dependency": "libcom-err2 (>= 1.43.9)",
+      "chosen": "libcom-err2",
+      "version": "1.46.5-2ubuntu1.2"
+    },
+    {
+      "dependency": "libk5crypto3 (>= 1.16)",
+      "chosen": "libk5crypto3",
+      "version": "1.19.2-2ubuntu0.10"
+    },
+    {
+      "dependency": "libkrb5-3 (= 1.19.2-2ubuntu0.10)",
+      "chosen": "libkrb5-3",
+      "version": "1.19.2-2ubuntu0.10"
+    },
+    {
+      "dependency": "libkrb5support0 (>= 1.15~beta1)",
+      "chosen": "libkrb5support0",
+      "version": "1.19.2-2ubuntu0.10"
+    },
+    {
+      "dependency": "libsasl2-2 (>= 2.1.27+dfsg2)",
+      "chosen": "libsasl2-2",
+      "version": "2.1.27+dfsg2-3ubuntu1.2"
+    },
+    {
+      "dependency": "libdb5.3",
+      "chosen": "libdb5.3",
+      "version": "5.3.28+dfsg1-0.8ubuntu3"
+    },
+    {
+      "dependency": "libgdbm-compat4 (>= 1.18-3)",
+      "chosen": "libgdbm-compat4",
+      "version": "1.23-1"
+    },
+    {
+      "dependency": "libgdbm6 (>= 1.18-3)",
+      "chosen": "libgdbm6",
+      "version": "1.23-1"
+    },
+    {
+      "dependency": "libblkid1 (>= 2.17.2)",
+      "chosen": "libblkid1",
+      "version": "2.37.2-4ubuntu3.6"
+    },
+    {
+      "dependency": "libtirpc3 (= 1.3.2-2ubuntu0.1)",
+      "chosen": "libtirpc3",
+      "version": "1.3.2-2ubuntu0.1"
+    },
+    {
+      "dependency": "libnsl2 (= 1.3.0-2build2)",
+      "chosen": "libnsl2",
+      "version": "1.3.0-2build2"
+    },
+    {
+      "dependency": "libkeyutils1 (>= 1.5.9)",
+      "chosen": "libkeyutils1",
+      "version": "1.6.1-2ubuntu3"
+    },
+    {
+      "dependency": "libsasl2-modules-db (>= 2.1.27+dfsg2-3ubuntu1.2)",
+      "chosen": "libsasl2-modules-db",
+      "version": "2.1.27+dfsg2-3ubuntu1.2"
+    },
+    {
+      "dependency": "libtirpc-common (>= 1.3.2-2ubuntu0.1)",
+      "chosen": "libtirpc-common",
+      "version": "1.3.2-2ubuntu0.1"
+    }
+  ],
+  "signature_verification": "PENDING_TARGET_GPGV using Ubuntu keyring in pinned base image before installing anything",
+  "base_installed_inventory_compatibility": "PENDING_TARGET_BUILD; metadata closure is not dpkg ABI/install proof",
+  "recommends_suggests_installed": false
+}

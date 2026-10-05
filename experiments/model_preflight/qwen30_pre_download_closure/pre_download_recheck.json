@@ -1,0 +1,220 @@
+{
+  "frozen_checklist_sha256": "40f7df0cd8735462ac7ca25ce30d0a7bf0dd71812d385fc3e7dbf741e21a6007",
+  "evaluation_role": "Separate fail-closed application of exact frozen checklist by implementer; not independent assigned repair review",
+  "items": [
+    {
+      "id": "CHECKPOINT",
+      "mandatory": true,
+      "frozen_requirement": "Exact repo/SHA and16-shard declarations frozen",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "BODY_MANIFEST",
+      "mandatory": true,
+      "frozen_requirement": "Expected lengths/hash/layout metadata available; acquired bodies deliberately not verified yet",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "STORAGE",
+      "mandatory": true,
+      "frozen_requirement": "Target >=250GB free staging and>=64GiB plausible host RAM provision (128GiB preferred) not evidenced",
+      "previous_state": "PENDING",
+      "new_evidence": [
+        "target_attestation_schema.json",
+        "target_capacity_policy.json",
+        "target_probe.py",
+        "target_attestation_validator.py"
+      ],
+      "current_state": "PENDING",
+      "reason": "Target schema/probe/policy implemented; no actual compatible host capacity inventory. Contract is not measurement."
+    },
+    {
+      "id": "HASHING_PROCEDURE",
+      "mandatory": true,
+      "frozen_requirement": "Stream/count/hash, header/index validation, atomic promotion and read-only isolation specified",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "RUNTIME_SOURCE",
+      "mandatory": true,
+      "frozen_requirement": "vLLM commit and eight archived source matches, TF/PEFT/CPython source pins and base digest metadata resolved",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "RUNTIME_BUILD",
+      "mandatory": true,
+      "frozen_requirement": "Complete exact transitive/build/Python Linux binary identities and final image build inputs/digest absent",
+      "previous_state": "PENDING",
+      "new_evidence": [
+        "runtime_build_lock.json",
+        "runtime_build_manifest.json",
+        "Dockerfile",
+        "requirements-linux-cp311.lock",
+        "build/README.md"
+      ],
+      "current_state": "PENDING",
+      "reason": "Exact source/package/compiler/dependency metadata and executable offline bundle implemented. Package body authentication, actual target build, installed binaries/SBOM and final image digest still absent."
+    },
+    {
+      "id": "ISOLATION_DESIGN",
+      "mandatory": true,
+      "frozen_requirement": "Offline scoped mounts, no-tools and fixed negative probes specified",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "RUNNER_ATTESTATION",
+      "mandatory": true,
+      "frozen_requirement": "Raw-stream runner/observer build hashes and enforcement implementation not attested",
+      "previous_state": "PENDING",
+      "new_evidence": [
+        "runner_manifest.json",
+        "runner_attestation.json",
+        "test_results/model_free_batch_3.json",
+        "test_results/preparation_batch_2.json"
+      ],
+      "current_state": "PENDING",
+      "reason": "Implementation/oracle/build content root and 36 current model-free tests established. Actual Linux container enforcement and target observer/runtime identities have not been attested."
+    },
+    {
+      "id": "FIXTURES",
+      "mandatory": true,
+      "frozen_requirement": "Literal and historical invented bytes/recipes and hashes frozen",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "DAG",
+      "mandatory": true,
+      "frozen_requirement": "HistoricalA-S mapping and repair invalidation DAG frozen",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "FAILURE_REPAIR",
+      "mandatory": true,
+      "frozen_requirement": "Three classes, finite repairs, invariants and provenance frozen",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "RUN_SCHEMA",
+      "mandatory": true,
+      "frozen_requirement": "External-run JSON schema frozen with fail-closed PASS evidence obligations",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "NO_PROTECTED_DEPENDENCY",
+      "mandatory": true,
+      "frozen_requirement": "All fixture inputs invented/authenticated candidate-free historical conformance",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    },
+    {
+      "id": "NO_PROTOCOL_AMBIGUITY",
+      "mandatory": true,
+      "frozen_requirement": "Context/reserve/full stream/controls/BC/parser unchanged; unresolved executable observations remain gates",
+      "previous_state": "PASS",
+      "new_evidence": [
+        "baseline_integrity.json: unchanged frozen evidence"
+      ],
+      "current_state": "PASS",
+      "reason": "Frozen preparation evidence hashes unchanged; no executed gate claim"
+    }
+  ],
+  "blocker_recheck": [
+    {
+      "id": "RUNTIME_BUILD",
+      "previous_state": "PENDING",
+      "previous_detail": "No final build recipe with complete exact transitive/build-tool/Linux Python binary hashes or final executable image digest. Stock vLLM Dockerfile CUDA12.9.1/Python3.12 defaults do not satisfy this profile.",
+      "new_evidence": [
+        "runtime_build_lock.json",
+        "runtime_build_manifest.json",
+        "Dockerfile",
+        "requirements-linux-cp311.lock",
+        "build/README.md"
+      ],
+      "current_state": "PENDING",
+      "class": "C",
+      "reason": "Exact source/package/compiler/dependency metadata and executable offline bundle implemented. Package body authentication, actual target build, installed binaries/SBOM and final image digest still absent."
+    },
+    {
+      "id": "TARGET_CAPACITY",
+      "previous_state": "PENDING",
+      "previous_detail": "No intended Linux target inventory proving free staging storage >=250GB, >=64GiB plausible host RAM floor (128GiB preferred) and selected TP1 CUDA-capable BF16 device provision. Historical local Windows inventory is insufficient and not refreshed.",
+      "new_evidence": [
+        "target_attestation_schema.json",
+        "target_capacity_policy.json",
+        "target_probe.py",
+        "target_attestation_validator.py"
+      ],
+      "current_state": "PENDING",
+      "class": "C",
+      "reason": "Target schema/probe/policy implemented; no actual compatible host capacity inventory. Contract is not measurement."
+    },
+    {
+      "id": "RUNNER_ATTESTATION",
+      "previous_state": "PENDING",
+      "previous_detail": "No content-addressed implementation/attestation of the specified offline raw-stream runner, isolation boundary and telemetry observer. This step freezes designs and schemas, not executable certification.",
+      "new_evidence": [
+        "runner_manifest.json",
+        "runner_attestation.json",
+        "test_results/model_free_batch_3.json",
+        "test_results/preparation_batch_2.json"
+      ],
+      "current_state": "PENDING",
+      "class": "C",
+      "reason": "Implementation/oracle/build content root and 36 current model-free tests established. Actual Linux container enforcement and target observer/runtime identities have not been attested."
+    }
+  ],
+  "all_mandatory_checks_must_pass": true,
+  "any_PENDING_FAIL_is_NO_GO": true,
+  "verdict": "NOT READY — RUNTIME_BUILD, TARGET_CAPACITY, RUNNER_ATTESTATION",
+  "acquisition_authorized": false,
+  "A_S_authorized": false
+}

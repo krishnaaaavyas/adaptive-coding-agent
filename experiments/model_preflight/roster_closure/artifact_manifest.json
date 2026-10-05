@@ -1,0 +1,71 @@
+{
+  "scope": "Entire dedicated roster closure tree",
+  "excluded_self": "artifact_manifest.json",
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 28080,
+      "sha256": "634f508644503d9a6278a584d6ed99576a39be21e1cf19336757743886e7bd9d"
+    },
+    {
+      "path": "baseline_integrity.json",
+      "bytes": 278889,
+      "sha256": "86339ac5bd04bd51835e8580cef4a2a30013015b027e069343c8514dd1a20ef8"
+    },
+    {
+      "path": "build_closure.py",
+      "bytes": 61051,
+      "sha256": "841a96a30d068bb43f15199fde12701525a2ea1305950d1d0161bd44a4ad9065"
+    },
+    {
+      "path": "closure_decision.json",
+      "bytes": 2756,
+      "sha256": "6e0f9d9c8710a25b44d987d663fa89070e253038132d1d5f7e5a81a8ed26c2f7"
+    },
+    {
+      "path": "fallback_resolution.json",
+      "bytes": 1693,
+      "sha256": "12eecd7e2500fe8ac129d7a10183cf4ad82dc1ce97d93346aeab980d6cbe20c7"
+    },
+    {
+      "path": "infrastructure_roster.json",
+      "bytes": 202642,
+      "sha256": "ac09b10f129c8e0a0757ab56618c86633c04a61114df78e8f0a8a000bad66679"
+    },
+    {
+      "path": "mechanism_coverage_matrix.csv",
+      "bytes": 2293,
+      "sha256": "c158d502c2978bce8578a23100e2695d310d19b004333f7c8c9bf19809b30d2d"
+    },
+    {
+      "path": "model_status_matrix.csv",
+      "bytes": 4031,
+      "sha256": "b7061b8d1018cdeb1dfafa21053585f3fa2f10bbd188a9af687630cf134ab310"
+    },
+    {
+      "path": "request_source.txt",
+      "bytes": 11587,
+      "sha256": "142b3c9a678cca2a001b2fcdc1de25a948c2e3c924c4270b9e37a38d7e0bb3d5"
+    },
+    {
+      "path": "source_manifest.json",
+      "bytes": 16009,
+      "sha256": "b7123671a71d92332a54a3f99ff4f02173984a044481d7eef28b7b986e378311"
+    },
+    {
+      "path": "validate_closure.py",
+      "bytes": 18437,
+      "sha256": "48d10e05b254127d20363915892bbd5dbc8b01795afdd814ec33e0e5288c573c"
+    },
+    {
+      "path": "validation.json",
+      "bytes": 2355,
+      "sha256": "38fd3ffc59daa42c7c56c7560943556093010dc4cc1d76ddd56813f5f0ad69be"
+    },
+    {
+      "path": "verification_order.json",
+      "bytes": 7131,
+      "sha256": "070b7014020bcfcfd153ab3dcd73df06e440749f0644d3597195d9ab9c9dd3cb"
+    }
+  ]
+}

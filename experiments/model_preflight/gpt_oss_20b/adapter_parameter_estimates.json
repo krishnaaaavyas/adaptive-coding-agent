@@ -1,0 +1,21 @@
+{
+  "basis": "ESTIMATED source-shape arithmetic, not instantiated; rank16 planning only",
+  "rank": 16,
+  "attention_modules": [
+    "model.layers.<i>.self_attn.q_proj",
+    "model.layers.<i>.self_attn.k_proj",
+    "model.layers.<i>.self_attn.v_proj",
+    "model.layers.<i>.self_attn.o_proj"
+  ],
+  "attention_only": 7962624,
+  "expert_parameters": [
+    "model.layers.<i>.mlp.experts.gate_up_proj",
+    "model.layers.<i>.mlp.experts.down_proj"
+  ],
+  "all_experts_only": 176947200,
+  "attention_plus_all_experts": 184909824,
+  "expert_formula": "24 * 32 * 16 * ((2880+5760)+(2880+2880))",
+  "router_included": false,
+  "adapter_bf16_bytes": 369819648,
+  "conventional_adapter_training_state_bytes_at_16_bytes_per_parameter": 2958557184
+}

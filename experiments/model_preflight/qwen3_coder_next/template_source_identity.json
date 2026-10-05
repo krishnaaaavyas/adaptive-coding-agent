@@ -1,0 +1,6 @@
+{
+  "selected": "chat_template.jinja",
+  "standalone_sha256": "c79a833039a43602150cce0902403d6e376c50930c1b2a139b2964e1f0c322a0",
+  "embedded_sha256": "0b5c439b5b14126c0ae8b14ca93240c3cef1e7e29d684102b07f10727523dbdb",
+  "difference": "standalone final LF only; rendered parity checked below"
+}

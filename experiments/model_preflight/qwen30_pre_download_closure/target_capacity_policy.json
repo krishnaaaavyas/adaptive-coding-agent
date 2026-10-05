@@ -1,0 +1,33 @@
+{
+  "status": "TARGET CONTRACT COMPLETE \u2014 ACTUAL HOST ATTESTATION PENDING",
+  "frozen_authority": "../qwen30_infrastructure_governance/hardware_requirements.json",
+  "actual_target_attested": false,
+  "provider": null,
+  "tensor_parallel_size": 1,
+  "selected_devices": 1,
+  "driver_minimum": "570.124.06",
+  "compute_capability_minimum": 8.0,
+  "planning": {
+    "BF16_payload_GiB": 56.872,
+    "KV_GiB_before_workspace": 3,
+    "free_device_GiB_plausible": 70,
+    "free_device_GiB_preferred": 80,
+    "RAM_total_GiB_plausible": 64,
+    "RAM_total_GiB_preferred": 128,
+    "storage_free_bytes": 250000000000
+  },
+  "planning_is_fit_guarantee": false,
+  "below_planning_point": "C/PENDING capacity evidence, never fundamental model failure",
+  "required_actual_evidence": [
+    "target_probe inventory",
+    "hash-bound actual Linux CPU-only isolation probe",
+    "selected TP1 full device UUID",
+    "driver / CUDA compatibility",
+    "fresh available capacities",
+    "cgroup v2 memory.peak and /proc/smaps_rollup",
+    "image/source/runner binding before model acquisition"
+  ],
+  "probe_does_not_read_project_material": true,
+  "provisioning_authorized": false,
+  "acquisition_authorized": false
+}

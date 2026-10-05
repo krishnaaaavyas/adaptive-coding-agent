@@ -1,0 +1,22 @@
+{
+  "audited_at": "2026-10-03T14:04:02.807923+05:30",
+  "workspace": "C:\\Users\\admin\\Documents\\adaptive-coding-agent",
+  "head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "expected_head_matches": true,
+  "tracked_diff": "",
+  "staged_diff": "",
+  "status": "?? experiments/model_preflight/",
+  "policy_sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b",
+  "artifact_scope": "experiments/model_preflight/gpt_oss_20b/",
+  "excluded_from_model_context": "frozen EXCLUDED_DIRS includes experiments",
+  "model_generation_performed": false,
+  "benchmark_tasks_inspected": false,
+  "candidate_artifacts_inspected": false,
+  "adaptation_performed": false,
+  "step_8k_b_rerun": false,
+  "committed": false,
+  "synthetic_capacity_cases": 45,
+  "synthetic_input_fixtures": 58,
+  "hand_authored_channel_examples": 4,
+  "full_parser_executed": false
+}

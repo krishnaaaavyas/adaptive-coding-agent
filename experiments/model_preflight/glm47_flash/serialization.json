@@ -1,0 +1,571 @@
+{
+  "repository": "zai-org/GLM-4.7-Flash",
+  "revision": "7dd20894a642a0aa287e9827cb1a1f7f91386b67",
+  "selected_profile": "NATIVE_DEFAULT_THINKING_FULL_SUFFIX_RAW_TOKEN_IDS",
+  "full_stream_Draft3_compatibility_statically_established": true,
+  "compatibility_scope": "Transport/accounting compatible; no claim that generated reasoning or markers form a valid replacement. Draft3 evaluates incorrect content as emitted.",
+  "native_profiles": [
+    {
+      "name": "Native default thinking; no output parsers",
+      "classification": "COMPATIBLE",
+      "selected": true,
+      "reason": "Preserves default input and all emitted suffix; no effort change, suppression or projection"
+    },
+    {
+      "name": "enable_thinking=True; otherwise same profile",
+      "classification": "COMPATIBLE",
+      "selected": false,
+      "reason": "Rendered input identical to native default"
+    },
+    {
+      "name": "enable_thinking=False native template branch",
+      "classification": "UNRESOLVED",
+      "selected": false,
+      "reason": "Documented input mode, not output projection; existence does not grant study permission. Choosing it merely to fit reserve/protocol would be incompatible; no independently authorized reason adopted."
+    },
+    {
+      "name": "Reasoning parser with final/content-only output",
+      "classification": "INCOMPATIBLE",
+      "selected": false,
+      "reason": "Drops substantive reasoning or delimiters from full generated stream"
+    },
+    {
+      "name": "Agent tool execution/history/retries",
+      "classification": "INCOMPATIBLE",
+      "selected": false,
+      "reason": "Violates frozen single-request no-read/no-tools/no-retry design"
+    }
+  ],
+  "tokenizer_files": {
+    "tokenizer.json": "19e773648cb4e65de8660ea6365e10acca112d42a854923df93db4a6f333a82d",
+    "tokenizer_config.json": "31a173e2797ddc8b72ac996803513e627fc28d7aad02cfcce321a431d865c86d",
+    "chat_template.jinja": "d63ad536c3c81880043e22ec7fd08db42b4d8fb7c89c7138bc562bfa25281375"
+  },
+  "normalizer": null,
+  "backend": {
+    "normalizer": null,
+    "pre_tokenizer": {
+      "type": "Sequence",
+      "pretokenizers": [
+        {
+          "type": "Split",
+          "pattern": {
+            "Regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+          },
+          "behavior": "Isolated",
+          "invert": false
+        },
+        {
+          "type": "ByteLevel",
+          "add_prefix_space": false,
+          "trim_offsets": true,
+          "use_regex": false
+        }
+      ]
+    },
+    "post_processor": {
+      "type": "ByteLevel",
+      "add_prefix_space": true,
+      "trim_offsets": false,
+      "use_regex": true
+    },
+    "decoder": {
+      "type": "ByteLevel",
+      "add_prefix_space": true,
+      "trim_offsets": true,
+      "use_regex": true
+    }
+  },
+  "backend_vocabulary_size": 154856,
+  "model_vocabulary_size": 154880,
+  "special_token_map": {
+    "<|endoftext|>": 154820,
+    "[MASK]": 154821,
+    "[gMASK]": 154822,
+    "[sMASK]": 154823,
+    "<sop>": 154824,
+    "<eop>": 154825,
+    "<|system|>": 154826,
+    "<|user|>": 154827,
+    "<|assistant|>": 154828,
+    "<|observation|>": 154829,
+    "<|begin_of_image|>": 154830,
+    "<|end_of_image|>": 154831,
+    "<|begin_of_video|>": 154832,
+    "<|end_of_video|>": 154833,
+    "<|begin_of_audio|>": 154834,
+    "<|end_of_audio|>": 154835,
+    "<|begin_of_transcription|>": 154836,
+    "<|end_of_transcription|>": 154837,
+    "<|code_prefix|>": 154838,
+    "<|code_middle|>": 154839,
+    "<|code_suffix|>": 154840,
+    "<think>": 154841,
+    "</think>": 154842,
+    "<tool_call>": 154843,
+    "</tool_call>": 154844,
+    "<tool_response>": 154845,
+    "</tool_response>": 154846,
+    "<arg_key>": 154847,
+    "</arg_key>": 154848,
+    "<arg_value>": 154849,
+    "</arg_value>": 154850,
+    "/nothink": 154851,
+    "<|begin_of_box|>": 154852,
+    "<|end_of_box|>": 154853,
+    "<|image|>": 154854,
+    "<|video|>": 154855
+  },
+  "special_token_attributes": [
+    {
+      "id": 154820,
+      "content": "<|endoftext|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154821,
+      "content": "[MASK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154822,
+      "content": "[gMASK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154823,
+      "content": "[sMASK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154824,
+      "content": "<sop>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154825,
+      "content": "<eop>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154826,
+      "content": "<|system|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154827,
+      "content": "<|user|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154828,
+      "content": "<|assistant|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154829,
+      "content": "<|observation|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154830,
+      "content": "<|begin_of_image|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154831,
+      "content": "<|end_of_image|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154832,
+      "content": "<|begin_of_video|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154833,
+      "content": "<|end_of_video|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154834,
+      "content": "<|begin_of_audio|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154835,
+      "content": "<|end_of_audio|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154836,
+      "content": "<|begin_of_transcription|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154837,
+      "content": "<|end_of_transcription|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 154838,
+      "content": "<|code_prefix|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154839,
+      "content": "<|code_middle|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154840,
+      "content": "<|code_suffix|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154841,
+      "content": "<think>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154842,
+      "content": "</think>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154843,
+      "content": "<tool_call>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154844,
+      "content": "</tool_call>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154845,
+      "content": "<tool_response>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154846,
+      "content": "</tool_response>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154847,
+      "content": "<arg_key>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154848,
+      "content": "</arg_key>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154849,
+      "content": "<arg_value>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154850,
+      "content": "</arg_value>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154851,
+      "content": "/nothink",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154852,
+      "content": "<|begin_of_box|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154853,
+      "content": "<|end_of_box|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154854,
+      "content": "<|image|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    },
+    {
+      "id": 154855,
+      "content": "<|video|>",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": false
+    }
+  ],
+  "bos_token": null,
+  "pad_token": "<|endoftext|>",
+  "pad_id": 154820,
+  "eos_config_ids": [
+    154820,
+    154827,
+    154829
+  ],
+  "automatic_input_prefix_ids": [
+    154822,
+    154824
+  ],
+  "generation_prefix": "<|assistant|><think>",
+  "input_prefix_think_id": 154841,
+  "closing_think_id": 154842,
+  "nonthinking_input_prefix": "<|assistant|></think>",
+  "thinking_control_is_template_input_choice": true,
+  "selected_thinking_effort_changed": false,
+  "template_default_system_injection": false,
+  "tools": null,
+  "documents": null,
+  "history": null,
+  "assistant_history_branch_note": "Template can split/clear reasoning in supplied old assistant turns; selected two-message profile has no assistant history, so branch is dormant. Never apply template to generated output.",
+  "tool_markers": [
+    "<tool_call>",
+    "</tool_call>",
+    "<arg_key>",
+    "</arg_key>",
+    "<arg_value>",
+    "</arg_value>",
+    "<tool_response>",
+    "</tool_response>"
+  ],
+  "tool_handoff": "<|observation|> id154829 is configured native stop/handoff; no external tool execution or continuation",
+  "final_answer_marker": "No separate final marker/channel token; closing </think> can delimit reasoning from later answer text, and is retained if emitted",
+  "generated_suffix_accounting": "Every emitted ID including reasoning, closing/opening markers, tool/role tokens and a terminal counts toward total2048. Prefilled <think> belongs to input only.",
+  "terminal_allowance": 1,
+  "terminal_removal": "Only a verified last observed configured terminal event, at most one ID; never remove </think> or tool-call body",
+  "decode_skip_special_tokens": false,
+  "raw_encode_add_special_tokens": false,
+  "padding": false,
+  "truncation": false,
+  "raw_byte_transport": "ByteLevel inverse alphabet plus literal special bytes; preserve before strict UTF-8 admission, never lossy replacement. Unknown/padded IDs fail infrastructure rather than silently disappearing.",
+  "lossless_input_byte_roundtrip_all_fixtures": true,
+  "output_decoder_empirically_certified": false,
+  "template_checks": [
+    {
+      "name": "system_user",
+      "input_tokens": 14,
+      "rendered_utf8_bytes": 82,
+      "rendered_sha256": "2d7581e6aa84b29f691ed4ce34fcb224dc634de46ddac3577c4362b9b29b1e9d",
+      "token_ids_sha256": "16dc14dc83ef940cff5d59787576291bc8b35396a15415c7934444bf83b058ea",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 2062,
+      "within_32768": true
+    },
+    {
+      "name": "system_user_assistant",
+      "input_tokens": 20,
+      "rendered_utf8_bytes": 123,
+      "rendered_sha256": "1d4dae6ceffc32dc40051e4ab67ec5061d5ab9ec448d8505adf707d1c48554f8",
+      "token_ids_sha256": "2806cfb2af0814cc2514b8d2aeee204ef1f3e1c9d510ccecee9c7c8c956e6a9b",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 2068,
+      "within_32768": true
+    },
+    {
+      "name": "multiline_code",
+      "input_tokens": 18,
+      "rendered_utf8_bytes": 97,
+      "rendered_sha256": "70a74ecf0f70734e8825bd5b10d532414c8d225d6c77de357ce5364490652248",
+      "token_ids_sha256": "89c0384dc254e435b528901bc7daf60f927c2ede7f4fe95d656cd34912f5a314",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 2066,
+      "within_32768": true
+    },
+    {
+      "name": "unicode",
+      "input_tokens": 23,
+      "rendered_utf8_bytes": 104,
+      "rendered_sha256": "e7a98e9e755ed78c667b72be50ed3d98759934a038a8146c5050be4a30e1646a",
+      "token_ids_sha256": "96a9ab9cec2a04194bf134558fba5a76fad6106e7337ceec66d4867e505a17ca",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 2071,
+      "within_32768": true
+    },
+    {
+      "name": "protocol_delimiters",
+      "input_tokens": 167,
+      "rendered_utf8_bytes": 825,
+      "rendered_sha256": "e80a7cda2874dce3fdc88071a5e2354bde09136e67dbb29c386d10f1e44b0daa",
+      "token_ids_sha256": "f22a9e398f934e053643203efd9c9eddadd041746be553b190b53c713c2ba2a9",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 2215,
+      "within_32768": true
+    },
+    {
+      "name": "empty_h",
+      "input_tokens": 197,
+      "rendered_utf8_bytes": 1017,
+      "rendered_sha256": "9cd4a9e9a933d8af3931f48d1c2176b1ff776496c262857003070cab341a83e9",
+      "token_ids_sha256": "1f98d2cb78ec08c1f94a0ed22f216cb627ea200a1109dbc7769827a89ac1fefd",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 2245,
+      "within_32768": true
+    }
+  ],
+  "canonical_render": "[gMASK]<sop><|system|>{frozen SYSTEM}<|user|>{frozen user(P,K,H)}<|assistant|><think>"
+}

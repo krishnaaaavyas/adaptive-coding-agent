@@ -1,0 +1,658 @@
+STEP 8K-B.1G2A-0 — INFRASTRUCTURE EXECUTION GOVERNANCE + QWEN30 ENVIRONMENT LOCK
+
+The static landscape is CLOSED.
+
+Frozen infrastructure-verification roster/order:
+1. Qwen3-Coder-30B-A3B-Instruct
+2. Devstral-Small-2-24B-Instruct-2512
+3. GLM-4.7-Flash
+4. NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+5. Qwen3-Coder-Next
+
+STOP MODEL SHOPPING = YES.
+
+This step prepares the first executable infrastructure track:
+Qwen3-Coder-30B-A3B-Instruct.
+
+DO NOT YET DOWNLOAD FULL MODEL WEIGHTS.
+DO NOT RUN MODEL INFERENCE.
+DO NOT USE/Rent GPU RESOURCES.
+DO NOT RUN ADAPTATION.
+
+PURPOSE
+
+Freeze the execution-governance rules, immutable runtime identity,
+failure handling, gate dependencies, fixtures, acceptance criteria,
+and exact Qwen30 execution plan BEFORE expensive infrastructure work.
+
+This step must make the later Qwen30 execution mechanical rather than
+allowing decisions to change after seeing runtime/model behavior.
+
+==================================================
+1. AUTHORITATIVE INPUTS
+==================================================
+
+Use:
+
+- roster_closure artifacts
+- Qwen3-Coder-30B-A3B static preflight
+- Qwen3-Coder-Next static preflight only where shared historical
+  Qwen evidence is explicitly relevant
+- cross_model_audit artifacts
+- current-repo-v1-draft2
+- current-repo-v1-draft3
+- current context-policy implementation revision/provenance
+- existing conformance/golden artifacts
+
+Subject:
+
+Qwen/Qwen3-Coder-30B-A3B-Instruct
+revision:
+b2cff646eb4bb1d68355c01b18ae02e7cf42d120
+
+Do not refresh or substitute the checkpoint.
+
+==================================================
+2. STRICT PROHIBITIONS
+==================================================
+
+DO NOT:
+
+- search for new models
+- change the frozen roster/order
+- download model weight bodies
+- instantiate the model
+- instantiate adapters
+- run inference
+- generate model completions
+- train
+- use GPUs
+- inspect protected candidates/tasks
+- inspect benchmark outcomes/private scorers
+- run A/B/M/C/BC
+- run Study1/2/3
+- modify Draft2/Draft3
+- modify P/K/H
+- change 32768 context
+- change 2048 generated-token reserve
+- change full-stream semantics
+- introduce retries
+- introduce clipping/shifting
+- suppress reasoning
+- change generation controls
+- change task population
+- commit changes
+
+Small immutable public source/package/container metadata may be
+retrieved only where required to resolve the already-proposed Qwen30
+runtime lock.
+
+==================================================
+3. FREEZE FAILURE-HANDLING POLICY
+==================================================
+
+Formalize these three classes BEFORE execution:
+
+A. PROTOCOL / MODEL INCOMPATIBILITY
+
+Examples:
+- required entire completion cannot be retained
+- frozen generation controls fundamentally unavailable
+- actual model cannot satisfy required context/output contract
+
+Action:
+STOP configuration/model track.
+
+No repair may alter normative protocol semantics.
+
+B. INFRASTRUCTURE / CONFIGURATION DEFECT
+
+Examples:
+- wrong runtime flag
+- broken container wiring
+- logging/instrumentation defect
+- packaging error
+- correctable dependency/build configuration
+
+Action:
+QUARANTINE
+→ bounded repair
+→ invalidate affected/dependent gates
+→ rerun required gates.
+
+The original failure remains in provenance.
+
+C. MEASUREMENT / VERIFICATION INCOMPLETE
+
+Examples:
+- telemetry missing
+- determinism unresolved
+- trace incomplete
+- measurement cannot distinguish pass/fail
+
+Action:
+PENDING.
+
+Never convert incomplete evidence to PASS.
+
+Create a machine-readable failure policy.
+
+==================================================
+4. REPAIR GOVERNANCE
+==================================================
+
+Define PRE-OUTCOME rules for infrastructure repair.
+
+Every repair must record:
+
+- failure ID
+- class
+- exact symptom
+- affected gate
+- root-cause evidence
+- files/config changed
+- semantic-invariance justification
+- dependent gates invalidated
+- rerun set
+- before/after hashes
+- reviewer disposition
+
+Repairs MUST NOT change merely to obtain PASS:
+
+- checkpoint identity
+- selected native profile
+- P/K/H
+- BC ownership
+- 32768 deployed context
+- 2048 generated-token cap
+- full replacement semantics
+- entire generated-stream retention
+- task population
+- generation controls
+- retry count
+- output parser semantics
+- candidate admission
+- adaptation condition definitions
+
+If a proposed repair requires one of these:
+classify it as protocol/model incompatibility or require a separate
+future normative amendment.
+
+Do not perform that amendment here.
+
+==================================================
+5. GATE DEPENDENCY GRAPH
+==================================================
+
+Take the historical Qwen30 A–S infrastructure matrix and formalize a
+dependency DAG.
+
+At minimum cover:
+
+A exact checkpoint bodies/hash/layout
+B immutable runtime/container/parser lock
+C successful pristine model load + actual 32768 support
+D exact prompt-token parity
+E effective frozen generation controls
+F native terminal behavior
+G natural termination
+H forced 2048 cap
+I raw token/byte retention
+J same-process greedy repeatability
+K fresh-process repeatability
+L isolation/no-read/no-tools
+M measured VRAM/RAM/storage
+N timing/throughput/rebuild measurements
+O conservative attention-LoRA forward/backward
+P adapter save/reload
+Q direct serve or required merge/export
+R second fresh ORIGINAL rebuild
+S contamination/state-reset audit
+
+If historical naming differs, preserve authoritative historical IDs and
+create an explicit mapping rather than silently renaming evidence.
+
+For every gate specify:
+
+- prerequisites
+- independent acceptance criterion
+- evidence required
+- failure class possibilities
+- dependent gates invalidated on repair
+
+==================================================
+6. QWEN30 IMMUTABLE RUNTIME LOCK
+==================================================
+
+Resolve the remaining static blocker identified by roster closure:
+Qwen30 vLLM 0.11.2 needs an immutable source/build/runtime identity.
+
+Establish the exact proposed stack WITHOUT executing it.
+
+Record:
+
+- vLLM exact repository commit
+- version
+- Python 3.11.9
+- PyTorch exact version/build expectation
+- Transformers exact version/commit
+- Tokenizers
+- Jinja
+- CUDA toolkit/runtime expectation
+- NVIDIA driver compatibility requirement
+- architecture
+- OS base
+- compiler/Triton/FlashAttention or equivalent dependencies
+- package lock
+- hashes where obtainable
+- container build inputs
+
+Do not use `latest`.
+
+Do not treat a Dockerfile alone as immutable proof.
+
+Define the later required executable identity as:
+
+content-addressed container image digest
++ exact checkpoint body hashes
++ package lock/hashes
++ Python runtime
++ CUDA/runtime/driver identity
++ GPU topology
++ parser/build identity.
+
+If an exact runtime dependency cannot yet be resolved statically:
+mark it PENDING.
+Do not guess.
+
+==================================================
+7. CONTAINER / EXECUTION PROFILE
+==================================================
+
+Specify the proposed later execution environment.
+
+It must support:
+
+- Linux
+- CUDA
+- offline model execution after authenticated acquisition
+- read-only authenticated model mount
+- immutable runtime/container
+- one input request at a time
+- no network during inference
+- no tools
+- no retrieval
+- no repository reads beyond explicitly provided input
+- no shell/tool callbacks from model output
+- scoped output directory
+- fresh temporary state where required
+- raw token IDs retained
+- raw bytes retained
+- finish reason retained
+- terminal-removal receipt retained
+- resource telemetry retained
+
+Separate:
+
+ACQUISITION ENVIRONMENT
+from
+EXECUTION ENVIRONMENT.
+
+Network may be needed for authenticated acquisition.
+
+Evaluation execution itself must be offline.
+
+==================================================
+8. QWEN30 FROZEN GENERATION PROFILE
+==================================================
+
+Restate and machine-encode the exact frozen controls.
+
+At minimum:
+
+greedy
+temperature = 0
+top_p = 1
+top_k disabled
+repetition penalty = 1
+frequency penalty = 0
+presence penalty = 0
+seed = 0
+no text stops
+max generated tokens = 2048
+n = 1
+zero retries
+no clipping
+no shifting
+no prompt truncation
+no speculative decoding
+no tools
+no reasoning parser
+no output projection
+no prefix-cache contamination
+
+Map each to the exact proposed runtime argument.
+
+Expected values must be literal independent constants.
+
+DO NOT derive the test oracle from production runtime constants.
+
+This requirement follows the earlier F2 lesson from the context-policy
+implementation audit.
+
+==================================================
+9. FIXTURES / GOLDENS
+==================================================
+
+Freeze all non-protected infrastructure fixtures required for Qwen30.
+
+Include:
+
+- tokenizer/template fixtures
+- P/K/H boundary fixtures
+- A/B/M/C/BC serialization fixtures
+- Unicode fixtures
+- delimiter/code fixtures
+- terminal fixtures
+- natural-stop fixture design
+- forced-2048 fixture design
+- raw-byte fixture design
+- repeatability fixture design
+- divergent-prior-request contamination fixture
+- isolation negative probes
+
+Reuse authenticated existing synthetic fixtures where valid.
+
+Do not inspect protected candidate tasks.
+
+Every fixture must have:
+
+- stable ID
+- bytes/hash
+- purpose
+- expected invariant
+- gate membership
+
+==================================================
+10. REPEATABILITY POLICY
+==================================================
+
+Freeze BEFORE model execution what counts as repeatability.
+
+Distinguish:
+
+TOKEN-EXACT repeatability
+BYTE-EXACT repeatability
+TERMINAL/EVENT repeatability
+RESOURCE measurement variability
+
+Define:
+
+- number of same-process repetitions
+- number of fresh-process repetitions
+- comparison fields
+- handling of timestamps/telemetry
+- what mismatch causes FAIL vs PENDING
+
+Do not select repeat counts after seeing outputs.
+
+Do not weaken equality after observing nondeterminism.
+
+==================================================
+11. RESOURCE MEASUREMENT POLICY
+==================================================
+
+Freeze what will later be measured:
+
+- model disk
+- host RAM
+- GPU VRAM
+- load peak
+- steady-state inference peak
+- 32768-context peak
+- generation peak
+- adapter training peak
+- merge/export peak if applicable
+- TTFT
+- decode throughput
+- load time
+- destroy/reset time
+- second-original rebuild time
+
+Specify measurement tools and sampling rules where possible.
+
+These measurements are descriptive infrastructure evidence.
+
+They must NOT be used as post-hoc quality-selection metrics.
+
+==================================================
+12. ADAPTATION LIFECYCLE PLAN
+==================================================
+
+For Qwen30 conservative scope only:
+
+rank-16 attention LoRA.
+
+Freeze:
+
+- exact target modules
+- target count
+- rank
+- base dtype
+- optimizer-state expectations
+- adapter initialization
+- save format
+- reload procedure
+- merge/direct-serving route to test
+- pristine-original authentication before every adaptation cycle
+- adapter cannot parent next adaptation
+- merged derivative cannot parent next adaptation
+
+Do NOT train.
+
+Do NOT choose training data/hyperparameters beyond what is strictly
+required to verify a forward/backward lifecycle.
+
+This is infrastructure verification, not Study3.
+
+==================================================
+13. EXTERNAL EXECUTION MANIFEST
+==================================================
+
+Design the manifest that every later Qwen30 executable run must emit.
+
+At minimum include:
+
+- run ID
+- timestamp
+- checkpoint repo/SHA
+- exact body hashes
+- container digest
+- package/runtime identities
+- GPU model/count/topology
+- driver/CUDA
+- frozen control values
+- prompt fixture ID/hash
+- exact prompt token count
+- raw generated token IDs
+- raw generated bytes hash
+- generated token count
+- finish reason
+- terminal token
+- terminal-removal receipt
+- normalized completion hash
+- wall time
+- TTFT
+- throughput
+- peak VRAM
+- peak host RAM
+- isolation result
+- gate result
+- failure classification if any
+- provenance artifact hashes
+
+Do not put protected task content into this preparatory step.
+
+==================================================
+14. HARDWARE / CLOUD EXECUTION REQUIREMENTS
+==================================================
+
+Do NOT select or rent a provider.
+
+Derive only the technical minimum needed for the first Qwen30 run from
+the static resource evidence.
+
+Separate:
+
+- minimum plausible device memory
+- preferred safety margin
+- host RAM
+- storage
+- CUDA/runtime constraints
+- expected need for one vs multiple GPUs
+
+Mark all as planning estimates until measured.
+
+Do not optimize for price yet.
+
+==================================================
+15. PRE-DOWNLOAD GO / NO-GO CHECKLIST
+==================================================
+
+Produce an explicit checklist that must pass before downloading the
+Qwen30 weight bodies.
+
+It should include:
+
+- checkpoint identity frozen
+- body manifest expected
+- storage sufficient
+- acquisition hashing procedure ready
+- runtime source lock complete enough
+- execution isolation design ready
+- fixture/golden hashes frozen
+- gate DAG frozen
+- failure/repair policy frozen
+- manifest schema frozen
+- no protected candidate dependency
+- no protocol ambiguity requiring resolution
+
+The result of this step must be one of:
+
+READY FOR AUTHENTICATED QWEN30 ACQUISITION
+
+or
+
+NOT READY — <specific blockers>
+
+Do not perform acquisition.
+
+==================================================
+16. REQUIRED ARTIFACTS
+==================================================
+
+Create a dedicated directory such as:
+
+experiments/model_preflight/qwen30_infrastructure_governance/
+
+At minimum:
+
+REPORT.md
+failure_policy.json
+repair_policy.json
+gate_dependency_graph.json
+runtime_lock.json
+execution_profile.json
+generation_profile.json
+fixture_manifest.json
+repeatability_policy.json
+resource_measurement_policy.json
+adaptation_lifecycle_plan.json
+run_manifest_schema.json
+hardware_requirements.json
+pre_download_checklist.json
+source_manifest.json
+artifact_manifest.json
+validation.json
+
+Small deterministic validation/acquisition-planning scripts allowed.
+
+No commit.
+
+==================================================
+17. VALIDATION
+==================================================
+
+Before finalizing verify:
+
+- JSON parses
+- artifact hashes
+- exact Qwen checkpoint identity
+- roster/order unchanged
+- Draft2/Draft3 unchanged
+- P/K/H unchanged
+- generation controls unchanged
+- no full weight bodies downloaded
+- no model instantiated
+- no adapter instantiated
+- no inference
+- no GPU execution
+- no protected candidates accessed
+- no benchmark outcomes accessed
+- no product repository modifications
+- git HEAD unchanged
+- worktree status recorded
+
+==================================================
+18. REPORT
+==================================================
+
+REPORT.md should contain:
+
+1. Verdict
+2. Scope/prohibitions
+3. Frozen Qwen30 identity
+4. Failure policy
+5. Repair governance
+6. Gate dependency DAG
+7. Immutable runtime lock
+8. Acquisition vs execution separation
+9. Execution/isolation profile
+10. Frozen generation controls
+11. Fixtures/goldens
+12. Repeatability policy
+13. Resource measurement policy
+14. Conservative adaptation lifecycle
+15. Run manifest/provenance
+16. Hardware planning envelope
+17. Pre-download checklist
+18. Remaining blockers
+19. Freeze boundaries
+20. Files created/modified
+21. Claim limitations
+22. Final recommendation
+
+Finish with:
+
+Qwen30 exact repo/SHA:
+Runtime lock status:
+Failure policy frozen: YES/NO
+Repair policy frozen: YES/NO
+Gate DAG frozen: YES/NO
+Fixtures frozen: YES/NO
+Repeatability policy frozen: YES/NO
+Run manifest schema frozen: YES/NO
+Pre-download verdict:
+Full weights downloaded: YES/NO
+Model instantiated: YES/NO
+Inference occurred: YES/NO
+GPU used: YES/NO
+Protected candidates accessed: YES/NO
+Protocol changed: YES/NO
+Commit made: YES/NO
+Final HEAD/status:
+
+STOP.
+
+Do not begin weight acquisition.
+Do not begin Qwen30 A–S execution.

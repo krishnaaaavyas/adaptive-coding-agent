@@ -1,0 +1,25 @@
+id,test,procedure,acceptance,status
+A,Exact acquisition and body identity,Acquire only authorized original six shards; verify LFS sizes/SHA256 and immutable metadata; inspect real dtype/shape/scale headers,Original body manifest; reject mismatch,NOT_RUN
+B,Official reconstruction,Execute explicit dequantize=True and key mapping on CPU; account for every weight/scale; reject missing/new weights; verify finite BF16 and flags stripped,585 tensor manifest and conversion trace,NOT_RUN
+C,"32,768 context load",Load authenticated full BF16 reconstruction with max_model_len=32768 and reserve2048; no native-maximum inference,Effective config and memory receipt,NOT_RUN
+D,Prompt token parity,Exact pinned renderer/backend vs input server receipt on all synthetic fixtures; no hidden BOS/default system/history/tool/template,Byte and token hashes identical,NOT_RUN
+E,Frozen controls,All 15 requested controls effective; source profile typed parameters; seed/greedy/reserve; no generation_config overrides,"Authenticated control receipt, negative override tests",NOT_RUN
+F,Native terminals,Establish actual native EOS2 behavior; PAD11/internal tools/modality markers retained; no blanket special stripping,Raw IDs and termination receipt,NOT_RUN
+G,Natural termination,Allow synthetic authorized input to terminate before cap; actual count and finish_reason recorded,Natural termination with no retry,NOT_RUN
+H,"Forced 2,048 cap",Synthetic later generation reaching2048: count terminal within cap; EOS-at-cap classified capacity failure despite runtime stop precedence,output_capacity_failure; no clipping/regeneration,NOT_RUN
+I,Raw token/byte retention,Capture all IDs; invert ByteLevel alphabet to raw bytes including literal special markers; retain invalid UTF-8 without replacement; only verified final EOS removal and CR/LF normalization,Raw/normalized byte hashes and receipts,NOT_RUN
+J,Same-process greedy repeat,Authorized synthetic inference repeats fixed request/controls; compare IDs/bytes,Exact repetition or explicit failure,NOT_RUN
+K,Fresh-process greedy repeat,Cold process repeats pinned hardware/runtime/base/request; compare IDs/bytes,Repeatability boundary certificate,NOT_RUN
+L,Isolation/no-read/no-tools,Negative egress/tool/filesystem/history/retrieval probes; no candidate mounts or server prefix cache,Independent sandbox audit,NOT_RUN
+M,Peak RAM/VRAM/storage,Measure acquire/reconstruct/load/prefill/generation/train/save/reload/merge/reset peaks for both scopes,Peak table versus estimates,NOT_RUN
+N,Timing/throughput,"Measure cold reconstruction/hash/load, full prompt prefill, decode, save/reload/merge/reset timing",Resource timings only; no model-quality selection,NOT_RUN
+O,Attention-only forward/backward,"Fresh base and rank16 attention adapter; exact160 targets/19,660,800 trainables; finite nonzero gradients; base frozen","Gradient, trainable-name and base-hash audit",NOT_RUN
+P,Attention+MLP forward/backward,"Fresh base and rank16 combined adapter; exact280 targets/92,405,760 trainables; finite nonzero gradients; vision/head frozen",Gradient and scope audit,NOT_RUN
+Q,Adapter save/destroy/reload,Save safetensors/config/provenance; terminate training; reconstruct original again; reload saved adapter exactly,"Adapter hashes, key coverage and output/logit agreement",NOT_RUN
+R,Direct serving or merge/export,"Verify vLLM packed-target adapter route; alternatively safe BF16 merge/export with save_original_format=False, no quant metadata; compare declared numerical/decision parity",Evaluation derivative manifest; no new adaptation parent,NOT_RUN
+S,Second independent reconstruction,Reconstruct same original in fresh directory/process under pinned CPU/software twice; compare per-tensor hashes,Equal canonical pristine tensor roots; shard byte determinism separately checked,NOT_RUN
+T,Contamination/reset audit,Cycle2 starts original only; fresh adapter/optimizer/RNG; no merged derivative/history/cache state; destruction receipts,Original lineage and zero optimizer-step audit,NOT_RUN
+U,Architecture/attention-scale parity,Authenticate legacy llama_4_scaling alias from original constants; compare Transformers and vLLM logits including >8192 positions and YaRN,No omitted/doubled attention scaling,NOT_RUN
+V,Parser environment/full stream,"CPython3.11.9 Unicode14.0.0 official completion parser; retain reasoning/tool markers if emitted, no final-only extraction",Protocol-compatible raw full-stream certification,NOT_RUN
+W,Dependency/container/kernel lock,"Resolve complete Linux package versions/wheel hashes, CUDA driver, Torch/vLLM extensions, model class and container digest; reject incompatible optional media dependencies",Complete runnable immutable environment identity,NOT_RUN
+X,Fresh cycle cost and derivative guard,Measure repeat original reconstruction per train/evaluation cycle; prove merged export rejects as original input,Reset cost receipt and fail-closed provenance tests,NOT_RUN

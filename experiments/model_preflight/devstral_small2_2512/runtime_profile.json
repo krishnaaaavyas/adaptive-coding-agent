@@ -1,0 +1,254 @@
+{
+  "status": "STATIC_PROPOSAL / NOT AN AUTHENTICATED RUN PROFILE",
+  "verdict": "PROCEED TO INFRASTRUCTURE VERIFICATION",
+  "same_original_inference_representation": "authenticated pristine BF16 reconstruction, and independently reloaded adapter or merged evaluation derivative",
+  "stack": {
+    "vllm": {
+      "version": "0.30.0",
+      "commit": "ced6857afa0ea7b2e3f0846a62e1394e90f15607",
+      "backend": "V1 offline LLM"
+    },
+    "python": "3.11.9",
+    "pytorch": "2.13.0",
+    "transformers": {
+      "version": "5.19.0.dev0",
+      "commit": "02d8fb9784e8f14a1251e4c992cd82a5762417c6"
+    },
+    "peft": {
+      "version": "0.21.3.dev0",
+      "commit": "532a05dd505c28993119b7715ee286f4234bf51b"
+    },
+    "tokenizers": "0.23.2",
+    "jinja2": "3.1.6",
+    "markupsafe": "3.0.4",
+    "packaging": "26.3",
+    "accelerate": "1.15.0",
+    "safetensors": "0.6.2",
+    "mistral_common": "1.12.0",
+    "cuda_assumption": "13.0.3 from pinned vLLM Dockerfile; compatible actual wheel/driver/container/kernels must be resolved and authenticated later",
+    "os_architecture_assumption": "Linux x86_64 CUDA; local Windows tokenizer check is separate"
+  },
+  "installation_certified": false,
+  "transitive_lock_container_digest": "NOT_ESTABLISHED; mandatory before later execution",
+  "dependency_source_check": "vLLM 0.30.0 Transformers>=5.10.4 and Tokenizers>=0.21.1 admit proposed versions; no installed-build ABI or complete dependency-resolution claim",
+  "rejected_runtime_snapshot": {
+    "commit": "5f30fc7031cae49bf51073fc953d419b08f8887c",
+    "reason": "its Transformers upper bound <5.18 conflicts with selected 5.19.0.dev0 snapshot"
+  },
+  "engine_args": {
+    "max_model_len": 32768,
+    "dtype": "bfloat16",
+    "quantization": null,
+    "tensor_parallel_size": 1,
+    "max_num_seqs": 1,
+    "seed": 0,
+    "enforce_eager": true,
+    "enable_prefix_caching": false,
+    "generation_config": "vllm",
+    "skip_tokenizer_init": true,
+    "limit_mm_per_prompt": {
+      "image": 0
+    },
+    "trust_remote_code": false,
+    "speculative_config": null
+  },
+  "input_transport": "explicit precomputed prompt_token_ids; no chat server template or history/tool/reasoning parser",
+  "configuration_alias": {
+    "text_config.llama_4_scaling": {
+      "original_max_position_embeddings": 8192,
+      "beta": 0.1
+    },
+    "origin": "unchanged exact params.json constants and text_config.rope_parameters values",
+    "purpose": "vLLM MistralAttention reads legacy alias; Transformers reads rope_parameters; preserve both"
+  },
+  "sampling_params": {
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "min_p": 0.0,
+    "repetition_penalty": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "seed": 0,
+    "n": 1,
+    "max_tokens": 2048,
+    "min_tokens": 0,
+    "stop": [],
+    "stop_token_ids": [
+      2
+    ],
+    "ignore_eos": false,
+    "detokenize": false,
+    "skip_special_tokens": false,
+    "truncate_prompt_tokens": null,
+    "logit_bias": null,
+    "allowed_token_ids": null,
+    "bad_words": null,
+    "structured_outputs": null,
+    "repetition_detection": null
+  },
+  "frozen_control_map": {
+    "decoding": {
+      "requested": "greedy",
+      "runtime_parameter": "temperature",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "temperature": {
+      "requested": 0,
+      "runtime_parameter": "temperature",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "top_p": {
+      "requested": 1,
+      "runtime_parameter": "top_p",
+      "runtime_value": 1.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "top_k": {
+      "requested": "disabled",
+      "runtime_parameter": "top_k",
+      "runtime_value": 0,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "repetition_penalty": {
+      "requested": 1,
+      "runtime_parameter": "repetition_penalty",
+      "runtime_value": 1.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "frequency_penalty": {
+      "requested": 0,
+      "runtime_parameter": "frequency_penalty",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "presence_penalty": {
+      "requested": 0,
+      "runtime_parameter": "presence_penalty",
+      "runtime_value": 0.0,
+      "runtime_argument_type": "decimal",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "seed": {
+      "requested": 0,
+      "runtime_parameter": "seed",
+      "runtime_value": 0,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "text_stops": {
+      "requested": [],
+      "runtime_parameter": "stop",
+      "runtime_value": [],
+      "runtime_argument_type": "array",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "max_generation": {
+      "requested": 2048,
+      "runtime_parameter": "max_tokens",
+      "runtime_value": 2048,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "completions": {
+      "requested": 1,
+      "runtime_parameter": "n",
+      "runtime_value": 1,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py"
+    },
+    "retries": {
+      "requested": 0,
+      "runtime_parameter": "orchestrator retry count",
+      "runtime_value": 0,
+      "runtime_argument_type": "integer",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "static transport/isolation design; wrapper must be certified"
+    },
+    "context_shifting": {
+      "requested": false,
+      "runtime_parameter": "one fixed prompt_token_ids sequence, no shifting",
+      "runtime_value": false,
+      "runtime_argument_type": "boolean",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "static transport/isolation design; wrapper must be certified"
+    },
+    "clipping": {
+      "requested": false,
+      "runtime_parameter": "lossless capture; no slice/clipping",
+      "runtime_value": false,
+      "runtime_argument_type": "boolean",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "static transport/isolation design; wrapper must be certified"
+    },
+    "truncation": {
+      "requested": false,
+      "runtime_parameter": "truncate_prompt_tokens=None; overflow fail, never truncate",
+      "runtime_value": false,
+      "runtime_argument_type": "boolean",
+      "source_status": "SOURCE-SUPPORTED",
+      "infrastructure_status": "INFRASTRUCTURE-UNVERIFIED",
+      "evidence": "static transport/isolation design; wrapper must be certified"
+    }
+  },
+  "terminal_ids": [
+    2
+  ],
+  "terminal_allowance": 1,
+  "raw_capture": [
+    "all generated token IDs INCLUDING EOS",
+    "actual count",
+    "finish_reason",
+    "stop_reason",
+    "decoded raw bytes",
+    "only-one-final-EOS removal receipt",
+    "CR/LF normalization receipt"
+  ],
+  "cap_rule": "2048 includes terminal; independent actual count >=2048 is capacity failure even if vLLM checks EOS before LENGTH and reports stop",
+  "decode_rule": "exact ByteLevel inverse alphabet to bytes plus added-token literal UTF-8 bytes, retain all special markers; do not silently replace invalid UTF-8 via a string-only decoder. Remove at most one verified final observed EOS ID, then strict full-stream text admission and allowed CR/LF normalization only",
+  "no_final_only_projection": true,
+  "determinism": "greedy/seed source support does not establish repeated-process or cross-hardware deterministic inference",
+  "source_urls": [
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/sampling_params.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/engine/arg_utils.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/v1/core/sched/utils.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/outputs.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/entrypoints/llm.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/requirements/cuda.txt",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/requirements/common.txt",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/docker/Dockerfile"
+  ]
+}

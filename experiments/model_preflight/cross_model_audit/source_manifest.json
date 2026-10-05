@@ -1,0 +1,102 @@
+{
+  "audit": "STEP 8K-B.1G1D",
+  "date": "2026-10-03",
+  "timezone": "Asia/Calcutta",
+  "workspace_head": "7fcdecbe26f4fd01138edf8f58c02ce4b947db0b",
+  "normative_precedence": "draft2 except explicit draft3 replacements/additions",
+  "original_inputs": [
+    {
+      "id": "draft2",
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\4d262682-37c3-4202-b522-9860924a2b11\\Pasted text.txt",
+      "archived_path": "sources/draft2.txt",
+      "bytes": 43599,
+      "sha256": "e51c19b1acd06723a26b4e2151825ac6b858ef3d1c68271da76a622127aa9536"
+    },
+    {
+      "id": "draft3",
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\b6cfa734-22da-4b8a-8ea2-dfcc49e2a728\\Pasted text.txt",
+      "archived_path": "sources/draft3.txt",
+      "bytes": 47405,
+      "sha256": "f0d5c27a14d7769846f592902288bacbe1b55701232d403150da669ff30d3acc"
+    },
+    {
+      "id": "request",
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\5ea8cc20-f745-4044-ae3e-1c3e8ce03153\\Pasted text.txt",
+      "archived_path": "sources/request.txt",
+      "bytes": 8388,
+      "sha256": "522148d364f679c3c28f369f3b668bfc941cae1691fc6474eeb561d037e28dcf"
+    },
+    {
+      "id": "preflight_30b",
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\ecd0841a-a583-4bc6-a2da-2d5bc13e4e33\\Pasted text.txt",
+      "archived_path": "sources/preflight_30b.txt",
+      "bytes": 26436,
+      "sha256": "94112c2641b7c687a783e17f1d355a69c0ecd61a75ec6e44eb6cd6fe205c930e"
+    },
+    {
+      "id": "preflight_next",
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\8eceb4d1-a72f-4456-a3d0-bd44917737d9\\Pasted text.txt",
+      "archived_path": "sources/preflight_next.txt",
+      "bytes": 24904,
+      "sha256": "0f072060a129452240eca2c21fabc87f99132563a769599dbbcd054b417696b5"
+    },
+    {
+      "id": "preflight_gpt_oss",
+      "original_path": "C:\\Users\\admin\\.codex\\attachments\\85f8ad66-b94d-4b45-a65c-fa0e638c29c0\\Pasted text.txt",
+      "archived_path": "sources/preflight_gpt_oss.txt",
+      "bytes": 40956,
+      "sha256": "7cf679b3177f287cf02a2d84f9f815062dc12bdc5f130573262d063af3ebae16"
+    },
+    {
+      "id": "implementation_protocol",
+      "original_path": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\harness\\context_policy\\protocol.py",
+      "archived_path": "sources/protocol.py",
+      "bytes": 12307,
+      "sha256": "1c775d8bc0a1187e92a3c15e596b91747672796dd93f80e098dbc37c14fc9a45"
+    },
+    {
+      "id": "implementation_core",
+      "original_path": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\harness\\context_policy\\core.py",
+      "archived_path": "sources/core.py",
+      "bytes": 8267,
+      "sha256": "db38809c2e027e059d182d7768d05d6cab263b7648761286870fbd92551bcbba"
+    },
+    {
+      "id": "implementation_artifact",
+      "original_path": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\harness\\context_policy\\artifact.py",
+      "archived_path": "sources/artifact.py",
+      "bytes": 7673,
+      "sha256": "53ec09f8ca524d14b31b22cd9a2c4f3e5a33b26ae01ffc721a6d5b9c4bf7c523"
+    },
+    {
+      "id": "implementation_readme",
+      "original_path": "C:\\Users\\admin\\Documents\\adaptive-coding-agent\\harness\\context_policy\\README.md",
+      "archived_path": "sources/implementation_README.md",
+      "bytes": 6271,
+      "sha256": "5da790277a49d85171e9f26c6015aa20e9c482364d3949f4e1aa9b6cd00b5868"
+    }
+  ],
+  "supplementary_inputs": [
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/source_manifest.json",
+      "bytes": 3361,
+      "sha256": "fbbd139b6d37a46e07a580b6b503ac03b7de61b6d4b78e5ebd4949a00522b473"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_30b_a3b/proposed_runtime.json",
+      "bytes": 2297,
+      "sha256": "90ddca935c9d06f0d43cf617834a74d164d8f1b3ffcf412c1d61983021c0f83b"
+    },
+    {
+      "path": "experiments/model_preflight/qwen3_coder_next/adapter_parameter_estimates.json",
+      "bytes": 1071,
+      "sha256": "9d3ba8a893503584735662f12081803ee87d69de56594ae49f30fc056b86158c"
+    },
+    {
+      "path": "experiments/model_preflight/gpt_oss_20b/channel_parser_checks.json",
+      "bytes": 3182,
+      "sha256": "6edf725e6ecb8b8a9df6901b4ae9474618f4f9bcce0d88e237adc393ea937b5e"
+    }
+  ],
+  "status": "static audit only; no inference or freeze"
+}

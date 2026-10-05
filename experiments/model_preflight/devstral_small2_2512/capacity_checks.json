@@ -1,0 +1,1061 @@
+{
+  "status": "PASS_STATIC_SYNTHETIC_TOKENIZATION_ONLY",
+  "fixture_methodology": "same canonical helpers and 4 pattern families \u00d7 2 byte boundaries \u00d7 5 forms, plus 5 empty registries; no experimental A/B/M/C/BC generation",
+  "rows": [
+    {
+      "name": "capacity_ascii_0_A",
+      "input_tokens": 16386,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "25cf4f606bd2000e6fd727210b7463c0b7071a4793b51bf8d4511a464d709539",
+      "token_ids_sha256": "9d879fe9fc8b8c08c070c9bf8600d981b32ce29e071136464dd36a6b84cefa2d",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 18434,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "A",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_ascii_0_B",
+      "input_tokens": 20454,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "8a92083721ceed00b2ed0f5e1b0c58e67ad289dea1d56a296635cef6528a964f",
+      "token_ids_sha256": "0266771935871cab144a93b8503dc46482b1fc34dffaf064492ea36fd7d81902",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22502,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "B",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_0_M",
+      "input_tokens": 20454,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "8a92083721ceed00b2ed0f5e1b0c58e67ad289dea1d56a296635cef6528a964f",
+      "token_ids_sha256": "0266771935871cab144a93b8503dc46482b1fc34dffaf064492ea36fd7d81902",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22502,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "M",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_0_C",
+      "input_tokens": 20454,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "8a92083721ceed00b2ed0f5e1b0c58e67ad289dea1d56a296635cef6528a964f",
+      "token_ids_sha256": "0266771935871cab144a93b8503dc46482b1fc34dffaf064492ea36fd7d81902",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22502,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "C",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_0_BC",
+      "input_tokens": 20439,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "75f6d0e98e9995288002c39ed02b46049d89f8a13d05847a05d9127c8e51a41b",
+      "token_ids_sha256": "4aca7bb747d779522c0d1df58299eae00dfb6a2b2980788593f1e4a6306e0b77",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22487,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "BC",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2048
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_1_A",
+      "input_tokens": 16386,
+      "rendered_utf8_bytes": 17012,
+      "rendered_sha256": "82f359e7a4f86ced2ad84dcd3d08763bbc15f0bf3e2c3e256024a986486d12d5",
+      "token_ids_sha256": "2db6286bc90b36a87a7bc7ce002d7f1c3b09fb654f2fe62e616bb2da2c9fb45c",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 18434,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "A",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_ascii_1_B",
+      "input_tokens": 20452,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "c5a37bdbcabf1ec391d9420474df113526feea92c2065e8e1b897a1e6fd1289f",
+      "token_ids_sha256": "52f8319f0e94e7b7914a4faece08d4316c18df83d4de63fc2e5d583c0ad0b11f",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22500,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "B",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_1_M",
+      "input_tokens": 20452,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "c5a37bdbcabf1ec391d9420474df113526feea92c2065e8e1b897a1e6fd1289f",
+      "token_ids_sha256": "52f8319f0e94e7b7914a4faece08d4316c18df83d4de63fc2e5d583c0ad0b11f",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22500,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "M",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_1_C",
+      "input_tokens": 20452,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "c5a37bdbcabf1ec391d9420474df113526feea92c2065e8e1b897a1e6fd1289f",
+      "token_ids_sha256": "52f8319f0e94e7b7914a4faece08d4316c18df83d4de63fc2e5d583c0ad0b11f",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22500,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "C",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_ascii_1_BC",
+      "input_tokens": 20439,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "704a4a9b755352217d3f6014fe521f877ba4b7e9ffd41509a7e58997e04d75b1",
+      "token_ids_sha256": "b4896271f4466af58cc0f8bf01a5d3aebcc628ca82a35bcb029007a10895191d",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 22487,
+      "within_32768": true,
+      "family": "ascii",
+      "condition": "BC",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2047
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_0_A",
+      "input_tokens": 9972,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "daf82d3b04792d3d94ea2c1de93dc859a31f29873f2e5d43eb54f16fc443c90e",
+      "token_ids_sha256": "1a35bb3ac5fc77c2e8d52e81b2452413b7814a8aac094ab0edac70532173fe95",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 12020,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "A",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_unicode_0_B",
+      "input_tokens": 12178,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "c3669f8aa69a8aab083a73aeebe4496e32a8195a169ecdfa96d3280a417a90c8",
+      "token_ids_sha256": "599e6d36bd4f9be74f65093291578c23c644364cd8125ee458b3845a255abfc0",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14226,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "B",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_0_M",
+      "input_tokens": 12178,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "c3669f8aa69a8aab083a73aeebe4496e32a8195a169ecdfa96d3280a417a90c8",
+      "token_ids_sha256": "599e6d36bd4f9be74f65093291578c23c644364cd8125ee458b3845a255abfc0",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14226,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "M",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_0_C",
+      "input_tokens": 12178,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "c3669f8aa69a8aab083a73aeebe4496e32a8195a169ecdfa96d3280a417a90c8",
+      "token_ids_sha256": "599e6d36bd4f9be74f65093291578c23c644364cd8125ee458b3845a255abfc0",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14226,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "C",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_0_BC",
+      "input_tokens": 12182,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "5f2b94d62107ab713444ca6f6778772e5cfc9497790ceeeac97153608b2ba1a0",
+      "token_ids_sha256": "7750a87c8160da28c36ff0d99e964f05e5aeb06067adaf457d9e2ba4b9734d2a",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14230,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "BC",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2048
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_1_A",
+      "input_tokens": 9956,
+      "rendered_utf8_bytes": 17012,
+      "rendered_sha256": "fe5867915c8da0d065c69e817665f5f60359c46dc054bb69651a758fc27eae03",
+      "token_ids_sha256": "6844b7e06a84ae51048010837fc380a9af648d2d2e205deb9f6677afe623f6c3",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 12004,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "A",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_unicode_1_B",
+      "input_tokens": 12161,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "4c4dfaa9d20f2e119a0ed2048878d33200423305022daaa0188290afe43d1af1",
+      "token_ids_sha256": "5eb33444bad73cc266aea7eb85d04a452f52ce7f068478546e2b29da98ada6c6",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14209,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "B",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_1_M",
+      "input_tokens": 12161,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "4c4dfaa9d20f2e119a0ed2048878d33200423305022daaa0188290afe43d1af1",
+      "token_ids_sha256": "5eb33444bad73cc266aea7eb85d04a452f52ce7f068478546e2b29da98ada6c6",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14209,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "M",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_1_C",
+      "input_tokens": 12161,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "4c4dfaa9d20f2e119a0ed2048878d33200423305022daaa0188290afe43d1af1",
+      "token_ids_sha256": "5eb33444bad73cc266aea7eb85d04a452f52ce7f068478546e2b29da98ada6c6",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14209,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "C",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_unicode_1_BC",
+      "input_tokens": 12165,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "8e5d052be3448b54bcc4f3eee7bd150d762df81ddd85b8b22a1697fb85e61fcf",
+      "token_ids_sha256": "b1e156b04f13d10e976218383f49800c694de36183c196d07bd45b4eae7067e2",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 14213,
+      "within_32768": true,
+      "family": "unicode",
+      "condition": "BC",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2047
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_0_A",
+      "input_tokens": 15714,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "04fb3ccf4c5af2a8d35b501e4258a8b0594b0c23e4351918c590c997c0c6f109",
+      "token_ids_sha256": "40a71022da42032f146ecb9aeb24cc9be0892190573714d230c490b8b4d9cbe9",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 17762,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "A",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_nfc_expansion_0_B",
+      "input_tokens": 19782,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "819d6e8558031b829de33d08e06685ef34012b248ca19a6b965cf3a0486e05f4",
+      "token_ids_sha256": "c8e69b101b3719b27487b0e693688aaea71ac2e2836991514b7469f73c3423cb",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21830,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "B",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_0_M",
+      "input_tokens": 19782,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "819d6e8558031b829de33d08e06685ef34012b248ca19a6b965cf3a0486e05f4",
+      "token_ids_sha256": "c8e69b101b3719b27487b0e693688aaea71ac2e2836991514b7469f73c3423cb",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21830,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "M",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_0_C",
+      "input_tokens": 19782,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "819d6e8558031b829de33d08e06685ef34012b248ca19a6b965cf3a0486e05f4",
+      "token_ids_sha256": "c8e69b101b3719b27487b0e693688aaea71ac2e2836991514b7469f73c3423cb",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21830,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "C",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_0_BC",
+      "input_tokens": 19768,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "21dfcd5b0755cf0fbcae0136bde9419434a52452381ef1170a93859072d199e7",
+      "token_ids_sha256": "d4d7e65bad44d06972d7027115d785b1a064dca9eb12f0dd77ce33f0d87fe11e",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21816,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "BC",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2048
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_1_A",
+      "input_tokens": 15710,
+      "rendered_utf8_bytes": 17012,
+      "rendered_sha256": "fca226bc26eb563e45b8d6cdb6313b0b4d47f31aaf74d272689ed3b31e6220a4",
+      "token_ids_sha256": "8a0eb1259974c6c283539cfdf29d24117946b697341dbf0661d134b0716cc903",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 17758,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "A",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_nfc_expansion_1_B",
+      "input_tokens": 19777,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "54a0fd262936e9cff2e88980afeb677cc5c7efc6cf2c65f0decc044a97eca85b",
+      "token_ids_sha256": "86de3827350cdc6fd6bc2b84bb80ce2a68bd596fd1df5b7e388a21aa18c95325",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21825,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "B",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_1_M",
+      "input_tokens": 19777,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "54a0fd262936e9cff2e88980afeb677cc5c7efc6cf2c65f0decc044a97eca85b",
+      "token_ids_sha256": "86de3827350cdc6fd6bc2b84bb80ce2a68bd596fd1df5b7e388a21aa18c95325",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21825,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "M",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_1_C",
+      "input_tokens": 19777,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "54a0fd262936e9cff2e88980afeb677cc5c7efc6cf2c65f0decc044a97eca85b",
+      "token_ids_sha256": "86de3827350cdc6fd6bc2b84bb80ce2a68bd596fd1df5b7e388a21aa18c95325",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21825,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "C",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_nfc_expansion_1_BC",
+      "input_tokens": 19763,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "3ccda5fc06d3d457238b97a54bc69e396566e0bf88d50e2f6be389e5f9868420",
+      "token_ids_sha256": "0f68fa7634b7bc5e336eaee2dea6eaaff2e414f1048c29e1d6d04f113e82a89a",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 21811,
+      "within_32768": true,
+      "family": "nfc_expansion",
+      "condition": "BC",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2047
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_0_A",
+      "input_tokens": 5322,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "0519a834fdfa79eeafb9c4f06224446e235bcdb6852dda5e692e47144ebe72a7",
+      "token_ids_sha256": "00b286ed0429efcb3819d02670b9852082de14a02157aef0e0e6d8b11632e18e",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 7370,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "A",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_code_delimiters_0_B",
+      "input_tokens": 6582,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "35183597a2929b10cd69d6b86be113125a6bd013c3ad33b7990b7d9d5c19b951",
+      "token_ids_sha256": "7b750ee19124b18fad176aa4097a85e00db9203b7ce313e1b16fb96aa0782f7c",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8630,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "B",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_0_M",
+      "input_tokens": 6582,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "35183597a2929b10cd69d6b86be113125a6bd013c3ad33b7990b7d9d5c19b951",
+      "token_ids_sha256": "7b750ee19124b18fad176aa4097a85e00db9203b7ce313e1b16fb96aa0782f7c",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8630,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "M",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_0_C",
+      "input_tokens": 6582,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "35183597a2929b10cd69d6b86be113125a6bd013c3ad33b7990b7d9d5c19b951",
+      "token_ids_sha256": "7b750ee19124b18fad176aa4097a85e00db9203b7ce313e1b16fb96aa0782f7c",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8630,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "C",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4096
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_0_BC",
+      "input_tokens": 6590,
+      "rendered_utf8_bytes": 21110,
+      "rendered_sha256": "d4688c452ba0bad3316ad4f3d67dd3e1c906f11960c1367d71e8a6221950039e",
+      "token_ids_sha256": "4c752464afdb746c05c1555f3a2eb91dd8e7e821a8784af1b2e92d258d2aa2c1",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8638,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "BC",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 4096,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2048
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_1_A",
+      "input_tokens": 5322,
+      "rendered_utf8_bytes": 17012,
+      "rendered_sha256": "27ec00a223c87f37ec72aef99b06c7eb4bb7f2cfe7e31c92b54db2a875ed1be7",
+      "token_ids_sha256": "75098580e2c3ee0278397f97e7b1ed0bc3a5899edceb02e57e56c80950ab658e",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 7370,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "A",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 0,
+      "lane_bytes": []
+    },
+    {
+      "name": "capacity_code_delimiters_1_B",
+      "input_tokens": 6581,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "989092035b2b99c0d969f01fee3229e0bbefce1e0d41f3acf9dabe12d0a7658d",
+      "token_ids_sha256": "8515ac4e2c418c9e05194470e63777027a5b94c7beb9f29fef5b22ed1484bc8f",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8629,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "B",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_1_M",
+      "input_tokens": 6581,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "989092035b2b99c0d969f01fee3229e0bbefce1e0d41f3acf9dabe12d0a7658d",
+      "token_ids_sha256": "8515ac4e2c418c9e05194470e63777027a5b94c7beb9f29fef5b22ed1484bc8f",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8629,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "M",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "DESCRIPTIVE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_1_C",
+      "input_tokens": 6581,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "989092035b2b99c0d969f01fee3229e0bbefce1e0d41f3acf9dabe12d0a7658d",
+      "token_ids_sha256": "8515ac4e2c418c9e05194470e63777027a5b94c7beb9f29fef5b22ed1484bc8f",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8629,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "C",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "CONFIRMED_RULE",
+          4095
+        ]
+      ]
+    },
+    {
+      "name": "capacity_code_delimiters_1_BC",
+      "input_tokens": 6589,
+      "rendered_utf8_bytes": 21107,
+      "rendered_sha256": "a81a630494572082e6270bfe1c32683ec5f1d6a83d326aaf45bdf23ffc47fabc",
+      "token_ids_sha256": "c8066eebf28318dc75a2079041882f74caaf5ceb4acb796f03361668b1b8f784",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 8637,
+      "within_32768": true,
+      "family": "code_delimiters",
+      "condition": "BC",
+      "p_bytes": 4095,
+      "k_bytes": 12287,
+      "h_bytes": 4095,
+      "lane_bytes": [
+        [
+          "EPISODIC",
+          2047
+        ],
+        [
+          "CONFIRMED_RULE",
+          2048
+        ]
+      ]
+    },
+    {
+      "name": "empty_registry_A",
+      "input_tokens": 4241,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "c26a2640319c7dc4958876d6ce48beb5124f2355018a39f179a3b797ca816966",
+      "token_ids_sha256": "d553bdcb028cdbe7c5048381a0aa5187c2a54364df6a820ddd372c22672fb003",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 6289,
+      "within_32768": true,
+      "condition": "A",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0
+    },
+    {
+      "name": "empty_registry_B",
+      "input_tokens": 4241,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "c26a2640319c7dc4958876d6ce48beb5124f2355018a39f179a3b797ca816966",
+      "token_ids_sha256": "d553bdcb028cdbe7c5048381a0aa5187c2a54364df6a820ddd372c22672fb003",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 6289,
+      "within_32768": true,
+      "condition": "B",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0
+    },
+    {
+      "name": "empty_registry_M",
+      "input_tokens": 4241,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "c26a2640319c7dc4958876d6ce48beb5124f2355018a39f179a3b797ca816966",
+      "token_ids_sha256": "d553bdcb028cdbe7c5048381a0aa5187c2a54364df6a820ddd372c22672fb003",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 6289,
+      "within_32768": true,
+      "condition": "M",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0
+    },
+    {
+      "name": "empty_registry_C",
+      "input_tokens": 4241,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "c26a2640319c7dc4958876d6ce48beb5124f2355018a39f179a3b797ca816966",
+      "token_ids_sha256": "d553bdcb028cdbe7c5048381a0aa5187c2a54364df6a820ddd372c22672fb003",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 6289,
+      "within_32768": true,
+      "condition": "C",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0
+    },
+    {
+      "name": "empty_registry_BC",
+      "input_tokens": 4241,
+      "rendered_utf8_bytes": 17014,
+      "rendered_sha256": "c26a2640319c7dc4958876d6ce48beb5124f2355018a39f179a3b797ca816966",
+      "token_ids_sha256": "d553bdcb028cdbe7c5048381a0aa5187c2a54364df6a820ddd372c22672fb003",
+      "repeated_encodings": 4,
+      "deterministic_encoding": true,
+      "lossless_input_byte_roundtrip": true,
+      "reserve": 2048,
+      "input_plus_reserve": 6289,
+      "within_32768": true,
+      "condition": "BC",
+      "p_bytes": 4096,
+      "k_bytes": 12288,
+      "h_bytes": 0
+    }
+  ],
+  "template_fixture_count": 6,
+  "capacity_fixture_count": 45,
+  "maximum_synthetic_input_tokens": 20454,
+  "maximum_input_plus_2048": 22502,
+  "deployed_target": 32768,
+  "reserve": 2048,
+  "native_config_maximum": 393216,
+  "capacity_violations": 0,
+  "repeated_deterministic_encodings": true,
+  "fixed_rendered_utf8_overhead": 630,
+  "maximum_variable_bytes": 20480,
+  "raw_utf8_bound_plus_reserve": 23158,
+  "all_256_byte_alphabet_symbols_in_vocab": true,
+  "bpe_dropout": null,
+  "byte_bound_evidence": "Source-code inference: no normalizer, no prefix insertion in ByteLevel pretokenizer, complete byte alphabet and merge-only BPE; token count cannot exceed rendered UTF-8 bytes. Not model/runtime certification.",
+  "normalized_bytes_expansion": false,
+  "measured_deployed_capacity": false,
+  "policy_sha256": "d93f5136339153e65e35ef720333e21260292bc680f2cd3cfe608dfa46939a3b"
+}

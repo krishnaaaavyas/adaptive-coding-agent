@@ -1,0 +1,111 @@
+[
+  {
+    "name": "information_A",
+    "rendered_bytes": 1321,
+    "input_tokens": 265,
+    "render_sha256": "a33456122169891f099af02d7da6f1462ad3035637027d447db1961319fc742f",
+    "token_ids_sha256": "6ea19e4f7961d3869eeda5d0e1077fcbea89a0c06981c7173a020b9b3872c251",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 265,
+    "upstream_jinja_raw_harmony_encoding_parity": true,
+    "condition": "A",
+    "k_sha256": "7aff7fdeb1179a849820f5359769be02445a7f5eacba99642dfded0b676a4924",
+    "p_sha256": "9391daf8de9b3c80eae5a634665cb7cdbbecb829a56a2e612cc51b6f97ff05a5",
+    "h_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "selected_kinds": [],
+    "semantic_p_bytes": 128,
+    "semantic_k_bytes": 256,
+    "semantic_h_bytes": 0
+  },
+  {
+    "name": "information_B",
+    "rendered_bytes": 1460,
+    "input_tokens": 310,
+    "render_sha256": "f5b6ff5806c2f18f7d139a2cd6765bbd337b3b619e095f3b5b42a0e096713d80",
+    "token_ids_sha256": "520a0aab6cfbbe371c51ed344b104efe2c489bcdeee8d8e4822f9b3986dadeca",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 310,
+    "upstream_jinja_raw_harmony_encoding_parity": true,
+    "condition": "B",
+    "k_sha256": "7aff7fdeb1179a849820f5359769be02445a7f5eacba99642dfded0b676a4924",
+    "p_sha256": "9391daf8de9b3c80eae5a634665cb7cdbbecb829a56a2e612cc51b6f97ff05a5",
+    "h_sha256": "53a99a82037147801dad80232faec0200360a26b74b51040359f727de685cd0c",
+    "selected_kinds": [
+      "EPISODIC"
+    ],
+    "semantic_p_bytes": 128,
+    "semantic_k_bytes": 256,
+    "semantic_h_bytes": 139
+  },
+  {
+    "name": "information_M",
+    "rendered_bytes": 1446,
+    "input_tokens": 299,
+    "render_sha256": "d993422b09fe2716048a5c5ce65c9fdfe5e81743a10925eb6bed335edd0067dd",
+    "token_ids_sha256": "1bbe7eff42cf2cae6bff51776e7e80f34134521763abdec1f7303e02fe3608ea",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 299,
+    "upstream_jinja_raw_harmony_encoding_parity": true,
+    "condition": "M",
+    "k_sha256": "7aff7fdeb1179a849820f5359769be02445a7f5eacba99642dfded0b676a4924",
+    "p_sha256": "9391daf8de9b3c80eae5a634665cb7cdbbecb829a56a2e612cc51b6f97ff05a5",
+    "h_sha256": "f51705889acaa566530510574b1f0f7d1520b4f95116e4546472d9ccb7b15d64",
+    "selected_kinds": [
+      "DESCRIPTIVE"
+    ],
+    "semantic_p_bytes": 128,
+    "semantic_k_bytes": 256,
+    "semantic_h_bytes": 125
+  },
+  {
+    "name": "information_C",
+    "rendered_bytes": 1457,
+    "input_tokens": 302,
+    "render_sha256": "8203b1c2a31d19a7cb0716f96e239deb05f6c6c13457073e6de3691878e92d50",
+    "token_ids_sha256": "ea16df7e50c2d112ca6957955840f91c859e1edef8c79c84ac7cc105bf09a44d",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 302,
+    "upstream_jinja_raw_harmony_encoding_parity": true,
+    "condition": "C",
+    "k_sha256": "7aff7fdeb1179a849820f5359769be02445a7f5eacba99642dfded0b676a4924",
+    "p_sha256": "9391daf8de9b3c80eae5a634665cb7cdbbecb829a56a2e612cc51b6f97ff05a5",
+    "h_sha256": "09357835519ad851ad9cb68fecaf202da0b24def1ca0380413f7da7c64032aa5",
+    "selected_kinds": [
+      "CONFIRMED_RULE"
+    ],
+    "semantic_p_bytes": 128,
+    "semantic_k_bytes": 256,
+    "semantic_h_bytes": 136
+  },
+  {
+    "name": "information_BC",
+    "rendered_bytes": 1569,
+    "input_tokens": 337,
+    "render_sha256": "736074e18b4089d9f1e61a73325a6aa5d93e3b8c94d1398106ebf0355c8babdc",
+    "token_ids_sha256": "3f63aa856d8fbace9cac6238245c0989879054d5adc57abc59c8c829010131d4",
+    "repeat_encodings": 4,
+    "deterministic": true,
+    "serialization": "official typed Harmony; TextContent encoded as ordinary text",
+    "upstream_jinja_input_tokens": 337,
+    "upstream_jinja_raw_harmony_encoding_parity": true,
+    "condition": "BC",
+    "k_sha256": "7aff7fdeb1179a849820f5359769be02445a7f5eacba99642dfded0b676a4924",
+    "p_sha256": "9391daf8de9b3c80eae5a634665cb7cdbbecb829a56a2e612cc51b6f97ff05a5",
+    "h_sha256": "ccfb78ed63216d43e13710fa1ed1c9f2bb97132ebf5d1872417a8fa6c8f8c36d",
+    "selected_kinds": [
+      "EPISODIC",
+      "CONFIRMED_RULE"
+    ],
+    "semantic_p_bytes": 128,
+    "semantic_k_bytes": 256,
+    "semantic_h_bytes": 248
+  }
+]

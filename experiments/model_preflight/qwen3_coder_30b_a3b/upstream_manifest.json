@@ -1,0 +1,66 @@
+{
+  "repository": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+  "revision": "b2cff646eb4bb1d68355c01b18ae02e7cf42d120",
+  "files": [
+    {
+      "file": "config.json",
+      "bytes": 963,
+      "sha256": "e2c8d8eea39471785cd93379d8b48241ad7dcda299013155dd02526e34a0de62",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/config.json"
+    },
+    {
+      "file": "generation_config.json",
+      "bytes": 180,
+      "sha256": "c99723ab3ba28630d26ae23def77603b540a46924895af5cf234740d3b27b51d",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/generation_config.json"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 13055,
+      "sha256": "60f6e8cb15c98dd07300a3cc465ea662de245d2095e4245616af21b2324db3fc",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/tokenizer_config.json"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 7032399,
+      "sha256": "19564a48c4f71a2a1b937cce34c737a1e662b171c5f5d7edf641a15cd896f07d",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/tokenizer.json"
+    },
+    {
+      "file": "vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/vocab.json"
+    },
+    {
+      "file": "merges.txt",
+      "bytes": 1671839,
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/merges.txt"
+    },
+    {
+      "file": "chat_template.jinja",
+      "bytes": 6211,
+      "sha256": "5a38bfa05833266240066aedc497decc9b00cc0d3e3b8cceea98cf530196ab06",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/chat_template.jinja"
+    },
+    {
+      "file": "LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/LICENSE"
+    },
+    {
+      "file": "README.md",
+      "bytes": 5425,
+      "sha256": "98e8f0e00f2d6c7f1743fc4ef2b6297dcc57bec73d71f36588aed984370ac3f3",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/README.md"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "bytes": 1699758,
+      "sha256": "8dde190b862c7c80ec7403c6495de00c60bbaf246ed479cee4506284989c584c",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/resolve/b2cff646eb4bb1d68355c01b18ae02e7cf42d120/model.safetensors.index.json"
+    }
+  ]
+}

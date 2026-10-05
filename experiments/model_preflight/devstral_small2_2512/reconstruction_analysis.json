@@ -1,0 +1,129 @@
+{
+  "original_repository": "mistralai/Devstral-Small-2-24B-Instruct-2512",
+  "original_revision": "55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128",
+  "static_path_established": true,
+  "verified_lifecycle": false,
+  "direct_native_fp8_training_supported": false,
+  "destination": "BF16 full dense representation of the stored quantized original",
+  "prequantization_BF16_recovered": false,
+  "native_fp8_execution_bitwise_equivalent": false,
+  "key_mapping": {
+    "^language_model\\.model\\.": "model.language_model.",
+    "^language_model\\.lm_head\\.": "lm_head.",
+    "^vision_tower\\.": "model.vision_tower.",
+    "^multi_modal_projector\\.": "model.multi_modal_projector."
+  },
+  "loading_attributes": {
+    "dequantize": true,
+    "dtype": "bfloat16",
+    "device_map": "cpu",
+    "trust_remote_code": false,
+    "local_files_only": true
+  },
+  "preserve_quantization_metadata_on_input": {
+    "activation_scheme": "static",
+    "dequantize": false,
+    "modules_to_not_convert": [
+      "model.vision_tower",
+      "model.multi_modal_projector",
+      "lm_head"
+    ],
+    "quant_method": "fp8",
+    "weight_block_size": null
+  },
+  "dense_export_required": {
+    "save_original_format": false,
+    "safe_serialization": true,
+    "quantization_config_absent": true,
+    "is_quantized": false
+  },
+  "serving_config_alias": {
+    "text_config.llama_4_scaling": {
+      "original_max_position_embeddings": 8192,
+      "beta": 0.1
+    },
+    "origin": "unchanged exact params.json constants and text_config.rope_parameters values",
+    "purpose": "vLLM MistralAttention reads legacy alias; Transformers reads rope_parameters; preserve both"
+  },
+  "questions": [
+    {
+      "number": 1,
+      "question": "Direct FP8 PEFT training?",
+      "evidence_level": "UNSUPPORTED",
+      "answer": "The inspected FineGrainedFP8HfQuantizer.is_trainable is False. No native-FP8 bypass or undocumented training route is admitted."
+    },
+    {
+      "number": 2,
+      "question": "Reconstruct trainable representation?",
+      "evidence_level": "SOURCE-CODE INFERENCE",
+      "answer": "Yes: pre_quantized plus explicit dequantize=True on the SAME original, preserving static activation scheme/null block size, FP32 scale multiplication then BF16 destination. Ordinary nn.Linear remains."
+    },
+    {
+      "number": 3,
+      "question": "Same original provenance?",
+      "evidence_level": "SOURCE-CODE INFERENCE",
+      "answer": "All tensors derive only from exact original shards; no separately released BF16 checkpoint. Original hashes plus conversion recipe plus reconstructed tensor hashes form the identity chain."
+    },
+    {
+      "number": 4,
+      "question": "Official conversion path?",
+      "evidence_level": "DOCUMENTED",
+      "answer": "FineGrainedFP8Config -> FineGrainedFP8HfQuantizer.get_weight_conversions/augment_weight_conversions -> Fp8Dequantize.convert/_dequantize_one; postprocess_model removes quantization configuration."
+    },
+    {
+      "number": 5,
+      "question": "Deterministic conversion?",
+      "evidence_level": "EMPIRICALLY UNVERIFIED",
+      "answer": "Path has no RNG/calibration and deterministic elementwise mathematical mapping under a pinned implementation. Pin CPU architecture/PyTorch/thread settings and compare two independent tensor manifests; bitwise repeatability has not been tested."
+    },
+    {
+      "number": 6,
+      "question": "Transformed tensors?",
+      "evidence_level": "SOURCE-CODE INFERENCE",
+      "answer": "280 text projection matrices use weight_scale_inv; 560 scale entries are consumed (activation_scale not reproduced as BF16 runtime quantization). 305 nonquantized weights pass through; actual dtype/shape/scales remain body-unverified."
+    },
+    {
+      "number": 7,
+      "question": "Regenerated/calibrated/requantized?",
+      "evidence_level": "SOURCE-CODE INFERENCE",
+      "answer": "No regeneration/calibration is needed. Existing FP8 rounding is irreversible; FP32 multiplication -> BF16 adds declared rounding. Use save_original_format=False to avoid inverse Fp8Quantize during dense export. Reject missing or newly initialized weights."
+    },
+    {
+      "number": 8,
+      "question": "Hashable every cycle?",
+      "evidence_level": "SOURCE-CODE INFERENCE",
+      "answer": "Yes: original LFS/body hash, source/environment hash, sorted per-tensor name/shape/dtype/byte hash and canonical manifest root; no such dense tensor hashes have yet been measured."
+    },
+    {
+      "number": 9,
+      "question": "Expansion?",
+      "evidence_level": "SOURCE-CODE INFERENCE",
+      "answer": "Original 25,793,059,408 bytes; reconstructed BF16 payload 48,022,722,560 bytes. Full artifact retained; RAM/VRAM/workspace costs are separately estimated."
+    },
+    {
+      "number": 10,
+      "question": "Repeat fresh reconstruction?",
+      "evidence_level": "EMPIRICALLY UNVERIFIED",
+      "answer": "Conceptually supported: original read-only shards -> new empty destination -> exact recipe -> matching tensor root. Repeat for every fresh cycle; never reload prior adapted/merged derivative. Time and peak memory unmeasured."
+    }
+  ],
+  "required_fail_closed_checks": [
+    "All six original body hashes/sizes match declared LFS",
+    "All 1145 raw entries accounted; 280 scale pairs complete",
+    "Actual dtype/shape agrees with topology; finite scales and outputs",
+    "Zero missing/unexpected/mismatched or newly initialized weights",
+    "585 reconstructed non-scale parameters; complete named tensor catalog",
+    "BF16 export has no quantization flags/scales/requantized tensors",
+    "Repeat reconstruction per-tensor hash equality",
+    "Serving config alias is authenticated; logits parity including positions >8192"
+  ],
+  "source_urls": [
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/quantizers/quantizer_finegrained_fp8.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/integrations/finegrained_fp8.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/quantizers/base.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/modeling_utils.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/conversion_mapping.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/mistral.py",
+    "https://huggingface.co/mistralai/Devstral-Small-2-24B-Instruct-2512/blob/55c5b41e98c2dbd21b0c8afffc540dcfc9eb5128/params.json"
+  ]
+}

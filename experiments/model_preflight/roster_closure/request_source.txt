@@ -1,0 +1,440 @@
+STEP 8K-B.1G1E-CLOSE — STATIC LANDSCAPE / INFRASTRUCTURE-ROSTER CLOSURE
+
+Perform the final PRE-OUTCOME STATIC closure audit after completion of
+the bounded model-landscape queue.
+
+This is NOT infrastructure verification.
+This is NOT model inference.
+This is NOT model-quality ranking.
+This is NOT benchmark comparison.
+This is NOT Study1/2/3.
+This is NOT permission to inspect protected candidates.
+
+PURPOSE
+
+Determine whether the frozen STOP-MODEL-SHOPPING criterion from 1G1E
+has now been satisfied and determine the exact bounded set/order of
+model configurations that should proceed to infrastructure verification.
+
+Do not choose a model based on expected coding quality or expected
+adaptation gain.
+
+==================================================
+1. REQUIRED INPUTS
+==================================================
+
+Use the existing immutable/static artifacts for:
+
+A. Landscape closure
+experiments/model_preflight/landscape_closure/
+
+B. Qwen3-Coder-30B-A3B-Instruct preflight
+
+C. Qwen3-Coder-Next preflight
+
+D. gpt-oss-20b preflight
+
+E. Cross-model completion-boundary audit
+
+F. Devstral-Small-2-24B-Instruct-2512 full static preflight
+experiments/model_preflight/devstral_small2_2512/
+
+G. GLM-4.7-Flash targeted static preflight
+experiments/model_preflight/glm47_flash/
+
+H. NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16 targeted static preflight
+experiments/model_preflight/nemotron35_lightning_bf16/
+
+I. Draft2 + current-repo-v1-draft3 specification artifacts
+
+Use exact existing revisions/hashes.
+Do not refresh model releases or search for additional models.
+
+==================================================
+2. STRICT PROHIBITIONS
+==================================================
+
+DO NOT:
+
+- search for new models
+- add optional models merely for breadth
+- download model weight bodies
+- instantiate any model
+- run inference
+- run adapters
+- use GPUs
+- inspect protected candidate tasks/inventory
+- inspect experimental outcomes/private scorers
+- run A/B/M/C/BC
+- run Study1/2/3
+- modify Draft2/Draft3
+- modify P/K/H
+- modify 32768 context
+- modify 2048 reserve
+- alter completion semantics
+- amend protocol to rescue a model
+- use benchmark score magnitude
+- predict which model will adapt best
+- rank models by coding quality
+- commit changes
+
+This is a closure/decision audit over already completed static evidence.
+
+==================================================
+3. VERIFY COMPLETED BOUNDED QUEUE
+==================================================
+
+Confirm exact status of:
+
+Qwen3-Coder-30B-A3B-Instruct
+Qwen3-Coder-Next
+gpt-oss-20b
+Devstral-Small-2-24B-Instruct-2512
+GLM-4.7-Flash
+NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16
+
+For each record:
+
+- exact repo
+- exact SHA
+- static verdict
+- Draft3 full-stream status
+- fresh-original adaptation status
+- architecture/adaptation regime
+- remaining empirical blockers
+- fallback status
+- whether eligible for infrastructure verification
+
+Do not reopen completed static questions unless two artifacts directly
+contradict each other.
+
+==================================================
+4. CHECK STOP-MODEL-SHOPPING CRITERION
+==================================================
+
+Apply the criterion frozen in 1G1E.
+
+Specifically determine whether the required mechanism gaps are now
+represented by a statically admissible fresh-original path or precise
+source-based failure:
+
+- ordinary dense attention/MLP regime
+- ordinary attention + routed MoE regime
+- hybrid recurrent/DeltaNet regime
+- MLA regime
+- Mamba2/state-space regime
+
+Also account for materially different tokenizer/serialization/runtime
+regimes already represented where relevant.
+
+Do NOT require every architecture in the 36-model census.
+
+Do NOT turn optional sensitivity regimes into mandatory work unless
+the frozen 1G1E rule explicitly requires them.
+
+Return exactly:
+
+STOP MODEL SHOPPING: YES
+
+or
+
+STOP MODEL SHOPPING: NO — <precise unmet frozen requirement>
+
+If YES, state what would be required to legitimately reopen model
+discovery later under the frozen rule.
+
+==================================================
+5. FALLBACK RESOLUTION
+==================================================
+
+Check whether any predefined fallback was actually triggered.
+
+Specifically:
+
+- Devstral Small 2 → Devstral-Small-2507 BF16 fallback
+- GLM-4.7-Flash → DeepSeek-Coder-V2-Lite-Instruct BF16 fallback
+
+Do not run a fallback merely because it exists.
+
+If the primary static preflight established the required credible path,
+record fallback NOT TRIGGERED.
+
+Do not invent a Nemotron fallback.
+
+==================================================
+6. REDUNDANCY / NON-REDUNDANCY
+==================================================
+
+Apply the already frozen lineage rule only.
+
+Use:
+
+- architecture/base lineage
+- documented checkpoint/training lineage
+- tokenizer/serialization family
+- runtime/adaptation characteristics
+
+Do not use benchmark quality.
+
+For each surviving infrastructure candidate classify:
+
+NON-REDUNDANT
+or
+REDUNDANT FOR THE STATED CORE MECHANISM SCOPE
+
+Explain concretely.
+
+Do not force a model count.
+
+==================================================
+7. INFRASTRUCTURE-VERIFICATION ROSTER
+==================================================
+
+Construct the bounded set of configurations eligible to proceed to
+infrastructure verification.
+
+This is NOT the final experimental model roster.
+
+A configuration belongs here only if:
+
+1. static protocol compatibility is established;
+2. a credible fresh-original adaptation path exists;
+3. it contributes non-redundant mechanism evidence under the frozen rule;
+4. no unresolved STATIC blocker prevents execution.
+
+For each admitted configuration record:
+
+- model
+- exact SHA
+- selected native profile
+- conservative adaptation scope
+- optional/conditional adaptation scopes
+- proposed runtime
+- number/names of NOT_RUN infrastructure checks
+- expected resource regime as descriptive planning only
+
+Keep conditional expert scopes separate from the minimum conservative
+path.
+
+==================================================
+8. INFRASTRUCTURE ORDER
+==================================================
+
+Apply the PREDECLARED non-quality ordering logic.
+
+Do NOT order by expected benchmark performance.
+
+Use the frozen logic:
+
+1. coverage gain
+2. fresh-original adaptation testability
+3. verification burden
+4. resource burden
+5. retain both if still tied
+
+Also preserve any previously frozen engineering-order constraints that
+remain valid, including Qwen30 before Qwen-Next unless superseded by a
+documented non-quality reason.
+
+Produce an explicit recommended verification sequence.
+
+For every ordering decision give only engineering/methodological
+reasons.
+
+==================================================
+9. MINIMUM VS EXTENDED VERIFICATION
+==================================================
+
+Distinguish:
+
+MINIMUM REQUIRED INFRASTRUCTURE PATH
+from
+EXTENDED MECHANISM-COVERAGE PATH
+
+The minimum path should establish the infrastructure/protocol on the
+least burdensome non-redundant configuration(s) needed before
+expanding expensive verification.
+
+The extended path may include additional non-redundant architectures
+needed for the intended architecture-breadth claim.
+
+Do not automatically require all surviving models to complete every
+expensive adaptation scope.
+
+In particular:
+
+- conservative adapter paths may be verified before expert scopes;
+- expert scopes are not automatically required;
+- hybrid scopes should only be tested where they are part of the
+  architecture-specific evidence we actually intend to claim.
+
+==================================================
+10. FAILURE POLICY HANDOFF
+==================================================
+
+Restate the already planned 1G2A failure classes:
+
+A. PROTOCOL/MODEL INCOMPATIBILITY
+→ STOP that configuration/model track.
+
+B. INFRASTRUCTURE/CONFIGURATION DEFECT
+→ QUARANTINE → bounded repair → rerun affected/dependent gates.
+
+C. MEASUREMENT/VERIFICATION INCOMPLETE
+→ PENDING; never convert to PASS.
+
+Confirm that no infrastructure repair may change:
+
+- P/K/H
+- budgets
+- completion semantics
+- task population
+- generation controls
+- normative protocol behavior
+
+merely to obtain PASS.
+
+Do not yet execute 1G2A.
+
+==================================================
+11. FREEZE BOUNDARY
+==================================================
+
+Clearly distinguish:
+
+STATIC LANDSCAPE CLOSED
+from
+INFRASTRUCTURE ROSTER FROZEN
+from
+FINAL EXPERIMENTAL MODEL ROSTER
+from
+FINAL current-repo-v1 PROTOCOL FREEZE
+
+This step may freeze only what its evidence justifies.
+
+It must NOT claim:
+
+- infrastructure success
+- final model selection
+- model quality
+- adaptation improvement
+- final protocol external verification
+- Study1 readiness
+
+State exactly what is and is not frozen after this step.
+
+==================================================
+12. REQUIRED ARTIFACTS
+==================================================
+
+Create a dedicated directory such as:
+
+experiments/model_preflight/roster_closure/
+
+with at minimum:
+
+REPORT.md
+model_status_matrix.csv
+mechanism_coverage_matrix.csv
+infrastructure_roster.json
+verification_order.json
+fallback_resolution.json
+closure_decision.json
+source_manifest.json
+artifact_manifest.json
+validation.json
+
+Additional deterministic static scripts are allowed.
+
+Do not modify historical preflight artifacts.
+
+Do not commit.
+
+==================================================
+13. VALIDATION
+==================================================
+
+Before finalizing verify:
+
+- all referenced model identities and SHAs match source artifacts
+- all verdicts match source artifacts
+- no model search occurred
+- no new checkpoint was introduced
+- no full weights acquired
+- no model instantiated
+- no inference
+- no GPU execution
+- no protected candidate access
+- no benchmark outcome used
+- Draft2/Draft3 unchanged
+- product repositories unchanged
+- git HEAD unchanged
+- final worktree status recorded
+- artifact hashes recorded
+
+==================================================
+14. REPORT STRUCTURE
+==================================================
+
+REPORT.md:
+
+1. Verdict
+2. Scope/prohibitions
+3. Completed bounded queue
+4. Model status matrix
+5. Frozen mechanism-coverage test
+6. STOP-MODEL-SHOPPING decision
+7. Fallback resolution
+8. Redundancy analysis
+9. Infrastructure-verification roster
+10. Verification order
+11. Minimum required path
+12. Extended mechanism-coverage path
+13. Failure-policy handoff
+14. Freeze boundaries
+15. Remaining blockers
+16. Files created/modified
+17. Claim limitations
+18. Final recommendation
+
+==================================================
+15. FINAL OUTPUT
+==================================================
+
+Finish with a compact summary containing:
+
+STOP MODEL SHOPPING: YES/NO
+
+Static landscape closed: YES/NO
+
+Infrastructure-verification candidates:
+<exact list>
+
+Recommended verification order:
+<exact order>
+
+Minimum first configuration:
+<model>
+
+Fallbacks triggered:
+<list or NONE>
+
+Protocol changed:
+YES/NO
+
+Inference occurred:
+YES/NO
+
+Protected candidates accessed:
+YES/NO
+
+Commit made:
+YES/NO
+
+Final HEAD/status.
+
+Then STOP.
+
+Do not begin 1G2A.
+Do not download weights.
+Do not start infrastructure verification.

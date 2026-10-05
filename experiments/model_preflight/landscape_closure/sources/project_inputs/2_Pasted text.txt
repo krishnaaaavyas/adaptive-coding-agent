@@ -1,0 +1,513 @@
+STEP 8K-B.1G1E — OPEN-WEIGHT MODEL LANDSCAPE CLOSURE
+
+ROLE
+
+Act as an independent model-landscape and experimental-methodology auditor.
+
+This is a PRE-OUTCOME, CANDIDATE-BLIND landscape closure for an adaptive
+software-engineering-agent research project.
+
+The purpose is NOT to identify the "best coding model."
+
+The purpose is to determine whether the current model roster reasonably
+represents the relevant open-weight landscape before expensive infrastructure
+verification begins, and to identify only the minimum additional static
+preflights that could materially change the experimental roster.
+
+CURRENT DATE / CUTOFF
+
+Use information available as of 2026-10-03.
+
+Fresh web verification is REQUIRED for current model identity, release status,
+weights availability, license, architecture, context length, official
+software-engineering positioning, runtime support, and adaptation support.
+
+Prefer PRIMARY SOURCES:
+- official model repositories
+- official model cards
+- official documentation
+- official release posts
+- official GitHub repositories
+- official license files
+
+Use secondary sources only when a primary source cannot establish a fact.
+Clearly label such evidence.
+
+Do not rely on remembered model specifications when a current primary source
+can verify them.
+
+
+SUPPLIED INPUT
+
+The supplied 1G1D cross-model audit is historical project evidence.
+
+Treat its conclusions as the current preflight state:
+
+- Qwen3-Coder-30B-A3B:
+  PROCEED TO INFRASTRUCTURE VERIFICATION.
+
+- Qwen3-Coder-Next:
+  PROCEED TO INFRASTRUCTURE VERIFICATION after 30B.
+
+- gpt-oss-20b proposed final-only Harmony path:
+  DROP — CURRENT PROTOCOL INCOMPATIBLE.
+
+Do NOT reopen the Harmony completion-boundary decision.
+
+Do NOT modify current-repo-v1-draft3.
+
+
+STRICT PROHIBITIONS
+
+DO NOT:
+
+- inspect Step 8K candidate inventories or dispositions
+- inspect the 31 candidate conventions
+- inspect benchmark/project task instances
+- inspect Study-1 outcomes
+- inspect model outputs from project experiments
+- inspect private evaluators/scorers
+- perform model inference
+- download full model weight bodies
+- train or instantiate adapters
+- modify Draft2 or Draft3
+- modify the context-policy implementation
+- freeze the final model roster
+- freeze current-repo-v1
+- rank models by coding quality
+- select models using benchmark SCORE MAGNITUDE
+- use our expected adaptation results in model selection
+
+No benchmark performance number may affect inclusion, exclusion,
+redundancy, or tiebreak decisions.
+
+Benchmark EXISTENCE may be used only for the mechanical Product-Relevance
+gate defined below.
+
+
+============================================================
+PART 1 — DEFINE THE LANDSCAPE
+============================================================
+
+Construct a reasonable census of CURRENT open-weight/open-model families
+that could plausibly be relevant to repository-level software engineering.
+
+The census should be broad enough that retaining only the existing Qwen
+models cannot be criticized as arbitrary.
+
+Do not enumerate dozens of trivial variants.
+
+Group obvious variants/checkpoints into model families where appropriate.
+
+Include materially relevant contemporary families even when they are likely
+to fail resource/adaptation criteria.
+
+Investigate at minimum the relevant current families represented by:
+
+- Qwen coding/SWE models
+- Mistral/Devstral
+- OpenAI gpt-oss
+- DeepSeek coding/general models with credible SWE relevance
+- Z.ai / GLM coding/SWE-capable open-weight models
+- Moonshot/Kimi open-weight models with credible SWE relevance
+
+Also identify any other major current open-weight family that satisfies the
+search scope and would make omission methodologically questionable.
+
+Do not force inclusion merely for vendor diversity.
+
+
+============================================================
+PART 2 — ELIGIBILITY GATE
+============================================================
+
+For every family/checkpoint considered, verify:
+
+1. Weights are actually obtainable for self-hosting.
+2. Exact checkpoint/revision can in principle be identified.
+3. License/terms permit the intended research/product-development use,
+   or clearly document any material restriction.
+4. Core model intelligence does not require a proprietary/commercial API.
+5. The artifact is sufficiently documented to evaluate I/A/P below.
+
+Record:
+
+PASS
+UNCERTAIN
+FAIL
+
+Do not silently infer permissive licensing from "open model" wording.
+
+
+============================================================
+PART 3 — I: INFERENCE FEASIBILITY
+============================================================
+
+Evaluate independently:
+
+Can this checkpoint plausibly execute current-repo-v1-draft3 Study-1
+generation under self-hosted infrastructure?
+
+Consider:
+
+- >= 32,768 usable deployed context including the existing 2,048-token
+  generation reserve
+- self-hosted serving support
+- tokenizer/template/native serialization
+- output-channel behavior
+- deterministic/greedy controls
+- native terminal handling
+- no mandatory proprietary API
+- no mandatory tool-use loop
+- ability to provide complete replacement output
+- plausible offline/no-read execution
+- checkpoint residency/topology requirements
+- known runtime integration issues
+
+Classify:
+
+PASS
+UNCERTAIN — PREFLIGHT REQUIRED
+FAIL
+
+Do not change Draft3 to accommodate a model.
+
+
+============================================================
+PART 4 — A: ADAPTATION FEASIBILITY
+============================================================
+
+Evaluate separately from inference.
+
+Question:
+
+Is there a technically credible path for repeated parameter-efficient
+adaptation starting from the ORIGINAL BASE each cycle?
+
+Consider:
+
+- LoRA/QLoRA/PEFT compatibility
+- explicit target-module/parameter support
+- architecture-specific training limitations
+- MoE expert representation
+- quantized-training limitations
+- fresh ORIGINAL-BASE loading
+- adapter save/reload
+- merge/export or direct-adapter serving
+- likely training topology
+- base residency
+- adapter-state scale
+- repeated rebuild complexity
+- whether inference sparsity hides much larger training residency/state
+
+Classify:
+
+PASS
+UNCERTAIN — PREFLIGHT REQUIRED
+FAIL
+
+IMPORTANT:
+
+Do NOT impose an arbitrary fixed hardware ceiling.
+
+Instead classify the observed engineering RESOURCE REGIME, such as:
+
+- single modest accelerator
+- single large-memory accelerator
+- small multi-GPU
+- large multi-GPU
+- cluster-scale / specialized
+- unresolved
+
+These are descriptive engineering classes, not quality rankings.
+
+Inference feasibility and adaptation feasibility MUST remain separate.
+
+
+============================================================
+PART 5 — P: PRODUCT RELEVANCE
+============================================================
+
+This gate is mechanical.
+
+P = PASS only when authoritative release/model documentation satisfies at
+least ONE of:
+
+A. Explicitly describes the model as intended for software engineering,
+   coding agents, repository-level coding, multi-file coding, codebase
+   interaction, or an equivalent SWE/coding-agent use case.
+
+OR
+
+B. Reports evaluation on at least one recognized repository-level or
+   software-engineering benchmark family such as SWE-bench.
+
+The EXISTENCE of the benchmark evaluation can establish P.
+
+Its SCORE MAGNITUDE CANNOT influence any selection decision.
+
+Generic statements such as:
+- "good at coding"
+- "strong programming ability"
+- HumanEval-style function generation alone
+- community anecdotes
+
+do NOT establish P.
+
+Classify:
+
+PASS
+UNCERTAIN
+FAIL
+
+Quote or precisely cite the authoritative evidence establishing PASS.
+
+
+============================================================
+PART 6 — LINEAGE / REDUNDANCY
+============================================================
+
+Do NOT define redundancy by vendor.
+
+Construct lineage groups using:
+
+1. base architecture lineage
+2. checkpoint/training lineage where documented
+3. tokenizer/serialization family
+4. runtime/adaptation characteristics
+
+Two models may be classified REDUNDANT REPRESENTATIVE only when they are
+substantially the same experimental subject across those dimensions AND
+retaining both would not materially test a different:
+
+- architecture/adaptation regime
+- serialization/protocol regime
+- inference-resource regime
+- adaptation-resource regime
+
+Rules:
+
+Same company != redundant.
+Same license != redundant.
+Same tokenizer alone != redundant.
+Different parameter count alone != independent.
+
+Explain every redundancy decision.
+
+
+============================================================
+PART 7 — FINAL DISPOSITIONS
+============================================================
+
+Use ONLY these dispositions:
+
+FULL PREFLIGHT
+
+TARGETED PREFLIGHT
+
+INFERENCE-ONLY REFERENCE
+
+REDUNDANT REPRESENTATIVE
+
+EXCLUDE
+
+
+Definitions:
+
+FULL PREFLIGHT:
+Model plausibly satisfies eligibility/I/A/P and represents a materially
+useful experimental regime, but requires model-specific static verification
+before infrastructure admission.
+
+TARGETED PREFLIGHT:
+One or a small number of unresolved facts could materially change its
+classification. Investigate only those facts.
+
+INFERENCE-ONLY REFERENCE:
+Inference is plausible/relevant but repeated fresh-base adaptation is
+clearly outside the currently evidenced practical regime or technically
+unsupported. Do not treat it as a primary adaptation candidate.
+
+REDUNDANT REPRESENTATIVE:
+Covered by another retained representative under the frozen redundancy rule.
+
+EXCLUDE:
+Fails a required eligibility, current-protocol, or product-relevance gate,
+or is clearly outside a meaningful self-hosted research regime.
+
+Do not require a fixed number of survivors.
+
+
+============================================================
+PART 8 — RESOURCE-CONSTRAINED TIEBREAK
+============================================================
+
+Do NOT use this unless several NON-REDUNDANT FULL/TARGETED PREFLIGHT
+candidates survive and available resources later require fewer preflights.
+
+Apply this lexicographically, never as a weighted score:
+
+1. EXPERIMENTAL COVERAGE GAIN
+
+Prefer the candidate adding a regime not already represented across:
+
+architecture/adaptation mechanism
+→ serialization/protocol regime
+→ adaptation-resource regime
+→ inference-resource regime
+
+2. ADAPTATION RELEVANCE
+
+If tied, prefer stronger PRE-OUTCOME evidence that repeated fresh
+ORIGINAL-BASE adaptation is technically testable.
+
+Do not use evidence that it adapts better.
+
+3. VERIFICATION BURDEN
+
+If still tied, prefer fewer unresolved dependencies and a simpler
+certifiable runtime/training stack.
+
+4. RESOURCE BURDEN
+
+If still tied, prefer lower expected infrastructure requirements based on
+checkpoint/storage/topology/training-state facts available before inference.
+
+5. STILL TIED
+
+Retain both as unresolved candidates.
+
+DO NOT invent a winner.
+
+Benchmark scores, coding-quality judgments, project benchmark results and
+adaptation outcomes are prohibited tiebreakers.
+
+
+============================================================
+PART 9 — CURRENT ROSTER SENSITIVITY
+============================================================
+
+Re-evaluate only the METHODOLOGICAL COVERAGE of the current roster:
+
+- Qwen3-Coder-30B-A3B
+- Qwen3-Coder-Next
+
+Do not redo their previous static preflights.
+
+Ask:
+
+1. Are they actually redundant under the frozen rule?
+2. What architecture/resource/adaptation regimes do they already cover?
+3. Does another surviving family add materially independent coverage?
+4. Would omission of that family leave an obvious landscape-selection hole?
+
+gpt-oss remains historical evidence of a tested protocol boundary.
+Do not re-admit it by changing the protocol.
+
+
+============================================================
+PART 10 — MINIMUM ADDITIONAL PREFLIGHT SET
+============================================================
+
+Recommend the MINIMUM additional static preflight work needed to close the
+landscape before GPU spending.
+
+For each proposed additional model state:
+
+- exact reason it could change roster coverage
+- unresolved I/A/protocol facts
+- exact static checks required
+- whether FULL or TARGETED preflight is justified
+
+Do NOT recommend preflighting every survivor.
+
+If no additional model can materially change coverage, say so.
+
+If one model is sufficient, recommend one.
+
+If two are genuinely necessary, explain why one cannot resolve both gaps.
+
+
+============================================================
+PART 11 — PRODUCT-ECONOMICS OBSERVATIONS
+============================================================
+
+Without inventing a hardware ceiling or cloud price:
+
+Compare the resource regimes relevant to our product's repeated
+fresh-original-base adaptation loop.
+
+Distinguish:
+
+- inference residency
+- training residency
+- adapter trainable-state size
+- checkpoint reload burden
+- sharding/distribution burden
+- merge/export burden
+- quantization constraints
+- likely operational complexity
+
+Do not infer cost from active-parameter count alone.
+
+Do not turn this into a quality ranking.
+
+
+============================================================
+PART 12 — STOP CONDITION
+============================================================
+
+State explicitly whether the landscape is sufficiently covered to STOP
+MODEL SHOPPING after the recommended additional static preflight(s).
+
+A valid closure may contain only a small number of models.
+
+The criterion is methodological coverage, not quantity.
+
+
+============================================================
+REQUIRED OUTPUT
+============================================================
+
+Produce:
+
+1. Verdict
+2. Search cutoff and methodology
+3. Primary sources consulted
+4. Landscape census
+5. Eligibility table
+6. I — inference-feasibility table
+7. A — adaptation-feasibility table
+8. P — product-relevance table with evidence
+9. Resource-regime table
+10. Lineage groups
+11. Redundancy decisions
+12. Current-roster coverage analysis
+13. Final disposition table
+14. Tiebreak analysis, only if actually required
+15. Minimum additional preflight recommendation
+16. Product adaptation-economics observations
+17. Remaining uncertainties
+18. Candidate artifacts inspected? YES/NO
+19. Model inference performed? YES/NO
+20. Protocol modified? YES/NO
+21. Files created/modified
+22. STOP-MODEL-SHOPPING determination
+23. Final recommendation
+
+Also create machine-readable artifacts if useful:
+
+experiments/model_preflight/landscape_closure/
+    REPORT.md
+    landscape.csv
+    source_manifest.json
+    artifact_manifest.json
+
+Do not commit unless explicitly authorized.
+
+Do not freeze the model roster or current-repo-v1.
+
+Do not begin infrastructure testing.
+
+If a fact cannot be verified, mark it UNCERTAIN rather than filling the gap
+from memory.

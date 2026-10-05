@@ -1,0 +1,28 @@
+{
+  "triggered": [],
+  "predeclared_fallbacks": [
+    {
+      "primary_configuration_id": "devstral_small2_2512",
+      "fallback_repository": "mistralai/Devstral-Small-2507",
+      "fallback_revision": "bd165ab26cebbcc2eea2c4ecbfc07f3ac42b3c39",
+      "status": "NOT TRIGGERED",
+      "trigger_condition": "Only the specific failed-primary static path specified in landscape section 15",
+      "reason": "Own FP8 original has a credible official BF16 reconstruction and fresh-original path; native FP8 backward being unsupported does not trigger replacement.",
+      "fallback_work_executed_in_closure": false,
+      "admitted_to_infrastructure_roster": false
+    },
+    {
+      "primary_configuration_id": "glm47_flash",
+      "fallback_repository": "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct",
+      "fallback_revision": "e434a23f91ba5b4923cf6c9d9a238eb4a08e3a11",
+      "status": "NOT TRIGGERED",
+      "trigger_condition": "Only the specific failed-primary static path specified in landscape section 15",
+      "reason": "Native default-thinking full-stream profile and credible MLA fresh-original path exist; optional expert/direct-serving uncertainty does not trigger replacement.",
+      "fallback_work_executed_in_closure": false,
+      "admitted_to_infrastructure_roster": false
+    }
+  ],
+  "nemotron_fallback": null,
+  "nemotron_policy": "No automatic fallback; record an exact source-based block rather than adding releases/sizes.",
+  "future_failure_policy": "No automatic switch. A later factual blocker can justify documented bounded re-review of its named trigger and distinct original; never use coding outcomes or optional-scope difficulty."
+}

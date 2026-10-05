@@ -1,0 +1,44 @@
+{
+  "repository": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+  "revision": "a9904d24bcc1d289a1950fa9d2b978c47cf903b9",
+  "training": {
+    "stack": {
+      "transformers": "02d8fb9784e8f14a1251e4c992cd82a5762417c6",
+      "PEFT": "532a05dd505c28993119b7715ee286f4234bf51b"
+    },
+    "original_prefix": "backbone.",
+    "model_prefix": "model.",
+    "load_conversion": "backbone.->model.; numeric individual expert stacking into up_proj/down_proj3D parameters; no dtype conversion/dequantization",
+    "backward": "Source-visible differentiable reference torch Mamba chunk scan and eager experts; standard LoRA module forward. Kernel package absence + Hub kernels disabled selects reference path.",
+    "out_proj_limit": "Combined training kernel reads raw out_proj.weight, bypasses module adapter; excluded. use_mamba_kernels=False is deprecated/no-op, not a reliable bypass switch.",
+    "training_cache": "use_cache=False, fresh None states every sample/step; no reused inference state",
+    "weight_manifest_entries": 401
+  },
+  "serving": {
+    "runtime": "vLLM0.30.0",
+    "commit": "ced6857afa0ea7b2e3f0846a62e1394e90f15607",
+    "original_mapper": "backbone.->model.; embeddings->embed_tokens; A_log->A; mtp->None; q/k/v->qkv_proj",
+    "config_resolution": "Current vLLM config registry does not override nemotron_h; pinned native Transformers config remaps legacy block names and provides hybrid_override_pattern property, consumed by runtime. No hand-authored model patch.",
+    "known_time_step_difference": "Pinned Transformers reference mixer dt_limit=(0.001,inf), vLLM Mamba kernel calls dt_limit=(0.0,inf). Native implementation difference must be tested, not silently declared cross-runtime logit parity.",
+    "Mamba": "Fused/custom Triton conv/SSM scan/selective-state kernels; Mamba in/out modules are sharded; recurrent cache external per slot",
+    "MoE": "Non-gated FusedMoE w3/w2 individual-expert mapping; shared expert overlap may use separate/fused paths",
+    "direct_LoRA": "SupportsLoRA, packed qkv declarations and MTP skip; actual full scope and parameter-adapter coverage unresolved",
+    "primary": "Safe merged original-layout BF16 main export; no direct ParamWrapper kernel bypass claim"
+  },
+  "export": {
+    "save_original_format": true,
+    "safe_serialization": true,
+    "inverse": "Split expert dimension0 into indexed up/down.weight tensors; reverse model.->backbone. rename; verify numeric ordering/config aliases",
+    "precision": "BF16 merge rounding with actual adapter dtype; source deterministic arithmetic route, numerical/decision parity NOT_RUN",
+    "not_new_original": true,
+    "MTP": "Evaluation main export excludes unused270 MTP keys; authenticated original store retains all14 bodies"
+  },
+  "source_urls": [
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/conversion_mapping.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/core_model_loading.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/modeling_utils.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/model_executor/models/nemotron_h.py",
+    "https://github.com/vllm-project/vllm/blob/ced6857afa0ea7b2e3f0846a62e1394e90f15607/vllm/transformers_utils/config.py",
+    "https://github.com/huggingface/transformers/blob/02d8fb9784e8f14a1251e4c992cd82a5762417c6/src/transformers/models/nemotron_h/configuration_nemotron_h.py"
+  ]
+}
